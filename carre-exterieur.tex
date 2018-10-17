@@ -1,0 +1,129 @@
+\documentclass{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{enumerate}
+
+\usepackage{eulervm}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{propriete}{Propriété}
+\newtheorem{definition}{Définition}
+\newtheorem{theoreme}{Théorème}
+\newtheorem{lemme}{Lemme}
+
+\DeclareMathOperator{\Hom}{\mathnormal{Hom}}
+\DeclareMathOperator{\Ext}{\mathnormal{Ext}}
+
+\begin{document}
+
+\title{Facteurs $\gamma$ du carré extérieur}
+\date{\today}
+\maketitle
+
+\section{Préliminaires}
+ 
+ \begin{proposition}
+ \label{funcloc}
+ Equation fonctionnelle locale
+ \end{proposition}
+ 
+ \begin{proposition}
+ \label{funcglob}
+ Equation fonctionnelle globale
+ \end{proposition}
+ 
+ \begin{proposition}
+ \label{globalisation}
+ Globalisation
+ \end{proposition}
+ 
+ \section{Facteurs $\gamma$}
+ 
+ On se propose de démontrer l'égalité entre les facteurs $\gamma^{JS}(., \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(., \pi, \Lambda^2, \psi)$ à une constante (dépendant de $\pi$) de module 1 près.
+ 
+ On commence à montrer cette égalité pour les facteurs $\gamma$ archimédiens. Pour le moment, les résultats connus ne nous donnent même pas l'existence du facteur $\gamma^{JS}$ dans le cas archimédien, ce sera une conséquence de la méthode de globalisation.
+ 
+ \begin{proposition}
+ Soit $F = \mathbb{R}$ ou $\mathbb{C}$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. 
+ 
+ Il existe une fonction méromorphe $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ telle que pour tous $s$, $W \in W(\pi, \psi)$ et $\phi \in \mathcal{S}(F)$, on ait
+ \begin{equation}
+ \gamma^{JS}(s, \pi, \Lambda^2, \phi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ \end{equation}
+ 
+ De plus, il existe une constante $c(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$,
+ \begin{equation}
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
+ \end{equation}
+ \end{proposition}
+ 
+ \begin{proof}
+ Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soit $v \neq v'$ deux places non archimédiennes distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$.
+ 
+ D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
+ 
+ D'après la proposition \ref{funcglob}, on a
+ \begin{equation}
+ \begin{split}
+ &J(s, W_\infty, \phi_\infty)J(s, W_v, \phi_v)L^S(s, \Pi, \Lambda^2) \\
+ &= J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_\psi(\phi_\infty))J(1-s, \rho(w_{n,n})\tilde{W}_v, \mathcal{F}_\psi(\phi_v))L^S(1-s, \tilde{\Pi}, \Lambda^2)
+ \end{split}
+ \end{equation}
+ et
+ \begin{equation}
+ L^S(s, \Pi, \Lambda^2) = \gamma^{Sh}(s, \Pi_\infty, \Lambda^2, \psi_\infty)\gamma^{Sh}(s, \Pi_v, \Lambda^2, \psi_v)L^S(1-s, \tilde{\Pi}, \Lambda^2).
+ \end{equation}
+ 
+ Le quotient de ces deux équations nous donne, en utilisant la proposition \ref{funcloc} sur $\Pi_v$, la relation
+ \begin{equation}
+ \frac{J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_\psi(\phi_\infty))}{J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, \psi_\infty)} \frac{\gamma^{JS}(s, \Pi_v, \Lambda^2, \psi_v)}{\gamma^{Sh}(s, \Pi_v, \Lambda^2, \psi_v)} = 1.
+ \end{equation}
+ 
+ Ce qui prouve la première partie de la proposition pour $\Pi_\infty$, l'existence du facteur $\gamma^{JS}(s, \Pi_\infty, \Lambda^2, \psi_\infty)$.
+ 
+ On choisit maintenant pour $U$ une base de voisinage contenant $\pi$, en utilisant la continuité des facteurs $\gamma$ et des facteurs $J$, on en déduit que $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$
+ est une fonction méromorphe indépendante de $W$ et de $\phi$, que l'on note $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$, qui est le produit de $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ et d'une fonction, que l'on note $R(s)$, qui est limite de fractions rationnelles en $q_v^s$; donc $R$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$.
+ 
+  On réutilisant notre raisonnement en la place $v'$, on voit que $R$ est aussi périodique de période $\frac{2i\pi}{\log q_{v'}}$; donc est constante. Ce qui nous permet de voir qu'il existe une constante $c(\pi)=R$ telle que
+ \begin{equation}
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
+ \end{equation}
+ 
+ Il ne nous reste plus qu'à montrer que la constante $c(\pi)$ est de module 1. Reprenons l'équation fonctionnelle locale archimédienne,
+ \begin{equation}
+ \label{funcarch}
+ \gamma^{JS}(s, \pi, \Lambda^2, \phi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ \end{equation}
+ 
+ On utilise maintenant l'équation fonctionnelle sur la représentation $\tilde{\pi}$ pour transformer le facteur $J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))$, ce qui nous donne
+ \begin{equation}
+ \gamma^{JS}(s, \pi, \Lambda^2, \phi) J(s, W, \phi) = \frac{J(s, W, \mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)))}{\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\phi})}.
+ \end{equation}
+ 
+ Puisque $\mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)) = \phi$, on obtient donc la relation 
+ \begin{equation}
+ \gamma^{JS}(s, \pi, \Lambda^2, \phi)\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\phi}) = 1.
+ \end{equation}
+ 
+ D'autre part, en conjuguant l'équation \ref{funcarch}, on obtient
+ \begin{equation}
+ \overline{\gamma^{JS}(s, \pi, \Lambda^2, \phi)} = \gamma^{JS}(\bar{s}, \bar{\pi}, \Lambda^2, \bar{\phi}).
+ \end{equation}
+ 
+ Comme $\pi$ est tempérée, $\pi$ est unitaire, donc $\tilde{\pi} \simeq \bar{\pi}$. On en déduit, pour $s = \frac{1}{2}$,
+ \begin{equation}
+ |\gamma^{JS}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1.
+ \end{equation}
+ 
+ D'autre part, le facteur $\gamma$ de Shahidi vérifie aussi $|\gamma^{JS}(\frac{1}{2}, \pi, \Lambda^2, \phi)|^2=1$; on en déduit donc que $c(\pi)$ est bien de module 1.
+ \end{proof}
+\end{document}
