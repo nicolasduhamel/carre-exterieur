@@ -29,16 +29,53 @@
 \date{\today}
 \maketitle
 
+Soit $F$ un corps local, $\psi$ un caractère non trivial de $F$ et $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini la fonction L de carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notée $J(s, W, \phi)$, où $W \in W(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F)$ est une fonction de Schwartz. On montre que les facteurs $\gamma$ associés, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$, sont égaux à une constante de module 1 prés à ceux définis par Shahidi, que l'on note $\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$. Plus exactement, il existe une constante $c(\pi)$ de module 1, tel que
+$$\gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$$
+pour tout $s \in C$.
+
 \section{Préliminaires}
- 
+
+\subsection{Définition, premières propriétés}
+
+\subsubsection{Théorie locale}
+Les intégrales $J(s, W, \phi)$ sont définies par
+$$\int \int W\left(\sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix}\right)\psi(-Tr(X))dX\phi(e_ng)\det g^s dg$$
+pour tous $W \in W(\pi, \psi)$, $\phi \in \mathcal{S}(F)$ et $s \in \mathcal{C}$. L'élément $\sigma$ est la permutation
+$$\bigl(\begin{smallmatrix}
+    1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
+    1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
+  \end{smallmatrix}\bigr)$$
+  
+  (Jacquet-Shalika) Il existe $\eta > 0$ tel que les intégrales $J(s, W, \phi)$ convergent absolument pour $Re(s) > 1 - \eta$.
+  De plus, lorsque $F$ est p-adique ce sont des fractions rationnelles en $q^{s}$ donc s'étendent méromorphiquement à tout le plan complexe.
+  
+  (Belt) équivalent archimédien
+  
+  D'autre part, dans le cas d'une représentation non ramifiée, ont peut représenter la fonction L obtenu par la correspondance de Langlands (qui est égale à celle obtenu par la méthode de Langlands-Shahidi).
+  (Jacquet-Shalika) calcul non ramifié
+  
+  \subsubsection{Théorie globale}
+  La méthode que l'on utilise est une méthode de globalisation, essentiellement, on verra $\pi$ comme une composante locale d'une représentation automorphe cuspidale. Pour se faire, on aura besoin de l'équivalent global des intégrales $J$.
+  
+  \subsection{Equation fonctionnelle}
+  Matringe a démontré que $J(s, W, \phi)$ vérifie une équation fonctionnelle lorsque $F$ est un corps $p$-adique, plus précisément, on a la
  \begin{proposition}
  \label{funcloc}
- Equation fonctionnelle locale
+ Supposons que $F$ est un corps $p$-adiqueIl existe un monôme $\epsilon(s,\pi,\Lambda^2,\psi)$ en $q^s$, tel que pour tous $W \in W(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, ont ait
+ $$\epsilon \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}$$
  \end{proposition}
  
+ D'autre part, Jacquet et Shalika ont démontré une équation fonctionnelle globale
  \begin{proposition}
  \label{funcglob}
- Equation fonctionnelle globale
+ prolongement méromorphique +
+ J(s,W,\phi)=J(1-s, \tilde{W}, F(\phi))
  \end{proposition}
  
  \begin{proposition}
