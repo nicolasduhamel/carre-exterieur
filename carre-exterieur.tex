@@ -1,6 +1,5 @@
 \documentclass{amsart}
 
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{bbm}
@@ -14,11 +13,11 @@
 
 \usepackage{eulervm}
 
-\newtheorem{proposition}{Proposition}
-\newtheorem{propriete}{Propriété}
-\newtheorem{definition}{Définition}
-\newtheorem{theoreme}{Théorème}
-\newtheorem{lemme}{Lemme}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{propriete}{Propriété}[section]
+\newtheorem{definition}{Définition}[section]
+\newtheorem{theoreme}{Théorème}[section]
+\newtheorem{lemme}{Lemme}[section]
 
 \DeclareMathOperator{\Hom}{\mathnormal{Hom}}
 \DeclareMathOperator{\Ext}{\mathnormal{Ext}}
@@ -29,17 +28,101 @@
 \date{\today}
 \maketitle
 
+Soit $F$ un corps local de caractéristique $0$, $\psi$ un caractère non trivial de $F$ et $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini une fonction L du carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notée $J(s, W, \phi)$, où $W \in W(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F)$ est une fonction de Schwartz. Matringe a prouvé que ces quantités $J(s,W,\phi)$ vérifient une équation fonctionnelle, ce qui permet de définir des facteurs $\gamma$, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$. On montre que ces facteurs $\gamma$ sont égaux à une constante de module 1 prés à ceux définis par Shahidi, que l'on note $\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$. Plus exactement, il existe une constante $c(\pi)$ de module 1, tel que
+$$\gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$$
+pour tout $s \in \mathbb{C}$. La preuve se fait par une méthode de globalisation, on voit $\pi$ comme une composante locale d'une représentation automorphe cuspidale.
+
 \section{Préliminaires}
- 
+
+\subsection{Théorie locale}
+Les intégrales $J(s, W, \phi)$ sont définies par
+ \begin{equation}
+\int_{N_n\backslash{G_n}} \int_{Lie(B_n)\backslash{M_n}} W\left(\sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix}\right)\psi(-Tr(X))dX\phi(e_ng)\det g^s dg
+ \end{equation}
+pour tous $W \in W(\pi, \psi)$, $\phi \in \mathcal{S}(F)$ et $s \in \mathcal{C}$. On a noté $G_n$ le groupe $GL_n(F)$, $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. L'élément $\sigma$ est la permutation
+$$\bigl(\begin{smallmatrix}
+    1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
+    1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
+  \end{smallmatrix}\bigr)$$
+  
+  Jacquet et Shalika ont démontré que ces intégrales convergent pour $Re(s)$ suffisamment grand, plus exactement, on dispose de la
+  \begin{proposition}[Jacquet-Shalika]
+  Il existe $\eta > 0$ tel que les intégrales $J(s, W, \phi)$ convergent absolument pour $Re(s) > 1 - \eta$.
+  \end{proposition}
+  
+  Kewat montre, lorsque $F$ est p-adique, que ce sont des fractions rationnelles en $q^{s}$ où $q$ est le cardinal du corps résiduel de $F$. On aura aussi besoin d'avoir le prolongement méromorphe de ces intégrales lorsque le corps $F$ est archimédien et d'un résultat de non annulation.
+  \begin{proposition}[Belt]
+  \label{nonzero}
+  Fixons $s_0 \in \mathbb{C}$. Il existe $W$ et $\phi$ tel que $J(s,W,\phi)$ admet un prolongement méromorphe à tout le plan complexe et ne s'annule pas en $s_0$. Si $F=\mathbb{R}$ ou $\mathbb{C}$, le point $s_0$ peut éventuellement être un pôle. Si $F$ est $p$-adique, on peut choisir $W$ et $\phi$ tel que $J(s, W, \phi)$ soit entière.
+  \end{proposition}
+  
+  D'autre part, dans le cas d'une représentation non ramifiée, ont peut représenter la fonction L obtenue par la correspondance de Langlands locale (qui est égale à celle obtenu par la méthode de Langlands-Shahidi d'après un résultat d'Henniart) par ces intégrales.
+  \begin{proposition}[Jacquet-Shalika]
+  \label{calculnr}
+  Supposons que $F$ est $p$-adique, le conducteur de $\psi$ est l'anneau des entiers $\mathcal{O}$ de $F$. Soit $\pi$ une représentation non ramifiée de $GL_{2n}(F)$. On note $\phi_0$ la fonction caractéristique de $\mathcal{O}^n$ et $W_0$ l'unique fonction de Whittaker invariante par $GL_{2n}(\mathcal{O})$ et qui vérifie $W(1)=1$. Alors
+   \begin{equation}
+   J(s,W_0,\phi_0) = L(s, \pi, \Lambda^2).
+    \end{equation}
+  \end{proposition}
+  
+  Pour finir ce paragraphe, on énonce l'équation fonctionnelle démontrée par Matringe lorsque $F$ est un corps $p$-adique, plus précisément, on a la
  \begin{proposition}
  \label{funcloc}
- Equation fonctionnelle locale
+ Supposons que $F$ est un corps $p$-adique. Il existe un monôme $\epsilon(s,\pi,\Lambda^2,\psi)$ en $q^s$, tel que pour tous $W \in W(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, ont ait
+ \begin{equation}
+ \epsilon(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\tilde{W},\hat{\phi})}{L(1-s,\tilde{\pi},\Lambda^2)},
+ \end{equation}
+ où $\tilde{W} \in W(\tilde{\pi}, \bar{\psi})$ est la fonction de Whittaker définie par $\tilde{W}(g) = W(w_n(g^t)^{-1})$ avec $w_n$ la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+    1 & \cdots & 2n  \\
+    2n & \cdots &  1 
+  \end{smallmatrix}\bigr)$
+  et
+ $w_{n,n} = \begin{pmatrix}
+0 & 1_n \\
+1_n & 0
+\end{pmatrix}$. On définit alors le facteur $\gamma$ de Jacquet-Shalika par la relation
+\begin{equation}
+\gamma^{JS}(s,\pi,\Lambda^2,\psi)  = \epsilon(s,\pi,\Lambda^2,\psi)\frac{L(1-s,\tilde{\pi},\Lambda^2)}{L(s,\pi,\Lambda^2)}.
+\end{equation}
  \end{proposition}
  
- \begin{proposition}
+  \subsection{Théorie globale}
+  La méthode que l'on utilise est une méthode de globalisation. Essentiellement, on verra $\pi$ comme une composante locale d'une représentation automorphe cuspidale. Pour se faire, on aura besoin de l'équivalent global des intégrales $J(s, W, \phi)$.
+  
+  Soit $K$ un corps de nombres et $\psi_\mathbb{A}$ un caractère non trivial de $\mathbb{A}_K/K$. Soit $\Pi$ une représentation automorphe cuspidale irréductible sur $GL_{2n}(\mathbb{A}_K)$. Pour $\varphi \Pi$, on considère
+  \begin{equation}
+  W_\varphi(g) = \int_{N_n(K)\backslash{N_n(\mathbb{A}_K)}} \varphi(ug)\psi_\mathbb{A}(u)du
+  \end{equation}
+  la fonction de Whittaker associée. On considère $\psi_\mathbb{A}$ comme un caractère de $N_n(\mathbb{A}_K)$ en posant $\psi_\mathbb{A}(u) = \psi_\mathbb{A}(\sum_{i=1}^{n-1} u_{i,i+1})$. Pour $\Phi \in \mathcal{S}(\mathbb{A}_K^n)$ une fonction de Swchartz, on note $J(s, W_\varphi, \Phi)$ l'intégrale
+  \begin{equation}
+\int_{N_n\backslash{G_n}} \int_{Lie(B_n)\backslash{M_n}} W_\varphi \left(\sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix}\right)\psi_\mathbb{A}(Tr(X))dX\Phi(e_ng)\det g^s dg
+ \end{equation}
+ où l'on note $G_n$ le groupe $GL_n(\mathbb{A}_K)$, $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $\mathbb{A}_K$.
+ 
+  Finissons cette section par l'équation fonctionnelle globale démontré par Jacquet et Shalika.
+ \begin{proposition}[Jacquet-Shalika]
  \label{funcglob}
- Equation fonctionnelle globale
+ Les intégrales $J(s, W_\varphi, \Phi)$ convergent absolument pour $Re(s)$ suffisamment grand. De plus, $J(s, W_\varphi, \Phi)$ admet un prolongement méromorphe à tout le plan complexe et vérifie l'équation fonctionnelle suivante
+ \begin{equation}
+ J(s,W_\varphi,\Phi)=J(1-s, \rho(w_{n,n})\tilde{W}_\varphi, \hat{\Phi}).
+ \end{equation}
  \end{proposition}
+ 
+ Les intégrales globales sont reliées aux intégrales locales. Plus exactement, si $W=\prod_v W_v$ et $\Phi = \prod_v \Phi_v$, où $v$ décrit les places de $K$, ont a $J(s,W_\varphi,\Phi)=\prod_v J(s, W_v, \Phi_v)$.
+ 
+ \subsection{Globalisation}
  
  \begin{proposition}
  \label{globalisation}
@@ -48,7 +131,7 @@
  
  \section{Facteurs $\gamma$}
  
- On se propose de démontrer l'égalité entre les facteurs $\gamma^{JS}(., \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(., \pi, \Lambda^2, \psi)$ à une constante (dépendant de $\pi$) de module 1 près.
+ Dans cette partie, on prouve l'égalité entre les facteurs $\gamma^{JS}(., \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(., \pi, \Lambda^2, \psi)$ à une constante (dépendant de $\pi$) de module 1 près.
  
  On commence à montrer cette égalité pour les facteurs $\gamma$ archimédiens. Pour le moment, les résultats connus ne nous donnent même pas l'existence du facteur $\gamma^{JS}$ dans le cas archimédien, ce sera une conséquence de la méthode de globalisation.
  
@@ -71,19 +154,22 @@
  
  D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
  
+ On choisit maintenant des fonctions de Whittaker $W_w$ et des fonctions de Schwartz $\phi_w$ dans le but d'appliquer l'équation fonctionnelle globale. Pour $w \neq \infty, v$, on prend les fonctions "non ramifiée" qui apparaissent dans la proposition \ref{calculnr}. Pour $w = \infty, v$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
+ $$W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.$$
+ 
  D'après la proposition \ref{funcglob}, on a
  \begin{equation}
  \begin{split}
  &J(s, W_\infty, \phi_\infty)J(s, W_v, \phi_v)L^S(s, \Pi, \Lambda^2) \\
- &= J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_\psi(\phi_\infty))J(1-s, \rho(w_{n,n})\tilde{W}_v, \mathcal{F}_\psi(\phi_v))L^S(1-s, \tilde{\Pi}, \Lambda^2)
+ &= J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_\psi(\phi_\infty))J(1-s, \rho(w_{n,n})\tilde{W}_v, \mathcal{F}_\psi(\phi_v))L^S(1-s, \tilde{\Pi}, \Lambda^2),
  \end{split}
  \end{equation}
- et
+ où $L^S(s, \Pi, \Lambda^2) = \prod_{w \neq \infty,v} L(s, \Pi_w, \Lambda^2)$ est la fonction L non ramifiée. D'autre part, les facteurs $\gamma$ de Shahidi vérifient une relation similaire,
  \begin{equation}
  L^S(s, \Pi, \Lambda^2) = \gamma^{Sh}(s, \Pi_\infty, \Lambda^2, \psi_\infty)\gamma^{Sh}(s, \Pi_v, \Lambda^2, \psi_v)L^S(1-s, \tilde{\Pi}, \Lambda^2).
  \end{equation}
  
- Le quotient de ces deux équations nous donne, en utilisant la proposition \ref{funcloc} sur $\Pi_v$, la relation
+ Le quotient de ces deux équations nous donne, en utilisant la proposition \ref{funcloc} sur le facteur en $\Pi_v$, la relation
  \begin{equation}
  \frac{J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_\psi(\phi_\infty))}{J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, \psi_\infty)} \frac{\gamma^{JS}(s, \Pi_v, \Lambda^2, \psi_v)}{\gamma^{Sh}(s, \Pi_v, \Lambda^2, \psi_v)} = 1.
  \end{equation}
