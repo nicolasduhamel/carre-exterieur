@@ -137,7 +137,11 @@ g & 0 \\
  Supposons que $F$ est un corps $p$-adique. Il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$.
  \end{lemme}
  
- On note $Temp(GL_{2n}(F)$ l'ensemble des classes d'isomorphismes de représentations tempérées irréductibles. Topologie sur $Temp(GL_{2n}(F))$.
+ On note $Temp(GL_{2n}(F)$ l'ensemble des classes d'isomorphismes de représentations tempérées irréductibles. On va définir une topologie sur $Temp(GL_{2n}(F))$. On note $Temp_{ind}(GL_{2n}(F))$ l'ensemble des classes d'isomorphismes de représentations de la forme $i_P^G(\sigma)$ où $P=MU$ est un sous-groupe parabolique de $GL_{2n}(F)$, $\sigma$ est une représentation irréductible de carré intégrable de $M$ et $i_P^G$ est l'induction normalisée. Chaque représentation de $Temp(GL_{2n}(F))$ est une composante d'une unique représentation de $Temp_{ind}(GL_{2n}(F))$.
+ 
+ On définira alors la topologie sur $Temp(GL_{2n}(F))$ comme l'image réciproque de la topologie sur $Temp_{ind}(GL_{2n}(F))$ que l'on définit dans la suite. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$ et $\sigma$ une représentation irréductible de carré intégrable de $M$, on note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \in X^*(M)/D \mapsto i^G_M(\sigma \otimes \chi) \in Temp_{ind}(GL_{2n}(F))$ où $D$ est le sous-groupe de $X^*(M)$ des éléments $\chi$ tels que $\sigma \otimes \chi \simeq \sigma$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp_{ind}(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M)/D$.
+ 
+ Cette topologie sur $Temp(GL_{2n}(F))$ nous permet d'énoncer le résultat principal dont on aura besoin pour la méthode de globalisation.
  \begin{proposition}[Beuzart-Plessis]
  \label{globalisation}
  Soit $k$ un corps de nombres, $v_0,v_1$ deux places distinctes de $k$ avec $v_1$ non archimédienne. Soit $U$ un ouvert de $Temp(GL_{2n}(k_{v_0})$. Alors il existe une représentation automorphe cuspidale irréductible $\Pi$ de $GL_{2n}(\mathbb{A}_k)$ telle que $\Pi_{v_0} \in U$ et $\Pi_v$ est non ramifiée pour toute place non archimédienne $v \not \in \{v_0,v_1\}$.
