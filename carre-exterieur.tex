@@ -153,23 +153,86 @@ g & 0 \\
  
  L'espace des fonctions tempérées $C^w(N_n(F)\backslash{GL_{2n}(F)}, \psi)$ est l'espace des fonctions $f : GL_{2n}(F) \rightarrow \mathbb{C}$ telles que $f(ng) = \psi(n)f(g)$ pour tous $n \in N(F)$ et $g \in GL_{2n}(F)$, on impose les conditions suivantes :
  \begin{itemize}
- \item Si $F$ est $p$-adique, $f$ est localement constante et il existe $d > 0$ et $C > 0$ tels que $|f(g)| \leq C \Xi(g)\log(||g||_\infty)^d$ pour tout $g \in GL_{2n}(F)$,
- \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ et $C > 0$ tels que $|(R(u)f)(g)| \leq C \Xi(g) \log(||g||_\infty)^d$ pour tous $g \in GL_{2n}(F)$ et $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$,
+ \item Si $F$ est $p$-adique, $f$ est localement constante et il existe $d > 0$ et $C > 0$ tels que $|f(g)| \leq C \Xi(g)\log(||a||)^d$ pour tout $g \in GL_{2n}(F)$,
+ \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ et $C > 0$ tels que $|(R(u)f)(g)| \leq C \Xi(g) \log(||a||)^d$ pour tous $g \in GL_{2n}(F)$ et $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$,
  \end{itemize}
- où $\Xi$ est la fonction définie par $\Xi(nak) = \delta_{B_n}(a)^{\frac{1}{2}}$.
+ où $a$ est défini par la décomposition d'Iwasawa $g=nak$ et $\Xi$ est la fonction définie par $\Xi(g) = \delta_{B_n}(a)^{\frac{1}{2}}$.
  
- La proposition suivante est une extension d'un résultat qui sert de base pour la convergence des intégrales $J(s, W, \phi)$.
- \begin{proposition}
- Soit $W \in C^w(N_n(F)\backslash{GL_{2n}(F)}, \psi)$,
- \begin{equation}
- W(ak) = \delta^{\frac{1}{2}}(a) \sum_{\xi \in X} \phi_\xi(a,k)\xi(a).
- \end{equation}
- \end{proposition}
+On rappelle la majoration des fonctions tempérées sur la diagonale,
+\begin{lemme}[Beuzart-Plessis]
+\label{majtemp}
+\begin{equation}
+|f(ak)| \leq C\prod (1 + |\frac{a_i}{a_{i+1}}|)^{-N}\delta(a)^{\frac{1}{2}}\log(||a||)^d
+\end{equation}
+\end{lemme}
+
+\begin{lemme}
+Il existe $N$ tel que pour tous $s$ vérifiant $Re(s) > 0$ et $d > 0$, l'intégrale
+\begin{equation}
+\int_{A_n} \prod (1+|\frac{a_i}{a_{i+1}}|)^{-N}\log(||a||)^d|\det a|^s da
+\end{equation}
+converge absolument.
+\end{lemme}
+
+On étend la définition des intégrales $J(s, W, \phi)$ aux fonctions tempérées $W$, on montre maintenant la convergence de ces intégrales
+\begin{lemme}
+Pour $W C^w(N_n(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 1$.
+\end{lemme}
  
  \begin{proof}
- ???
- \end{proof}
+ D'après la décomposition d'Iwasawa, on a $N_n\backslash{G_n} = A_nK_n$. Il suffit de montrer la convergence de l'intégrale
+ \begin{equation}
+ \int |W\left(\sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+ak & 0 \\
+0 & ak
+\end{pmatrix}\right)||\det a|^{Re(s)} \delta^{-1}(a)dX da dk.
+ \end{equation}
  
+ On pose $u_X = \sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \sigma^{-1}$, ce qui nous permet d'écrire
+\begin{equation}
+\sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+a & 0 \\
+0 & a
+\end{pmatrix} = b u_{a^{-1}Xa},
+\end{equation}
+ où $b=diag(a_1,a_1,a_2,a_2,...)$. On effectue le changement de variable $X \mapsto aXa^{-1}$, l'intégrale devient alors
+ \begin{equation}
+ \int |W\left(b u_X \sigma \begin{pmatrix}
+k & 0 \\
+0 & k
+\end{pmatrix}\right)||\det a|^{Re(s)} \delta^{-2}(a) dX da dk
+ \end{equation}
+ 
+ On écrit $u_X = n_Xt_Xk_X$ la décomposition d'Iwasawa de $u_x$ et on pose $k_\sigma = \sigma \begin{pmatrix}
+k & 0 \\
+0 & k
+\end{pmatrix}$. Le lemme \ref{majtemp} donne alors
+ \begin{align}
+ |W(bt_Xk_Xk_\sigma)| &\leq C \prod (1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d \\
+ &\leq C \prod |\frac{t_j}{t_{j+1}}|^{-N} \prod (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d \\
+ &\leq C m(X)^{-\alpha N} \prod (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d
+ \end{align}
+ où $m(X) = sup(1, ||X||)$, la dernière inégalité provient de Jacquet-Shalika. L'intégrale est alors majorée (à une constante prés) par le produit des intégrales
+ \begin{equation}
+ \int m(X)^{-\alpha N} \delta^{\frac{1}{2}}(t_X)\log(||t_X||)^d dX
+ \end{equation}
+ et
+ \begin{equation}
+ \int \prod (1+ |\frac{a_i}{a_{i+1}}|)^{-N} \log(||b||)^d|\det a|^{Re(s)} \delta^{\frac{1}{2}}(b)\delta^{-2}(a) da.
+ \end{equation}
+ 
+ La première intégrale converge pour $N$ assez grand et la deuxième pour $N$ assez grand lorsque $Re(s) > 1$.
+  \end{proof}
+  
  \section{Facteurs $\gamma$}
  
  Dans cette partie, on prouve l'égalité entre les facteurs $\gamma^{JS}(., \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(., \pi, \Lambda^2, \psi)$ à une constante (dépendant de $\pi$) de module 1 près.
