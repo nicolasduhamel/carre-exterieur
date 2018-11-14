@@ -66,7 +66,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   Fixons $s_0 \in \mathbb{C}$. Il existe $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$ tels que $J(s,W,\phi)$ admet un prolongement méromorphe à tout le plan complexe et ne s'annule pas en $s_0$. Si $F=\mathbb{R}$ ou $\mathbb{C}$, le point $s_0$ peut éventuellement être un pôle. Si $F$ est $p$-adique, on peut choisir $W$ et $\phi$ tels que $J(s, W, \phi)$ soit entière.
   \end{proposition}
   
-  Lorsque la représentation non ramifiée, ont peut représenter la fonction L du carré extérieur obtenue par la correspondance de Langlands locale, que l'on note $L(s, \pi, \Lambda^2)$, (qui est égale à celle obtenue par la méthode de Langlands-Shahidi d'après un résultat d'Henniart) par ces intégrales.
+  Lorsque la représentation est non-ramifiée, on peut représenter la fonction L du carré extérieur obtenue par la correspondance de Langlands locale, que l'on note $L(s, \pi, \Lambda^2)$, (qui est égale à celle obtenue par la méthode de Langlands-Shahidi d'après un résultat d'Henniart \cite{henniart}) par ces intégrales.
   \begin{proposition}[Jacquet-Shalika]
   \label{calculnr}
   Supposons que $F$ est $p$-adique, le conducteur de $\psi$ est l'anneau des entiers $\mathcal{O}$ de $F$. Soit $\pi$ une représentation non ramifiée de $GL_{2n}(F)$. On note $\phi_0$ la fonction caractéristique de $\mathcal{O}^n$ et $W_0$ l'unique fonction de Whittaker invariante par $GL_{2n}(\mathcal{O})$ et qui vérifie $W(1)=1$. Alors
@@ -97,13 +97,13 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
  \end{proposition}
  
   \subsection{Théorie globale}
-  La méthode que l'on utilise est une méthode de globalisation. Essentiellement, on verra $\pi$ comme une composante locale d'une représentation automorphe cuspidale. Pour se faire, on aura besoin de l'équivalent global des intégrales $J(s, W, \phi)$.
+  La méthode que l'on utilise est une méthode de globalisation. Essentiellement, on verra $\pi$ comme une composante locale d'une représentation automorphe cuspidale. Pour ce faire, on aura besoin de l'équivalent global des intégrales $J(s, W, \phi)$.
   
   Soit $K$ un corps de nombres et $\psi_\mathbb{A}$ un caractère non trivial de $\mathbb{A}_K/K$. Soit $\Pi$ une représentation automorphe cuspidale irréductible sur $GL_{2n}(\mathbb{A}_K)$. Pour $\varphi \in \Pi$, on considère
   \begin{equation}
-  W_\varphi(g) = \int_{N_n(K)\backslash{N_n(\mathbb{A}_K)}} \varphi(ug)\psi_\mathbb{A}(u)du
+  W_\varphi(g) = \int_{N_{2n}(K)\backslash{N_{2n}(\mathbb{A}_K)}} \varphi(ug)\psi_\mathbb{A}(u)du
   \end{equation}
-  la fonction de Whittaker associée. On considère $\psi_\mathbb{A}$ comme un caractère de $N_n(\mathbb{A}_K)$ en posant $\psi_\mathbb{A}(u) = \psi_\mathbb{A}(\sum_{i=1}^{n-1} u_{i,i+1})$. Pour $\Phi \in \mathcal{S}(\mathbb{A}_K^n)$ une fonction de Swchartz, on note $J(s, W_\varphi, \Phi)$ l'intégrale
+  la fonction de Whittaker associée. On considère $\psi_\mathbb{A}$ comme un caractère de $N_{2n}(\mathbb{A}_K)$ en posant $\psi_\mathbb{A}(u) = \psi_\mathbb{A}(\sum_{i=1}^{2n-1} u_{i,i+1})$. Pour $\Phi \in \mathcal{S}(\mathbb{A}_K^n)$ une fonction de Schwartz, on note $J(s, W_\varphi, \Phi)$ l'intégrale
   \begin{equation}
 \int_{N_n\backslash{G_n}} \int_{Lie(B_n)\backslash{M_n}} W_\varphi \left(\sigma \begin{pmatrix}
 1 & X \\
@@ -115,17 +115,17 @@ g & 0 \\
  \end{equation}
  où l'on note $G_n$ le groupe $GL_n(\mathbb{A}_K)$, $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $\mathbb{A}_K$.
  
-  Finissons cette section par l'équation fonctionnelle globale démontrée par Jacquet et Shalika.
+  Finissons cette section par l'équation fonctionnelle globale démontrée par Jacquet et Shalika \cite{jacquet-shalika}.
  \begin{proposition}[Jacquet-Shalika]
  \label{funcglob}
  Les intégrales $J(s, W_\varphi, \Phi)$ convergent absolument pour $Re(s)$ suffisamment grand. De plus, $J(s, W_\varphi, \Phi)$ admet un prolongement méromorphe à tout le plan complexe et vérifie l'équation fonctionnelle suivante
  \begin{equation}
  J(s,W_\varphi,\Phi)=J(1-s, \rho(w_{n,n})\tilde{W}_\varphi, \hat{\Phi}),
  \end{equation}
- où $\tilde{W}_\varphi(g) = W_\varphi(w_n(g^t)^{-1})$ et $\hat{\Phi}$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi_\mathbb{A}$.
+ où $\tilde{W}_\varphi(g) = W_\varphi(w_n(g^t)^{-1})$ et $\hat{\Phi}$ est la transformée de Fourier de $\Phi$ par rapport au caractère $\psi_\mathbb{A}$.
  \end{proposition}
  
- Comme on peut s'y attendre, les intégrales globales sont reliées aux intégrales locales. Plus exactement, si $W=\prod_v W_v$ et $\Phi = \prod_v \Phi_v$, où $v$ décrit les places de $K$, ont a
+ Comme on peut s'y attendre, les intégrales globales sont reliées aux intégrales locales. Plus exactement, si $W=\prod_v W_v$ et $\Phi = \prod_v \Phi_v$, où $v$ décrit les places de $K$, on a
  \begin{equation}
  J(s,W_\varphi,\Phi)=\prod_v J(s, W_v, \Phi_v).
  \end{equation}
@@ -133,62 +133,64 @@ g & 0 \\
  \subsection{Globalisation}
  
  Comme la preuve se fait par globalisation, la première chose à faire est de trouver un corps de nombres dont $F$ est une localisation. On dispose du
- \begin{lemme}
+ \begin{lemme}[Kable \cite{kable}]
  \label{corpsglobal}
  Supposons que $F$ est un corps $p$-adique. Il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$.
  \end{lemme}
  
- On note $Temp(GL_{2n}(F)$ l'ensemble des classes d'isomorphismes de représentations tempérées irréductibles. On va définir une topologie sur $Temp(GL_{2n}(F))$. On note $Temp_{ind}(GL_{2n}(F))$ l'ensemble des classes d'isomorphismes de représentations de la forme $i_P^G(\sigma)$ où $P=MU$ est un sous-groupe parabolique de $GL_{2n}(F)$, $\sigma$ est une représentation irréductible de carré intégrable de $M$ et $i_P^G$ est l'induction normalisée. Chaque représentation de $Temp(GL_{2n}(F))$ est une composante d'une unique représentation de $Temp_{ind}(GL_{2n}(F))$.
- 
- On définira alors la topologie sur $Temp(GL_{2n}(F))$ comme l'image réciproque de la topologie sur $Temp_{ind}(GL_{2n}(F))$ que l'on définit dans la suite. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$ et $\sigma$ une représentation irréductible de carré intégrable de $M$, on note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \in X^*(M)/D \mapsto i^G_M(\sigma \otimes \chi) \in Temp_{ind}(GL_{2n}(F))$ où $D$ est le sous-groupe de $X^*(M)$ des éléments $\chi$ tels que $\sigma \otimes \chi \simeq \sigma$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp_{ind}(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M)/D$.
+ On note $Temp(GL_{2n}(F))$ l'ensemble des classes d'isomorphismes de représentations tempérées irréductibles. On va définir une topologie sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$ et $\sigma$ une représentation irréductible de carré intégrable de $M$, on note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto i^G_M(\sigma \otimes \chi_\lambda) \in Temp(GL_{2n}(F))$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
  
  Cette topologie sur $Temp(GL_{2n}(F))$ nous permet d'énoncer le résultat principal dont on aura besoin pour la méthode de globalisation.
  \begin{proposition}[Beuzart-Plessis]
  \label{globalisation}
- Soit $k$ un corps de nombres, $v_0,v_1$ deux places distinctes de $k$ avec $v_1$ non archimédienne. Soit $U$ un ouvert de $Temp(GL_{2n}(k_{v_0})$. Alors il existe une représentation automorphe cuspidale irréductible $\Pi$ de $GL_{2n}(\mathbb{A}_k)$ telle que $\Pi_{v_0} \in U$ et $\Pi_v$ est non ramifiée pour toute place non archimédienne $v \not \in \{v_0,v_1\}$.
+ Soient $k$ un corps de nombres, $v_0,v_1$ deux places distinctes de $k$ avec $v_1$ non archimédienne. Soit $U$ un ouvert de $Temp(GL_{2n}(k_{v_0}))$. Alors il existe une représentation automorphe cuspidale irréductible $\Pi$ de $GL_{2n}(\mathbb{A}_k)$ telle que $\Pi_{v_0} \in U$ et $\Pi_v$ est non ramifiée pour toute place non archimédienne $v \not \in \{v_0,v_1\}$.
  \end{proposition}
  
  \subsection{Fonctions tempérées}
- On aura besoin dans la suite de connaitre la dépendance que $J(s, W, \phi)$ lorsque l'on fait varier la représentation $\pi$. Pour ce faire, on introduit la notion fonction tempérée et on étend la définition de $J(s,W,\phi)$ pour ces fonctions tempérées.
+ On aura besoin dans la suite de connaître la dépendance que $J(s, W, \phi)$ lorsque l'on fait varier la représentation $\pi$. Pour ce faire, on introduit la notion de fonction tempérée et on étend la définition de $J(s,W,\phi)$ pour ces fonctions tempérées.
  
  L'espace des fonctions tempérées $C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ est l'espace des fonctions $f : GL_{2n}(F) \rightarrow \mathbb{C}$ telles que $f(ng) = \psi(n)f(g)$ pour tous $n \in N_{2n}(F)$ et $g \in GL_{2n}(F)$, on impose les conditions suivantes :
  \begin{itemize}
- \item Si $F$ est $p$-adique, $f$ est localement constante et il existe $d > 0$ et $C > 0$ tels que $|f(g)| \leq C \Xi(g)\log(||a||)^d$ pour tout $g \in GL_{2n}(F)$,
- \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ et $C > 0$ tels que $|(R(u)f)(g)| \leq C \Xi(g) \log(||a||)^d$ pour tous $g \in GL_{2n}(F)$ et $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$,
+ \item Si $F$ est $p$-adique, $f$ est localement constante et il existe $d > 0$ et $C > 0$ tels que $|f(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O})$,
+ \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ et $C > 0$ tels que $|(R(u)f)(nak| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$, $k \in GL_{2n}(\mathcal{O})$ et $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$.
  \end{itemize}
- où $a$ est défini par la décomposition d'Iwasawa $g=nak$ et $\Xi$ est la fonction définie par $\Xi(g) = \delta_{B_n}(a)^{\frac{1}{2}}$.
+ 
+ définir $||a||$ invariant sous la décomposition d'Iwasawa
+ 
  
 On rappelle la majoration des fonctions tempérées sur la diagonale,
-\begin{lemme}[Beuzart-Plessis]
+\begin{lemme}
 \label{majtemp}
+Soit $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$. Alors, pour tout $N \geq 1$, il existe $C > 0$ tel que
 \begin{equation}
-|f(ak)| \leq C\prod (1 + |\frac{a_i}{a_{i+1}}|)^{-N}\delta(a)^{\frac{1}{2}}\log(||a||)^d
+|W(bk)| \leq C\prod_{i=1}^{2n-1} (1 + |\frac{b_i}{b_{i+1}}|)^{-N}\delta_{B_{2n}}(b)^{\frac{1}{2}}\log(||b||)^d,
 \end{equation}
+pour tous $b \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O})$.
 \end{lemme}
 
 \begin{lemme}
 Il existe $N$ tel que pour tous $s$ vérifiant $Re(s) > 0$ et $d > 0$, l'intégrale
 \begin{equation}
-\int_{A_n} \prod (1+|\frac{a_i}{a_{i+1}}|)^{-N}\log(||a||)^d|\det a|^s da
+\int_{A_n} \prod_{i=1}^{n-1} (1+|\frac{a_i}{a_{i+1}}|)^{-N}(1+|a_n|)^{-N}\log(||a||)^d|\det a|^s da
 \end{equation}
 converge absolument.
 \end{lemme}
 
 On étend la définition des intégrales $J(s, W, \phi)$ aux fonctions tempérées $W$, on montre maintenant la convergence de ces intégrales
 \begin{lemme}
-Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 1$.
+Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 0$.
 \end{lemme}
  
  \begin{proof}
  D'après la décomposition d'Iwasawa, on a $N_n\backslash{G_n} = A_nK_n$. Il suffit de montrer la convergence de l'intégrale
  \begin{equation}
- \int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} |W\left(\sigma \begin{pmatrix}
+ \int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(\sigma \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix}\right)| dX dk |\det a|^{Re(s)} \delta^{-1}(a) da.
+\end{pmatrix}\right) \phi(e_nak)\right| dX dk \left|\det a\right|^{Re(s)} \delta^{-1}(a) da.
  \end{equation}
  
  On pose $u_X = \sigma \begin{pmatrix}
@@ -206,31 +208,49 @@ a & 0 \\
 \end{equation}
  où $b=diag(a_1,a_1,a_2,a_2,...)$. On effectue le changement de variable $X \mapsto aXa^{-1}$, l'intégrale devient alors
  \begin{equation}
-\int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} |W\left(b u_X \sigma \begin{pmatrix}
+\int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(b u_X \sigma \begin{pmatrix}
 k & 0 \\
 0 & k
-\end{pmatrix}\right)|dX dk |\det a|^{Re(s)} \delta^{-2}(a) da.
+\end{pmatrix}\right)\phi(e_nak)\right|dX dk |\det a|^{Re(s)} \delta^{-2}(a) da.
  \end{equation}
  
  On écrit $u_X = n_Xt_Xk_X$ la décomposition d'Iwasawa de $u_x$ et on pose $k_\sigma = \sigma \begin{pmatrix}
 k & 0 \\
 0 & k
 \end{pmatrix}$. Le lemme \ref{majtemp} donne alors
+ \begin{equation}
+ |W(bt_Xk_Xk_\sigma)| \leq C \prod_{i=1}^{2n-1} (1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d
+ \end{equation}
+ 
+ On aura besoin d'inégalités prouvées par Jacquet et Shalika \cite{jacquet-shalika} concernant les $t_j$. On dispose de la
+ \begin{proposition}[Jacquet-Shalika]
+ On a $|t_k| \geq 1$ lorsque $k$ est impair et $|t_k| \leq 1$ lorsque $k$ est pair. En particulier, $|\frac{t_j}{t_{j+1}}| \geq 1$ lorsque $j$ est impair et $|\frac{t_j}{t_{j+1}}| \leq 1$ lorsque $j$ est pair.
+ \end{proposition}
+ 
+ On combine alors cette proposition avec le fait que $\frac{b_j}{b_{j+1}} = 1$ lorsque $j$ est impair et $\frac{b_j}{b_{j+1}} = \frac{a_\frac{j}{2}}{a_{\frac{j}{2}+1}}$ lorsque $j$ est pair. Ce qui nous permet d'obtenir
  \begin{align}
- |W(bt_Xk_Xk_\sigma)| &\leq C \prod (1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d \\
- &\leq C \prod |\frac{t_j}{t_{j+1}}|^{-N} \prod (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d \\
- &\leq C m(X)^{-\alpha N} \prod (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d
+ |W(bt_Xk_Xk_\sigma)| &\leq C 2^{-nN} \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N} \prod_{i=1}^{2n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d \\
+ &\leq C 2^{-nN} m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d
  \end{align}
- où $m(X) = sup(1, ||X||)$, la dernière inégalité provient de Jacquet-Shalika. L'intégrale est alors majorée (à une constante prés) par le produit des intégrales
+ où $m(X) = sup(1, ||X||)$, la dernière inégalité provient de la section 5.5 de Jacquet-Shalika \cite{jacquet-shalika}. D'autre part, on dispose de la majoration suivante
+ \begin{equation}
+ |\phi(e_nak)| \leq C'(1+|a_n|)^{-N}.
+ \end{equation}
+ L'intégrale est alors majorée (à une constante prés) par le produit des intégrales
  \begin{equation}
  \int_{Lie(B_n)\backslash{M_n}} m(X)^{-\alpha N} \delta^{\frac{1}{2}}(t_X)\log(||t_X||)^d dX
  \end{equation}
  et
  \begin{equation}
- \int_{A_n}  \prod (1+ |\frac{a_i}{a_{i+1}}|)^{-N} \log(||b||)^d|\det a|^{Re(s)} \delta^{\frac{1}{2}}(b)\delta^{-2}(a) da.
+ \int_{A_n}  \prod_{i=1}^{n-1} (1+ |\frac{a_i}{a_{i+1}}|)^{-N} (1+|a_n|)^{-N}\log(||b||)^d|\det a|^{Re(s)} \delta_{B_{2n}}^{\frac{1}{2}}(b)\delta_{B_n}^{-2}(a) da.
  \end{equation}
  
- La première intégrale converge pour $N$ assez grand et la deuxième pour $N$ assez grand lorsque $Re(s) > 1$.
+ La première intégrale converge pour $N$ assez grand et la deuxième pour $N$ assez grand lorsque $Re(s) > 0$. On a utilisé la relation $\delta_{B_{2n}}^{\frac{1}{2}}(b) = \delta_{B_n}^2(a)$. En effet,
+ \begin{align}
+ \delta_{B_{2n}}(b) &= |a_1|^{1-2n}|a_1|^{3-2n}|a_2|^{5-2n}|a_2|^{7-2n}...|a_n|^{2n-3}|a_n|^{2n-1}, \\
+ &= |a_1|^{4-4n}|a_2|^{12-4n}...|a_n|^{4n-4},\\
+ &= \delta_{B_n}^4(a).
+ \end{align}
   \end{proof}
   
  \section{Facteurs $\gamma$}
@@ -366,4 +386,8 @@ k & 0 \\
  
  Le reste du raisonnement est maintenant identique à la fin de la preuve de la proposition \ref{proparch}. Par continuité, le quotient $|\frac{\gamma^{JS}(s, \pi, \Lambda^2, \psi)}{\gamma^{Sh}(s, \pi, \Lambda^2, \psi)}|$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$. En appliquant le même raisonnement en la place $v'$, on obtient que c'est une constante. En évaluant $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ en $s=\frac{1}{2}$, on montre que cette constante est $1$.
  \end{proof}
+ 
+ \bibliographystyle{siam}
+\bibliography{carre-exterieur}
+
 \end{document}
