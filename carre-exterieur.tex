@@ -152,7 +152,7 @@ g & 0 \\
  L'espace des fonctions tempérées $C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ est l'espace des fonctions $f : GL_{2n}(F) \rightarrow \mathbb{C}$ telles que $f(ng) = \psi(n)f(g)$ pour tous $n \in N_{2n}(F)$ et $g \in GL_{2n}(F)$, on impose les conditions suivantes :
  \begin{itemize}
  \item Si $F$ est $p$-adique, $f$ est localement constante et il existe $d > 0$ et $C > 0$ tels que $|f(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O})$,
- \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ et $C > 0$ tels que $|(R(u)f)(nak| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$, $k \in GL_{2n}(\mathcal{O})$ et $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$.
+ \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ et $C > 0$ tels que $|(R(u)f)(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$, $k \in GL_{2n}(\mathcal{O})$ et $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$.
  \end{itemize}
  
  définir $||a||$ invariant sous la décomposition d'Iwasawa
@@ -178,6 +178,7 @@ converge absolument.
 
 On étend la définition des intégrales $J(s, W, \phi)$ aux fonctions tempérées $W$, on montre maintenant la convergence de ces intégrales
 \begin{lemme}
+\label{convtemp}
 Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 0$.
 \end{lemme}
  
@@ -219,7 +220,7 @@ k & 0 \\
 0 & k
 \end{pmatrix}$. Le lemme \ref{majtemp} donne alors
  \begin{equation}
- |W(bt_Xk_Xk_\sigma)| \leq C \prod_{i=1}^{2n-1} (1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d
+ |W(bt_Xk_Xk_\sigma)| \leq C \prod_{i=1}^{2n-1} (1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d.
  \end{equation}
  
  On aura besoin d'inégalités prouvées par Jacquet et Shalika \cite{jacquet-shalika} concernant les $t_j$. On dispose de la
@@ -230,9 +231,9 @@ k & 0 \\
  On combine alors cette proposition avec le fait que $\frac{b_j}{b_{j+1}} = 1$ lorsque $j$ est impair et $\frac{b_j}{b_{j+1}} = \frac{a_\frac{j}{2}}{a_{\frac{j}{2}+1}}$ lorsque $j$ est pair. Ce qui nous permet d'obtenir
  \begin{align}
  |W(bt_Xk_Xk_\sigma)| &\leq C 2^{-nN} \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N} \prod_{i=1}^{2n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d \\
- &\leq C 2^{-nN} m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d
+ &\leq C 2^{-nN} m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d,
  \end{align}
- où $m(X) = sup(1, ||X||)$, la dernière inégalité provient de la section 5.5 de Jacquet-Shalika \cite{jacquet-shalika}. D'autre part, on dispose de la majoration suivante
+ où $m(X) = sup(1, ||X||)$, la dernière inégalité provient de la section 5.5 de Jacquet-Shalika \cite{jacquet-shalika}. D'autre part, il existe $C' > 0$ tel que
  \begin{equation}
  |\phi(e_nak)| \leq C'(1+|a_n|)^{-N}.
  \end{equation}
@@ -259,15 +260,35 @@ k & 0 \\
  
  On commence à montrer cette égalité pour les facteurs $\gamma$ archimédiens. Pour le moment, les résultats connus ne nous donnent même pas l'existence du facteur $\gamma^{JS}$ dans le cas archimédien, ce sera une conséquence de la méthode de globalisation.
  
- On aura besoin d'un résultat sur la continuité du quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \hat{\phi})}{J(s, W, \phi)}$ par rapport à $\pi$, on dispose du
+ Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On aura besoin d'un résultat sur la continuité du quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \hat{\phi})}{J(s, W, \phi)}$ lorsque l'on fait varier la représentation $\pi$, on dispose du
  \begin{lemme}
  \label{cont}
- Supposons que $J(s, W, \phi) \neq 0$. Alors il existe une section $\pi' \mapsto W_{\pi'}$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ tel que la fonction $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \hat{\phi})}{J(s, W_{\pi'}, \phi)}$ soit continue.
+ Soient $W_0 \in \mathcal{W}(\pi, \psi))$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ tels que $W_0 = W_\pi$ et l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \hat{\phi})}{J(s, W_{\pi'}, \phi)}$ soit continue.
  \end{lemme}
  
  \begin{proof}
- On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ (Beuzart-Plessis). La fonction $W \mapsto J(s, W, \phi)$ est continue, il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \hat{\phi})}{J(s, W_{\pi'}, \phi)}$ est alors bien une fonction continue de $\pi'$ sur $V$. 
+ On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ (Beuzart-Plessis). La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue, il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \hat{\phi})}{J(s, W_{\pi'}, \phi)}$ est alors bien une fonction continue de $\pi'$ sur $V$. 
  \end{proof}
+ 
+ On étudie maintenant la dépendance du quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$ par rapport au caractère additif $\psi$, où l'on note $\mathcal{F}_\psi$ pour la transformée de Fourier par rapport à $\psi$. Les caractères additifs de $F$ sont de la forme $\psi_\lambda$ avec $\lambda \in F^*$ où $\psi_\lambda(x) = \psi(\lambda x)$.
+ 
+ \begin{lemme}
+ \label{depcaradd}
+ Soient $\lambda \in F^*$, $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W, \phi) \neq 0$. Alors
+ \begin{equation}
+ \frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W, \phi)} =  |\lambda|^{n(s-\frac{1}{2})}\omega_\pi(\lambda)\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)} .
+ \end{equation}
+ \end{lemme}
+ 
+ \begin{proof}
+ En effet, la mesure de Haar auto-duale pour $\psi_\lambda$ est reliée à la mesure de Haar auto-duale pour $\psi$ par un facteur $|\lambda|^{\frac{n}{2}}$. On en déduit que $\mathcal{F}_{\psi_\lambda}(\phi)(x) = |\lambda|^{\frac{n}{2}}\mathcal{F}_\psi(\phi)(\lambda x)$. Le changement de variable $g \mapsto \lambda^{-1} g$ dans l'intégrale définissant $J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)(\lambda .))$ donne
+ \begin{equation}
+ J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)(\lambda.)) = |\lambda|^{n(s-1)}\omega(\lambda)J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ \end{equation}
+ On en déduit immédiatement le lemme.
+ \end{proof}
+ 
+ Les facteurs $\gamma$ de Shahidi du carré extérieur vérifient la même dépendance par rapport au caractère additif $\psi$ (voir Henniart \cite{henniart}). Dans la suite, on pourra donc choisir arbitrairement un caractère additif non trivial, les relations seront alors vérifiées pour tous les caractères additifs, en particulier pour le caractère $\psi$ que l'on a fixé.
  
  \begin{proposition}
  \label{proparch}
@@ -275,7 +296,7 @@ k & 0 \\
  
  Il existe une fonction méromorphe $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ telle que pour tous $s \in \mathbb{C}$, $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$, on ait
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \phi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
  \end{equation}
  
  De plus, il existe une constante $c(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$,
@@ -285,33 +306,39 @@ k & 0 \\
  \end{proposition}
  
  \begin{proof}
- Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soit $v \neq v'$ deux places non archimédiennes distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère $\psi_\mathbb{A}$ de $\mathbb{A}_K/K$ tel que $(\psi_\mathbb{A})_\infty = \psi$.
+ Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soient $v \neq v'$ deux places non archimédiennes distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_K/K$.
  
  D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
  
  On choisit maintenant des fonctions de Whittaker $W_w$ et des fonctions de Schwartz $\phi_w$ dans le but d'appliquer l'équation fonctionnelle globale. Pour $w \not\in \{\infty, v\}$, on prend les fonctions "non ramifiées" qui apparaissent dans la proposition \ref{calculnr}. Pour $w = \infty$ ou $v$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
  $$W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.$$
  
- D'après la proposition \ref{funcglob}, on a
+ On note $S = \{\infty, v\}$ l'ensemble des places où $\Pi$ est non ramifiée et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est non ramifié. D'après la proposition \ref{funcglob}, on a
  \begin{equation}
  \label{jacquet-shalika}
  \begin{split}
- &J(s, W_\infty, \phi_\infty)J(s, W_v, \phi_v)L^S(s, \Pi, \Lambda^2) \\
- &= J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_\psi(\phi_\infty))J(1-s, \rho(w_{n,n})\tilde{W}_v, \mathcal{F}_{(\psi_\mathbb{A})_v}(\phi_v))L^S(1-s, \tilde{\Pi}, \Lambda^2),
+ & \prod_{w \in S \cup T} J(s, W_w, \phi_w) L^{S \cup T}(s, \Pi, \Lambda^2) \\
+ &= \prod_{w \in S \cup T} J(1-s, \rho(w_{n,n})\tilde{W}_w, \mathcal{F}_{(\psi_\mathbb{A})_w}(\phi_w)) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2),
  \end{split}
  \end{equation}
- où $S = \{\infty, v\}$ et $L^S(s, \Pi, \Lambda^2) = \prod_{w \neq \infty,v} L(s, \Pi_w, \Lambda^2)$ est la fonction L partielle. D'autre part, les facteurs $\gamma$ de Shahidi vérifient une relation similaire,
+ où  $L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T} L(s, \Pi_w, \Lambda^2)$ est la fonction L partielle. D'autre part, les facteurs $\gamma$ de Shahidi vérifient une relation similaire (voir Henniart \cite{henniart}),
  \begin{equation}
  \label{shahidi}
- L^S(s, \Pi, \Lambda^2) = \gamma^{Sh}(s, \Pi_\infty, \Lambda^2, \psi)\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)L^S(1-s, \tilde{\Pi}, \Lambda^2).
+ L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T} \gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2).
  \end{equation}
  
- Le quotient de (\ref{jacquet-shalika}) et (\ref{shahidi}), en utilisant la proposition \ref{funcloc} sur le facteur en $\Pi_v$, donne
+ Le quotient de (\ref{jacquet-shalika}) et (\ref{shahidi}), en utilisant la proposition \ref{funcloc} pour les places $w \in \{v\} \cup T$, donne
  \begin{equation}
- \frac{J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_\psi(\phi_\infty))}{J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, \psi)} \frac{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)} = 1.
+ \frac{J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty))}{J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty)} \prod_{w \in \{v\} \cup T} \frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = 1.
  \end{equation}
  
- Ce qui prouve la première partie de la proposition pour $\Pi_\infty$, l'existence du facteur $\gamma^{JS}(s, \Pi_\infty, \Lambda^2, \psi)$.
+ Ce qui prouve la première partie de la proposition pour $\Pi_\infty$, l'existence du facteur $\gamma^{JS}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty)$.
+ 
+ On s'occupe tout de suite du quotient $\frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}$ lorsque $w \in T$. En effet, $\Pi_w$ est non ramifiée, une combinaison de la proposition \ref{calculnr} et du lemme \ref{depcaradd} va nous permettre de calculer ce quotient. Il existe $\lambda \in F^*$ et un caractère non ramifié $\psi_0$ de $F$ tel que $(\psi_\mathbb{A})_w(x) = \psi_0(\lambda x)$. La remarque suivant le lemme \ref{depcaradd} nous dit que les facteurs $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ ont la même dépendance par rapport au caractère additif. On en déduit que
+ \begin{equation}
+ \frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = \frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, \psi_0)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, \psi_0)} = 1,
+ \end{equation}
+ d'après la proposition \ref{calculnr} (calcul non ramifié des intégrales de Jacquet-Shalika) et le calcul non ramifié des facteurs gamma de Shahidi (voir Henniart \cite{henniart}).
  
  On choisit maintenant pour $U$ une base de voisinage contenant $\pi$, en utilisant le lemme \ref{cont} et la continuité des facteurs $\gamma$ de Shahidi, on en déduit que $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$
  est une fonction méromorphe indépendante de $W$ et de $\phi$, que l'on note $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$, qui est le produit de $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ et d'une fonction, que l'on note $R(s)$, qui est limite de fractions rationnelles en $q_v^s$; donc $R$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$.
@@ -388,6 +415,6 @@ k & 0 \\
  \end{proof}
  
  \bibliographystyle{siam}
-\bibliography{carre-exterieur}
+ \bibliography{carre-exterieur}
 
 \end{document}
