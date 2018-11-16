@@ -264,6 +264,8 @@ k & 0 \\
  \begin{lemme}
  \label{cont}
  Soient $W_0 \in \mathcal{W}(\pi, \psi))$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ tels que $W_0 = W_\pi$ et l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \hat{\phi})}{J(s, W_{\pi'}, \phi)}$ soit continue.
+ 
+ En particulier, si $F$ est un corps $p$-adique, ce quotient est égal à $\gamma^{JS}(s, \pi', \Lambda^2, \psi)$ (proposition \ref{funcloc}); donc $\pi' \in V \mapsto \gamma^{JS}(s, \pi', \Lambda^2, \psi)$ est continue.
  \end{lemme}
  
  \begin{proof}
@@ -311,7 +313,9 @@ k & 0 \\
  D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
  
  On choisit maintenant des fonctions de Whittaker $W_w$ et des fonctions de Schwartz $\phi_w$ dans le but d'appliquer l'équation fonctionnelle globale. Pour $w \not\in \{\infty, v\}$, on prend les fonctions "non ramifiées" qui apparaissent dans la proposition \ref{calculnr}. Pour $w = \infty$ ou $v$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
- $$W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.$$
+ \begin{equation}
+ W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.
+ \end{equation}
  
  On note $S = \{\infty, v\}$ l'ensemble des places où $\Pi$ est non ramifiée et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est non ramifié. D'après la proposition \ref{funcglob}, on a
  \begin{equation}
@@ -327,23 +331,46 @@ k & 0 \\
  L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T} \gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2).
  \end{equation}
  
- Le quotient de (\ref{jacquet-shalika}) et (\ref{shahidi}), en utilisant la proposition \ref{funcloc} pour les places $w \in \{v\} \cup T$, donne
+ Les équations (\ref{jacquet-shalika}) et (\ref{shahidi}), en utilisant la proposition \ref{funcloc} pour les places $w \in \{v\} \cup T$, donne
  \begin{equation}
- \frac{J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty))}{J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty)} \prod_{w \in \{v\} \cup T} \frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = 1.
+ \label{equationlocalglobal}
+ \begin{split}
+ & J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty)) = \\
+ & J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty) \prod_{w \in \{v\} \cup T} \frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}.
+ \end{split}
  \end{equation}
  
  Ce qui prouve la première partie de la proposition pour $\Pi_\infty$, l'existence du facteur $\gamma^{JS}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty)$.
  
- On s'occupe tout de suite du quotient $\frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}$ lorsque $w \in T$. En effet, $\Pi_w$ est non ramifiée, une combinaison de la proposition \ref{calculnr} et du lemme \ref{depcaradd} va nous permettre de calculer ce quotient. Il existe $\lambda \in F^*$ et un caractère non ramifié $\psi_0$ de $F$ tel que $(\psi_\mathbb{A})_w(x) = \psi_0(\lambda x)$. La remarque suivant le lemme \ref{depcaradd} nous dit que les facteurs $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ ont la même dépendance par rapport au caractère additif. On en déduit que
+ On s'occupe tout de suite du quotient $\frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}$ lorsque $w \in T$. En effet, $\Pi_w$ est non ramifiée, une combinaison de la proposition \ref{calculnr} et du lemme \ref{depcaradd} va nous permettre de calculer ce quotient. Il existe $\lambda \in F^*$ et un caractère non ramifié $\psi_0$ de $F$ tel que $(\psi_\mathbb{A})_w(x) = \psi_0(\lambda x)$. La remarque suivant le lemme \ref{depcaradd} nous dit que les facteurs $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ ont la même dépendance par rapport au caractère additif. On en déduit que
  \begin{equation}
- \frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = \frac{\gamma^{JS}(s, \Pi_w, \Lambda^2, \psi_0)}{\gamma^{Sh}(s, \Pi_w, \Lambda^2, \psi_0)} = 1,
+ \frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = \frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, \psi_0)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, \psi_0)} = 1,
  \end{equation}
  d'après la proposition \ref{calculnr} (calcul non ramifié des intégrales de Jacquet-Shalika) et le calcul non ramifié des facteurs gamma de Shahidi (voir Henniart \cite{henniart}).
  
- On choisit maintenant pour $U$ une base de voisinage contenant $\pi$, en utilisant le lemme \ref{cont} et la continuité des facteurs $\gamma$ de Shahidi, on en déduit que $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$
- est une fonction méromorphe indépendante de $W$ et de $\phi$, que l'on note $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$, qui est le produit de $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ et d'une fonction, que l'on note $R(s)$, qui est limite de fractions rationnelles en $q_v^s$; donc $R$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$.
+ L'équation (\ref{equationlocalglobal}) devient alors
+ \begin{equation}
+ \begin{split}
+ & J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty)) = \\
+ & J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty) \frac{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}.
+ \end{split}
+ \end{equation}
  
-  On réutilisant notre raisonnement en la place $v'$, on voit que $R$ est aussi périodique de période $\frac{2i\pi}{\log q_{v'}}$; donc est constante. Ce qui nous permet de voir qu'il existe une constante $c(\pi)=R$ telle que
+ On choisit maintenant pour $U$ une base de voisinage contenant $\pi$, en utilisant le lemme \ref{cont} et la continuité des facteurs $\gamma$ de Shahidi, on en déduit que $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$
+ est une fonction méromorphe indépendante de $W$ et de $\phi$, que l'on note $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$, qui est le produit de $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ et d'une fonction, que l'on note $R(s)$. La fonction $R(s)$ ne dépend pas du choix de la base de voisinage et des choix qui sont fait lors de l'utilisation de la proposition \ref{globalisation}. En effet, on a
+ \begin{equation}
+ \label{facteurR}
+ R(s) = \frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty))}{J(s, W, \phi_\infty)\gamma^{Sh}(s, \pi, \Lambda^2, (\psi_\mathbb{A})_\infty)},
+ \end{equation}
+ où $W \in \mathcal{W}(\pi, \psi)$, qui est bien indépendant des choix que l'on a fait.
+ De plus, $R$ est une limite de fractions rationnelles en $q_v^s$ (les quotients $\frac{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}$); donc $R$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$.
+ 
+  En réutilisant le même raisonnement en la place $v'$, on voit que $R$ est aussi périodique de période $\frac{2i\pi}{\log q_{v'}}$. L'équation (\ref{facteurR}) s'écrit
+   \begin{equation}
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) = R(s)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
+ \end{equation}
+ 
+  La fonction $R$ est donc une fraction rationnelle en $q_v^s$ périodique de période $\frac{2i\pi}{\log q_{v'}}$. Ce qui est impossible sauf si $R$ est constante. Ce qui nous permet de voir qu'il existe une constante $c(\pi)=R$ telle que
  \begin{equation}
  \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
  \end{equation}
@@ -356,12 +383,12 @@ k & 0 \\
  
  On utilise maintenant l'équation fonctionnelle sur la représentation $\tilde{\pi}$ pour transformer le facteur $J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))$, ce qui nous donne
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = \frac{J(s, W, \mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)))}{\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\phi})}.
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = \frac{J(s, W, \mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)))}{\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\psi})}.
  \end{equation}
  
  Puisque $\mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)) = \phi$, on obtient donc la relation 
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi)\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\phi}) = 1.
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi)\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\psi}) = 1.
  \end{equation}
  
  D'autre part, en conjuguant l'équation \ref{funcarch}, on obtient
@@ -374,7 +401,7 @@ k & 0 \\
  |\gamma^{JS}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1.
  \end{equation}
  
- D'autre part, le facteur $\gamma$ de Shahidi vérifie aussi $|\gamma^{JS}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1$; on en déduit donc que $c(\pi)$ est bien de module 1.
+ D'autre part, le facteur $\gamma$ de Shahidi vérifie aussi $|\gamma^{Sh}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1$; on en déduit donc que $c(\pi)$ est bien de module 1.
  \end{proof}
  
  \begin{proposition}
@@ -387,31 +414,31 @@ k & 0 \\
  \end{proposition}
  
  \begin{proof}
- D'après le lemme \ref{corpsglobal}, il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$. Soit $v,v'$ deux places distinctes non archimédiennes et différentes de $v_0$. Soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$ tel que $(\psi_\mathbb{A})_{v_0} = \psi$.
+ D'après le lemme \ref{corpsglobal}, il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$. Soient $v,v'$ deux places distinctes non archimédiennes et différentes de $v_0$. Soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$.
  
  D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{v_0} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
  
  Pour $w = v_0,v$ ou une place archimédienne, on choisit d'après la proposition \ref{nonzero}, des fonctions de Whittaker $W_w$ et des fonctions de Schwartz $\phi_w$ telles que $J(s, W_w, \phi_w) \neq 0$. Pour les places non ramifiées, on choisit les fonctions "non ramifiées" de la proposition \ref{calculnr}. On pose alors
  $$W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.$$
  
- D'après l'équation fonctionnelle globale (proposition \ref{funcglob}), on a
+ On note $S_\infty$ l'ensemble des places archimédienne, $S = S_\infty \cup \{v,v_0\}$ et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est non ramifié. D'après l'équation fonctionnelle globale (proposition \ref{funcglob}), on a
  \begin{equation}
  \begin{split}
- &\prod_{w \in \{v,v_0,v_\infty\}} J(s, W_w, \phi_w) L^S(s, \Pi, \Lambda^2)\\
- &= \prod_{w \in \{v,v_0,v_\infty\}} J(1-s, \rho(w_{n,n})\tilde{W}_w, \mathcal{F}_{(\psi_\mathbb{A})_w}(\phi_w)) L^S(1-s, \tilde{\Pi}, \Lambda^2),
+ &\prod_{w \in S \cup T} J(s, W_w, \phi_w) L^{S \cup T}(s, \Pi, \Lambda^2)\\
+ &= \prod_{w \in S \cup T} J(1-s, \rho(w_{n,n})\tilde{W}_w, \mathcal{F}_{(\psi_\mathbb{A})_w}(\phi_w)) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2),
  \end{split}
  \end{equation}
- où $v_\infty$ décrit les places archimédiennes, $S = \{v_\infty\} \cup \{v, v_0\}$ et $L^S(s, \Pi, \Lambda^2)$ est la fonction L partielle. Les facteurs $\gamma$ de Shahidi vérifient
+  où $L^{S \cup T}(s, \Pi, \Lambda^2)$ est la fonction L partielle. Les facteurs $\gamma$ de Shahidi vérifient (voir Henniart \cite{henniart})
  \begin{equation}
- L^S(s, \Pi, \Lambda^2) = \prod_{w \in S}\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^S(1-s, \tilde{\Pi}, \Lambda^2).
+ L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T}\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2).
  \end{equation}
  
- En utilisant les propositions \ref{funcloc} et \ref{proparch}, on obtient donc la relation
+ On rappelle que lors de la preuve de la proposition précédente, on a démontré que $\frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = 1$ pour $w \in T$. En utilisant les propositions \ref{funcloc} et \ref{proparch}, on obtient donc la relation
  \begin{equation}
- \prod_{v_\infty} c(\Pi_{v_\infty}) \frac{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}\frac{\gamma^{JS}(s, \Pi_{v_0}, \Lambda^2, \psi)}{\gamma^{Sh}(s, \Pi_{v_0}, \Lambda^2, \psi)} = 1.
+ \prod_{v_\infty \in S_\infty} c(\Pi_{v_\infty}) \frac{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}\frac{\gamma^{JS}(s, \Pi_{v_0}, \Lambda^2, \psi)}{\gamma^{Sh}(s, \Pi_{v_0}, \Lambda^2, \psi)} = 1.
  \end{equation}
  
- Le reste du raisonnement est maintenant identique à la fin de la preuve de la proposition \ref{proparch}. Par continuité, le quotient $|\frac{\gamma^{JS}(s, \pi, \Lambda^2, \psi)}{\gamma^{Sh}(s, \pi, \Lambda^2, \psi)}|$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$. En appliquant le même raisonnement en la place $v'$, on obtient que c'est une constante. En évaluant $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ en $s=\frac{1}{2}$, on montre que cette constante est $1$.
+ Le reste du raisonnement est maintenant identique à la fin de la preuve de la proposition \ref{proparch}. Par continuité, le quotient $\frac{\gamma^{JS}(s, \pi, \Lambda^2, \psi)}{\gamma^{Sh}(s, \pi, \Lambda^2, \psi)}$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$. Or c'est une fraction rationnelle en $q_{v_0}^s$, on obtient que c'est une constante. En évaluant $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ en $s=\frac{1}{2}$, on montre que cette constante est de module $1$.
  \end{proof}
  
  \bibliographystyle{siam}
