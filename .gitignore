@@ -5,3 +5,9 @@ carre-exterieur.out
 carre-exterieur.synctex.gz
 carre-exterieur.bbl
 carre-exterieur.blg
+*.gz
+unfloding.aux
+unfloding.bbl
+unfloding.blg
+unfloding.log
+unfloding.out
