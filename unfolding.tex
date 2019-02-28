@@ -469,25 +469,24 @@ pour $N$ suffisamment grand. Or cette dernière intégrale est majorée\footnote
 m(X')^{-\alpha' N} \prod_{i=1}^{n-1} (1 + |\frac{a'_i}{a'_{i+1}}|)^{-N} \delta^{\frac{1}{2}}_{B_{2n-2}}(b't_{X'})\log(||b't_{X'}||)^d \delta_{B_n}^{-2}(a) \delta_{B_{n-1}}^{-2}(a') da dX da' dX',
 \end{split}
 \end{equation}
-où $b = diag(a_1, a_1, a_2, a_2, ...)$ et $b' = diag(a_1', a_1', a_2', a_2', ...)$. Cette dernière intégrale est majorée (à une constante prés) par le produit des intégrales
+où $b = diag(a_1, a_1, a_2, a_2, ...)$ et $b' = diag(a_1', a_1', a_2', a_2', ...)$. Cette dernière intégrale est majorée (à une constante prés) par le maximum du produit des intégrales
  \begin{equation}
- \int_{\bar{\mathfrak{t}}_n} m(X)^{-\alpha N} \delta^{\frac{1}{2}}_{B_{2n}}(t_X)\log(||t_X||)^d dX,
+ \int_{\bar{\mathfrak{t}}_n} m(X)^{-\alpha N} \delta^{\frac{1}{2}}_{B_{2n}}(t_X)\log(||t_X||)^{d-j} dX,
  \end{equation}
  
  \begin{equation}
- \int_{\bar{\mathfrak{t}}_{n-1}} m(X')^{-\alpha' N} \delta^{\frac{1}{2}}_{B_{2n-2}}(t_{X'})\log(||t_{X'}||)^d dX',
+ \int_{\bar{\mathfrak{t}}_{n-1}} m(X')^{-\alpha' N} \delta^{\frac{1}{2}}_{B_{2n-2}}(t_{X'})\log(||t_{X'}||)^{d-j'} dX',
  \end{equation}
  
  \begin{equation}
- \int_{A_n}  \prod_{i=1}^{n-1} (1+ |\frac{a_i}{a_{i+1}}|)^{-N} (1+|a_n|)^{-N}\log(||b||)^d|\det a| da,
+ \int_{A_n}  \prod_{i=1}^{n-1} (1+ |\frac{a_i}{a_{i+1}}|)^{-N} (1+|a_n|)^{-N}\log(||b||)^j|\det a| da,
  \end{equation}
  
  et
  \begin{equation}
- \int_{A_{n-1}}  \prod_{i=1}^{n-2} (1+ |\frac{a_i'}{a_{i+1}'}|)^{-N} (1+|a_{n-1}'|)^{-N}\log(||b'||)^d|\det a'|da'.
+ \int_{A_{n-1}}  \prod_{i=1}^{n-2} (1+ |\frac{a_i'}{a_{i+1}'}|)^{-N} (1+|a_{n-1}'|)^{-N}\log(||b'||)^{j'}|\det a'|da',
  \end{equation}
- 
-Ces dernières intégrales convergent pour $N$ assez grand.
+ pour $j, j'$ compris entre $0$ et $d$. Ces dernières intégrales convergent pour $N$ assez grand.
 
 \end{proof}
 
