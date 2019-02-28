@@ -1,6 +1,6 @@
 \documentclass{amsart}
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{bbm}
@@ -35,13 +35,18 @@
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}$ où $X$ est dans $M_n$ et $g$ dans $G_n$ et $H_P = H \cap P_{2n}$. On note $\theta$ le caractère sur $H$ défini par $\psi(Tr(X))$.
+\end{pmatrix} \sigma^{-1}$ où $X$ est dans $M_n$ et $g$ dans $G_n$. On pose $H_P = H \cap P_{2n}$. On note $\theta$ le caractère sur $H$ défini par $\psi(Tr(X))$.
 
 \begin{proposition}
 Soit $f \in \mathcal{S}(G_{2n})$, alors on a
 \begin{equation}
 \int_{H} f(s) \theta(s)^{-1} ds = \int_{H_P \cap N_{2n} \backslash{H_P}} \int_{H \cap N_{2n} \backslash{H}} W_f(\xi_p, \xi) \theta(\xi)^{-1} \theta(\xi_p)^{-1} d\xi d\xi_p .
 \end{equation}
+où $W_f$ est la fonction de $G_{2n} \times G_{2n}$ définie par
+\begin{equation}
+W_f(g_1,g_2) = \int_{N_{2n}} f(g_1^{-1}ug_2) \psi(u)^{-1} du
+\end{equation}
+pour tous $g_1, g_2 \in G_{2n}$.
 \end{proposition}
 
 \begin{proof}
@@ -56,7 +61,7 @@ z & 0 \\
 \end{pmatrix} \right) \psi(u)^{-1} du dz.
 \end{equation}
 
-Ce qui est bien l'égalité voulue. Supposons maintenant que $n > 1$ et que la proposition soit vrai au rang $n-1$.
+Ce qui est bien l'égalité voulue. Supposons maintenant que $n > 1$ et que la proposition soit vraie au rang $n-1$.
 
 Le groupe $H \cap N_{2n} \backslash{H}$ est isomorphe à l'ensemble des matrices
 de la forme $\sigma \begin{pmatrix}
@@ -99,9 +104,10 @@ De même, on dispose d'une décomposition, $H_P \cap N_{2n} \backslash{H_P} = \t
 
 On utilise ces décompositions pour écrire le membre de droite de la proposition sous la forme
 \begin{equation}
-\int_{\tilde{H}_P} \int_{H_{P'}'} \int_{\tilde{H}} \int_{H'} W_f(\tilde{\xi}_p\xi_p', \tilde{\xi}\xi') |\det \xi_p'\xi'|^{-1/2} d\xi' d\tilde{\xi} d\xi_p' d\tilde{\xi}_p,
+\int_{\tilde{H}_P} \int_{H_{P'}'} \int_{\tilde{H}} \int_{H'} W_f(\tilde{\xi}_p\xi_p', \tilde{\xi}\xi') |\det \xi_p'\xi'|^{-1/2} d\xi' d\tilde{\xi} d\xi_p' d\tilde{\xi}_p.
 \end{equation}
-on a choisi les représentants des matrices $Y$, $\tilde{Y}$, $Z$ et $\tilde{Z}$ de sorte que le caractère $\theta$ soit trivial.
+
+On a choisit les représentants des matrices $Y$, $\tilde{Y}$, $Z$ et $\tilde{Z}$ de sorte à ce que le caractère $\theta$ soit trivial.
 
 On fixe $\tilde{\xi}_p \in \tilde{H}_P$ et $\tilde{\xi} \in \tilde{H}$. On pose $f' = L(\tilde{\xi}_p)R(\tilde{\xi})f$, on a alors
  \begin{equation}
@@ -120,7 +126,10 @@ De plus,
  W_{f'}(\xi_p', \xi') = |\det \xi_p'|^{2}\int_{N_{2n-2}} \int_V f'(v {\xi'}_p^{-1} u \xi') \psi(u)^{-1}\psi(v)^{-1} dv du.
  \end{equation}
 
-On note $\tilde{f}'(g) = |\det g|^{-1}\int_V f'(vg) \psi(v)^{-1} dv$ pour $g \in G_{2n-2}$; alors $\tilde{f}' \in \mathcal{S}(G_{2n-2})$. On obtient ainsi l'égalité
+On note $\tilde{f}'(g) = |\det g|^{-1}\int_V f'\left(v\begin{pmatrix}
+g & 0 \\
+0 & I_2
+\end{pmatrix}\right) \psi(v)^{-1} dv$ pour $g \in G_{2n-2}$; alors $\tilde{f}' \in \mathcal{S}(G_{2n-2})$. On obtient ainsi l'égalité
 \begin{equation}
 W_{f'}(\xi_p', \xi') = |\det \xi_p' \xi'| W_{\tilde{f}'}(\xi_p', \xi').
 \end{equation}
@@ -133,7 +142,7 @@ Appliquons l'hypothèse de récurrence,
  & \int_{H_{n-1}} |\det s|^{-1} \int_V f(\tilde{\xi}_p^{-1}v s \tilde{\xi}) \theta(s)^{-1} \psi(v)^{-1} dv ds,
  \end{split}
  \end{equation}
-où l'on note $H_{n-1}$ le groupe $H$ au rang $n-1$.
+où l'on a noté $H_{n-1}$ le groupe $H$ au rang $n-1$.
 
 Il nous faut maintenant intégrer sur $\tilde{\xi}_p$ et $\tilde{\xi}$ pour revenir à notre membre de droite. Explicitons l'intégrale sur $\tilde{\xi}_p$ en le décomposant sous la forme $\sigma \begin{pmatrix}
 1 & \tilde{Z} \\
@@ -172,7 +181,7 @@ t & n_2
 \tilde{p}^{-1} & 0 \\
 0 & \tilde{p}^{-1}
 \end{pmatrix} \sigma^{-1} s \tilde{\xi}\right) \\
-& \theta(s)^{-1} \psi(-Tr(y)) \psi(-Ts(\tilde{p}t\tilde{p}^{-1}))^{-1} |\det \tilde{p}|^3  d\begin{pmatrix}
+& \theta(s)^{-1} \psi(-Tr(y)) \psi(-Ts(\tilde{p}t\tilde{p}^{-1}))|\det \tilde{p}|^3  d\begin{pmatrix}
 n_1 & y \\
 t & n_2
 \end{pmatrix} ds d\tilde{\xi} d\tilde{Z} d\tilde{p}.
@@ -203,19 +212,53 @@ t & n_2
 \tilde{p}^{-1} g & 0 \\
 0 & \tilde{p}^{-1} g
 \end{pmatrix} \sigma^{-1} \tilde{\xi}\right) \\
-& \psi(-Tr(X)) \psi(-Tr(y)) \psi(-Ts(\tilde{p}t\tilde{p}^{-1}))^{-1}  |\det \tilde{p}| d\begin{pmatrix}
+& \psi(-Tr(X)) \psi(-Tr(y)) \psi(-Ts(\tilde{p}t\tilde{p}^{-1}))  |\det \tilde{p}| d\begin{pmatrix}
 n_1 & y \\
 t & n_2
 \end{pmatrix} dg dX d\tilde{\xi} d\tilde{Z} d\tilde{p}.
 \end{split}
 \end{equation}
 
-On effectue le changement de variables $g \mapsto \tilde{p}g$. En considérant uniquement l'intégration sur $t$ et sur $\tilde{p}$ et en remarquant que $Ts(\tilde{p}t\tilde{p}^{-1})$ n'est autre que le produit scalaire des vecteurs dans $F^{n-1}$ correspondant à $\tilde{p}$ et $t$, on voit apparaitre une
-formule d'inversion de Fourier, ce qui nous permet de simplifier notre intégrale en
+On effectue le changement de variables $g \mapsto \tilde{p}g$, notre intégrale devient alors
 \begin{equation}
 \begin{split}
-& \int_{F^{n-1}} \int_{\tilde{H}} \int_{M_{n-1}} \int_{G_{n-1}}  |\det g|^{-2}\int_{\sigma^{-1}V_0\sigma} \\
+& \int_{P_{n-1}U_n\backslash{P_n}} \int_{F^{n-1}} \int_{\tilde{H}} \int_{M_{n-1}} \int_{G_{n-1}}  |\det g|^{-2}\int_{\sigma^{-1}V\sigma} \\
 & f\left(\sigma \begin{pmatrix}
+1 & -\tilde{Z} \\
+0 & 1
+\end{pmatrix}  \begin{pmatrix}
+n_1 & y \\
+t & n_2
+\end{pmatrix} \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma^{-1} \tilde{\xi}\right) \\
+& \psi(-Tr(X)) \psi(-Tr(y)) \psi(-Ts(\tilde{p}t\tilde{p}^{-1}))  |\det \tilde{p}| d\begin{pmatrix}
+n_1 & y \\
+t & n_2
+\end{pmatrix} dg dX d\tilde{\xi} d\tilde{Z} d\tilde{p}.
+\end{split}
+\end{equation}
+
+\begin{lemme}
+Soit $F \in \mathcal{S}(G_n)$, alors
+\begin{equation}
+\int_{P_{n-1}U_n\backslash{P_n}} \int_{Lie(U_n)} F(t) \psi(-Ts(\tilde{p}t\tilde{p}^{-1}))|\det \tilde{p}| dt d\tilde{p} = F(0).
+\end{equation}
+\end{lemme}
+
+\begin{proof}
+On a $P_{n-1}U_n\backslash{P_n} \simeq F^{n-1}\backslash{\{0\}}$. De plus, $|\det \tilde{p}| d\tilde{p}$ correspond à la mesure additive sur $F^{n-1}$. En remarquant que $Ts(\tilde{p}t\tilde{p}^{-1})$ n'est autre que le produit scalaire des vecteurs dans $F^{n-1}$ correspondant à $\tilde{p}$ et $t$, le lemme n'est autre qu'une
+formule d'inversion de Fourier.
+\end{proof}
+
+Le lemme précédent nous permet de simplifier notre intégrale en
+\begin{equation}
+\begin{split}
+\int_{F^{n-1}} \int_{\tilde{H}} \int_{M_{n-1}} \int_{G_{n-1}}  & |\det g|^{-2}\int_{\sigma^{-1}V_0\sigma} f\left(\sigma \begin{pmatrix}
 1 & -\tilde{Z} \\
 0 & 1
 \end{pmatrix}  \begin{pmatrix}
@@ -277,35 +320,7 @@ n_1 & 0\\
 \end{pmatrix}.
 \end{equation}
 
-On effectue les changements de variables $y \mapsto yn_1$ et $X \mapsto n_1^{-1}Xn_1$. Ce qui nous permet de combiner les intégrales selon $y$ et $X$ en une intégration sur $M_{n-1} \times F^n$ dont on note encore la variable $X$. On effectue ensuite le changement de variables $X \mapsto X + \tilde{Z}n_2$ ce qui donne
-\begin{equation}
-\begin{split}
-\int_{F^{n-1}} \int_{\tilde{H}} \int_{G_{n-1}} \int_{M_{n-1} \times F^n}  & |\det g|^{-2}\int_{U_n^2} f\left(\sigma \begin{pmatrix}
-1 & X \\
-0 & n_2
-\end{pmatrix} \begin{pmatrix}
-n_1g & 0 \\
-0 & n_1g
-\end{pmatrix} \sigma^{-1} \tilde{\xi}\right) \\
-& \psi(-Tr(X)) \psi(-Tr(\tilde{Z}n_2))  d(n_1,n_2) dX dg d\tilde{\xi} d\tilde{Z}.
-\end{split}
-\end{equation}
-
-On reconnait une formule d'inversion de Fourier selon les variables $\tilde{Z}$ et $n_2$ ce qui nous permet de simplifier notre intégrale en
-\begin{equation}
-\begin{split}
-\int_{\tilde{H}} \int_{G_{n-1}} \int_{M_{n-1} \times F^n}  |\det g|^{-2}\int_{U_n} & f\left(\sigma \begin{pmatrix}
-1 & X \\
-0 & 1
-\end{pmatrix} \begin{pmatrix}
-n_1g & 0 \\
-0 & n_1g
-\end{pmatrix} \sigma^{-1} \tilde{\xi}\right) \\
-& \psi(-Tr(X))  dn_1 dX dg d\tilde{\xi}.
-\end{split}
-\end{equation}
-
-On explicite l'intégration sur $\tilde{xi}$ de la forme $\sigma \begin{pmatrix}
+On effectue les changements de variables $y \mapsto yn_1$ et $X \mapsto n_1^{-1}Xn_1$. Ce qui nous permet de combiner les intégrales selon $y$ et $X$ en une intégration sur $M_{n-1} \times F^n$ dont on note encore la variable $X$. On explicite l'intégration sur $\tilde{\xi}$ de la forme $\sigma \begin{pmatrix}
 1 & \tilde{Y} \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -315,21 +330,74 @@ On explicite l'intégration sur $\tilde{xi}$ de la forme $\sigma \begin{pmatrix}
 où $\tilde{Y}$ est une matrice de la forme $\begin{pmatrix}
 0_{n-1} & 0 \\
 \tilde{y} & 0
-\end{pmatrix}$ avec $\tilde{y} \in F^{n-1}$ et $\tilde{h}$ est dans $P_n \backslash{G_n}$ et on effectue le changement de variable $\tilde{Y} \mapsto (n_1g)^{-1} \tilde{Y} n_1g$, on obtient alors
+\end{pmatrix}$ avec $\tilde{y} \in F^{n-1}$ et $\tilde{h}$ est dans $P_n \backslash{G_n}$. L'intégrale devient
+
 \begin{equation}
 \begin{split}
-\int_{P_n \backslash{G_n}} \int_{F^{n-1}} \int_{G_{n-1}} \int_{M_{n-1} \times F^n}  |\det g|^{-1}\int_{U_n} & f\left(\sigma \begin{pmatrix}
-1 & X + \tilde{Y} \\
-0 & 1
+&\int_{F^{n-1}} \int_{F^{n-1}} \int_{P_n \backslash{G_n}} \int_{G_{n-1}} \int_{M_{n-1} \times F^n}  |\det g|^{-2}\int_{U_n^2} \\
+& f\left(\sigma \begin{pmatrix}
+1 & X - \tilde{Z}n_2 \\
+0 & n_2
 \end{pmatrix} \begin{pmatrix}
-n_1gh & 0 \\
-0 & n_1gh
-\end{pmatrix} \sigma^{-1} \right) \\
-& \psi(-Tr(X))  dn_1 dX dg d\tilde{Y} d\tilde{h}.
+n_1g & 0 \\
+0 & n_1g
+\end{pmatrix} \begin{pmatrix}
+1 & \tilde{Y} \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+\tilde{h} & 0 \\
+0 & \tilde{h}
+\end{pmatrix} \sigma^{-1} \right)  \psi(-Tr(X))  d(n_1,n_2) dX dg d\tilde{h} d\tilde{Y} d\tilde{Z}.
 \end{split}
 \end{equation}
 
-Après combinaison des intégrations en $X$, $\tilde{Y}$ et des intégrations sur $n_1$, $g$, $h$; on trouve bien notre membre de gauche
+On effectue le changement de variable $\tilde{Y} \mapsto (n_1g)^{-1}\tilde{Y} n_1 g$ et on combine les intégrales sur $X$ et $\tilde{Y}$ en une intégration sur $M_n$ dont on note encore la variable $X$. On obtient alors
+
+\begin{equation}
+\label{combX}
+\begin{split}
+\int_{F^{n-1}} \int_{P_n \backslash{G_n}} \int_{G_{n-1}} \int_{M_n}  & |\det g|^{-1}\int_{U_n^2} f\left(\sigma \begin{pmatrix}
+1 & X - \tilde{Z}n_2\\
+0 & n_2
+\end{pmatrix} \begin{pmatrix}
+n_1g\tilde{h} & 0 \\
+0 & n_1g\tilde{h}
+\end{pmatrix} \sigma^{-1} \right) \\
+& \psi(-Tr(X)) d(n_1,n_2) dX dg d\tilde{h} d\tilde{Z}.
+\end{split}
+\end{equation}
+
+
+On effectue ensuite le changement de variables $X \mapsto X + \tilde{Z}n_2$ ce qui donne
+\begin{equation}
+\begin{split}
+\int_{F^{n-1}} \int_{P_n \backslash{G_n}} \int_{G_{n-1}} \int_{M_n}  & |\det g|^{-1}\int_{U_n^2} f\left(\sigma \begin{pmatrix}
+1 & X \\
+0 & n_2
+\end{pmatrix} \begin{pmatrix}
+n_1g\tilde{h} & 0 \\
+0 & n_1g\tilde{h}
+\end{pmatrix} \sigma^{-1} \right) \\
+& \psi(-Tr(X))  \psi(-Tr(\tilde{Z}n_2)) d(n_1,n_2) dX dg d\tilde{h} d\tilde{Z}.
+\end{split}
+\end{equation}
+
+On reconnait une formule d'inversion de Fourier selon les variables $\tilde{Z}$ et $n_2$ ce qui nous permet de simplifier notre intégrale en
+\begin{equation}
+\label{combg}
+\begin{split}
+\int_{P_n \backslash{G_n}} \int_{G_{n-1}} \int_{M_n}  |\det g|^{-1}\int_{U_n} & f\left(\sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+n_1g\tilde{h} & 0 \\
+0 & n_1g\tilde{h}
+\end{pmatrix} \sigma^{-1} \tilde{\xi}\right) \\
+& \psi(-Tr(X))  dn_1 dX dg d\tilde{h}.
+\end{split}
+\end{equation}
+
+Après combinaison des intégrations sur $n_1$, $g$, $h$; on trouve bien notre membre de gauche
 \begin{equation}
 \int_{G_n} \int_{M_n}  f\left(\sigma \begin{pmatrix}
 1 & X \\
@@ -340,6 +408,86 @@ g & 0 \\
 \end{pmatrix} \sigma^{-1} \right) \psi(-Tr(X))  dX dg.
 \end{equation}
 
+On remarquera que l'on a pris garde à ne pas échanger l'intégrale sur $V$ qui n'est pas absolument convergente avec les intégrales sur $\tilde{H}$, $H'$, $\tilde{H}_P$ et $H_{P'}'$ qui sont absolument convergente. On s'est contenté d'échanger des intégrales sur les différents $H$ d'une part, d'échanger des intégrales sur les $n_1$, $n_2$, $t$, $y$ qui compose l'intégrale sur $V$ d'autre part. On doit seulement vérifier qu'il n'y a pas de problème de convergence lorsque l'on combine l'intégration en $X$ sur $M_n$ (cf. intégrale \ref{combX}) et lorsque l'on échange l'intégrale sur $U_n$ et $M_n$ (cf. intégrale \ref{combg}). Pour ce qui est de la dernière intégrale, on intègre sur un sous-groupe et $f \in \mathcal{S}(G_{2n})$ donc l'intégrale est absolument convergente. Pour ce qui est de l'intégrale \ref{combX}, à part l'intégration sur $\tilde{Z}$, on intègre sur un sous-groupe donc l'intégration est aussi absolument convergente.
+
+Finissons par montrer la convergence absolue de notre membre de droite. Notons $r(g) = 1 + ||e_ng||_\infty$. On a
+\begin{equation}
+\begin{split}
+& W_{r^N |\det|^{-1} f}\left(\sigma \begin{pmatrix}
+1 & X' \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+a'k' & 0 \\
+0 & a'k'
+\end{pmatrix} \sigma^{-1}, \sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ak & 0 \\
+0 & ak
+\end{pmatrix} \sigma^{-1}\right) = \\
+& (1+|a_n|)^N |\det aa'|^{-1} W_f\left(\sigma \begin{pmatrix}
+1 & X' \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+a'k' & 0 \\
+0 & a'k'
+\end{pmatrix} \sigma^{-1}, \sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ak & 0 \\
+0 & ak
+\end{pmatrix} \sigma^{-1}\right),
+\end{split}
+\end{equation}
+pour tous $a \in A_n$, $a' \in A_{n-1}$, $k \in K_n$ et  $k' \in K_{n-1}$.
+
+Il suffit de vérifier la convergence de l'intégrale
+\begin{equation}
+\begin{split}
+&\int_{\bar{\mathfrak{t}}_{n-1}} \int_{A_{n-1}} \int_{\bar{\mathfrak{t}}_n} \int_{A_n} (1+|a_n|)^{-N} |\det aa'| \\
+& W_{r^N |\det|^{-1}f}\left(\sigma \begin{pmatrix}
+1 & X' \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+a'k' & 0 \\
+0 & a'k'
+\end{pmatrix} \sigma^{-1}, \sigma \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ak & 0 \\
+0 & ak
+\end{pmatrix} \sigma^{-1}\right) da dX da' dX'.
+\end{split}
+\end{equation}
+pour $N$ suffisamment grand. Or cette dernière intégrale est majorée\footnote{https://github.com/nicolasduhamel/carre-exterieur/blob/master/carre-exterieur.pdf} à une constante prés par
+\begin{equation}
+\begin{split}
+\int_{\bar{\mathfrak{t}}_{n-1}} \int_{A_{n-1}} \int_{\bar{\mathfrak{t}}_n} \int_{A_n} (1+|a_n|)^N m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}_{B_{2n}}(bt_X)\log(||bt_X||)^d \\
+m(X')^{-\alpha' N} \prod_{i=1}^{n-1} (1 + |\frac{a'_i}{a'_{i+1}}|)^{-N} \delta^{\frac{1}{2}}_{B_{2n-2}}(b't_{X'})\log(||b't_{X'}||)^d \delta_{B_n}^{-2}(a) \delta_{B_{n-1}}^{-2}(a') da dX da' dX',
+\end{split}
+\end{equation}
+où $b = diag(a_1, a_1, a_2, a_2, ...)$ et $b' = diag(a_1', a_1', a_2', a_2', ...)$. Cette dernière intégrale est majorée (à une constante prés) par le produit des intégrales
+ \begin{equation}
+ \int_{\bar{\mathfrak{t}}_n} m(X)^{-\alpha N} \delta^{\frac{1}{2}}_{B_{2n}}(t_X)\log(||t_X||)^d dX,
+ \end{equation}
+ 
+ \begin{equation}
+ \int_{\bar{\mathfrak{t}}_{n-1}} m(X')^{-\alpha' N} \delta^{\frac{1}{2}}_{B_{2n-2}}(t_{X'})\log(||t_{X'}||)^d dX',
+ \end{equation}
+ 
+ \begin{equation}
+ \int_{A_n}  \prod_{i=1}^{n-1} (1+ |\frac{a_i}{a_{i+1}}|)^{-N} (1+|a_n|)^{-N}\log(||b||)^d|\det a| da,
+ \end{equation}
+ 
+ et
+ \begin{equation}
+ \int_{A_{n-1}}  \prod_{i=1}^{n-2} (1+ |\frac{a_i'}{a_{i+1}'}|)^{-N} (1+|a_{n-1}'|)^{-N}\log(||b'||)^d|\det a'|da'.
+ \end{equation}
+ 
+Ces dernières intégrales convergent pour $N$ assez grand.
 
 \end{proof}
 
