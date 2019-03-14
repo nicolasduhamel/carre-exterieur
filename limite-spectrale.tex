@@ -11,6 +11,7 @@
 \usepackage{hyperref}
 \usepackage{graphics}
 \usepackage{enumerate}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 
 \usepackage{eulervm}
 
@@ -29,35 +30,41 @@
 %\date{\today}
 \maketitle
 
-Soit $G$ un groupe réductif connexe (dans la suite $G$ sera $G_{2n}$, $SO_{2n+1}$ ou un quotient, sous-groupe de Lévi de ces groupes). On note $Temp(G)$ l'ensemble des représentations irréductibles tempérées de $G$. On note $Z_G$ le centre de $G$ et $A_G$ un tore déployé maximal dans $Z_G$. Soit $M$ un sous-groupe de Levi de $G$. Il existe une unique mesure (à constante prés) $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures de Haar sur $\widehat{A_M}$. On définit alors la mesure $d\pi$ localement autour de $\pi \simeq Ind_M^G(\sigma)$ par la formule
+Soit $G$ un groupe réductif connexe (dans la suite $G$ sera $G_{2n}$, $SO_{2n+1}$ ou un quotient, sous-groupe de Levi de ces groupes). On note $Temp(G)$ l'ensemble des classes
+d'isomorphismes de représentations irréductibles tempérées de $G$. On note $Z_G$ le centre de $G$ et $A_G$ le tore déployé maximal dans $Z_G$. On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$. On équipe alors $A_M$ par la mesure $(d^\times x)^{\wedge dim(A)}$ où $d^\times x = \frac{dx}{|x|_F}$ est la mesure de Haar sur $F^\times$.
+
+Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ défini par
+\begin{equation}
+d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi},
+\end{equation}
+où $\gamma^*(0, 1, \psi) = \lim_{s \rightarrow 0^+} \frac{\gamma(s, 1, \psi)}{s log(q_F)}$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq Ind_M^G(\sigma)$ par la formule
 \begin{equation}
 d\pi  = |W(G, M)|^{-1} (Ind_M^G)_* d\sigma.
 \end{equation}
-La mesure $d\pi$ est définie à une constante prés que l'on choisira de façon à ce que l'équation \ref{mesurePlanch} soit vérifiée.
+La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
 
-
-On note $\overline{G_{2n}} = G_{2n}(F)/Z_{2n}(F)$. Soit $f \in \mathcal{S}(\overline{G_{2n}})$, pour $\pi \in Temp(\overline{G_{2n}})$, on définit $f_\pi$ par
+On note $PG_{2n} = G_{2n}(F)/Z_{2n}(F)$. Soit $f \in \mathcal{S}(PG_{2n})$, pour $\pi \in Temp(PG_{2n})$, on définit $f_\pi$ par
 \begin{equation}
 f_\pi(g) = Tr(\pi(g)\pi(f^\vee)),
 \end{equation}
-pour tout $g \in \overline{G_{2n}}$, où $f^{\vee}(x) = f(x^{-1})$.
+pour tout $g \in PG_{2n}$, où $f^{\vee}(x) = f(x^{-1})$.
 
 \begin{proposition}
-Il existe une unique mesure $\mu_{\overline{G_{2n}}}$ sur $Temp(\overline{G_{2n}})$ telle que
+Il existe une unique mesure $\mu_{PG_{2n}}$ sur $Temp(PG_{2n})$ telle que
 \begin{equation}
-f(g) = \int_{Temp(\overline{G_{2n}})} f_{\pi}(g) d\mu_{\overline{G_{2n}}}(\pi),
+f(g) = \int_{Temp(PG_{2n})} f_{\pi}(g) d\mu_{PG_{2n}}(\pi),
 \end{equation} 
-pour tous $f \in \mathcal{S}(\overline{G_{2n}})$ et $g \in \overline{G_{2n}}$. De plus, on a l'égalité de mesure suivante :
+pour tous $f \in \mathcal{S}(PG_{2n})$ et $g \in PG_{2n}$. De plus, on a l'égalité de mesure suivante :
 \begin{equation}
 \label{mesurePlanch}
-d\mu_{\overline{G_{2n}}}(\pi) = \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_\pi|} d\pi,
+d\mu_{PG_{2n}}(\pi) = \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_\pi|} d\pi,
 \end{equation}
-où $\gamma^*(0, \pi, \overline{Ad}, \psi) = \lim_{s \rightarrow 0} (s \log(q))^{-n_{\pi, \overline{Ad}}} \gamma(s, \pi, \overline{Ad}, \psi)$, avec $n_{\pi, \overline{Ad}}$ l'ordre du zéro de $\gamma(s, \pi, \overline{Ad}, \psi)$ en $s=0$; c'est le premier coefficient non nul de $\gamma(s, \pi, \overline{Ad}, \psi)$ à un facteur $\log(q)$ près. Pour $\pi \in Temp(\overline{G_{2n}})$ sous-représentation de $\pi_1 \times ... \times \pi_k$, avec $\pi_i \in \Pi_{2}(\overline{G_{n_i}})$, le facteur $|S_{\pi}|$ est le produit $n_1 ... n_k$.
+où $\gamma^*(0, \pi, \overline{Ad}, \psi) = \lim_{s \rightarrow 0} (s log(q_F)^{-n_{\pi, \overline{Ad}}} \gamma(s, \pi, \overline{Ad}, \psi)$, avec $n_{\pi, \overline{Ad}}$ l'ordre du zéro de $\gamma(s, \pi, \overline{Ad}, \psi)$ en $s=0$. Pour $\pi \in Temp(PG_{2n})$ sous-représentation de $\pi_1 \times ... \times \pi_k$, avec $\pi_i \in \Pi_{2}(G_{n_i})$, le facteur $|S_{\pi}|$ est le produit $\prod_{i=1}^k n_i$.
 \end{proposition}
 
-On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérées de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
+On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
 
-On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est une application $\phi : W_F' \rightarrow {}^L SO(2m+1)$. Or ${}^L SO(2m+1) = Sp(2m)$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ par l'injection de $Sp(2m)$ dans $G_{2m}$. La correspondance de Langlands locale pour $SO(2m+1)$ nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. On sait caractériser l'image de l'application de transfert. Plus exactement,
+On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$. La correspondance de Langlands locale pour $SO(2m+1)$ nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. On sait caractériser l'image de l'application de transfert. Plus exactement,
 \begin{equation}
 \label{caracTransf}
 \pi \in T(Temp(SO(2n+1))/Stab) \iff \pi = \left( \bigtimes_{i=1}^k \tau_i \times \widetilde{\tau_i} \right) \times \bigtimes_{j=1}^l \mu_i
@@ -65,22 +72,26 @@ On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappe
 avec $\tau_i \in \Pi_2(G_{n_i})$ et $\mu_j \in T(Temp(SO(2m_j+1))/Stab) \cap \Pi_2(G_{2m_j})$.
 
 \begin{proposition}
-Soit $\phi \in \mathcal{S}(\overline{G_{2n}})$, on a 
+Soit $\phi \in \mathcal{S}(Temp(PG_{2n}))$, on a 
 
 \begin{equation}
-\lim_{s \rightarrow 0^+}  2n \gamma(s, 1, \psi) \int_{Temp(\overline{G_{2n}})} \phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{\overline{G_{2n}}}
- = \int_{Temp(SO_{2n+1}) / Stab} \phi(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma.
+\begin{split}
+& \lim_{s \rightarrow 0^+}  n \gamma(s, 1, \psi) \int_{Temp(PG_{2n})} \phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{PG_{2n}} = \\
+& \int_{Temp(SO_{2n+1}) / Stab} \phi(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma.
+ \end{split}
 \end{equation}
+
+Pour $\sigma \in Temp(SO(2n+1))$ sous-représentation de $\pi_1 \times ... \times \pi_l \times \sigma_0$, avec $\pi_i \in \Pi_{2}(G_{n_i})$ et $\sigma_0 \in \Pi_2(SO(2m+1))$, le facteur $|S_{\pi}|$ est le produit $|S_{\pi_1}|...|S_{\pi_l}||S_{\sigma_0}|$; où $|S_{\sigma_0}|=2^k$ tel que $T(\sigma_0) \simeq \tau_1 \times ... \times \tau_k$ avec $\tau_i \in \Pi_2(G_{m_i})$.
 \end{proposition}
 
 \begin{proof}
 D'après la relation \ref{mesurePlanch}, on a
 \begin{equation}
-\int_{Temp(\overline{G_{2n}})} \phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{\overline{G_{2n}}}(\pi) = 
-\int_{Temp(\overline{G_{2n}})} \phi(\pi) \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_\pi|\gamma(s, \pi, \Lambda^2, \psi)} d\pi.
+\int_{Temp(PG_{2n})} \phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{PG_{2n}}(\pi) = 
+\int_{Temp(PG_{2n})} \phi(\pi) \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_\pi|\gamma(s, \pi, \Lambda^2, \psi)} d\pi.
 \end{equation}
 
-Soit $\pi \in Temp(\overline{G_{2n}})$. En prenant des partitions de l'unité, on peut supposer que $\phi$ est à support dans un voisinage $U$ suffisamment petit de $\pi$. On écrit la représentation $\pi$ sous la forme
+Soit $\pi \in Temp(PG_{2n})$. En prenant des partitions de l'unité, on peut supposer que $\phi$ est à support dans un voisinage $U$ suffisamment petit de $\pi$. On écrit la représentation $\pi$ sous la forme
 \begin{equation}
 \pi = \left( \bigtimes_{i=1}^t \tau_i^{\times m_i} \times \widetilde{\tau_i}^{\times n_i} \right) \times \left( \bigtimes_{j=1}^u \mu_j^{\times p_j} \right) \times \left( \bigtimes_{k=1}^v \nu_k^{\times q_k}\right),
 \end{equation}
@@ -95,37 +106,46 @@ Soit
 \begin{equation}
 M = \left( \prod_{i=1}^t G_{d_i}^{m_i+n_i} \times \prod_{j=1}^u G_{e_j}^{p_j} \times \prod_{k=1}^v G_{f_k}^{q_k} \right) / Z_{2n}
 \end{equation}
-le sous-groupe de Lévi de $\overline{G_{2n}}$ qui apparait dans la définition de $\pi$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, alors $X^*(M) \otimes \mathbb{R}$ est en correspondance avec l'espace de ces exposants 
-$\mathcal{A}_0 \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k}$ qui est l'hyperplan définit par la condition que la somme des coordonnées est nulle.
-
+le sous-groupe de Levi de $PG_{2n}$ qui apparait dans la définition de $\pi$. Alors $\pi = Ind_M^{PG_{2n}}(\tau)$ pour une certaine représentation $\tau$ de $M$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, alors $X^*(M) \otimes \mathbb{R}$ est en correspondance avec l'espace de ces exposants 
+$\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ qui est l'hyperplan définit par la condition que la somme des coordonnées est nulle. On équipe $(i\mathbb{R})_M$ du produit des mesures de Lebesgue sur $i\mathbb{R}$ et $\mathcal{A}$ de la mesure de Haar telle que la mesure quotient de $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$ soit la mesure de Lebesgue. L'isomorphisme local $\chi \otimes \alpha \in X^*(M) \otimes \mathbb{R} \mapsto |\chi|^\alpha_F \in \widehat{A_M}$ préserve localement les mesures, où l'on équipe $\widehat{A_M}$ de la mesure \todo{$d\widetilde{\chi} $ ??? }$\left(\frac{2\pi}{log(q)}\right)^{dim(A_M)}d\chi$.
 Dans la suite, on notera les coordonnées de la manière suivante :
 \begin{itemize}
 \item $x_i(\lambda) = (x_{i,1}(\lambda), ..., x_{i, m_i}(\lambda), \widetilde{x_{i, 1}}(\lambda), ..., \widetilde{x_{i,n_i}}(\lambda)) \in (i\mathbb{R})^{m_i} \times (i\mathbb{R})^{n_i}$,
 \item $y_j(\lambda) = (y_{j,1}(\lambda), ..., y_{j, p_j}(\lambda)) \in (i\mathbb{R})^{p_j}$,
 \item $z_k(\lambda) = (z_{k,1}(\lambda), ..., z_{k, q_k}(\lambda)) \in (i\mathbb{R})^{q_k}$,
 \end{itemize}
-pour tout $\lambda \in \mathcal{A}_0$.
+pour tout $\lambda \in \mathcal{A}$.
 
-On dispose alors d'une application $\lambda \in \mathcal{A}_0 \mapsto \pi_\lambda \in Temp(\overline{G_{2n}})$, où
+On dispose alors d'une application $\lambda \in \mathcal{A} \mapsto \pi_\lambda \in Temp(PG_{2n})$, où
 \begin{equation}
 \begin{split}
-\pi_{\lambda} = &\left( \bigtimes_{i=1}^t \left( \bigtimes_{l=1}^{m_i} \tau_i^{\times m_i} \otimes |\det|^{\frac{x_{i,l}(\lambda)}{d_i}} \right) \times \left( \bigtimes_{l=1}^{n_i} \widetilde{\tau_i}^{\times n_i} \otimes |\det|^{\frac{\widetilde{x_{i,l}}(\lambda)}{d_i}} \right) \right) \\
-& \times \left( \bigtimes_{j=1}^u \bigtimes_{l=1}^{p_j} \mu_j^{\times p_j} \otimes |\det|^{\frac{y_{j,l}(\lambda)}{e_j}} \right) \times \left( \bigtimes_{k=1}^v \bigtimes_{l=1}^{q_k} \nu_k^{\times q_k} \otimes |\det|^{\frac{z_{k,l}(\lambda)}{f_k}} \right).
+\pi_{\lambda} = &\left( \bigtimes_{i=1}^t \left( \bigtimes_{l=1}^{m_i} \tau_i \otimes |\det|^{\frac{x_{i,l}(\lambda)}{d_i}} \right) \times \left( \bigtimes_{l=1}^{n_i} \widetilde{\tau_i} \otimes |\det|^{\frac{\widetilde{x_{i,l}}(\lambda)}{d_i}} \right) \right) \\
+& \times \left( \bigtimes_{j=1}^u \bigtimes_{l=1}^{p_j} \mu_j\otimes |\det|^{\frac{y_{j,l}(\lambda)}{e_j}} \right) \times \left( \bigtimes_{k=1}^v \bigtimes_{l=1}^{q_k} \nu_k \otimes |\det|^{\frac{z_{k,l}(\lambda)}{f_k}} \right).
 \end{split}
 \end{equation}
 
-Cette dernière induit un homéomorphisme $U \simeq V/W(\overline{G_{2n}}, M)$, où $V$ est un voisinage de 0 dans $\mathcal{A}_{0}$ et $W(\overline{G_{2n}}, M)$ est le groupe de Weyl associé au sous-groupe de Lévi $M$ de $\overline{G_{2n}}$. Alors
-\begin{align}
-\int_U \phi(\pi) \gamma(s, \pi, \lambda^2, \psi)^{-1} d\mu_{\overline{G_{2n}}}(\pi) &= \int_U \phi(\pi) \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_{\pi}|\gamma(s, \pi, \Lambda^2, \psi)}  d\pi \\
-& = \frac{1}{|W(\overline{G_{2n}}, M)|} \int_{V} \phi(\pi_\lambda) \frac{\gamma^*(0, \pi_\lambda, \overline{Ad}, \psi)}{|S_{\pi_\lambda}|\gamma(s, \pi_\lambda, \Lambda^2, \psi)} d\lambda.
-\end{align}
-
-La première égalité provient de la relation \ref{mesurePlanch}. De plus, par définition de $|S_{\pi_\lambda}|$, on a $|S_{\pi_\lambda}| = \prod_{i=1}^t d_i^{m_i+n_i} \prod_{j=1}^u e_j^{p_j} \prod_{k=1}^v f_k^{q_k}$. On notera ce produit $P$ dans la suite. 
+Cette dernière induit un homéomorphisme $U \simeq V/W(PG_{2n}, \tau)$, où $V$ est un voisinage de 0 dans $\mathcal{A}$ et $W(PG_{2n}, \tau)$ est le sous-groupe de $W(PG_{2n}, M)$ fixant la représentation $\tau$. Alors
+\begin{equation}
+\int_U \phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{PG_{2n}}(\pi) = \int_U \phi(\pi) \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_{\pi}|\gamma(s, \pi, \Lambda^2, \psi)}  d\pi
+\end{equation}
+d'après la relation \ref{mesurePlanch}. Du choix des mesures $d\pi$ sur $Temp(PG_{2n})$ et $d\lambda$ sur $\mathcal{A}$, cette intégrale est égale à
+\begin{equation}
+\frac{1}{|W(PG_{2n}, \tau)|} \left(\frac{log(q)}{2\pi}\right)^{dim(\mathcal{A})}\int_{V} \phi(\pi_\lambda) \frac{\gamma^*(0, \pi_\lambda, \overline{Ad}, \psi)}{|S_{\pi_\lambda}|\gamma(s, \pi_\lambda, \Lambda^2, \psi)} d\lambda.
+\end{equation}
+De plus, on a
+\begin{equation}
+|S_{\pi_\lambda}| = \prod_{i=1}^t d_i^{m_i+n_i} \prod_{j=1}^u e_j^{p_j} \prod_{k=1}^v f_k^{q_k}.
+\end{equation}
+On notera ce produit $P$ dans la suite. 
 
 On en déduit l'égalité suivante :
 \begin{equation}
-\int_{Temp(\overline{G_{2n}})} \phi(\pi) \gamma(s, \pi, \lambda^2, \psi)^{-1} d\mu_{\overline{G_{2n}}}(\pi) = 
-\frac{1}{|W(\overline{G_{2n}}, M)|P} \int_{\mathcal{A}_0} \varphi(\lambda) \frac{\gamma^*(0, \pi_\lambda, \overline{Ad}, \psi)}{\gamma(s, \pi_\lambda, \Lambda^2, \psi)} d\lambda,
+\label{defvarphi}
+\begin{split}
+\int_{Temp(PG_{2n})} &\phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{PG_{2n}}(\pi) = \\
+& \frac{1}{|W(PG_{2n}, \tau)|P} \left(\frac{log(q)}{2\pi}\right)^{dim(\mathcal{A})} 
+\int_{\mathcal{A}} \varphi(\lambda) \frac{\gamma^*(0, \pi_\lambda, \overline{Ad}, \psi)}{\gamma(s, \pi_\lambda, \Lambda^2, \psi)} d\lambda,
+\end{split}
 \end{equation}
 où $\varphi(\lambda) = \phi(\pi_\lambda)$ si $\lambda \in V$ et $0$ sinon.
 
@@ -151,34 +171,33 @@ On en déduit que
 \left( \prod_{k=1}^v \prod_{1 \leq l \neq l' \leq q_k} (\frac{z_{k,l}(\lambda)-z_{k,l'}(\lambda)}{f_k}) \right) F(\lambda),
 \end{split}
 \end{equation}
-où $F$ est une fonction qui ne s'annule pas sur le voisinage $V$, il s'agit d'un produit de facteur $\gamma$ ne s'annulant pas. De plus, on a
+où $F$ est une fonction $C^\infty$ qui ne s'annule pas sur le voisinage $V$, il s'agit d'un produit de facteur $\gamma$ ne s'annulant pas. De même, on a
 \begin{equation}
 \begin{split}
-& \gamma(s, \pi_\lambda, \Lambda^2, \psi)^{-1} = \left( \prod_{i=1}^t \prod_{1 \leq l \neq l' \leq m_i} (s+\frac{x_{i,l}(\lambda)-x_{i,l'}(\lambda)}{d_i})^{-1} \right) \\ &
-\left( \prod_{j=1}^u \prod_{1 \leq l \neq l' \leq p_j} (s + \frac{y_{j,l}(\lambda)+y_{j,l'}(\lambda)}{e_j})^{-1} \right) 
- \left( \prod_{k=1}^v \prod_{1 \leq l \neq l' \leq q_k} (s+\frac{z_{k,l}(\lambda)-z_{k,l'}(\lambda)}{f_k})^{-1} \right) G(\lambda+2s),
+& \gamma(s, \pi_\lambda, \Lambda^2, \psi)^{-1} = \left( \prod_{i=1}^t \prod_{\substack{1 \leq l \leq m_i \\ 1\leq l' \leq n_i}} (s+\frac{x_{i,l}(\lambda)+\widetilde{x_{i,l'}}(\lambda)}{d_i})^{-1} \right) \\ &
+\left( \prod_{j=1}^u \prod_{1 \leq l < l' \leq p_j} (s + \frac{y_{j,l}(\lambda)+y_{j,l'}(\lambda)}{e_j})^{-1} \right) 
+ \left( \prod_{k=1}^v \prod_{1 \leq l \leq l' \leq q_k} (s+\frac{z_{k,l}(\lambda)-z_{k,l'}(\lambda)}{f_k})^{-1} \right) G(2\lambda+s),
  \end{split}
 \end{equation}
-où la fonction $G$ n'a pas de pôle sur $V+\mathcal{H}$, ici $\mathcal{H}$ est le demi-plan complexe et s'injecte dans $V$ diagonalement.
+où la fonction $G$ est une fonction méromorphe sur $\mathcal{A} \otimes \mathbb{C}$ et n'a pas de pôle sur $V+\mathcal{H}$; ici $\mathcal{H} = \{z \in \mathbb{C}, Re(z) > 0\} \cup \{0\}$ et s'injecte dans $\mathcal{A} \otimes \mathbb{C}$ par l'application $s \in \mathcal{H} \mapsto \lambda_s \in \mathcal{A} \otimes \mathbb{C}$ dont les coordonnées sont $x_i(\lambda_s) = d_i(s, ..., s)$, $y_j(\lambda_s) = e_j(s, ..., s)$ et $z_k(\lambda_s) = f_k(s, ..., s)$.
 
-On énonce maintenant le résultat fondamental de Raphaël Beuzart-Plessis, qui permet d'obtenir la proposition dans le cas unitaire.
-\begin{proposition}[Beuzart-Plessis, Proposition 3.3.1]
-\label{beuzart-plessis}
-En reprenant les notations de Beuzart-Plessis, on écrit
+On énonce maintenant le résultat fondamental de Raphaël Beuzart-Plessis, qui permet d'obtenir la proposition dans le cas unitaire. En reprenant les notations de Beuzart-Plessis, on écrit
 \begin{equation}
 \varphi(\lambda) \frac{\gamma^*(0, \pi_\lambda, \overline{Ad}, \psi)}{\gamma(s, \pi_\lambda, \Lambda^2, \psi)} = \varphi_s(\lambda) 
-\prod_{i=1}^t P_{m_i,n_i,s}(\frac{x_i(\lambda)}{d_i}) \prod_{j=1}^u Q_{p_j,s}(\frac{y_j(\lambda)}{e_j}) \prod_{i=1}^v R_{q_k,s}(\frac{z_k(\lambda)}{f_k}).
+\prod_{i=1}^t P_{m_i,n_i,s}(\frac{x_i(\lambda)}{d_i}) \prod_{j=1}^u Q_{p_j,s}(\frac{y_j(\lambda)}{e_j}) \prod_{i=1}^v R_{q_k,s}(\frac{z_k(\lambda)}{f_k}),
 \end{equation}
-
+où $\varphi_s(\lambda) = \phi(\lambda) F(\lambda) G(2\lambda+s)$ et les lettres $P, Q, R$ désignent des polynômes qui apparaissent dans le quotient des facteurs $\gamma$ (voir Beuzart-Plessis, Section 3).
+\begin{proposition}[Beuzart-Plessis, Proposition 3.3.1]
+\label{beuzart-plessis}
 La limite
 \begin{equation}
-\lim_{s \rightarrow 0^+}  2n \gamma(s, 1, \psi) \int_{\mathcal{A}_0} \varphi_s(\lambda) 
+\lim_{s \rightarrow 0^+}  \frac{n s}{|W|} \int_{\mathcal{A}} \varphi_s(\lambda) 
 \prod_{i=1}^t P_{m_i,n_i,s}(\frac{x_i(\lambda)}{d_i}) \prod_{j=1}^u Q_{p_j,s}(\frac{y_j(\lambda)}{e_j}) \prod_{i=1}^v R_{q_k,s}(\frac{z_k(\lambda)}{f_k}) d\lambda
 \end{equation}
 est nulle si $m_i \neq n_i$ pour un certain $i$ ou si l'un des $p_j$ est impair. De plus, dans le cas contraire, elle est égale à
 \begin{equation}
 \begin{split}
-&\frac{D(2\pi)^{N-1}2^{1-c} \gamma^*(0, 1, \psi)}{|W'|} \\
+&\frac{D(2\pi)^{N-1}2^{-c}}{|W'|} \\
 &\int_{\mathcal{A}'} \lim_{s \rightarrow 0^+} \varphi_s(\lambda') s^N \prod_{i=1}^t P_{m_i,n_i,s}(\frac{x_i(\lambda')}{d_i}) \prod_{j=1}^u Q_{p_j,s}(\frac{y_j(\lambda')}{e_j}) \prod_{i=1}^v R_{q_k,s}(\frac{z_k(\lambda')}{f_k}) d\lambda';
 \end{split}
 \end{equation}
@@ -186,18 +205,20 @@ où
 \begin{itemize}
 \item $D = \prod_{i=1}^t d_i^{n_i} \prod_{j=1}^u e_j^{\frac{p_j}{2}} \prod_{k=1}^v f_k^{\lceil \frac{q_k}{2} \rceil}$,
 \item c est le cardinal des $1 \leq k \leq t$ tel que $q_k \equiv 1 \mod 2$,
-\item $N = \sum_{i=1}^t n_i \sum_{j=1}^u \lfloor \frac{p_j}{2} \rfloor + \sum_{k=1}^v \lceil \frac{q_k}{2} \rceil$,
-\item $\gamma^*(0, 1, \psi) = \lim_{s \rightarrow 0^+} \frac{\gamma(s, 1, \psi)}{s}$,
-\item W' est défini de manière intrinsèque dans l'article de Beuzart-Plessis, il est isomorphe au groupe de Weyl $W(SO(2n+1), L)$,
-le sous-groupe de Lévi L est définit plus loin (voir \ref{leviOrtho})
+\item $N = \sum_{i=1}^t n_i + \sum_{j=1}^u \frac{p_j}{2} + \sum_{k=1}^v \lceil \frac{q_k}{2} \rceil$,
+\item $W$ et $W'$ sont définis de manière intrinsèque dans l'article de Beuzart-Plessis, $W$ est isomorphe à $W(PG_{2n}, \tau)$ et $W'$ est isomorphe à $W(SO(2n+1), \sigma)$ (defini après \ref{leviOrtho}).
 \end{itemize}
 
-De plus, $\mathcal{A}'$ est le sous-espace de $\mathcal{A}_0$ définit par les relations
+De plus, $\mathcal{A}'$ est le sous-espace de $\mathcal{A}$ défini par les relations :
 \begin{itemize}
 \item $x_{i,l}(\lambda) + \widetilde{x_{i,l}}(\lambda) = 0$ pour tous $1 \leq i \leq t$ et $1 \leq l \leq n_i$,
 \item $y_{j,l}(\lambda) + y_{j,p_j+1-l}(\lambda) = 0$ pour tous $1 \leq j \leq u$ et $1 \leq l \leq \lfloor \frac{p_j}{2} \rfloor$,
 \item $z_{k,l}(\lambda) + z_{k,q_k+1-l}(\lambda) = 0$ pour tous $1 \leq j \leq v$ et $1 \leq l \leq \lceil \frac{q_k}{2} \rceil$.
 \end{itemize}
+On équipe $\mathcal{A}'$ de la mesure Lebesgue provenant de l'isomorphisme
+\begin{equation}
+\mathcal{A}' \simeq \prod_{i=1}^t (i\mathbb{R})^{n_i} \prod_{j=1}^u (i\mathbb{R})^{\frac{p_j}{2}} \prod_{k=1}^v (i\mathbb{R})^{\lfloor \frac{q_k}{2} \rfloor}.
+\end{equation}
 \end{proposition}
 
 Supposons tout d'abord que $\pi$ n'est pas de la forme $T(\sigma)$ pour un certain $\sigma \in Temp(SO(2n+1))/Stab$. D'après la caractérisation \ref{caracTransf}, il existe $1 \leq i \leq r$ tel que $m_i \neq n_i$ ou $p_j$ est impair (on vérifie aisément que les autres cas se mettent sous la forme qui apparait dans \ref{caracTransf}). Alors en prenant $U$ suffisamment petit, on peut supposer que $U$ ne rencontre pas l'image de l'application de transfert $T$. Autrement dit, le terme de droite de la proposition est nul; d'après \ref{beuzart-plessis}, le terme de gauche l'est aussi.
@@ -209,20 +230,63 @@ peut écrire
 \end{equation}
 où $\sigma_0$ est une représentation de $SO(2m+1)$ pour un certain $m$ tel que
 \begin{equation}
-T(\sigma_0) = \bigtimes_{k=1 \\ q_k \equiv 1 \mod 2}^v \nu_k.
+\label{sigma0}
+T(\sigma_0) = \bigtimes_{\substack{k=1 \\ q_k \equiv 1 \mod 2}}^v \nu_k.
 \end{equation}
 
-On voit apparaitre le sous-groupe de Lévi
+On voit apparaitre le sous-groupe de Levi
 \begin{equation}
 \label{leviOrtho}
 L = \prod_{i=1}^t G_{d_i}^{n_i} \prod_{j=1}^u G_{e_j}^{\frac{p_j}{2}} \prod_{k=1}^v G_{f_k}^{\lfloor \frac{q_k}{2} \rfloor} \times SO(2m+1).
 \end{equation}
-Plus exactement, $\sigma = Ind_L^{SO(2n+1)}(\Sigma)$, où $\Sigma \in \Pi_2(L)$. Comme précédemment, $X^*(L) \otimes \mathbb{R}$ est en correspondance avec $\mathbb{A}'$. On en déduit une application $\lambda' \in \mathcal{A}' \mapsto \sigma_{\lambda'} \in Temp(SO(2n+1))$, avec
+De plus, $\sigma = Ind_L^{SO(2n+1)}(\Sigma)$, où $\Sigma \in \Pi_2(L)$. Le groupe $W'$ de la proposition \ref{beuzart-plessis} est isomorphe à $W(SO(2n+1), \sigma)$, où $W(SO(2n+1), \sigma)$ est le sous-groupe de $W(SO(2n+1), L)$ fixant $\sigma$.
+
+Comme précédemment, $X^*(L) \otimes \mathbb{R}$ est isomorphe à $\mathcal{A}'$. On en déduit une application $\lambda' \in \mathcal{A}' \mapsto \sigma_{\lambda'} \in Temp(SO(2n+1))$, avec
 \begin{equation}
 \begin{split}
 \sigma_{\lambda'} &= \left( \bigtimes_{i=1}^t \bigtimes_{l=1}^{n_i} \tau_i^{\times n_i} \otimes |\det|^{\frac{x_{i,l}(\lambda')}{d_i}} \right) \times \left( \bigtimes_{j=1}^u \bigtimes_{l=1}^{p_j}\mu_j^{\times \frac{p_j}{2}} \otimes |\det|^{\frac{y_{j,l}(\lambda')}{e_j}} \right) \\
 &\times \left(\bigtimes_{k=1}^v \bigtimes_{l=1}^{q_k} \nu_k^{\times \lfloor \frac{q_k}{2} \rfloor} \otimes |\det|^{\frac{z_{k,l}(\lambda')}{f_k}} \right) \times \sigma_0.
 \end{split}
 \end{equation}
+
+De plus, d'après \ref{caracTransf}, pour $\lambda \in \mathcal{A}$, $\pi_\lambda \in T(SO(2n+1)/Stab)$ si et seulement si $\lambda \in \mathcal{A}'$, dans ce cas $\pi_\lambda = T(\sigma_\lambda)$.
+
+En utilisant cette caractérisation et la définition de la fonction $\varphi$ (équation \ref{defvarphi}), on obtient
+\begin{equation}
+\label{membreDroite}
+\begin{split}
+& \int_{Temp(SO(2n+1))/Stab} \phi(T(\sigma)) \frac{\gamma^*(0, s, Ad, \psi)}{|S_\sigma|} d\sigma \\
+&= \frac{1}{|W'|} \left(\frac{log(q)}{2\pi}\right)^{dim(\mathcal{A}')} \int_{\mathcal{A}'} \phi(T(\sigma_{\lambda'})) \frac{\gamma^*(0, \sigma_{\lambda'}, Ad, \psi)}{|S_{\sigma_{\lambda'}}|} d\lambda' \\
+&= \frac{1}{|W'|} \left(\frac{log(q)}{2\pi}\right)^{dim(\mathcal{A}')} \int_{\mathcal{A}'} \varphi(\lambda') \frac{\gamma^*(0, \sigma_{\lambda'}, Ad, \psi)}{|S_{\sigma_{\lambda'}}|} d\lambda'.
+\end{split}
+\end{equation}
+
+De plus,
+\begin{equation}
+\label{Ssigma}
+|S_{\sigma_{\lambda'}}| = \prod_{i=1}^t {d_i}^{n_i} \prod_{j=1}^u {e_j}^{\frac{p_j}{2}} \prod_{k=1}^v {f_k}^{\lfloor \frac{q_k}{2} \rfloor} |S_{\sigma_0}| = 2^c \frac{P}{D},
+\end{equation}
+d'après les notations de la proposition \ref{beuzart-plessis} et la relation \ref{sigma0}. D'autre part, d'après la proposition \ref{beuzart-plessis} et l'équation \ref{defvarphi}, on a
+\begin{equation}
+\begin{split}
+& \lim_{s \rightarrow 0^+}  n \gamma(s, 1, \psi) \int_{Temp(PG_{2n})} \phi(\pi) \gamma(s, \pi, \lambda^2, \psi)^{-1} d\mu_{PG_{2n}}(\pi) = \frac{D(2\pi)^{N-1}2^{-c} \gamma^*(0, 1, \psi)log(q_F)}{|W'|P} \\
+&\left(\frac{log(q)}{2\pi}\right)^{dim(\mathcal{A})}\int_{\mathcal{A}'} \lim_{s \rightarrow 0^+} \varphi_s(\lambda') s^N \prod_{i=1}^t P_{m_i,n_i,s}(\frac{x_i(\lambda')}{d_i}) \prod_{j=1}^u Q_{p_j,s}(\frac{y_j(\lambda')}{e_j}) \prod_{i=1}^v R_{q_k,s}(\frac{z_k(\lambda')}{f_k}) d\lambda'.
+\end{split}
+\end{equation}
+Cette dernière intégrale est égale à
+\begin{equation}
+\int_{\mathcal{A}'} \varphi(\lambda') \lim_{s \rightarrow 0^+} s^N \frac{\gamma^*(0, \pi_{\lambda'}, \overline{Ad}, \psi)}{\gamma(s, \pi_{\lambda'}, \Lambda^2, \psi)} d\lambda'.
+\end{equation}
+De plus, on remarque que $s \mapsto \gamma(s, \pi_{\lambda'}, \Lambda^2, \psi)^{-1}$ a un pôle d'ordre $N$ en $s=0$. Notre membre de gauche est donc égal à
+\begin{equation}
+\label{finalgauche}
+\frac{D\left(2\pi\right)^{N-1}2^{-c}log(q_F)}{|W'|P} \left(\frac{log(q)}{2\pi}\right)^{dim(\mathcal{A})} \int_{\mathcal{A}'} \varphi(\lambda') \frac{\gamma^*(0, \sigma_{\lambda'}, Ad, \psi)}{log(q_F)^N} d\lambda';
+\end{equation}
+On a utilisé les relations $\gamma^*(0, 1, \psi)\gamma^*(s, \pi_{\lambda'}, \overline{Ad}, \psi) = \gamma^*(s, \pi_{\lambda'}, Ad, \psi)$ et
+\begin{equation}
+\frac{\gamma(s, T(\sigma_{\lambda'}), Ad, \psi)}{\gamma(s, T(\sigma_{\lambda'}), \Lambda^2, \psi)} = \gamma(s, \sigma_{\lambda'}, Ad, \psi).
+\end{equation}
+
+Dans l'expression \ref{finalgauche}, le facteur $\frac{log(q_F)}{2\pi}$ apparait avec un exposant $dim(\mathcal{A})-N+1 = dim(\mathcal{A}')$; on en déduit que \ref{finalgauche} est égal au membre de droite \ref{membreDroite}, d'après l'égalité \ref{Ssigma}.
 \end{proof}
 \end{document}
