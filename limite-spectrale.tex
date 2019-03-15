@@ -37,7 +37,7 @@ Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi},
 \end{equation}
-où $\gamma^*(0, 1, \psi) = \lim_{s \rightarrow 0^+} \frac{\gamma(s, 1, \psi)}{s log(q_F)}$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq Ind_M^G(\sigma)$ par la formule
+où $\gamma^*(0, 1, \psi) = \lim_{s \rightarrow 0^+} \frac{\gamma(s, 1, \psi)}{s log(q_F)}$. La mesure $d\chi$ est indépendante du caractère $\psi$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq Ind_M^G(\sigma)$ par la formule
 \begin{equation}
 d\pi  = |W(G, M)|^{-1} (Ind_M^G)_* d\sigma.
 \end{equation}
@@ -106,8 +106,13 @@ Soit
 \begin{equation}
 M = \left( \prod_{i=1}^t G_{d_i}^{m_i+n_i} \times \prod_{j=1}^u G_{e_j}^{p_j} \times \prod_{k=1}^v G_{f_k}^{q_k} \right) / Z_{2n}
 \end{equation}
-le sous-groupe de Levi de $PG_{2n}$ qui apparait dans la définition de $\pi$. Alors $\pi = Ind_M^{PG_{2n}}(\tau)$ pour une certaine représentation $\tau$ de $M$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, alors $X^*(M) \otimes \mathbb{R}$ est en correspondance avec l'espace de ces exposants 
-$\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ qui est l'hyperplan définit par la condition que la somme des coordonnées est nulle. On équipe $(i\mathbb{R})_M$ du produit des mesures de Lebesgue sur $i\mathbb{R}$ et $\mathcal{A}$ de la mesure de Haar telle que la mesure quotient de $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$ soit la mesure de Lebesgue. L'isomorphisme local $\chi \otimes \alpha \in X^*(M) \otimes \mathbb{R} \mapsto |\chi|^\alpha_F \in \widehat{A_M}$ préserve localement les mesures, où l'on équipe $\widehat{A_M}$ de la mesure \todo{$d\widetilde{\chi} $ ??? }$\left(\frac{2\pi}{log(q)}\right)^{dim(A_M)}d\chi$.
+le sous-groupe de Levi de $PG_{2n}$ qui apparait dans la définition de $\pi$. Alors $\pi = Ind_M^{PG_{2n}}(\tau)$ pour une certaine représentation $\tau$ de $M$.
+
+On note $X^*(M)$ le groupe des caractères algébriques de $M$, alors $X^*(M) \otimes \mathbb{R}$ est en correspondance avec l'espace de ces exposants 
+$\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ qui est l'hyperplan définit par la condition que la somme des coordonnées est nulle.
+
+On équipe $(i\mathbb{R})_M$ du produit des mesures de Lebesgue sur $i\mathbb{R}$ et $\mathcal{A}$ de la mesure de Haar telle que la mesure quotient de $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$ soit la mesure de Lebesgue. L'isomorphisme local $\chi \otimes \alpha \in X^*(M) \otimes \mathbb{R}/(\frac{2i\pi}{log(q_F)})\mathbb{Z} \mapsto |\chi|^\alpha_F \in \widehat{A_M}$ préserve localement les mesures, où l'on équipe $\widehat{A_M}$ de la mesure $\left(\frac{2\pi}{log(q_F)}\right)^{dim(A_M)}d\chi$.
+
 Dans la suite, on notera les coordonnées de la manière suivante :
 \begin{itemize}
 \item $x_i(\lambda) = (x_{i,1}(\lambda), ..., x_{i, m_i}(\lambda), \widetilde{x_{i, 1}}(\lambda), ..., \widetilde{x_{i,n_i}}(\lambda)) \in (i\mathbb{R})^{m_i} \times (i\mathbb{R})^{n_i}$,
