@@ -1,0 +1,249 @@
+\documentclass{amsart}
+
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{enumerate}
+
+\usepackage{eulervm}
+
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollaire}{Corollaire}[section]
+\newtheorem{propriete}{Propriété}[section]
+\newtheorem{definition}{Définition}[section]
+\newtheorem{theoreme}{Théorème}[section]
+\newtheorem{lemme}{Lemme}[section]
+
+\DeclareMathOperator{\Hom}{\mathnormal{Hom}}
+\DeclareMathOperator{\Ext}{\mathnormal{Ext}}
+
+\begin{document}
+
+\title{Formule de Plancherel}
+%\date{\today}
+\maketitle 
+ 
+Pour $W \in \mathcal{C}^w(N_{2n} \backslash G_{2n})$, on note
+\begin{equation}
+\label{beta}
+\beta(W) = \int_{H^P_n \cap N_{2n} \backslash H^P_n} W(\xi_p) \theta(\xi_p)^{-1} d\xi_p.
+\end{equation}
+
+\begin{lemme}
+L'intégrale \ref{beta} est absolument convergente.
+\end{lemme}
+
+\begin{proof}
+\end{proof}
+
+\begin{proposition}
+La forme linéaire $W \in \mathcal{W}(\pi, \psi) \mapsto \beta(W)$ est un élément de $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$.
+\end{proposition}
+
+\begin{proof}
+\end{proof}
+
+\begin{proposition}
+\label{constbeta}
+Soit $\sigma \in Temp(SO(2n+1))$, on pose $\pi = T(\sigma)$ le transfert de $\sigma$ dans $Temp(G_{2n})$. La forme linéaire $\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1}) \mapsto \beta(\widetilde{W})$ est un élément de $\Hom_{H_n}(\mathcal{W}(\widetilde{\pi}, \psi^{-1}), \theta)$. On identifie $\mathcal{W}(\pi, \psi)$ et $\mathcal{W}(\widetilde{\pi}, \psi^{-1})$ par l'isomorphisme $W \mapsto \widetilde{W}$. Il existe un signe $c_\beta(\sigma) = c_\beta(\pi)$ tel que
+\begin{equation}
+\beta(\widetilde{W}) = c_\beta(\sigma)\beta(W),
+\end{equation}
+pour tout $W \in \mathcal{W}(\pi, \psi)$.
+\end{proposition}
+
+\begin{proof}
+En effet, $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$ est de dimension au plus 1 (preuve, référence). De plus, $\pi$ est le transfert de $\sigma$ donc $\widetilde{\pi} \simeq \pi$. On en déduit l'existence de $c(\pi) \in \mathbb{C}$ qui vérifie $c(\widetilde{\pi})c(\pi) = 1$ donc $c(\pi)$ est un signe.
+\end{proof}
+
+\begin{lemme}
+Soit $\sigma \in Temp(SO(2n+1))$ et $\pi = T(\sigma)$. Alors
+\begin{equation}
+J(1, \widetilde{W}, \widehat{\phi}) = \phi(0)c_\beta(\sigma)\beta(W),
+\end{equation}
+pour tous $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$.
+\end{lemme}
+
+\begin{proof}
+En effet, on a
+\begin{equation}
+\begin{split}
+J(1, \widetilde{W}, \widehat{\phi}) &= \int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg \\
+&= \int_{P_n \backslash G_n} \int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ph & 0 \\
+0 & ph
+\end{pmatrix} \sigma^{-1} \right) \psi(-Tr(X)) dX dp \widehat{\phi}(e_nh) |\det h| dh.
+\end{split}
+\end{equation}
+
+On remarque que l'on a
+\begin{equation}
+\begin{split}
+\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ph & 0 \\
+0 & ph
+\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX dp &= \beta\left(R\left(\sigma \begin{pmatrix}
+h & 0 \\
+0 & h
+\end{pmatrix} \sigma^{-1}\right) \widetilde{W}\right) \\
+&= \beta(\widetilde{W}),
+\end{split}
+\end{equation}
+puisque $\beta$ est $H_n$-invariant. De plus,
+\begin{equation}
+\begin{split}
+\int_{P_n \backslash G_n}  \widehat{\phi}(e_nh) |\det h| dh &= \int_{F^n} \widehat{\phi}(x) dx \\
+&= \phi(0).
+\end{split}
+\end{equation}
+
+On conclut grâce à la proposition \ref{constbeta}.
+\end{proof}
+
+Soit $f \in \mathcal{S}(G_{2n})$ et $\pi \in Temp(G_{2n})$, on pose $W_{f, \pi} = W_{f_\pi}$.
+
+\begin{lemme}
+\label{limitezeta}
+Pour $W \in \mathcal{S}(Z_{2n} N_{2n} \backslash G_{2n})$ et $\phi \in \mathcal{S}(F^n)$, on a
+\begin{equation}
+\lim_{s\rightarrow 0^+} \gamma(ns, 1, \psi) J(s, W, \phi) = \phi(0) \int_{Z_{2n}(H_n \cap N_{2n}) \backslash H_n} W(\xi) \theta(\xi)^{-1} d\xi.
+\end{equation}
+\end{lemme}
+
+\begin{proof}
+On a
+\begin{equation}
+\begin{split}
+\gamma(ns, 1, \psi) J(s, W, \phi) &= \int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ak & 0 \\
+0 & ak
+\end{pmatrix} \sigma^{-1}\right) \\
+&\psi(-Tr(X)) dX \gamma(ns, 1, \psi) \int_{Z_n}\phi(e_nzk) |\det z|^s dz dk |\det a|^s \delta_{B_n}(a)^{-1} da
+\end{split}
+\end{equation}
+
+De plus,
+\begin{equation}
+\gamma(ns, 1, \psi) \int_{Z_n} \phi(e_n zk) |\det z|^s ds = \int_{F^*} \widehat{\phi_k}(x)|x|^{1-ns} dx,
+\end{equation}
+où l'on a posé $\phi_k(x) = \phi(xe_nk)$ pour tous $x \in F$ et $k \in K_n$. Ce qui nous donne
+\begin{equation}
+\lim_{s \rightarrow 0+} \gamma(ns, 1, \psi)\int_{Z_n} \phi(e_nzk) |\det z|^s dz = \int_{F} \widehat{\phi_k}(x)dx = \phi(0).
+\end{equation}
+
+On en déduit que
+\begin{equation}
+\begin{split}
+\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi) &= \phi(0)\int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ak & 0 \\
+0 & ak
+\end{pmatrix} \sigma^{-1}\right) \\
+&\psi(-Tr(X)) dX  dk \delta_{B_n}(a)^{-1} da,
+\end{split}
+\end{equation}
+ce qui nous permet de conclure.
+\end{proof}
+
+\begin{corollaire}[de la limite spectrale]
+Soit $f \in \mathcal{S}(G_{2n})$ et $g \in G_{2n}$, alors
+\begin{equation}
+\int_{H_n \cap N_{2n} \backslash H_n} W_f(g, \xi) \theta(\xi)^{-1} d\xi = \int_{Temp(SO(2n+1))/Stab} \beta(W_{f,T(\sigma)}(g,.)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma)) c_\beta(\sigma) d\sigma.
+\end{equation}
+\end{corollaire}
+
+\begin{proof}
+On peut supposer que $g = 1$ en remplaçant $f$ par $L(g)f$. On pose $\widetilde{f}(g) = \int_{Z_n} f(zg) dz$, alors $\widetilde{f} \in PG_{2n}$. On a donc
+\begin{equation}
+\int_{H_n \cap N_{2n} \backslash H_n} W_f(1, \xi) \theta(\xi)^{-1} d\xi = \int_{Z_{2n}(H_n \cap N_{2n}) \backslash H_n} W_{\widetilde{f}}(1, \xi) \theta(\xi)^{-1} d\xi.
+\end{equation}
+
+On choisit $\phi \in \mathcal{S}(F^n)$ tel que $\phi(0) = 1$. Comme $\widetilde{f}_\pi = f_\pi$ pour tout $\pi \in Temp(PG_{2n})$, d'après le lemme \ref{limitezeta}, on a
+\begin{equation}
+\begin{split}
+\int_{Z_{2n}(H_n \cap N_{2n}) \backslash H_n} W_{\widetilde{f}}(1, \xi) \theta(\xi)^{-1} d\xi &= \lim_{s\rightarrow 0^+} n\gamma(s, 1, \psi) J(s, W_{\widetilde{f}}(1, .), \phi) \\
+&= \lim_{s\rightarrow 0^+} n\gamma(s, 1, \psi) \int_{Temp(PG_{2n})}J(s, W_{f, \pi}(1, .), \phi) d\mu_{PG_{2n}}(\pi).
+\end{split}
+\end{equation}
+
+D'après l'équation fonctionnelle, on a
+\begin{equation}
+\begin{split}
+&\int_{H_n \cap N_{2n} \backslash H_n} W_f(1, \xi) \theta(\xi)^{-1} d\xi = \\
+&\lim_{s\rightarrow 0^+} n\gamma(s, 1, \psi) \int_{Temp(PG_{2n})}J(1-s, \widetilde{W_{f, \pi}(1, .)}, \widehat{\phi}) c(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{PG_{2n}}(\pi).
+\end{split}
+\end{equation}
+
+Cette dernière limite est égale à
+\begin{equation}
+\int_{Temp(SO(2n+1)/Stab} J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}) c(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma.
+\end{equation}
+
+On conclut grâce au lemme \ref{zetabeta}.
+\end{proof}
+
+\section{Formule de Plancherel}
+
+On note $Y_n = H_n \backslash G_{2n}$. On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
+\begin{equation}
+\varphi_f(x) = \int_{H_n} f(hx) \theta(h)^{-1} dh,
+\end{equation}
+pour tous $x \in Y_n$. Pour $\pi \in Temp(G_{2n})$ et $f_1,f_2 \in \mathcal{S}(G_{2n})$, on pose
+\begin{equation}
+(f_1,f_2)_{Y_n, \pi} = \sum_{W \in \mathcal{B}(\pi, \psi)} \beta(R(f_1)W)\overline{\beta(R(f_2)W)},
+\end{equation}
+où $\mathcal{B}(\pi, \psi)$ est une base orthonormée de $\mathcal{W}(\pi, \psi)$.
+
+\begin{theoreme}
+Soit $\varphi_1, \varphi_2 \in \mathcal{Y_n}$, il existe $f_1, f_2 \in \mathcal{S}(G_{2n})$ tel que $\phi_i = \phi_{f_i}$ pour $i = 1,2$. On a
+\begin{equation}
+(\phi_1, \phi_2)_{L^2(Y_n)} = \int_{H_n} f(h) \theta(h)^{-1} dh,
+\end{equation}
+où $f = f_1 * f_2^{*}$, on note $f_2^*(g) = \overline{f_2(g^{-1})}$. On pose alors
+\begin{equation}
+(\varphi_1, \varphi_2)_{Y_n, \pi} = \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta(W_{f,\pi}(\xi_p,.) \theta(\xi_p)^{-1} d\xi_p,
+\end{equation}
+pour tous $\pi \in Temp(G_{2n})$. Alors on a
+\begin{equation}
+(\phi_1, \phi_2)_{L^2(Y_n)} = \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+\end{equation}
+\end{theoreme}
+
+\begin{proof}
+\end{proof}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
