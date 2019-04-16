@@ -43,7 +43,7 @@ Pour $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$, la restriction de $\bet
 \end{lemme}
 
 \begin{proof}
-Il suffit de montrer la convegence de l'integrale
+Il suffit de montrer la convergence de l'intégrale
 \begin{equation}
 \int_{Lie(B_n) \backslash M_n} \int_{A_{n-1}} \left|W\left(\sigma \begin{pmatrix}
 1 & X \\
@@ -53,18 +53,18 @@ ak & 0 \\
 0 & ak
 \end{pmatrix}\sigma^{-1}\right)\right| \delta_{B_{n-1}}(a)^{-1} da dX,
 \end{equation}
-pour tout $k \in K_n$. On effectue la meme majoration que pour la convergence de l'integrale $J(s,W,\phi)$, l'integrale est donc majoree par
+pour tout $k \in K_n$. On effectue la même majoration que pour la convergence de l'intégrale $J(s,W,\phi)$, l'intégrale est donc majorée par
 \begin{equation}
 \begin{split}
 \int_{Lie(B_n) \backslash M_n} \int_{A_{n-1}} &\prod_{i=1}^{n-2}(1+\frac{|a_i|}{|a_{i+1}|}) (1+|a_n|) m(X)^{-\alpha N} \delta_{B_{2n}}(bt_X)^{\frac{1}{2}} \\
 &\log(||bt_X||)^d \delta_{B_n}(a) \delta_{B_{n-1}}(a)^{-1} da dX,
 \end{split}
 \end{equation}
-pour tout $N \geq 1$. Cette derniere integrale est convergente pour $N$ suffisament grand par le meme argument que pour la convergence de $J(s,W,\phi)$.
+pour tout $N \geq 1$. Cette dernière intégrale est convergente pour $N$ suffisamment grand par le même argument que pour la convergence de $J(s,W,\phi)$.
 
-Passons a la deuxieme partie, comme $\pi = T(\sigma)$, on sait que $\pi \simeq \widetilde{\pi}$ donc $\pi$ est $(H_n, \theta)$-distinguee. Autrement dit, $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ qui est de dimension au plus $1$ (Matringe, Prop 4.3). On en deduit que la restiction de $\beta$ a $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un element de $Hom_{H_n}(\pi, \theta)$.
+Passons a la deuxième partie, comme $\pi = T(\sigma)$, on sait que $\pi \simeq \widetilde{\pi}$ donc $\pi$ est $(H_n, \theta)$-distinguée. Autrement dit, $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ qui est de dimension au plus $1$ (Matringe, Prop 4.3). On en déduit que la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un élément de $Hom_{H_n}(\pi, \theta)$.
 
-Pour finir, le modele de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(N_{2n} \backslash P_{2n}, \psi)$ (Gelfand-Kazhdan). En particulier, il existe une fonction de Whittaker dont la restriction a $A_{n-1}K_n$ est l'indicatrice de $A_{n-1}(\mathcal{O}_F)$, alors $\beta$ est non nulle sur cette fonction.
+Pour finir, le modèle de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(N_{2n} \backslash P_{2n}, \psi)$ (Gelfand-Kazhdan). En particulier, il existe une fonction de Whittaker dont la restriction a $A_{n-1}K_n$ est l'indicatrice de $A_{n-1}(\mathcal{O}_F)$, alors $\beta$ est non nulle sur cette fonction.
 \end{proof}
 
 \begin{proposition}
@@ -219,7 +219,7 @@ D'après l'équation fonctionnelle, on a
 \end{split}
 \end{equation}
 
-D'apres (ref limite spectrale), cette dernière limite est égale à
+D'après (ref limite spectrale), cette dernière limite est égale à
 \begin{equation}
 \int_{Temp(SO(2n+1)/Stab} J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}) c(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma.
 \end{equation}
@@ -251,7 +251,7 @@ où $f = f_1 * f_2^{*}$, on note $f_2^*(g) = \overline{f_2(g^{-1})}$. On pose
 \begin{equation}
 (\varphi_1, \varphi_2)_{Y_n, \pi} = \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta\left(W_{f,\pi}(\xi_p,.)\right) \theta(\xi_p) d\xi_p,
 \end{equation}
-pour tout $\pi \in T(Temp(SO(2n+1)))$. La quantite $(\varphi_1, \varphi_2)_{Y_n, \pi}$ est independante du choix de $f_1,f_2$. Alors on a
+pour tout $\pi \in T(Temp(SO(2n+1)))$. La quantité $(\varphi_1, \varphi_2)_{Y_n, \pi}$ est indépendante du choix de $f_1,f_2$. Alors on a
 \begin{equation}
 (\phi_1, \phi_2)_{L^2(Y_n)} = \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
 \end{equation}
@@ -263,18 +263,18 @@ On a
 (\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{Y_n} \int_{H_n \times H_n} f_1(h_1 y) \overline{f_2(h_2 y)} \theta(h_1)^{-1} \theta(h_2) dh_1 dh_2 dy.
 \end{equation}
 
-L'integrale est absoluement convergente. En effet,
+L'intégrale est absolument convergente. En effet,
 \begin{equation}
 (y,h_1,h_2) \in \mathcal{Y}_n \times H_n \times H_n \mapsto f_1(h_1 y) \overline{f_2(h_2 y)}
 \end{equation}
-est a support compact, ou $\mathcal{Y}_n$ est un systeme de representant de $Y_n$.
-On effectue le changement de variable $h_1 \mapsto h_1h_2$ et on combine les integrales selon $y$ et $h_2$ en une integrale sur $G_{2n}$. Ce qui donne
+est a support compact, ou $\mathcal{Y}_n$ est un système de représentant de $Y_n$.
+On effectue le changement de variable $h_1 \mapsto h_1h_2$ et on combine les intégrales selon $y$ et $h_2$ en une intégrale sur $G_{2n}$. Ce qui donne
 \begin{equation}
 (\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{G_{2n}} \int_{H_n} f_1(h_1 y) \overline{f_2(y)} \theta(h_1)^{-1} dh_1 dy,
 \end{equation}
 qui est bien la relation \ref{psf}.
 
-D'apres [unfolding] et \ref{corolim}, on a
+D'après [unfolding] et \ref{corolim}, on a
 \begin{equation}
 \label{intfin}
 \begin{split}
@@ -284,22 +284,22 @@ D'apres [unfolding] et \ref{corolim}, on a
 \end{equation}
 
 \begin{lemme}
-La fonction $(\xi_p, \sigma) \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est a support compact, l'integrale \ref{intfin} est donc absolument convergente.
+La fonction $(\xi_p, \sigma) \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est a support compact, l'intégrale \ref{intfin} est donc absolument convergente.
 \end{lemme}
 
 \begin{proof}
 La fonction $\xi_p \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est lisse donc a support compact. De plus,
 \end{proof}
 
-On echange les integrales pour obtenir
+On échange les intégrales pour obtenir
 \begin{equation}
 \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))c_\beta(\sigma)d\sigma.
 \end{equation}
 
-Montrons que la quantite, $(\varphi_1, \varphi_2)_{Y_n, \pi}$ est independante du choix de $f_1, f_2$. Commencons par le
+Montrons que la quantité, $(\varphi_1, \varphi_2)_{Y_n, \pi}$ est indépendante du choix de $f_1, f_2$. Commençons par le
 \begin{lemme}
 \label{decbase}
-On note $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$. L'operateur $\pi(f^{\check{}}) : \mathcal{W}(\pi, \psi) \rightarrow \mathcal{W}(\pi, \psi)$ est de rang fini. Notons $\mathcal{B}(\pi, \psi)_f$ une base fini orthonormee de son image. Alors
+On note $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$. L'opérateur $\pi(f^{\check{}}) : \mathcal{W}(\pi, \psi) \rightarrow \mathcal{W}(\pi, \psi)$ est de rang fini. Notons $\mathcal{B}(\pi, \psi)_f$ une base finie orthonormée de son image. Alors
 \begin{equation}
 W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\pi(f_2)W'} \otimes \pi(f_1)W'.
 \end{equation}
@@ -313,9 +313,9 @@ Le lemme \ref{decbase} donne que
 \begin{equation}
 (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\beta(\pi(f_2)W')} \otimes \beta(\pi(f_1)W');
 \end{equation}
-qui est bien independant du choix de $f_1,f_2$ puisque la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est $H_n$ invariante.
+qui est bien indépendant du choix de $f_1,f_2$ puisque la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est $H_n$ invariante.
 
-Pour finir, [beuzart-plessis, prop 4.1.1] nous dit que les formes sesquilineaires $(\varphi_1, \varphi_2) \mapsto (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))c_\beta(\sigma)$ sont automatiquement definies positives. On en deduit que 
+Pour finir, [beuzart-plessis, prop 4.1.1] nous dit que les formes sesquilinéaires $(\varphi_1, \varphi_2) \mapsto (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))c_\beta(\sigma)$ sont automatiquement définies positives. On en déduit que 
 \begin{equation}
 \gamma^*(0, \sigma, Ad, \psi) c(T(\sigma))c_\beta(\sigma) = |\gamma^*(0, \sigma, Ad, \psi)|.
 \end{equation}
