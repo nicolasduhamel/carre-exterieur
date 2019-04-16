@@ -37,6 +37,7 @@ Pour $W \in \mathcal{C}^w(N_{2n} \backslash G_{2n})$, on note
 \end{equation}
 
 \begin{lemme}
+\label{lemmebeta}
 L'intégrale \ref{beta} est absolument convergente. La forme linéaire $W \in \mathcal{C}^w(N_{2n} \backslash G_{2n}) \mapsto \beta(W)$ est continue.
 
 Pour $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$, la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est un élément de $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$. De plus, la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est non nulle.
@@ -77,7 +78,7 @@ pour tout $W \in \mathcal{W}(\pi, \psi)$.
 \end{proposition}
 
 \begin{proof}
-En effet, $\Hom_{H^P_n}(\mathcal{W}(\pi, \psi), \theta)$ est de dimension au plus 1 (Matringe, Prop 4.3). De plus, $\pi$ est le transfert de $\sigma$ donc $\widetilde{\pi} \simeq \pi$. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$ qui vérifie $c_\beta(\widetilde{\pi})c_\beta(\pi) = 1$ donc $c_\beta(\pi)$ est un signe.
+En effet, $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$ est de dimension au plus 1, d'apres la preuve du lemme \ref{lemmebeta}. De plus, $\pi$ est le transfert de $\sigma$ donc $\widetilde{\pi} \simeq \pi$. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$ qui vérifie $c_\beta(\widetilde{\pi})c_\beta(\pi) = 1$ donc $c_\beta(\pi)$ est un signe.
 \end{proof}
 
 \begin{lemme}
@@ -236,9 +237,9 @@ On conclut grâce au lemme \ref{zetabeta}.
 
 On note $Y_n = H_n \backslash G_{2n}$. On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
 \begin{equation}
-\varphi_f(x) = \int_{H_n} f(hx) \theta(h)^{-1} dh,
+\varphi_f(y) = \int_{H_n} f(hy) \theta(h)^{-1} dh,
 \end{equation}
-pour tous $x \in Y_n$. 
+pour tout $y \in Y_n$. 
 
 %Pour $\pi \in Temp(G_{2n})$ et $f_1,f_2 \in \mathcal{S}(G_{2n})$, on pose
 %\begin{equation}
@@ -318,7 +319,7 @@ pour tous $W, W' \in \mathcal{W}(\pi, \psi)$.
 
 L'opérateur $\pi(f^{\vee}) : \mathcal{W}(\pi, \psi) \rightarrow \mathcal{W}(\pi, \psi)$ est de rang fini. Notons $\mathcal{B}(\pi, \psi)_f$ une base finie orthonormée de son image. Alors
 \begin{equation}
-W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f^\vee)\overline{W'} \otimes W'.
+W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\pi(f_2)W'} \otimes \pi(f_1)W'.
 \end{equation}
 \end{lemme}
 
@@ -352,9 +353,9 @@ W_{f, \pi}(g_1, g_2) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{N_{2n}}^* (
 pour tous $g_1, g_2 \in G_{2n}$. La derniere egalite est provient de [beuzart-plessis, Prop 2.14.2] (qui est une consequence de [Lapid-Mao, Lemme 4.4].
 \end{proof}
 
-Le lemme \ref{decbase} donne apres application de $\beta$ la relation
+Le lemme \ref{decbase} donne la relation
 \begin{equation}
-(\varphi_1, \varphi_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\beta(\pi(f_2)W')} \beta(\pi(f_1)W'),
+(\varphi_1, \varphi_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(T(\sigma), \psi)_f} \overline{\beta(T(\sigma)(f_2)W')} \beta(T(\sigma)(f_1)W'),
 \end{equation}
 qui est bien indépendant du choix de $f_1,f_2$ puisque la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est $H_n$-invariante.
 
