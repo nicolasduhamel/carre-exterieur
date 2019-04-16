@@ -64,7 +64,7 @@ pour tout $N \geq 1$. Cette dernière intégrale est convergente pour $N$ suffisam
 
 Passons a la deuxième partie, comme $\pi = T(\sigma)$, on sait que $\pi \simeq \widetilde{\pi}$ donc $\pi$ est $(H_n, \theta)$-distinguée. Autrement dit, $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ qui est de dimension au plus $1$ (Matringe, Prop 4.3). On en déduit que la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un élément de $Hom_{H_n}(\pi, \theta)$.
 
-Pour finir, le modèle de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(N_{2n} \backslash P_{2n}, \psi)$ (Gelfand-Kazhdan). En particulier, il existe une fonction de Whittaker dont la restriction a $A_{n-1}K_n$ est l'indicatrice de $A_{n-1}(\mathcal{O}_F)$, alors $\beta$ est non nulle sur cette fonction.
+Pour finir, le modèle de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(N_{2n} \backslash P_{2n}, \psi)$ (Gelfand-Kazhdan). En particulier, il existe une fonction de Whittaker dont la restriction a $A_{2n-1}K_{2n}$ est l'indicatrice de $A_{2n-1}(\mathcal{O}_F)$, alors $\beta$ est non nulle sur cette fonction.
 \end{proof}
 
 \begin{proposition}
@@ -93,20 +93,22 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$.
 En effet, on a
 \begin{equation}
 \begin{split}
-J(1, \widetilde{W}, \widehat{\phi}) &= \int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+J(1, \widetilde{W}, \widehat{\phi}) = \int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg \\
-&= \int_{P_n \backslash G_n} \int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+\end{pmatrix} \sigma^{-1}\right) \\
+& \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg \\
+= \int_{P_n \backslash G_n} \int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ph & 0 \\
 0 & ph
-\end{pmatrix} \sigma^{-1} \right) \psi(-Tr(X)) dX dp \widehat{\phi}(e_nh) |\det h| dh.
+\end{pmatrix} \sigma^{-1} \right) \\
+&\psi(-Tr(X)) dX dp \widehat{\phi}(e_nh) |\det h| dh.
 \end{split}
 \end{equation}
 
@@ -152,7 +154,7 @@ Pour $W \in \mathcal{S}(Z_{2n} N_{2n} \backslash G_{2n})$ et $\phi \in \mathcal{
 On a
 \begin{equation}
 \begin{split}
-\gamma(ns, 1, \psi) J(s, W, \phi) &= \int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+\gamma(ns, 1, \psi) J(s, W, \phi) &= \int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n} W\left(\sigma\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
@@ -163,27 +165,27 @@ ak & 0 \\
 \end{split}
 \end{equation}
 
-De plus,
+De plus, d'apres la these de Tate, on a
 \begin{equation}
 \gamma(ns, 1, \psi) \int_{Z_n} \phi(e_n zk) |\det z|^s ds = \int_{F^*} \widehat{\phi_k}(x)|x|^{1-ns} dx,
 \end{equation}
-où l'on a posé $\phi_k(x) = \phi(xe_nk)$ pour tous $x \in F$ et $k \in K_n$. Ce qui nous donne
+où l'on a posé $\phi_k(x) = \phi(xe_nk)$ pour tous $x \in F$ et $k \in K_n$. Ce qui nous donne par convergence dominee
 \begin{equation}
 \lim_{s \rightarrow 0+} \gamma(ns, 1, \psi)\int_{Z_n} \phi(e_nzk) |\det z|^s dz = \int_{F} \widehat{\phi_k}(x)dx = \phi(0).
 \end{equation}
 
-On en déduit que
+On en déduit que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est egal a
 \begin{equation}
 \begin{split}
-\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi) &= \phi(0)\int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n}\widetilde{W}\left(\sigma\begin{pmatrix}
+\phi(0)\int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n}
+&W\left(\sigma\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
 \end{pmatrix} \sigma^{-1}\right) \\
-&\psi(-Tr(X)) dX  dk \delta_{B_n}(a)^{-1} da \\
-&= \phi(0)\beta(\widetilde{W}),
+&\psi(-Tr(X)) dX  dk \delta_{B_n}(a)^{-1} da,
 \end{split}
 \end{equation}
 ce qui nous permet de conclure.
@@ -193,7 +195,10 @@ ce qui nous permet de conclure.
 \label{corolim}
 Soit $f \in \mathcal{S}(G_{2n})$ et $g \in G_{2n}$, alors
 \begin{equation}
-\int_{H_n \cap N_{2n} \backslash H_n} W_f(g, \xi) \theta(\xi)^{-1} d\xi = \int_{Temp(SO(2n+1))/Stab} \beta(W_{f,T(\sigma)}(g,.)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma)) c_\beta(\sigma) d\sigma.
+\begin{split}
+\int_{H_n \cap N_{2n} \backslash H_n} W_f(g, \xi) \theta(\xi)^{-1} d\xi = &\int_{Temp(SO(2n+1))/Stab} \beta(W_{f,T(\sigma)}(g,.)) \\
+&\frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma)) c_\beta(\sigma) d\sigma.
+\end{split}
 \end{equation}
 \end{corollaire}
 
@@ -288,7 +293,13 @@ La fonction $(\xi_p, \sigma) \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$
 \end{lemme}
 
 \begin{proof}
-La fonction $\xi_p \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est lisse donc a support compact. De plus,
+La fonction $\xi_p \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est lisse donc a support compact. De plus, d'apres la definition de $f_\pi$, $W_{f,\pi}$ est nul des que $\pi(f)$ l'est.
+
+Soit $K_f$ un sous-groupe ouvert compact tel que $f$ est biinvariant par $K_f$. Alors $\pi(f) \neq 0$, seulement lorsque $\pi$ admet des vecteurs $K_f$-invariant non nuls.
+
+D'apres Harish-Chandra (ref), il n'y a qu'un nombre fini de representations $\tau \in \Pi_2(M)$ modulo $X^*(M) \otimes i\mathbb{R}$ qui admettent des vecteurs $K_f$-invariant non nuls.
+
+Comme toute representation $\pi \in Temp(G_{2n})$ est une induite d'une telle representation $\tau$ pour un bon choix de sous-groupe de Levi $M$, on en deduit le lemme.
 \end{proof}
 
 On échange les intégrales pour obtenir
@@ -299,21 +310,53 @@ On échange les intégrales pour obtenir
 Montrons que la quantité, $(\varphi_1, \varphi_2)_{Y_n, \pi}$ est indépendante du choix de $f_1, f_2$. Commençons par le
 \begin{lemme}
 \label{decbase}
-On note $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$. L'opérateur $\pi(f^{\check{}}) : \mathcal{W}(\pi, \psi) \rightarrow \mathcal{W}(\pi, \psi)$ est de rang fini. Notons $\mathcal{B}(\pi, \psi)_f$ une base finie orthonormée de son image. Alors
+Soit $\pi \in Temp(G_{2n})$. On introduit un produit scalaire sur $\mathcal{W}(\pi, \psi)$ :
 \begin{equation}
-W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\pi(f_2)W'} \otimes \pi(f_1)W'.
+(W, W')^{Wh} = \int_{N_{2n} \backslash P_{2n}} W(p)\overline{W'(p)} dp,
+\end{equation}
+pour tous $W, W' \in \mathcal{W}(\pi, \psi)$.
+
+L'opérateur $\pi(f^{\vee}) : \mathcal{W}(\pi, \psi) \rightarrow \mathcal{W}(\pi, \psi)$ est de rang fini. Notons $\mathcal{B}(\pi, \psi)_f$ une base finie orthonormée de son image. Alors
+\begin{equation}
+W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f^\vee)\overline{W'} \otimes W'.
 \end{equation}
 \end{lemme}
 
 \begin{proof}
+Le produit scalaire $(.,.)^{Wh}$ est $P_{2n}$-invariant, d'apres Bernstein (ref), il est aussi $G_{2n}$-invariant.
 
+Pour $W \in \mathcal{W}(\pi, \psi)$, la decomposition de $\pi(f^{\vee})W$ selon ce produit scalaire est
+\begin{equation}
+\begin{split}
+\pi(f^{\vee})W &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (\pi(f^{\vee})W, W')^{Wh}W' \\
+&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (W, \pi(\overline{f^{\vee}})W')^{Wh}W'.
+\end{split}
+\end{equation}
+
+Cette egalite nous permet grace au produit scalaire $(.,.)^{Wh}$ de faire l'identification
+\begin{equation}
+\begin{split}
+\pi(f^\vee) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \pi(f^\vee)\overline{W'} \\
+&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_1)W' \otimes \overline{\pi(f_2)W'},
+\end{split}
+\end{equation}
+d'apres l'invariance par $G_{2n}$ du produit scalaire.
+
+On en deduit que
+\begin{equation}
+\begin{split}
+W_{f, \pi}(g_1, g_2) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{N_{2n}}^* (\pi(ug_2)\pi(f_1)W', \pi(g_1)\pi(f_2)W')\psi(u)^{-1}du \\
+&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_1)W'(g_2)\overline{\pi(f_2)W'}(g_1),
+\end{split}
+\end{equation}
+pour tous $g_1, g_2 \in G_{2n}$. La derniere egalite est provient de [beuzart-plessis, Prop 2.14.2] (qui est une consequence de [Lapid-Mao, Lemme 4.4].
 \end{proof}
 
-Le lemme \ref{decbase} donne que
+Le lemme \ref{decbase} donne apres application de $\beta$ la relation
 \begin{equation}
-(\varphi_1, \varphi_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\beta(\pi(f_2)W')} \otimes \beta(\pi(f_1)W');
+(\varphi_1, \varphi_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\beta(\pi(f_2)W')} \beta(\pi(f_1)W'),
 \end{equation}
-qui est bien indépendant du choix de $f_1,f_2$ puisque la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est $H_n$ invariante.
+qui est bien indépendant du choix de $f_1,f_2$ puisque la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est $H_n$-invariante.
 
 Pour finir, [beuzart-plessis, prop 4.1.1] nous dit que les formes sesquilinéaires $(\varphi_1, \varphi_2) \mapsto (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))c_\beta(\sigma)$ sont automatiquement définies positives. On en déduit que 
 \begin{equation}
