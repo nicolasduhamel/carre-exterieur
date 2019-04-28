@@ -19,6 +19,7 @@
 \newtheorem{definition}{Définition}[section]
 \newtheorem{theoreme}{Théorème}[section]
 \newtheorem{corollaire}{Corollaire}[section]
+\newtheorem{remarque}{Remarque}[section]
 \newtheorem{lemme}{Lemme}[section]
 
 \DeclareMathOperator{\Hom}{\mathnormal{Hom}}
@@ -1235,7 +1236,7 @@ pour tout $k \in K_n$. On effectue la même majoration que pour la convergence d
 \end{equation}
 pour tout $N \geq 1$. Cette dernière intégrale est convergente pour $N$ suffisamment grand par le même argument que pour la convergence de $J(s,W,\phi)$.
 
-Passons a la deuxième partie, comme $\pi = T(\sigma)$, on sait que $\pi \simeq \widetilde{\pi}$ donc $\pi$ est $(H_n, \theta)$-distinguée. Autrement dit, $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ qui est de dimension au plus $1$ (Matringe, Prop 4.3). On en déduit que la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un élément de $Hom_{H_n}(\pi, \theta)$.
+On montrera que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant lors de la preuve du lemme \ref{zetabeta}.
 
 Pour finir, le modèle de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(N_{2n} \backslash P_{2n}, \psi)$ (Gelfand-Kazhdan). En particulier, il existe une fonction de Whittaker dont la restriction a $A_{2n-1}K_{2n}$ est l'indicatrice de $A_{2n-1}(\mathcal{O}_F)$, alors $\beta$ est non nulle sur cette fonction.
 \end{proof}
@@ -1250,75 +1251,15 @@ pour tout $W \in \mathcal{W}(\pi, \psi)$.
 \end{proposition}
 
 \begin{proof}
-En effet, $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$ est de dimension au plus 1, d'apres la preuve du lemme \ref{lemmebeta}. De plus, $\pi$ est le transfert de $\sigma$ donc $\widetilde{\pi} \simeq \pi$. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$ qui vérifie $c_\beta(\widetilde{\pi})c_\beta(\pi) = 1$ donc $c_\beta(\pi)$ est un signe.
+En effet, $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$ est de dimension au plus 1, d'après Jacquet-Rallis (ref). De plus, $\pi$ est le transfert de $\sigma$ donc $\widetilde{\pi} \simeq \pi$. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$ qui vérifie $c_\beta(\widetilde{\pi})c_\beta(\pi) = 1$ donc $c_\beta(\pi)$ est un signe.
 \end{proof}
 
-\begin{lemme}
-\label{zetabeta}
-Soit $\sigma \in Temp(SO(2n+1))$ et $\pi = T(\sigma)$. Alors
-\begin{equation}
-J(1, \widetilde{W}, \widehat{\phi}) = \phi(0)c_\beta(\sigma)\beta(W),
-\end{equation}
-pour tous $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$.
-\end{lemme}
-
-\begin{proof}
-En effet, on a
-\begin{equation}
-\begin{split}
-J(1, \widetilde{W}, \widehat{\phi}) = \int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
-1 & X \\
-0 & 1
-\end{pmatrix} \begin{pmatrix}
-g & 0 \\
-0 & g
-\end{pmatrix} \sigma^{-1}\right) \\
-& \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg \\
-= \int_{P_n \backslash G_n} \int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
-1 & X \\
-0 & 1
-\end{pmatrix} \begin{pmatrix}
-ph & 0 \\
-0 & ph
-\end{pmatrix} \sigma^{-1} \right) \\
-&\psi(-Tr(X)) dX dp \widehat{\phi}(e_nh) |\det h| dh.
-\end{split}
-\end{equation}
-
-On remarque que l'on a
-\begin{equation}
-\begin{split}
-\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
-1 & X \\
-0 & 1
-\end{pmatrix} \begin{pmatrix}
-ph & 0 \\
-0 & ph
-\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX dp \\
-&= \beta\left(R\left(\sigma \begin{pmatrix}
-h & 0 \\
-0 & h
-\end{pmatrix} \sigma^{-1}\right) \widetilde{W}\right) \\
-&= \beta(\widetilde{W}),
-\end{split}
-\end{equation}
-puisque $\beta$ est $H_n$-invariant. De plus,
-\begin{equation}
-\begin{split}
-\int_{P_n \backslash G_n}  \widehat{\phi}(e_nh) |\det h| dh &= \int_{F^n} \widehat{\phi}(x) dx \\
-&= \phi(0).
-\end{split}
-\end{equation}
-
-On conclut grâce à la proposition \ref{constbeta}.
-\end{proof}
-
-On etend la forme lineaire $f \in \mathcal{S}(G_{2n}) \mapsto \int_{N_{2n}} f(u)\psi(u)^{-1} du$ par continuite en une forme lineaire sur $C^w(G_{2n})$ [beuzart-plessis], que l'on note
+On étend la forme linéaire $f \in \mathcal{S}(G_{2n}) \mapsto \int_{N_{2n}} f(u)\psi(u)^{-1} du$ par continuité en une forme linéaire sur $C^w(G_{2n})$ [beuzart-plessis], que l'on note
 \begin{equation}
 f \in C^w(G_{2n}) \mapsto \int_{N_{2n}}^* f(u)\psi(u)^{-1} du.
 \end{equation}
 
-Pour $f \in C^w(G_{2n})$, on peut ainsi definir $W_f$ par la formule
+Pour $f \in C^w(G_{2n})$, on peut ainsi définir $W_f$ par la formule
 \begin{equation}
 W_f(g_1, g_2) = \int_{N_{2n}}^* f(g_1^{-1}ug_2)\psi(u)^{-1} du,
 \end{equation}
@@ -1349,16 +1290,16 @@ ak & 0 \\
 \end{split}
 \end{equation}
 
-De plus, d'apres la these de Tate, on a
+De plus, d'après la thèse de Tate, on a
 \begin{equation}
 \gamma(ns, 1, \psi) \int_{Z_n} \phi(e_n zk) |\det z|^s ds = \int_{F^*} \widehat{\phi_k}(x)|x|^{1-ns} dx,
 \end{equation}
-où l'on a posé $\phi_k(x) = \phi(xe_nk)$ pour tous $x \in F$ et $k \in K_n$. Ce qui nous donne par convergence dominee
+où l'on a posé $\phi_k(x) = \phi(xe_nk)$ pour tous $x \in F$ et $k \in K_n$. Ce qui nous donne par convergence dominée
 \begin{equation}
 \lim_{s \rightarrow 0+} \gamma(ns, 1, \psi)\int_{Z_n} \phi(e_nzk) |\det z|^s dz = \int_{F} \widehat{\phi_k}(x)dx = \phi(0).
 \end{equation}
 
-On en déduit que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est egal a
+On en déduit que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est égal a
 \begin{equation}
 \begin{split}
 \phi(0)\int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n}
@@ -1408,15 +1349,125 @@ D'après l'équation fonctionnelle, on a
 \end{split}
 \end{equation}
 
-D'après \ref{limitespec}, cette dernière limite est égale à
+La proposition \ref{limitespectrale}, nous permet d'obtenir la relation
 \begin{equation}
-\int_{Temp(SO(2n+1)/Stab} J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}) c(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma.
+\label{relspec}
+\begin{split}
+&\int_{H_n \cap N_{2n} \backslash H_n} W_f(1, \xi) \theta(\xi)^{-1} d\xi =\\
+&\int_{Temp(SO(2n+1)/Stab} J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}) c(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma.
+\end{split}
 \end{equation}
 
-On conclut grâce au lemme \ref{zetabeta}.
+Le membre de gauche étant $(H_n, \theta)$-invariant, on en déduit que le membre de droite l'est aussi. Ce qui signifie que
+\begin{equation}
+\int_{Temp(SO(2n+1)/Stab} J(1, \widetilde{R(\xi)W_{f, T(\sigma)}(1,.)}, \widehat{\phi})-J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}) d\mu(\sigma) = 0,
+\end{equation}
+pour tout $\xi \in H_n$, où $d\mu(\sigma) = c(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma$.
+
+Soit $z \in \mathcal{Z}(G)$ un élément du centre de Bernstein de $G$. En remplaçant $f$ par $zf$, on en déduit que
+\begin{equation}
+\int_{Temp(SO(2n+1)/Stab} z(T(\sigma))(J(1, \widetilde{R(\xi)W_{f, T(\sigma)}(1,.)}, \widehat{\phi})-J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi})) d\mu(\sigma) = 0,
+\end{equation}
+pour tout $\xi \in H_n$.
+
+D'après le lemme de séparation spectrale (ref), on en déduit que
+$J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}))$ est $(H_n, \theta)$-invariant.
+
+\begin{lemme}
+\label{zetabeta}
+Soit $\sigma \in Temp(SO(2n+1))$ et $\pi = T(\sigma)$. Alors
+\begin{equation}
+J(1, \widetilde{W}, \widehat{\phi}) = \phi(0)c_\beta(\sigma)\beta(W),
+\end{equation}
+pour tous $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$.
+\end{lemme}
+
+\begin{proof}
+En effet, on a
+\begin{equation}
+\begin{split}
+J(1, \widetilde{W}, \widehat{\phi}) = \int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma^{-1}\right) \\
+& \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg.
+\end{split}
+\end{equation}
+
+On choisit $f \in \mathcal{S}(G)$ tel que $W_{f,\pi}(1,.) = W$, on en déduit que l'intégrale sur $N_n \backslash G_n$ est $(H_n, \theta)$-invariante. Comme $\widehat{\phi}(e_nh)$ est arbitraire parmi les fonctions invariante à gauche par $G_{n-1}U_{n-1}$, on en déduit que
+\begin{equation}
+\begin{split}
+\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma^{-1}\right) \\
+& \psi(-Tr(X)) dX dg
+\end{split}
+\end{equation}
+est $(H_n, \theta)$-invariant. Autrement dit, $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant, ce qui termine la preuve du lemme \ref{lemmebeta}.
+
+\begin{remarque}
+Cette preuve que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant est quelque peut détournée dû au fait qu'il nous manque un résultat. On conjecture que $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ qui est de dimension au plus $1$. En utilisant le fait que $\pi \simeq \widetilde{\pi}$ donc $\pi$ est $(H_n, \theta)$-distinguée, on a $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$. On en déduirait alors que la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un élément de $Hom_{H_n}(\pi, \theta)$. Ce qui simplifierait légèrement la preuve à condition de prouver le résultat de dimension $1$.
+\end{remarque}
+
+Finissons la preuve du lemme, on remarque que l'on a
+\begin{equation}
+\begin{split}
+&\int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} \widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg \\
+&= \int_{P_n \backslash G_n} \int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} \widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ph & 0 \\
+0 & ph
+\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_nh) |\det h| dh dp.
+\end{split}
+\end{equation}
+
+De plus,
+\begin{equation}
+\begin{split}
+\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ph & 0 \\
+0 & ph
+\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX dp \\
+&= \beta\left(R\left(\sigma \begin{pmatrix}
+h & 0 \\
+0 & h
+\end{pmatrix} \sigma^{-1}\right) \widetilde{W}\right) \\
+&= \beta(\widetilde{W}),
+\end{split}
+\end{equation}
+puisque $\beta$ est $(H_n, \theta)$-invariant. De plus,
+\begin{equation}
+\begin{split}
+\int_{P_n \backslash G_n}  \widehat{\phi}(e_nh) |\det h| dh &= \int_{F^n} \widehat{\phi}(x) dx \\
+&= \phi(0).
+\end{split}
+\end{equation}
+
+On conclut grâce à la proposition \ref{constbeta}.
 \end{proof}
 
-\section{Formule de Plancherel}
+Pour finir la preuve du corollaire, il suffit d'utiliser le lemme \ref{zetabeta} dans la relation \ref{relspec}.
+\end{proof}
+
+\subsection{Formule de Plancherel}
 
 On note $Y_n = H_n \backslash G_{2n}$. On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
 \begin{equation}
