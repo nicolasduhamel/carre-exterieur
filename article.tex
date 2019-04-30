@@ -46,7 +46,7 @@ Soit $\pi$ une représentation automorphe cuspidale de $GL_{2n}$ et $\varphi \in
 \mathcal{P}_{H_n, \theta}(\phi) = \int_{[Z_n \backslash H_n]} \varphi(h) \theta(h) dh.
 \end{equation}
 
-La factorisation de cette période globale comme produit de périodes locales va nous permettre d'obtenir une formule de Plancherel explicite sur $L^2(H_n \backslash G_n, \theta)$. Plus précisément, pour $\Phi$ une fonction de Schwartz globale et $W_\varphi$ la fonction de Whittaker associée à $\varphi$, on introduit dans la suite des fonctions zêta globale $J(s, W_\varphi, \Phi)$, qui sont reliées à la période globale par la relation
+La factorisation de cette période globale comme produit de périodes locales va nous permettre d'obtenir une formule de Plancherel explicite sur $L^2(H_n \backslash G_{2n}, \theta)$. Plus précisément, pour $\Phi$ une fonction de Schwartz globale et $W_\varphi$ la fonction de Whittaker associée à $\varphi$, on introduit dans la suite des fonctions zêta globale $J(s, W_\varphi, \Phi)$, qui sont reliées à la période globale par la relation
 \begin{equation}
 Res_{s=1} J(s, W_\varphi, \Phi) = \mathcal{P}_{H_n, \theta}(\varphi) \widehat{\Phi}(0).
 \end{equation}
@@ -57,6 +57,7 @@ J(s, W_\varphi, \Phi) = L^S(s, \pi, \Lambda^2) \prod_{v \in S} J(s, W_v, \Phi_v)
 \end{equation}
 où $S$ est un ensemble de places suffisamment grand. Le quotient $\frac{J(1, W_v, \Phi_v)}{\widehat{\Phi}_v(0)}$, que l'on désignera par $\beta$ dans la section \ref{plancherel}, est la période locale qui nous servira à prouver le théorème \ref{thPlanch}.
 
+On commence dans la section \ref{gamma} par prouver une relation sur les facteurs $\gamma$ du carré extérieur qui nous sera utile. Les sections \ref{seclimite} et \ref{formInv} sont des préliminaires pour le théorème \ref{thPlanch}. On fini dans la section \ref{plancherel} par prouver une formule de Plancherel explicite sur $L^2(H_n \backslash G_{2n}, \theta)$ et une formule de Plancherel abstraite sur $L^2(G_n \times G_n \backslash G_{2n})$.
 \subsection{Notations}
 On note $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
 1_{n-1} & x \\
@@ -66,6 +67,7 @@ On note $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le s
 Soit $G$ un groupe réductif connexe (dans la suite $G$ sera $G_{2n}$, $SO_{2n+1}$ ou un quotient, sous-groupe de Levi de ces groupes). On note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G$. On note $Z_G$ le centre de $G$ et $A_G$ le tore déployé maximal dans $Z_G$.
 
 \section{Facteurs $\gamma$ du carré extérieur}
+\label{gamma}
 Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini une fonction L du carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notées $J(s, W, \phi)$, où $W \in \mathcal{W}(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F^n)$ est une fonction de Schwartz. Matringe a prouvé que, lorsque $F$ est non archimédien, ces intégrales $J(s,W,\phi)$ vérifient une équation fonctionnelle, ce qui permet de définir des facteurs $\gamma$, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$. 
 
 On montre que l'on a encore une équation fonctionnelle lorsque $F$ est archimédien et que les facteurs $\gamma$ sont égaux à une constante de module 1 prés à ceux définis par Shahidi, que l'on note $\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$. Plus exactement, il existe une constante $c(\pi)$ de module 1, telle que
@@ -483,6 +485,7 @@ k & 0 \\
  
  \section{Limite spectrale}
  
+ \label{seclimite}
  Dans cette partie $F$ est un corps $p$-adique. On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$. On équipe alors $A_M$ par la mesure $(d^\times x)^{\wedge dim(A)}$ où $d^\times x = \frac{dx}{|x|_F}$ est la mesure de Haar sur $F^\times$.
 
 Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
@@ -748,7 +751,7 @@ Dans l'expression \ref{finalgauche}, le facteur $\frac{log(q_F)}{2\pi}$ apparait
 \end{proof}
 
 \section{Une formule d'inversion de Fourier}
-
+\label{formInv}
 On note $H_n$ l'ensemble des matrices de la forme $\sigma \begin{pmatrix}
 1 & X \\
 0 & 1
