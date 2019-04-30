@@ -1288,7 +1288,7 @@ pour tout $W \in \mathcal{W}(\pi, \psi)$.
 \end{proposition}
 
 \begin{proof}
-En effet, $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$ est de dimension au plus 1, d'après Jacquet-Rallis (ref). De plus, $\pi$ est le transfert de $\sigma$ donc $\widetilde{\pi} \simeq \pi$. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$ qui vérifie $c_\beta(\widetilde{\pi})c_\beta(\pi) = 1$ donc $c_\beta(\pi)$ est un signe.
+En effet, $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$ est de dimension au plus 1, d'après l'unicité du modèle de Shalika \cite{jacquet-rallis}. De plus, $\pi$ est le transfert de $\sigma$ donc $\widetilde{\pi} \simeq \pi$. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$ qui vérifie $c_\beta(\widetilde{\pi})c_\beta(\pi) = 1$ donc $c_\beta(\pi)$ est un signe.
 \end{proof}
 
 On étend la forme linéaire $f \in \mathcal{S}(G_{2n}) \mapsto \int_{N_{2n}} f(u)\psi(u)^{-1} du$ par continuité en une forme linéaire sur $C^w(G_{2n})$ [beuzart-plessis], que l'on note
@@ -1401,14 +1401,8 @@ Le membre de gauche étant $(H_n, \theta)$-invariant, on en déduit que le membr
 \end{equation}
 pour tout $\xi \in H_n$, où $d\mu(\sigma) = c(T(\sigma)) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma$.
 
-Soit $z \in \mathcal{Z}(G)$ un élément du centre de Bernstein de $G$. En remplaçant $f$ par $zf$, on en déduit que
-\begin{equation}
-\int_{Temp(SO(2n+1)/Stab} z(T(\sigma))(J(1, \widetilde{R(\xi)W_{f, T(\sigma)}(1,.)}, \widehat{\phi})-J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi})) d\mu(\sigma) = 0,
-\end{equation}
-pour tout $\xi \in H_n$.
-
-D'après le lemme de séparation spectrale (ref), on en déduit que
-$J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}))$ est $(H_n, \theta)$-invariant.
+D'après le lemme de séparation spectrale \cite[Lemme 5.7.2]{beuzart-plessis}, on en déduit que
+$J(1, \widetilde{R(\xi)W_{f, T(\sigma)}(1,.)}, \widehat{\phi} = J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}))$ pour tout $\xi \in H_n$ et donc que $J(1, \widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi}))$ est $(H_n, \theta)$-invariant.
 
 \begin{lemme}
 \label{zetabeta}
@@ -1648,7 +1642,7 @@ L^2(G_n \times G_n \backslash G_{2n}) \simeq L^2(H_n \backslash G_{2n}, \theta).
 \begin{theoreme}
 On a la décomposition de Plancherel abstraite suivante
 \begin{equation}
-L^2(G_n \times G_n \backslash G_{2n}) = \int^{\otimes}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+L^2(G_n \times G_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
 \end{equation}
 \end{theoreme}
 
