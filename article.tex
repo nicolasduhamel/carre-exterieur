@@ -451,7 +451,7 @@ k & 0 \\
  
  Dans cette partie $F$ est un corps $p$-adique. Soit $G$ un groupe réductif connexe (dans la suite $G$ sera $G_{2n}$, $SO_{2n+1}$ ou un quotient, sous-groupe de Levi de ces groupes). On note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G$. On note $Z_G$ le centre de $G$ et $A_G$ le tore déployé maximal dans $Z_G$. On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$. On équipe alors $A_M$ par la mesure $(d^\times x)^{\wedge dim(A)}$ où $d^\times x = \frac{dx}{|x|_F}$ est la mesure de Haar sur $F^\times$.
 
-Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ défini par
+Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi},
 \end{equation}
@@ -528,7 +528,7 @@ M = \left( \prod_{i=1}^t G_{d_i}^{m_i+n_i} \times \prod_{j=1}^u G_{e_j}^{p_j} \t
 le sous-groupe de Levi de $PG_{2n}$ qui apparait dans la définition de $\pi$. Alors $\pi = Ind_M^{PG_{2n}}(\tau)$ pour une certaine représentation $\tau$ de $M$.
 
 On note $X^*(M)$ le groupe des caractères algébriques de $M$, alors $X^*(M) \otimes \mathbb{R}$ est en correspondance avec l'espace de ces exposants 
-$\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ qui est l'hyperplan définit par la condition que la somme des coordonnées est nulle.
+$\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ qui est l'hyperplan défini par la condition que la somme des coordonnées est nulle.
 
 On équipe $(i\mathbb{R})_M$ du produit des mesures de Lebesgue sur $i\mathbb{R}$ et $\mathcal{A}$ de la mesure de Haar telle que la mesure quotient de $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$ soit la mesure de Lebesgue. L'isomorphisme local $\chi \otimes \alpha \in X^*(M) \otimes \mathbb{R}/(\frac{2i\pi}{log(q_F)})\mathbb{Z} \mapsto |\chi|^\alpha_F \in \widehat{A_M}$ préserve localement les mesures, où l'on équipe $\widehat{A_M}$ de la mesure $\left(\frac{2\pi}{log(q_F)}\right)^{dim(A_M)}d\chi$.
 
@@ -647,8 +647,7 @@ On équipe $\mathcal{A}'$ de la mesure Lebesgue provenant de l'isomorphisme
 
 Supposons tout d'abord que $\pi$ n'est pas de la forme $T(\sigma)$ pour un certain $\sigma \in Temp(SO(2n+1))/Stab$. D'après la caractérisation \ref{caracTransf}, il existe $1 \leq i \leq r$ tel que $m_i \neq n_i$ ou $p_j$ est impair (on vérifie aisément que les autres cas se mettent sous la forme qui apparait dans \ref{caracTransf}). Alors en prenant $U$ suffisamment petit, on peut supposer que $U$ ne rencontre pas l'image de l'application de transfert $T$. Autrement dit, le terme de droite de la proposition est nul; d'après \ref{beuzart-plessis}, le terme de gauche l'est aussi.
 
-Supposons maintenant qu'il existe $\sigma \in Temp(SO(2n+1))/Stab$ tel que $\pi = T(\sigma)$. Alors $m_i = n_i$ pour tout $1 \leq i \leq t$ et les $p_j$ sont pairs. De plus,
-peut écrire
+Supposons maintenant qu'il existe $\sigma \in Temp(SO(2n+1))/Stab$ tel que $\pi = T(\sigma)$. Alors $m_i = n_i$ pour tout $1 \leq i \leq t$ et les $p_j$ sont pairs. De plus, on peut écrire
 \begin{equation}
 \sigma = \left( \bigtimes_{i=1}^t \tau_i^{\times n_i} \times \bigtimes_{j=1}^u \mu_j^{\times \frac{p_j}{2}} \times \bigtimes_{k=1}^v \nu_k^{\times \lfloor \frac{q_k}{2}\rfloor} \right) \times \sigma_0,
 \end{equation}
@@ -758,7 +757,7 @@ $\sigma \begin{pmatrix}
 \end{pmatrix}\begin{pmatrix}
 h & 0 \\
 0 & h
-\end{pmatrix} \sigma^{-1}$ où $Y$ est une matrice triangulaire inférieure stricte de taille $n$ et $h \in \overline{B}_n$ le sous-groupe des matrices triangulaire inférieure inversible, s'identifie à un ouvert dense du quotient $H_n \cap N_{2n} \backslash{H_n}$. On injecte $\Omega_{n-1}$ dans $\Omega_n$, en rajoutant des 0 sur la dernière ligne et colonne de $Y$ et voyant $h$ comme un élément de $\overline{B}_n$. On note $\widetilde{\Omega}_n$ l'ensemble des matrices de la
+\end{pmatrix} \sigma^{-1}$ où $Y$ est une matrice triangulaire inférieure stricte de taille $n$ et $h \in \overline{B}_n$ le sous-groupe des matrices triangulaires inférieures inversible, s'identifie à un ouvert dense du quotient $H_n \cap N_{2n} \backslash{H_n}$. On injecte $\Omega_{n-1}$ dans $\Omega_n$, en rajoutant des 0 sur la dernière ligne et colonne de $Y$ et voyant $h$ comme un élément de $\overline{B}_n$. On note $\widetilde{\Omega}_n$ l'ensemble des matrices de la
 forme $\sigma \begin{pmatrix}
 1 & \widetilde{Y} \\
 0 & 1
@@ -780,7 +779,7 @@ On utilise ces décompositions pour écrire le membre de droite de la propositio
 \begin{equation}
 \int_{\widetilde{\Omega}_{n-1}} \int_{\Omega^P_{n-1}} \int_{\widetilde{\Omega}_n} \int_{\Omega_{n-1}} W_f(\xi_p'\widetilde{\xi}_p, \xi'\widetilde{\xi}) |\det \xi_p'\xi'|^{-1} d\xi' d\widetilde{\xi} d\xi_p' d\widetilde{\xi}_p,
 \end{equation}
-où les mesures $d\xi'$, $d\widetilde{\xi}$, $d\xi_p'$ et $d\widetilde{\xi}_p$ sont respectivement des mesures de Haar à droite sur $\Omega_{n-1}$, $\widetilde{\Omega}_n$,  $\Omega^P_{n-1}$ et $\widetilde{\Omega}_{n-1}$. On a choisi les représentants des matrices $Y$ et $\widetilde{Y}$ de sorte à ce que le caractère $\theta$ soit trivial.
+où les mesures $d\xi'$, $d\widetilde{\xi}$, $d\xi_p'$ et $d\widetilde{\xi}_p$ sont respectivement des mesures de Haar à droite sur $\Omega_{n-1}$, $\widetilde{\Omega}_n$,  $\Omega^P_{n-1}$ et $\widetilde{\Omega}_{n-1}$. On a choisi les représentants des matrices $Y$ et $\widetilde{Y}$ de sorte que le caractère $\theta$ soit trivial.
 
 On fixe $\widetilde{\xi}_p \in \widetilde{\Omega}_{n-1}$ et $\widetilde{\xi} \in \widetilde{\Omega}_n$. On pose $f' = L(\widetilde{\xi}_p)R(\widetilde{\xi})f$, on a alors
  \begin{equation}
@@ -1201,7 +1200,7 @@ Cette dernière intégrale est majorée (à constante près) par le maximum du p
  \end{proof}
  
  
- \section{Formule de Plancherel sur $H_n \backslash G_{2n}$}
+ \section{Formules de Plancherel}
  
  Pour $W \in \mathcal{C}^w(N_{2n} \backslash G_{2n})$, on note
 \begin{equation}
@@ -1467,7 +1466,7 @@ On conclut grâce à la proposition \ref{constbeta}.
 Pour finir la preuve du corollaire, il suffit d'utiliser le lemme \ref{zetabeta} dans la relation \ref{relspec}.
 \end{proof}
 
-\subsection{Formule de Plancherel}
+\subsection{Formule de Plancherel explicite sur $H_n \backslash G_{2n}$}
 
 On note $Y_n = H_n \backslash G_{2n}$. On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
 \begin{equation}
@@ -1476,6 +1475,7 @@ On note $Y_n = H_n \backslash G_{2n}$. On dispose d'une surjection $f \in \mathc
 pour tout $y \in Y_n$. 
 
 \begin{theoreme}
+\label{thPlanch}
 Soit $\varphi_1, \varphi_2 \in \mathcal{S}(Y_n)$, il existe $f_1, f_2 \in \mathcal{S}(G_{2n})$ tel que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On a
 \begin{equation}
 \label{psf}
@@ -1501,7 +1501,7 @@ L'intégrale est absolument convergente. En effet,
 \begin{equation}
 (y,h_1,h_2) \in \mathcal{Y}_n \times H_n \times H_n \mapsto f_1(h_1 y) \overline{f_2(h_2 y)}
 \end{equation}
-est a support compact, ou $\mathcal{Y}_n$ est un système de représentant de $Y_n$.
+est à support compact, ou $\mathcal{Y}_n$ est un système de représentant de $Y_n$.
 On effectue le changement de variable $h_1 \mapsto h_1h_2$ et on combine les intégrales selon $y$ et $h_2$ en une intégrale sur $G_{2n}$. Ce qui donne
 \begin{equation}
 (\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{G_{2n}} \int_{H_n} f_1(h_1 y) \overline{f_2(y)} \theta(h_1)^{-1} dh_1 dy,
@@ -1518,17 +1518,17 @@ D'après \ref{unfolding} et \ref{corolim}, on a
 \end{equation}
 
 \begin{lemme}
-La fonction $(\xi_p, \sigma) \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est a support compact, l'intégrale \ref{intfin} est donc absolument convergente.
+La fonction $(\xi_p, \sigma) \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est à support compact, l'intégrale \ref{intfin} est donc absolument convergente.
 \end{lemme}
 
 \begin{proof}
-La fonction $\xi_p \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est lisse donc a support compact. De plus, d'apres la definition de $f_\pi$, $W_{f,\pi}$ est nul des que $\pi(f)$ l'est.
+La fonction $\xi_p \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est lisse donc à support compact. De plus, d'après la définition de $f_\pi$, $W_{f,\pi}$ est nul des que $\pi(f)$ l'est.
 
 Soit $K_f$ un sous-groupe ouvert compact tel que $f$ est biinvariant par $K_f$. Alors $\pi(f) \neq 0$, seulement lorsque $\pi$ admet des vecteurs $K_f$-invariant non nuls.
 
-D'apres Harish-Chandra (ref), il n'y a qu'un nombre fini de representations $\tau \in \Pi_2(M)$ modulo $X^*(M) \otimes i\mathbb{R}$ qui admettent des vecteurs $K_f$-invariant non nuls.
+D'après Harish-Chandra (ref), il n'y a qu'un nombre fini de représentations $\tau \in \Pi_2(M)$ modulo $X^*(M) \otimes i\mathbb{R}$ qui admettent des vecteurs $K_f$-invariant non nuls.
 
-Comme toute representation $\pi \in Temp(G_{2n})$ est une induite d'une telle representation $\tau$ pour un bon choix de sous-groupe de Levi $M$, on en deduit le lemme.
+Comme toute représentation $\pi \in Temp(G_{2n})$ est une induite d'une telle représentation $\tau$ pour un bon choix de sous-groupe de Levi $M$, on en déduit le lemme.
 \end{proof}
 
 On échange les intégrales pour obtenir
@@ -1552,9 +1552,9 @@ W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\pi(f_2)W'} \otimes
 \end{lemme}
 
 \begin{proof}
-Le produit scalaire $(.,.)^{Wh}$ est $P_{2n}$-invariant, d'apres Bernstein (ref), il est aussi $G_{2n}$-invariant.
+Le produit scalaire $(.,.)^{Wh}$ est $P_{2n}$-invariant, d'après Bernstein (ref), il est aussi $G_{2n}$-invariant.
 
-Pour $W \in \mathcal{W}(\pi, \psi)$, la decomposition de $\pi(f^{\vee})W$ selon ce produit scalaire est
+Pour $W \in \mathcal{W}(\pi, \psi)$, la décomposition de $\pi(f^{\vee})W$ selon ce produit scalaire est
 \begin{equation}
 \begin{split}
 \pi(f^{\vee})W &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (\pi(f^{\vee})W, W')^{Wh}W' \\
@@ -1562,23 +1562,23 @@ Pour $W \in \mathcal{W}(\pi, \psi)$, la decomposition de $\pi(f^{\vee})W$ selon 
 \end{split}
 \end{equation}
 
-Cette egalite nous permet grace au produit scalaire $(.,.)^{Wh}$ de faire l'identification
+Cette égalité nous permet grâce au produit scalaire $(.,.)^{Wh}$ de faire l'identification
 \begin{equation}
 \begin{split}
 \pi(f^\vee) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \pi(f^\vee)\overline{W'} \\
 &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_1)W' \otimes \overline{\pi(f_2)W'},
 \end{split}
 \end{equation}
-d'apres l'invariance par $G_{2n}$ du produit scalaire.
+d'après l'invariance par $G_{2n}$ du produit scalaire.
 
-On en deduit que
+On en déduit que
 \begin{equation}
 \begin{split}
 W_{f, \pi}(g_1, g_2) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{N_{2n}}^* (\pi(ug_2)\pi(f_1)W', \pi(g_1)\pi(f_2)W')\psi(u)^{-1}du \\
 &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_1)W'(g_2)\overline{\pi(f_2)W'}(g_1),
 \end{split}
 \end{equation}
-pour tous $g_1, g_2 \in G_{2n}$. La derniere egalite est provient de \cite[Prop 2.14.2]{beuzart-plessis} (qui est une consequence de \cite[Lemme 4.4]{lapid-mao}).
+pour tous $g_1, g_2 \in G_{2n}$. La dernière égalité provient de \cite[Prop 2.14.2]{beuzart-plessis} (qui est une conséquence de \cite[Lemme 4.4]{lapid-mao}).
 \end{proof}
 
 Le lemme \ref{decbase} donne la relation
@@ -1591,6 +1591,31 @@ Pour finir, \cite[prop 4.1.1]{beuzart-plessis} nous dit que les formes sesquilin
 \begin{equation}
 \gamma^*(0, \sigma, Ad, \psi) c(T(\sigma))c_\beta(\sigma) = |\gamma^*(0, \sigma, Ad, \psi)|.
 \end{equation}
+\end{proof}
+
+\subsection{Formule de Plancherel abstraite sur $G_n \times G_n \backslash G_{2n}$}
+
+\begin{lemme}
+\label{lemmeiso}
+On dispose d'un isomorphisme d'espace de Hilbert
+\begin{equation}
+L^2(G_n \times G_n \backslash G_{2n}) \simeq L^2(H_n \backslash G_{2n}, \theta).
+\end{equation}
+\end{lemme}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{theoreme}
+On a la décomposition de Plancherel abstraite suivante
+\begin{equation}
+L^2(G_n \times G_n \backslash G_{2n}) = \int^{\otimes}_{Temp(SO(2n+1))/Stab} T(\sigma) d\sigma.
+\end{equation}
+\end{theoreme}
+
+\begin{proof}
+C'est une conséquence du lemme \ref{lemmeiso} et de la décomposition de Planchrel déduite du théorème \ref{thPlanch}.
 \end{proof}
 
  \bibliographystyle{siam}
