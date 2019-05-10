@@ -1636,18 +1636,133 @@ L^2(G_n \times G_n \backslash G_{2n}) \simeq L^2(H_n \backslash G_{2n}, \theta).
 \end{lemme}
 
 \begin{proof}
+On considère l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$, où $\widetilde{f}$ est définie par
+\begin{equation}
+\widetilde{f}(g) = \int_{G_n} f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1_n
+\end{pmatrix}g \sigma^{-1} \right) d\gamma
+\end{equation}
+pour tout $g \in G_{2n}$.
 
+Commençons par montrer que l'application est bien définie. En effet, pour $g' \in G_n$ et $x \in M_n$, on a $\begin{pmatrix}
+g' & X \\
+0 & g'
+\end{pmatrix}\begin{pmatrix}
+\gamma & 0 \\
+0 & 1_n
+\end{pmatrix} = \begin{pmatrix}
+g' \gamma & X\gamma \\
+0 & g'
+\end{pmatrix}$,
+on en déduit que $f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1_n
+\end{pmatrix}g \sigma^{-1} \right)$ est nul sauf si $\begin{pmatrix}
+g' \gamma & X\gamma \\
+0 & g'
+\end{pmatrix}$ est dans un compact pour un certain $g'$, autrement dit, si $\gamma$ est dans un compact. L'intégrale est donc absoluement convergente. De plus,
+pour tous $g_1, g_2 \in G_n$ et $g \in G_{2n}$, on a
+\begin{equation}
+\begin{split}
+\widetilde{f}\left( \begin{pmatrix}
+g_1 & 0 \\
+0 & g_2
+\end{pmatrix}g \right) &= \int_{G_n} f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1_n
+\end{pmatrix}\begin{pmatrix}
+g_1 & 0 \\
+0 & g_2
+\end{pmatrix}g \sigma^{-1} \right) d\gamma \\
+&=_{\gamma \mapsto g_2 \gamma g_1^{-1}} \int_{G_n} f\left( \sigma \begin{pmatrix}
+g_2 & 0 \\
+0 & g_2
+\end{pmatrix}\begin{pmatrix}
+\gamma & 0 \\
+0 & 1_n
+\end{pmatrix}g \sigma^{-1} \right) d\gamma \\
+&= \int_{G_n} f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1_n
+\end{pmatrix}g \sigma^{-1} \right) d\gamma \\
+&= \widetilde{f}(g).
+\end{split}
+\end{equation}
+
+Pour finir, montrons que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$. Grâce à la décomposition d'Iwasawa, écrivons $g$ sous la forme $\begin{pmatrix}
+g_2 & x \\
+0 & g_2
+\end{pmatrix}k$ avec $g_1, g_2 \in G_n$, $x \in M_n$ et $k \in K$. Alors $\widetilde{f}(g) = \widetilde{f}\left( \begin{pmatrix}
+1 & x \\
+0 & 1
+\end{pmatrix}k \right)$, on a alors
+\begin{equation}
+\begin{split}
+\widetilde{f}(g) &= \int_{G_n} f\left( \sigma \begin{pmatrix}
+1 & \gamma x \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+\gamma & 0 \\
+0 & 1
+\end{pmatrix} k \sigma^{-1} \right) d\gamma \\
+&= \int_{G_n} f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1
+\end{pmatrix} k \sigma^{-1} \right) \psi(Tr(\gamma x))d\gamma
+\end{split}
+\end{equation}
+Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact, à savoir la fonction $\phi_k$ définie par $\phi_k(y) = f\left( \sigma \begin{pmatrix}
+y & 0 \\
+0 & 1
+\end{pmatrix} k \sigma^{-1} \right)|\det y|^{-n}$ si $y \in G_n$ et $0$ sinon. Le facteur $|\det y|^{-n}$ provient de la transformation de la mesure multiplicative $d\gamma$ en une mesure additive. On en déduit que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$.
+Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ est bien définie.
+
+Cette application est linéaire et injective. En effet, si $\widetilde{f} = 0$, alors $\phi_k = 0$ pour tout $k \in K$, donc $f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1
+\end{pmatrix} k \sigma^{-1} \right)$ pour tout $\gamma \in G_n$ et $k \in K$. On en déduit que $f = 0$ car elle est $(H_n, \theta)$-invariante.
+
+Pour finir, montrons qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = ||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$. Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ s'étend en un isomorphisme d'espace de Hilbert.
+
+En effet,
+\begin{equation}
+\begin{split}
+||\widetilde{f}||_{L^2(H_n \backslash G_{2n}, \theta)} &= \int_{M_n \times K} |\widetilde{f}\left( \begin{pmatrix}
+1 & x \\
+0 & 1
+\end{pmatrix} k \right)|^2 dx dk \\
+&= \int_{M_n \times K} |\int_{G_n} f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1
+\end{pmatrix} k \sigma^{-1} \right) \psi(Tr(\gamma x) d\gamma|^2 dx dk \\
+&= \int_{M_n \times K} |\widehat{\phi}_k(x)|^2 dx dk.
+\end{split}
+\end{equation}
+
+La transformé de Fourier conserve la norme $L^2$ avec un choix de constante appropriée, on en déduit qu'il existe une constante $c' > 0$ telle que
+\begin{equation}
+\begin{split}
+||\widetilde{f}||_{L^2(H_n \backslash G_{2n}, \theta)} &= c' \int_{M_n \times K} |\phi_k(x)|^2 dx dk \\
+&= c' \int_{K} \int_{G_n} |f\left( \sigma \begin{pmatrix}
+\gamma & 0 \\
+0 & 1
+\end{pmatrix} k \sigma^{-1} \right)|^2 \frac{d\gamma}{|\det \gamma|^n} dk.
+\end{split}
+\end{equation}
+On met l'accent sur le fait que l'on a modifié la mesure additive sur $M_n$ restreinte à $G_n$ en une mesure multiplicative sur $G_n$. La mesure $\frac{d\gamma}{|\det \gamma|^n} dk$ est une mesure de Haar sur $G_n K \simeq H_n \backslash G_{2n}$. On en déduit bien qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = ||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$.
 \end{proof}
 
+Cet isomorphisme d'espace $L^2$ nous permet de faire le lien entre les formules de Plancherel sur  $G_n \times G_n \backslash G_{2n}$ et sur $H_n \backslash G_n$. En effet, on dispose du
 \begin{theoreme}
-On a la décomposition de Plancherel abstraite suivante
+Une décomposition de Plancherel abstraite sur $L^2(G_n \times G_n \backslash G_{2n})$ est obtenue par la relation
 \begin{equation}
 L^2(G_n \times G_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
 \end{equation}
 \end{theoreme}
 
 \begin{proof}
-C'est une conséquence du lemme \ref{lemmeiso} et de la décomposition de Planchrel déduite du théorème \ref{thPlanch}.
+C'est une conséquence du lemme \ref{lemmeiso} et de la décomposition de Planchrel abstraite déduite du théorème \ref{thPlanch}.
 \end{proof}
 
  \bibliographystyle{siam}
