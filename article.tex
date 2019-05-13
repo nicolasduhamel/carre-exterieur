@@ -1,6 +1,6 @@
 \documentclass{amsart}
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{bbm}
@@ -39,7 +39,11 @@ On note $H_n$ l'ensemble des matrices de la forme $\sigma \begin{pmatrix}
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}$ avec $X \in M_n$ et $g \in G_n$. Soit $\theta$ le caractère sur $H_n$ défini par $\psi(Tr(X))$.
+\end{pmatrix} \sigma^{-1}$ avec $X \in M_n$ et $g \in G_n$. L'élément $\sigma$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+    1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
+    1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
+  \end{smallmatrix}\bigr).$
+Soit $\theta$ le caractère sur $H_n$ défini par $\psi(Tr(X))$.
 
 Soit $\pi$ une représentation automorphe cuspidale de $GL_{2n}$ et $\varphi \in \pi$. On introduit la période globale
 \begin{equation}
@@ -58,6 +62,22 @@ J(s, W_\varphi, \Phi) = L^S(s, \pi, \Lambda^2) \prod_{v \in S} J(s, W_v, \Phi_v)
 où $S$ est un ensemble de places suffisamment grand. Le quotient $\frac{J(1, W_v, \Phi_v)}{\widehat{\Phi}_v(0)}$, que l'on désignera par $\beta$ dans la section \ref{plancherel}, est la période locale qui nous servira à prouver le théorème \ref{thPlanch}.
 
 On commence dans la section \ref{gamma} par prouver une relation sur les facteurs $\gamma$ du carré extérieur qui nous sera utile. Les sections \ref{seclimite} et \ref{formInv} sont des préliminaires pour le théorème \ref{thPlanch}. On fini dans la section \ref{plancherel} par prouver une formule de Plancherel explicite sur $L^2(H_n \backslash G_{2n}, \theta)$ et une formule de Plancherel abstraite sur $L^2(G_n \times G_n \backslash G_{2n})$.
+
+\begin{theoreme}
+Soit $\varphi_1, \varphi_2 \in \mathcal{S}(H_n \backslash G_{2n}, \theta)$. On a l'égalité
+\begin{equation}
+(\phi_1, \phi_2)_{L^2(H_n \backslash G_{2n})} = \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{H_n \backslash G_{2n}, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma,
+\end{equation}
+où $T : Temp(SO(2n+1))/Stab \rightarrow Temp(G_{2n})$ est l'application de transfert, $(\varphi_1, \varphi_2)_{H_n \backslash G_{2n}, T(\sigma)}$ est défini dans le théorème \ref{thPlanch} à partir de la forme linéaire $\beta$.
+\end{theoreme}
+
+\begin{theoreme}
+Une décomposition de Plancherel abstraite sur $L^2(G_n \times G_n \backslash G_{2n})$ est obtenue par la relation
+\begin{equation}
+L^2(G_n \times G_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+\end{equation}
+\end{theoreme}
+
 \subsection{Notations}
 On note $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
 1_{n-1} & x \\
@@ -1508,7 +1528,7 @@ pour tout $y \in Y_n$.
 
 \begin{theoreme}
 \label{thPlanch}
-Soit $\varphi_1, \varphi_2 \in \mathcal{S}(Y_n)$, il existe $f_1, f_2 \in \mathcal{S}(G_{2n})$ tel que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On a
+Soit $\varphi_1, \varphi_2 \in \mathcal{S}(Y_n, \theta)$, il existe $f_1, f_2 \in \mathcal{S}(G_{2n})$ tel que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On a
 \begin{equation}
 \label{psf}
 (\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{H_n} f(h) \theta(h)^{-1} dh,
