@@ -32,13 +32,13 @@
 \maketitle
 
 Soit $F$ un corps de nombres et $\psi$ un caractère non trivial de $\mathbb{A}_F$.
-On note $H_n$ l'ensemble des matrices de la forme $\sigma \begin{pmatrix}
+On note $H_n$ l'ensemble des matrices de la forme $\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}$ avec $X \in M_n$ et $g \in GL_n$. L'élément $\sigma$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+\end{pmatrix} \sigma_n^{-1}$ avec $X \in M_n$ et $g \in GL_n$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
   \end{smallmatrix}\bigr).$
@@ -74,7 +74,7 @@ où $T : Temp(SO(2n+1))/Stab \rightarrow Temp(G_{2n})$ est l'application de trans
 \begin{theoreme}
 Soit $F$ un corps $p$-adique. Une décomposition de Plancherel abstraite sur $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F))$ est obtenue par la relation
 \begin{equation}
-L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) = \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
 \end{equation}
 \end{theoreme}
 
@@ -101,7 +101,7 @@ pour tout $s \in \mathbb{C}$. La preuve se fait par une méthode de globalisation
 \subsubsection{Théorie locale}
 Les intégrales $J(s, W, \phi)$ sont définies par
  \begin{equation}
-\int_{N_n\backslash{G_n}} \int_{Lie(B_n)\backslash{M_n}} W\left(\sigma \begin{pmatrix}
+\int_{N_n\backslash{G_n}} \int_{Lie(B_n)\backslash{M_n}} W\left(\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -109,7 +109,7 @@ g & 0 \\
 0 & g
 \end{pmatrix}\right)\psi(-Tr(X))dX\phi(e_ng)|\det g|^s dg
  \end{equation}
-pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$. L'élément $\sigma$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
   \end{smallmatrix}\bigr).$
@@ -164,7 +164,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   \end{equation}
   la fonction de Whittaker associée. On considère $\psi_\mathbb{A}$ comme un caractère de $N_{2n}(\mathbb{A}_K)$ en posant $\psi_\mathbb{A}(u) = \psi_\mathbb{A}(\sum_{i=1}^{2n-1} u_{i,i+1})$. Pour $\Phi \in \mathcal{S}(\mathbb{A}_K^n)$ une fonction de Schwartz, on note $J(s, W_\varphi, \Phi)$ l'intégrale
   \begin{equation}
-\int_{N_n\backslash{G_n}} \int_{Lie(B_n)\backslash{M_n}} W_\varphi \left(\sigma \begin{pmatrix}
+\int_{N_n\backslash{G_n}} \int_{Lie(B_n)\backslash{M_n}} W_\varphi \left(\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -245,7 +245,7 @@ Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}
  \begin{proof}
  D'après la décomposition d'Iwasawa, on a $N_n\backslash{G_n} = A_nK_n$. Il suffit de montrer la convergence de l'intégrale
  \begin{equation}
- \int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(\sigma \begin{pmatrix}
+ \int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -254,28 +254,28 @@ ak & 0 \\
 \end{pmatrix}\right) \phi(e_nak)\right| dX dk \left|\det a\right|^{Re(s)} \delta^{-1}(a) da.
  \end{equation}
  
- On pose $u_X = \sigma \begin{pmatrix}
+ On pose $u_X = \sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
-\end{pmatrix} \sigma^{-1}$, ce qui nous permet d'écrire
+\end{pmatrix} \sigma_n^{-1}$, ce qui nous permet d'écrire
 \begin{equation}
-\sigma \begin{pmatrix}
+\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 a & 0 \\
 0 & a
-\end{pmatrix} = b u_{a^{-1}Xa} \sigma,
+\end{pmatrix} = b u_{a^{-1}Xa} \sigma_n,
 \end{equation}
  où $b=diag(a_1,a_1,a_2,a_2,...)$. On effectue le changement de variable $X \mapsto aXa^{-1}$, l'intégrale devient alors
  \begin{equation}
-\int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(b u_X \sigma \begin{pmatrix}
+\int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(b u_X \sigma_n \begin{pmatrix}
 k & 0 \\
 0 & k
 \end{pmatrix}\right)\phi(e_nak)\right|dX dk |\det a|^{Re(s)} \delta^{-2}(a) da.
  \end{equation}
  
- On écrit $u_X = n_Xt_Xk_X$ la décomposition d'Iwasawa de $u_x$ et on pose $k_\sigma = \sigma \begin{pmatrix}
+ On écrit $u_X = n_Xt_Xk_X$ la décomposition d'Iwasawa de $u_x$ et on pose $k_\sigma = \sigma_n \begin{pmatrix}
 k & 0 \\
 0 & k
 \end{pmatrix}$. Le lemme \ref{majtemp} donne alors
@@ -772,13 +772,13 @@ Dans l'expression \ref{finalgauche}, le facteur $\frac{log(q_F)}{2\pi}$ apparait
 
 \section{Une formule d'inversion de Fourier}
 \label{formInv}
-On note $H_n$ l'ensemble des matrices de la forme $\sigma \begin{pmatrix}
+On note $H_n$ l'ensemble des matrices de la forme $\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}$ où $X$ est dans $M_n$ et $g$ dans $G_n$. On pose $H^P_n = H_n \cap P_{2n}$. On note $\theta$ le caractère sur $H_n$ défini par $\psi(Tr(X))$.
+\end{pmatrix} \sigma_n^{-1}$ où $X$ est dans $M_n$ et $g$ dans $G_n$. On pose $H^P_n = H_n \cap P_{2n}$. On note $\theta$ le caractère sur $H_n$ défini par $\psi(Tr(X))$.
 
 \begin{proposition}
 \label{unfolding}
@@ -794,7 +794,7 @@ pour tous $g_1, g_2 \in G_{2n}$.
 \end{proposition}
 
 \begin{proof}
-On montre la proposition par récurrence sur $n$. Pour $n=1$, $H^P_1$ est trivial, $\sigma$ est trivial et $H_1 \simeq N_2 Z(G_2)$. Le membre de droite est alors
+On montre la proposition par récurrence sur $n$. Pour $n=1$, $H^P_1$ est trivial, $\sigma_n$ est trivial et $H_1 \simeq N_2 Z(G_2)$. Le membre de droite est alors
 \begin{equation}
 \int_{F^*} W_f \left(1, \begin{pmatrix}
 z & 0 \\
@@ -808,20 +808,20 @@ z & 0 \\
 Ce qui est bien l'égalité voulue. Supposons maintenant que $n > 1$ et que la proposition soit vraie au rang $n-1$.
 
 L'ensemble $\Omega_n$ des matrices de la forme
-$\sigma \begin{pmatrix}
+$\sigma_n \begin{pmatrix}
 1 & Y \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 h & 0 \\
 0 & h
-\end{pmatrix} \sigma^{-1}$ où $Y$ est une matrice triangulaire inférieure stricte de taille $n$ et $h \in \overline{B}_n$ le sous-groupe des matrices triangulaires inférieures inversible, s'identifie à un ouvert dense du quotient $H_n \cap N_{2n} \backslash{H_n}$. On injecte $\Omega_{n-1}$ dans $\Omega_n$, en rajoutant des 0 sur la dernière ligne et colonne de $Y$ et voyant $h$ comme un élément de $\overline{B}_n$. On note $\widetilde{\Omega}_n$ l'ensemble des matrices de la
-forme $\sigma \begin{pmatrix}
+\end{pmatrix} \sigma_n^{-1}$ où $Y$ est une matrice triangulaire inférieure stricte de taille $n$ et $h \in \overline{B}_n$ le sous-groupe des matrices triangulaires inférieures inversible, s'identifie à un ouvert dense du quotient $H_n \cap N_{2n} \backslash{H_n}$. On injecte $\Omega_{n-1}$ dans $\Omega_n$, en rajoutant des 0 sur la dernière ligne et colonne de $Y$ et voyant $h$ comme un élément de $\overline{B}_n$. On note $\widetilde{\Omega}_n$ l'ensemble des matrices de la
+forme $\sigma_n \begin{pmatrix}
 1 & \widetilde{Y} \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 \widetilde{h} & 0 \\
 0 & \widetilde{h}
-\end{pmatrix} \sigma^{-1}$
+\end{pmatrix} \sigma_n^{-1}$
 où $\widetilde{Y}$ est de la forme $\begin{pmatrix}
 0_{n-1} & 0 \\
 \widetilde{y} & 0
@@ -872,24 +872,24 @@ Appliquons l'hypothèse de récurrence,
  \end{split}
  \end{equation}
 
-Il nous faut maintenant intégrer sur $\widetilde{\xi}_p$ et $\widetilde{\xi}$ pour revenir à notre membre de droite. Explicitons l'intégrale sur $\widetilde{\xi}_p$ en le décomposant sous la forme $\sigma \begin{pmatrix}
+Il nous faut maintenant intégrer sur $\widetilde{\xi}_p$ et $\widetilde{\xi}$ pour revenir à notre membre de droite. Explicitons l'intégrale sur $\widetilde{\xi}_p$ en le décomposant sous la forme $\sigma_n \begin{pmatrix}
 1 & \widetilde{Z} \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 \widetilde{p} & 0 \\
 0 & \widetilde{p}
-\end{pmatrix} \sigma^{-1}$. On obtient alors
+\end{pmatrix} \sigma_n^{-1}$. On obtient alors
 \begin{equation}
-\int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{H_{n-1}} |\det s|^{-1} \int_V f\left(\sigma \begin{pmatrix}
+\int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{H_{n-1}} |\det s|^{-1} \int_V f\left(\sigma_n \begin{pmatrix}
 \widetilde{p}^{-1} & 0 \\
 0 & \widetilde{p}^{-1}
 \end{pmatrix} \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
-\end{pmatrix} \sigma^{-1} v s \widetilde{\xi}\right) \theta(s)^{-1} \psi(v)^{-1} dv ds d\widetilde{\xi} d\widetilde{Z} d\widetilde{p}.
+\end{pmatrix} \sigma_n^{-1} v s \widetilde{\xi}\right) \theta(s)^{-1} \psi(v)^{-1} dv ds d\widetilde{\xi} d\widetilde{Z} d\widetilde{p}.
 \end{equation}
 
-La conjugaison de $v$ par $\sigma^{-1}$ s'écrit sous la forme $\begin{pmatrix}
+La conjugaison de $v$ par $\sigma_n^{-1}$ s'écrit sous la forme $\begin{pmatrix}
 n_1 & y \\
 t & n_2
 \end{pmatrix}$ où $n_1, n_2$ sont dans $U_n$, les coefficients de $y$ sont nuls sauf la dernière colonne et $t$ est de la forme $\begin{pmatrix}
@@ -899,7 +899,7 @@ t & n_2
 $t \mapsto \widetilde{p}t\widetilde{p}^{-1}$ et $y \mapsto \widetilde{p}y\widetilde{p}^{-1}$ transforme l'intégrale précédente en
 \begin{equation}
 \begin{split}
-\int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{H_{n-1}} & |\det s|^{-1}\int_{\sigma^{-1}V\sigma} f\left(\sigma \begin{pmatrix}
+\int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{H_{n-1}} & |\det s|^{-1}\int_{\sigma_n^{-1}V\sigma_n} f\left(\sigma_n \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
 \end{pmatrix}  \begin{pmatrix}
@@ -908,7 +908,7 @@ t & n_2
 \end{pmatrix} \begin{pmatrix}
 \widetilde{p}^{-1} & 0 \\
 0 & \widetilde{p}^{-1}
-\end{pmatrix} \sigma^{-1} s \widetilde{\xi}\right) \\
+\end{pmatrix} \sigma_n^{-1} s \widetilde{\xi}\right) \\
 & \theta(s)^{-1} \psi(-Tr(y)) \psi(-Ts(\widetilde{p}t\widetilde{p}^{-1}))|\det \widetilde{p}|^3  d\begin{pmatrix}
 n_1 & y \\
 t & n_2
@@ -916,7 +916,7 @@ t & n_2
 \end{split}
 \end{equation}
 
-On explicite maintenant l'intégrale sur $s$ ce qui donne que $\sigma^{-1}s \sigma$ est de la forme $\begin{pmatrix}
+On explicite maintenant l'intégrale sur $s$ ce qui donne que $\sigma_n^{-1}s \sigma_n$ est de la forme $\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
@@ -926,8 +926,8 @@ g & 0 \\
 Le changement de variable $X \mapsto \widetilde{p}X\widetilde{p}^{-1}$ donne
 \begin{equation}
 \begin{split}
-& \int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{M_{n-1}} \int_{G_{n-1}}  |\det \widetilde{p}^{-1}g|^{-2}\int_{\sigma^{-1}V\sigma} \\
-& f\left(\sigma \begin{pmatrix}
+& \int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{M_{n-1}} \int_{G_{n-1}}  |\det \widetilde{p}^{-1}g|^{-2}\int_{\sigma_n^{-1}V\sigma_n} \\
+& f\left(\sigma_n \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
 \end{pmatrix}  \begin{pmatrix}
@@ -939,7 +939,7 @@ t & n_2
 \end{pmatrix} \begin{pmatrix}
 \widetilde{p}^{-1} g & 0 \\
 0 & \widetilde{p}^{-1} g
-\end{pmatrix} \sigma^{-1} \widetilde{\xi}\right) \\
+\end{pmatrix} \sigma_n^{-1} \widetilde{\xi}\right) \\
 & \psi(-Tr(X)) \psi(-Tr(y)) \psi(-Ts(\widetilde{p}t\widetilde{p}^{-1}))  |\det \widetilde{p}| d\begin{pmatrix}
 n_1 & y \\
 t & n_2
@@ -950,8 +950,8 @@ t & n_2
 On effectue maintenant le changement de variables $g \mapsto \widetilde{p}g$, notre intégrale devient alors
 \begin{equation}
 \begin{split}
-& \int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{M_{n-1}} \int_{G_{n-1}}  |\det g|^{-2}\int_{\sigma^{-1}V\sigma} \\
-& f\left(\sigma \begin{pmatrix}
+& \int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{M_{n-1}} \int_{G_{n-1}}  |\det g|^{-2}\int_{\sigma_n^{-1}V\sigma_n} \\
+& f\left(\sigma_n \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
 \end{pmatrix}  \begin{pmatrix}
@@ -963,7 +963,7 @@ t & n_2
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1} \widetilde{\xi}\right) \\
+\end{pmatrix} \sigma_n^{-1} \widetilde{\xi}\right) \\
 & \psi(-Tr(X)) \psi(-Tr(y)) \psi(-Ts(\widetilde{p}t\widetilde{p}^{-1}))  |\det \widetilde{p}| d\begin{pmatrix}
 n_1 & y \\
 t & n_2
@@ -991,7 +991,7 @@ formule d'inversion de Fourier.
 Le lemme précédent nous permet de simplifier notre intégrale en
 \begin{equation}
 \begin{split}
-\int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{M_{n-1}} \int_{G_{n-1}}  & |\det g|^{-2}\int_{\sigma^{-1}V_0\sigma} f\left(\sigma \begin{pmatrix}
+\int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{M_{n-1}} \int_{G_{n-1}}  & |\det g|^{-2}\int_{\sigma_n^{-1}V_0\sigma_n} f\left(\sigma_n \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
 \end{pmatrix}  \begin{pmatrix}
@@ -1003,22 +1003,22 @@ n_1 & y \\
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1} \widetilde{\xi}\right) \\
+\end{pmatrix} \sigma_n^{-1} \widetilde{\xi}\right) \\
 & \psi(-Tr(X)) \psi(-Tr(y))  d\begin{pmatrix}
 n_1 & y \\
 0 & n_2
 \end{pmatrix} dg dX d\widetilde{\xi} d\widetilde{Z},
 \end{split}
 \end{equation}
-où $\sigma^{-1}V_0\sigma$ est le sous-groupe de $\sigma^{-1}V\sigma$ où $t=0$.
+où $\sigma_n^{-1}V_0\sigma_n$ est le sous-groupe de $\sigma_n^{-1}V\sigma_n$ où $t=0$.
 
-On explicite l'intégration sur $\widetilde{\xi}$ de la forme $\sigma \begin{pmatrix}
+On explicite l'intégration sur $\widetilde{\xi}$ de la forme $\sigma_n \begin{pmatrix}
 1 & \widetilde{Y} \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 \widetilde{h} & 0 \\
 0 & \widetilde{h}
-\end{pmatrix} \sigma^{-1}$
+\end{pmatrix} \sigma_n^{-1}$
 où $\widetilde{Y}$ est une matrice de la forme $\begin{pmatrix}
 0_{n-1} & 0 \\
 \widetilde{y} & 0
@@ -1026,8 +1026,8 @@ où $\widetilde{Y}$ est une matrice de la forme $\begin{pmatrix}
 
 \begin{equation}
 \begin{split}
-&\int_{F^{n-1}} \int_{F^{n-1}} \int_{F^{n-1} \times F^*} \int_{G_{n-1}} \int_{M_{n-1}}  |\det g|^{-2}\int_{\sigma^{-1} V_0 \sigma} \\
-& f\left(\sigma \begin{pmatrix}
+&\int_{F^{n-1}} \int_{F^{n-1}} \int_{F^{n-1} \times F^*} \int_{G_{n-1}} \int_{M_{n-1}}  |\det g|^{-2}\int_{\sigma_n^{-1} V_0 \sigma_n} \\
+& f\left(\sigma_n \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
 \end{pmatrix}  \begin{pmatrix}
@@ -1045,7 +1045,7 @@ g & 0 \\
 \end{pmatrix}\begin{pmatrix}
 \widetilde{h} & 0 \\
 0 & \widetilde{h}
-\end{pmatrix} \sigma^{-1} \right)  \\
+\end{pmatrix} \sigma_n^{-1} \right)  \\
 & \psi(-Tr(X)) \psi(-Tr(y)) d\begin{pmatrix}
 n_1 & y \\
 0 & n_2
@@ -1084,7 +1084,7 @@ puisque $n_1y = y$. On effectue le changement de variable $\widetilde{Y} \mapsto
 \label{combX}
 \begin{split}
 &\int_{F^{n-1}} \int_{F^{n-1} \times F^*} \int_{G_{n-1}} \int_{M_n}  |\det g|^{-2}\int_{U_n^2} \\
-& f\left(\sigma \begin{pmatrix}
+& f\left(\sigma_n \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
 \end{pmatrix}  \begin{pmatrix}
@@ -1096,7 +1096,7 @@ n_1 & 0 \\
 \end{pmatrix} \begin{pmatrix}
 g\widetilde{h} & 0 \\
 0 & g\widetilde{h}
-\end{pmatrix} \sigma^{-1} \right)  \psi(-Tr(X)) d(n_1,n_2) dX dg d\widetilde{h} d\widetilde{Z}.
+\end{pmatrix} \sigma_n^{-1} \right)  \psi(-Tr(X)) d(n_1,n_2) dX dg d\widetilde{h} d\widetilde{Z}.
 \end{split}
 \end{equation}
 
@@ -1123,13 +1123,13 @@ n_1 & 0 \\
 Le changement de variables $X \mapsto n_1^{-1}(X + \widetilde{Z}n_2)n_1$ nous donne alors
 \begin{equation}
 \begin{split}
-\int_{F^{n-1}} \int_{F^{n-1} \times F^*} \int_{G_{n-1}} \int_{M_n}  & |\det g|^{-1}\int_{U_n^2} f\left(\sigma \begin{pmatrix}
+\int_{F^{n-1}} \int_{F^{n-1} \times F^*} \int_{G_{n-1}} \int_{M_n}  & |\det g|^{-1}\int_{U_n^2} f\left(\sigma_n \begin{pmatrix}
 1 & X \\
 0 & n_2
 \end{pmatrix} \begin{pmatrix}
 n_1g\widetilde{h} & 0 \\
 0 & n_1g\widetilde{h}
-\end{pmatrix} \sigma^{-1} \right) \\
+\end{pmatrix} \sigma_n^{-1} \right) \\
 & \psi(-Tr(X))  \psi(-Tr(\widetilde{Z}n_2)) d(n_1,n_2) dX dg d\widetilde{h} d\widetilde{Z}.
 \end{split}
 \end{equation}
@@ -1138,26 +1138,26 @@ On reconnait une formule d'inversion de Fourier selon les variables $\widetilde{
 \begin{equation}
 \label{combg}
 \begin{split}
-\int_{F^{n-1} \times F^*} \int_{G_{n-1}} \int_{M_n}  |\det g|^{-1}\int_{U_n} & f\left(\sigma \begin{pmatrix}
+\int_{F^{n-1} \times F^*} \int_{G_{n-1}} \int_{M_n}  |\det g|^{-1}\int_{U_n} & f\left(\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 n_1g\widetilde{h} & 0 \\
 0 & n_1g\widetilde{h}
-\end{pmatrix} \sigma^{-1} \right) \\
+\end{pmatrix} \sigma_n^{-1} \right) \\
 & \psi(-Tr(X))  dn_1 dX dg d\widetilde{h}.
 \end{split}
 \end{equation}
 
 Après combinaison des intégrations sur $n_1$, $g$, $\widetilde{h}$; on trouve bien notre membre de gauche
 \begin{equation}
-\int_{G_n} \int_{M_n}  f\left(\sigma \begin{pmatrix}
+\int_{G_n} \int_{M_n}  f\left(\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1} \right) \psi(-Tr(X))  dX dg.
+\end{pmatrix} \sigma_n^{-1} \right) \psi(-Tr(X))  dX dg.
 \end{equation}
 
 On remarquera que l'on a pris garde à ne pas échanger l'intégrale sur $V$ avec les intégrales sur $\widetilde{H}$, $H_{n-1}$, $\widetilde{\Omega}_{n-1}$ et $H^P_{n-1}$ qui chacune est absolument convergente mais l'intégrale totale ne l'est pas. On s'est contenté d'échanger des intégrales sur les différents $H$ d'une part, d'échanger des intégrales sur les $n_1$, $n_2$, $t$, $y$ qui compose l'intégrale sur $V$ d'autre part. On doit seulement vérifier qu'il n'y a pas de problème de convergence lorsque l'on combine l'intégration en $X$ sur $M_n$ (cf. intégrale \ref{combX}) et lorsque l'on échange l'intégrale sur $U_n$ et $M_n$ (cf. intégrale \ref{combg}). Pour ce qui est de la dernière intégrale, on intègre sur un sous-groupe fermé  et $f \in \mathcal{S}(G_{2n})$ donc l'intégrale est absolument convergente. Pour ce qui est de l'intégrale \ref{combX}, à part l'intégration sur $\widetilde{Z}$, on intègre sur un sous-groupe fermé donc on peut bien combiner les intégrales.
@@ -1165,32 +1165,32 @@ On remarquera que l'on a pris garde à ne pas échanger l'intégrale sur $V$ avec l
 Finissons par montrer la convergence absolue de notre membre de droite. Notons $r(g) = 1 + ||e_ng||_\infty$. On a
 \begin{equation}
 \begin{split}
-& W_{r^N |\det|^{-\frac{1}{2}} f}\left(\sigma \begin{pmatrix}
+& W_{r^N |\det|^{-\frac{1}{2}} f}\left(\sigma_n \begin{pmatrix}
 1 & X' \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 a'k' & 0 \\
 0 & a'k'
-\end{pmatrix} \sigma^{-1}, \sigma \begin{pmatrix}
+\end{pmatrix} \sigma_n^{-1}, \sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix} \sigma^{-1}\right) = \\
-& (1+|a_n|)^N |\det aa'|^{-1} W_f\left(\sigma \begin{pmatrix}
+\end{pmatrix} \sigma_n^{-1}\right) = \\
+& (1+|a_n|)^N |\det aa'|^{-1} W_f\left(\sigma_n \begin{pmatrix}
 1 & X' \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 a'k' & 0 \\
 0 & a'k'
-\end{pmatrix} \sigma^{-1}, \sigma \begin{pmatrix}
+\end{pmatrix} \sigma_n^{-1}, \sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix} \sigma^{-1}\right),
+\end{pmatrix} \sigma_n^{-1}\right),
 \end{split}
 \end{equation}
 pour tous $a \in A_n$, $a' \in A_{n-1}$, $k \in K_n$ et  $k' \in K_{n-1}$.
@@ -1200,30 +1200,30 @@ Il suffit de vérifier la convergence de l'intégrale
 \label{conv}
 \begin{split}
 &\int_{\bar{\mathfrak{n}}_n} \int_{A_{n-1}} \int_{\bar{\mathfrak{n}}_n} \int_{A_n} (1+|a_n|)^{-N} |\det aa'| \\
-& W_{r^N |\det|^{-\frac{1}{2}}f}\left(\sigma \begin{pmatrix}
+& W_{r^N |\det|^{-\frac{1}{2}}f}\left(\sigma_n \begin{pmatrix}
 1 & X' \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 a'k' & 0 \\
 0 & a'k'
-\end{pmatrix} \sigma^{-1}, \sigma \begin{pmatrix}
+\end{pmatrix} \sigma_n^{-1}, \sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix} \sigma^{-1}\right) \delta_{B_n}(a)^{-1} \delta_{B_{n-1}}(a')^{-1}da dX da' dX'
+\end{pmatrix} \sigma_n^{-1}\right) \delta_{B_n}(a)^{-1} \delta_{B_{n-1}}(a')^{-1}da dX da' dX'
 \end{split}
 \end{equation}
 pour $N$ suffisamment grand. On introduit les variables $u_X$ et $u_{X'}$ ainsi que leur décomposition d'Iwasawa (voir la preuve du lemme \ref{convtemp}). On a alors
 \begin{equation}
-\sigma \begin{pmatrix}
+\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix} \sigma^{-1} = bu_{(ak)^{-1}X(ak)},
+\end{pmatrix} \sigma_n^{-1} = bu_{(ak)^{-1}X(ak)},
 \end{equation}
 où $b = diag(a_1, a_1, a_2, a_2, ...)$.
 
@@ -1276,13 +1276,13 @@ Pour $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$, la restriction de $\bet
 \begin{proof}
 Il suffit de montrer la convergence de l'intégrale
 \begin{equation}
-\int_{Lie(B_n) \backslash M_n} \int_{A_{n-1}} \left|W\left(\sigma \begin{pmatrix}
+\int_{Lie(B_n) \backslash M_n} \int_{A_{n-1}} \left|W\left(\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix}\sigma^{-1}\right)\right| \delta_{B_{n-1}}(a)^{-1} da dX,
+\end{pmatrix}\sigma_n^{-1}\right)\right| \delta_{B_{n-1}}(a)^{-1} da dX,
 \end{equation}
 pour tout $k \in K_n$. On effectue la même majoration que pour la convergence de l'intégrale $J(s,W,\phi)$, l'intégrale est donc majorée par
 \begin{equation}
@@ -1336,13 +1336,13 @@ Pour $W \in \mathcal{S}(Z_{2n} N_{2n} \backslash G_{2n})$ et $\phi \in \mathcal{
 On a
 \begin{equation}
 \begin{split}
-\gamma(ns, 1, \psi) J(s, W, \phi) &= \int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n} W\left(\sigma\begin{pmatrix}
+\gamma(ns, 1, \psi) J(s, W, \phi) &= \int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n} W\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix} \sigma^{-1}\right) \\
+\end{pmatrix} \sigma_n^{-1}\right) \\
 &\psi(-Tr(X)) dX \gamma(ns, 1, \psi) \int_{Z_n}\phi(e_nzk) |\det z|^s dz dk |\det a|^s \delta_{B_n}(a)^{-1} da
 \end{split}
 \end{equation}
@@ -1360,13 +1360,13 @@ On en déduit que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est
 \begin{equation}
 \begin{split}
 \phi(0)\int_{Z_n \backslash A_n} \int_{K_n} \int_{Lie(B_n) \backslash M_n}
-&W\left(\sigma\begin{pmatrix}
+&W\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix} \sigma^{-1}\right) \\
+\end{pmatrix} \sigma_n^{-1}\right) \\
 &\psi(-Tr(X)) dX  dk \delta_{B_n}(a)^{-1} da,
 \end{split}
 \end{equation}
@@ -1437,13 +1437,13 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$.
 En effet, on a
 \begin{equation}
 \begin{split}
-J(1, \widetilde{W}, \widehat{\phi}) = \int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
+J(1, \widetilde{W}, \widehat{\phi}) = \int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}\right) \\
+\end{pmatrix} \sigma_n^{-1}\right) \\
 & \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg.
 \end{split}
 \end{equation}
@@ -1451,13 +1451,13 @@ g & 0 \\
 On choisit $f \in \mathcal{S}(G)$ tel que $W_{f,\pi}(1,.) = W$, on en déduit que l'intégrale sur $N_n \backslash G_n$ est $(H_n, \theta)$-invariante. Comme $\widehat{\phi}(e_nh)$ est arbitraire parmi les fonctions invariante à gauche par $G_{n-1}U_{n-1}$, on en déduit que
 \begin{equation}
 \begin{split}
-\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
+\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}\right) \\
+\end{pmatrix} \sigma_n^{-1}\right) \\
 & \psi(-Tr(X)) dX dg
 \end{split}
 \end{equation}
@@ -1470,37 +1470,37 @@ Cette preuve que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)
 Finissons la preuve du lemme, on remarque que l'on a
 \begin{equation}
 \begin{split}
-&\int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} \widetilde{W}\left(\sigma\begin{pmatrix}
+&\int_{N_n \backslash G_n} \int_{Lie(B_n) \backslash M_n} \widetilde{W}\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg \\
-&= \int_{P_n \backslash G_n} \int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} \widetilde{W}\left(\sigma\begin{pmatrix}
+\end{pmatrix} \sigma_n^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_ng) |\det g| dg \\
+&= \int_{P_n \backslash G_n} \int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} \widetilde{W}\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ph & 0 \\
 0 & ph
-\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_nh) |\det h| dh dp.
+\end{pmatrix} \sigma_n^{-1}\right) \psi(-Tr(X)) dX \widehat{\phi}(e_nh) |\det h| dh dp.
 \end{split}
 \end{equation}
 
 De plus,
 \begin{equation}
 \begin{split}
-\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma\begin{pmatrix}
+\int_{N_n \backslash P_n} \int_{Lie(B_n) \backslash M_n} &\widetilde{W}\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 ph & 0 \\
 0 & ph
-\end{pmatrix} \sigma^{-1}\right) \psi(-Tr(X)) dX dp \\
-&= \beta\left(R\left(\sigma \begin{pmatrix}
+\end{pmatrix} \sigma_n^{-1}\right) \psi(-Tr(X)) dX dp \\
+&= \beta\left(R\left(\sigma_n \begin{pmatrix}
 h & 0 \\
 0 & h
-\end{pmatrix} \sigma^{-1}\right) \widetilde{W}\right) \\
+\end{pmatrix} \sigma_n^{-1}\right) \widetilde{W}\right) \\
 &= \beta(\widetilde{W}),
 \end{split}
 \end{equation}
@@ -1658,10 +1658,10 @@ L^2(G_n \times G_n \backslash G_{2n}) \simeq L^2(H_n \backslash G_{2n}, \theta).
 \begin{proof}
 On considère l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$, où $\widetilde{f}$ est définie par
 \begin{equation}
-\widetilde{f}(g) = \int_{G_n} f\left( \sigma \begin{pmatrix}
+\widetilde{f}(g) = \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma^{-1} \right) d\gamma
+\end{pmatrix}g \sigma_n^{-1} \right) d\gamma
 \end{equation}
 pour tout $g \in G_{2n}$.
 
@@ -1675,10 +1675,10 @@ g' & X \\
 g' \gamma & X\gamma \\
 0 & g'
 \end{pmatrix}$,
-on en déduit que $f\left( \sigma \begin{pmatrix}
+on en déduit que $f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma^{-1} \right)$ est nul sauf si $\begin{pmatrix}
+\end{pmatrix}g \sigma_n^{-1} \right)$ est nul sauf si $\begin{pmatrix}
 g' \gamma & X\gamma \\
 0 & g'
 \end{pmatrix}$ est dans un compact pour un certain $g'$, autrement dit, si $\gamma$ est dans un compact. L'intégrale est donc absoluement convergente. De plus,
@@ -1688,24 +1688,24 @@ pour tous $g_1, g_2 \in G_n$ et $g \in G_{2n}$, on a
 \widetilde{f}\left( \begin{pmatrix}
 g_1 & 0 \\
 0 & g_2
-\end{pmatrix}g \right) &= \int_{G_n} f\left( \sigma \begin{pmatrix}
+\end{pmatrix}g \right) &= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
 \end{pmatrix}\begin{pmatrix}
 g_1 & 0 \\
 0 & g_2
-\end{pmatrix}g \sigma^{-1} \right) d\gamma \\
-&=_{\gamma \mapsto g_2 \gamma g_1^{-1}} \int_{G_n} f\left( \sigma \begin{pmatrix}
+\end{pmatrix}g \sigma_n^{-1} \right) d\gamma \\
+&=_{\gamma \mapsto g_2 \gamma g_1^{-1}} \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 g_2 & 0 \\
 0 & g_2
 \end{pmatrix}\begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma^{-1} \right) d\gamma \\
-&= \int_{G_n} f\left( \sigma \begin{pmatrix}
+\end{pmatrix}g \sigma_n^{-1} \right) d\gamma \\
+&= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma^{-1} \right) d\gamma \\
+\end{pmatrix}g \sigma_n^{-1} \right) d\gamma \\
 &= \widetilde{f}(g).
 \end{split}
 \end{equation}
@@ -1719,29 +1719,29 @@ g_2 & x \\
 \end{pmatrix}k \right)$, on a alors
 \begin{equation}
 \begin{split}
-\widetilde{f}(g) &= \int_{G_n} f\left( \sigma \begin{pmatrix}
+\widetilde{f}(g) &= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 1 & \gamma x \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma^{-1} \right) d\gamma \\
-&= \int_{G_n} f\left( \sigma \begin{pmatrix}
+\end{pmatrix} k \sigma_n^{-1} \right) d\gamma \\
+&= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma^{-1} \right) \psi(Tr(\gamma x))d\gamma
+\end{pmatrix} k \sigma_n^{-1} \right) \psi(Tr(\gamma x))d\gamma
 \end{split}
 \end{equation}
-Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact, à savoir la fonction $\phi_k$ définie par $\phi_k(y) = f\left( \sigma \begin{pmatrix}
+Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact, à savoir la fonction $\phi_k$ définie par $\phi_k(y) = f\left( \sigma_n \begin{pmatrix}
 y & 0 \\
 0 & 1
-\end{pmatrix} k \sigma^{-1} \right)|\det y|^{-n}$ si $y \in G_n$ et $0$ sinon. Le facteur $|\det y|^{-n}$ provient de la transformation de la mesure multiplicative $d\gamma$ en une mesure additive. On en déduit que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$.
+\end{pmatrix} k \sigma_n^{-1} \right)|\det y|^{-n}$ si $y \in G_n$ et $0$ sinon. Le facteur $|\det y|^{-n}$ provient de la transformation de la mesure multiplicative $d\gamma$ en une mesure additive. On en déduit que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$.
 Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ est bien définie.
 
-Cette application est linéaire et injective. En effet, si $\widetilde{f} = 0$, alors $\phi_k = 0$ pour tout $k \in K$, donc $f\left( \sigma \begin{pmatrix}
+Cette application est linéaire et injective. En effet, si $\widetilde{f} = 0$, alors $\phi_k = 0$ pour tout $k \in K$, donc $f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma^{-1} \right)$ pour tout $\gamma \in G_n$ et $k \in K$. On en déduit que $f = 0$ car elle est $(H_n, \theta)$-invariante.
+\end{pmatrix} k \sigma_n^{-1} \right)$ pour tout $\gamma \in G_n$ et $k \in K$. On en déduit que $f = 0$ car elle est $(H_n, \theta)$-invariante.
 
 Pour finir, montrons qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = ||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$. Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ s'étend en un isomorphisme d'espace de Hilbert.
 
@@ -1752,10 +1752,10 @@ En effet,
 1 & x \\
 0 & 1
 \end{pmatrix} k \right)|^2 dx dk \\
-&= \int_{M_n \times K} |\int_{G_n} f\left( \sigma \begin{pmatrix}
+&= \int_{M_n \times K} |\int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma^{-1} \right) \psi(Tr(\gamma x) d\gamma|^2 dx dk \\
+\end{pmatrix} k \sigma_n^{-1} \right) \psi(Tr(\gamma x) d\gamma|^2 dx dk \\
 &= \int_{M_n \times K} |\widehat{\phi}_k(x)|^2 dx dk.
 \end{split}
 \end{equation}
@@ -1764,10 +1764,10 @@ La transformé de Fourier conserve la norme $L^2$ avec un choix de constante appr
 \begin{equation}
 \begin{split}
 ||\widetilde{f}||_{L^2(H_n \backslash G_{2n}, \theta)} &= c' \int_{M_n \times K} |\phi_k(x)|^2 dx dk \\
-&= c' \int_{K} \int_{G_n} |f\left( \sigma \begin{pmatrix}
+&= c' \int_{K} \int_{G_n} |f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma^{-1} \right)|^2 \frac{d\gamma}{|\det \gamma|^n} dk.
+\end{pmatrix} k \sigma_n^{-1} \right)|^2 \frac{d\gamma}{|\det \gamma|^n} dk.
 \end{split}
 \end{equation}
 On met l'accent sur le fait que l'on a modifié la mesure additive sur $M_n$ restreinte à $G_n$ en une mesure multiplicative sur $G_n$. La mesure $\frac{d\gamma}{|\det \gamma|^n} dk$ est une mesure de Haar sur $G_n K \simeq H_n \backslash G_{2n}$. On en déduit bien qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = ||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$.
