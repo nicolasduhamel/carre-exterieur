@@ -15,6 +15,7 @@
 \usepackage{eulervm}
 
 \newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
 \newtheorem{propriete}{Propriété}[section]
 \newtheorem{definition}{Définition}[section]
 \newtheorem{theoreme}{Théorème}[section]
@@ -31,8 +32,20 @@
 \date{\today}
 \maketitle
 
+\section{Introduction}
+
+Sakellaridis et Venkatesh \cite{sak-ven} ont étudié des formules de Plancherel sur $L^2(X)$ où $X$ est une variété sphérique d'un groupe $p$-adique $G$.
+On prouve un cas particulier de la
+\begin{conjecture}[Sakellaridis-Venkatesh \cite{sak-ven}]
+Soit $X$ une variété sphérique d'un groupe $p$-adique $G$. Il existe un groupe $G_X$ et une application $\iota_* : Temp(G_X) \rightarrow Temp(G)$ tels que l'on ait une décomposition spectrale
+\begin{equation}
+L^2(X) = \int^{\oplus}_{Temp(G_X)/\sim} \iota_* (\sigma) d\mu_{G_X}(\sigma),
+\end{equation}
+où $d\mu_{G_X}$ est la mesure de Plancherel sur $G_X$ et $\sim$ est la relation d'équivalence "égalité des paramètres de Langlands".
+\end{conjecture}
+
 Soit $F$ un corps de nombres et $\psi$ un caractère non trivial de $\mathbb{A}_F$.
-On note $H_n$ l'ensemble des matrices de la forme $\sigma_n \begin{pmatrix}
+On note $H_n$ le groupe des matrices de la forme $\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -42,20 +55,41 @@ g & 0 \\
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
   \end{smallmatrix}\bigr).$
-Soit $\theta$ le caractère sur $H_n$ défini par $\psi(Tr(X))$.
+Soit $\theta$ le caractère sur $H_n$ qui envoie $\sigma_n \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma_n^{-1}$ sur $\psi(Tr(X))$.
 
-Soit $\pi$ une représentation automorphe cuspidale de $GL_{2n}$ et $\varphi \in \pi$. On introduit la période globale
+L'essentiel de notre travail consiste alors à prouver la
+\begin{conjecture}[Sakellaridis-Venkatesh]
+Soit $k$ un corps $p$-adique. On pose $X = H_n(k) \backslash G_{2n}(k)$. On a une décomposition spectrale
 \begin{equation}
-\mathcal{P}_{H_n, \theta}(\phi) = \int_{[Z_n \backslash H_n]} \varphi(h) \theta(h) dh,
+L^2(X) = \int^{\oplus}_{Temp(SO(2n+1))/\sim} T(\sigma) d\mu_{SO(2n+1)}(\sigma),
+\end{equation}
+où $d\mu_{SO(2n+1)}$ est la mesure de Plancherel sur $SO(2n+1)(k)$, $\sim$ est la relation d'équivalence "égalité des paramètres de Langlands" et $T : Temp(SO(2n+1)) \rightarrow Temp(GL_{2n})$ est l'application de transfert de $SO(2n+1)$ à $GL_{2n}$.
+\end{conjecture}
+
+Soit $\pi$ une représentation automorphe cuspidale irréductible de $GL_{2n}(\mathbb{A}_F)$ et $\phi_1, \phi_2$ des fonctions de Schwartz sur $GL_{2n}(\mathbb{A}_F)$ qui sont $(H_n(\mathbb{A}_F), \theta)$-invariante. On note $\Sigma \phi_i \in C^\infty([GL_{2n}])$, pour $i=1,2$, la fonction définie par $\Sigma \phi_i(g) = \sum_{x \in H_n(F) \backslash GL{2n(F)}} \phi_i(xg)$ pour tout $g \in GL_{2n}(\mathbb{A}_F)$. D'autre part, pour $\varphi \in \pi$, on introduit la période globale
+\begin{equation}
+\mathcal{P}_{H_n, \theta}(\varphi) = \int_{[Z_n \backslash H_n]} \varphi(h) \theta(h) dh,
 \end{equation}
 où $Z_n$ est le centre de $GL_n$ et les crochets désignent le quotient des points adéliques modulo les points rationnels.
 
-La factorisation de cette période globale comme produit de périodes locales va nous permettre d'obtenir une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$. Plus précisément, pour $\Phi$ une fonction de Schwartz globale et $W_\varphi$ la fonction de Whittaker associée à $\varphi$, on introduit dans la suite des fonctions zêta globale $J(s, W_\varphi, \Phi)$, qui sont reliées à la période globale par la relation
+Sakellaridis et Venkatesh conjecturent une factorisation du produit scalaire $<(\Sigma \phi_1)_\pi, (\Sigma \phi_2)_\pi>_{Pet} = \int_{[H_n]}(\Sigma \phi_1)_\pi(h)(\Sigma \phi_2)_\pi(h) dh$, où $(\Sigma \phi_1)_\pi$ est la projection sur $\pi$ de $\Sigma \phi_i$ et $dh$ est la mesure de Tamagawa de $[H_n]$ \cite[section 17.1]{sak-ven}. Cette factorisation prend la forme suivante
+\begin{equation}
+<(\Sigma \phi_1)_\pi, (\Sigma \phi_2)_\pi>_{Pet} = q \prod_v' <\phi_{1,v}, \phi_{2,v}>_{\sigma_v},
+\end{equation}
+où $q$ est un rationnel (qui dépend de $\pi$), il est nul si $\pi$ n'est pas le transfert d'une représentation automorphe cuspidale $\sigma$ de $SO(2n+1)(\mathbb{A}_F)$. Les quantités $<\phi_{1,v}, \phi_{2,v}>_{\sigma_v}$ sont des formes linéaires $H_n(F_v)$-invariante, elles sont conjecturalement reliées à la factorisation de la période globale $\mathcal{P}_{H_n, \theta}$ en produit de période locale. On renvoie à \cite[section 17.5]{sak-ven} pour la signification du produit $\prod_v'$. En effet, le produit n'est pas absoluement convergent et on doit l'interpréter comme l'évaluation d'une fonction $L$.
+
+La factorisation de la période globale $\mathcal{P}_{H_n, \theta}$ comme produit de périodes locales va nous permettre d'obtenir une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$. Plus précisément, pour $\Phi$ une fonction de Schwartz sur $GL_{2n}(\mathbb{A}_F)$ qui est $(H_n(\mathbb{A}_F), \theta)$-invariante et $W_\varphi$ la fonction de Whittaker associée à $\varphi$, on introduit dans la suite des fonctions zêta globales $J(s, W_\varphi, \Phi)$, qui sont reliées à la période globale par la relation
 \begin{equation}
 Res_{s=1} J(s, W_\varphi, \Phi) = \mathcal{P}_{H_n, \theta}(\varphi) \widehat{\Phi}(0).
 \end{equation}
 
-De plus, ces fonctions zêta globales se décomposent en un produit de fonctions zêta locales
+De plus, ces fonctions zêta globales se décomposent en un produit de fonctions zêta locales, pour $Re(s)$ assez grand, on a
 \begin{equation}
 J(s, W_\varphi, \Phi) = L^S(s, \pi, \Lambda^2) \prod_{v \in S} J(s, W_v, \Phi_v),
 \end{equation}
@@ -63,32 +97,61 @@ où $S$ est un ensemble de places suffisamment grand. Le quotient $\frac{J(1, W_v
 
 On commence dans la section \ref{gamma} par prouver une relation sur les facteurs $\gamma$ du carré extérieur. Les sections \ref{seclimite} et \ref{formInv} sont des préliminaires pour le théorème \ref{thPlanch}. On fini dans la section \ref{plancherel} par prouver une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$ et une formule de Plancherel abstraite sur $L^2(GL_n \times GL_n \backslash GL_{2n})$.
 
-\begin{theoreme}
-Soit $F$ un corps $p$-adique. Soit $\varphi_1, \varphi_2 \in \mathcal{S}(H_n(F) \backslash GL_{2n}(F), \theta)$. On a l'égalité
-\begin{equation}
-(\phi_1, \phi_2)_{L^2(H_n(F) \backslash G_{2n}(F))} = \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{H_n(F) \backslash GL_{2n}(F), T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma,
-\end{equation}
-où $T : Temp(SO(2n+1))/Stab \rightarrow Temp(G_{2n})$ est l'application de transfert, $(\varphi_1, \varphi_2)_{H_n(F) \backslash G_{2n}(F), T(\sigma)}$ est défini dans le théorème \ref{thPlanch} à partir de la forme linéaire $\beta$.
-\end{theoreme}
-
-\begin{theoreme}
-Soit $F$ un corps $p$-adique. Une décomposition de Plancherel abstraite sur $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F))$ est obtenue par la relation
-\begin{equation}
-L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) = \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
-\end{equation}
-\end{theoreme}
-
 \subsection{Notations}
-Dans la suite on notera $F$ un corps $p$-adique (sauf dans la section \ref{gamma} où $F$ peut désigner un corps archimédien) et $\psi$ un caractère non trivial de $F$. On note $G_{2n}$ le groupe $GL_{2n}(F)$. On notera dans la suite $H_n=H_n(F)$ le groupe des $F$-points. On note $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
+\label{notations}
+Dans la suite on notera $F$ un corps $p$-adique (sauf dans la section \ref{gamma} où $F$ peut désigner un corps archimédien) et $\psi$ un caractère non trivial de $F$. On note $q_F$ le cardinal du corps résiduel de $F$. On notera $G_{2n}$ le groupe $GL_{2n}(F)$ et $PG_{2n} = Z_n(F) \backslash GL_{2n}$. De plus, dans la suite on posera $H_n=H_n(F)$ le groupe de ses $F$-points. On note $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
 1_{n-1} & x \\
 0 & 1
 \end{pmatrix}$ pour $x \in F^{n-1}$ et $P_n = G_{n-1}U_n$ le sous-groupe mirabolique.
 
-Soit $G$ un groupe réductif connexe (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, sous-groupe de Levi de ces groupes). On note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G(F)$. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$.
+Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, d'un sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G(F)$. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$.
+On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
+
+On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$, où $W_F'$ est le groupe de Weil-Deligne de $F$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$. La correspondance de Langlands locale pour $SO(2m+1)$ démontrée par Arthur \cite{arthur}, nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. 
+
+Dans les mesures de Plancherel, on verra apparaître des termes $|S_{\sigma}|$ pour $\sigma \in Temp(SO(2n+1))$ ou $Temp(PG_{2n})$. On n'explicite pas les ensembles $S_{\sigma}$ et on se contente de donner leur cardinal. Pour $\sigma \in Temp(SO(2n+1))$ sous-représentation de $\pi_1 \times ... \times \pi_l \times \sigma_0$, avec $\pi_i \in \Pi_{2}(G_{n_i})$ et $\sigma_0 \in \Pi_2(SO(2m+1))$, le facteur $|S_{\sigma}|$ est le produit $|S_{\pi_1}|...|S_{\pi_l}||S_{\sigma_0}|$; où $|S_{\sigma_0}|=2^k$ tel que $T(\sigma_0) \simeq \tau_1 \times ... \times \tau_k$ avec $\tau_i \in \Pi_2(G_{m_i})$ et $|S_{\pi_i}| = n_i$.
+
+Pour $\pi \in Temp(G)$ et $r$ une représentation admissible de ${}^L G$, on note $L(s, \pi, r)$ la fonction $L$ associée par la correspondance de Langlands locale et $\gamma(s, \pi, r, \psi)$ le facteur $\gamma$ associée. Lorsque $r$ est la représentation standard, on l'omettra. De plus, on note $\gamma^*(0, \pi, r, \psi)$ la régularisation du facteur $\gamma$ en $0$, défini par la relation
+\begin{equation}
+\gamma^*(0, \pi, r, \psi) = \lim_{s \rightarrow 0^+} \frac{\gamma(s, \pi, r, \psi)}{(s log(q_F))^{n_{\pi,r}}},
+\end{equation}
+où $n_{\pi,r}$ est l'ordre du zéro de $\gamma(s, \pi, r, \psi)$ en $s=0$.
+
+\subsection{Mesures}
+On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$. Pour $G$ un groupe réductif connexe sur $F$, on équipe $A_G$ de la mesure $(d^\times x)^{\wedge dim(A_G)}$ où $d^\times x = \frac{dx}{|x|_F}$ est la mesure de Haar sur $F^\times$.
+
+Décrivons comment on normalise la mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
+\begin{equation}
+d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi}.
+\end{equation}
+
+La mesure $d\chi$ est indépendante du caractère $\psi$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq Ind_M^G(\sigma)$ par la formule
+\begin{equation}
+d\pi  = |W(G, M)|^{-1} (Ind_M^G)_* d\sigma.
+\end{equation}
+La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
+
+\subsection{Résultats}
+Le résultat principal est le
+\begin{theoreme}
+On a un isomorphisme de représentations unitaires
+\begin{equation}
+L^2(H_n(F) \backslash G_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+\end{equation}
+\end{theoreme}
+
+De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-invariant, on en déduit le
+\begin{theoreme}
+On a un isomorphisme de représentations unitaires
+\begin{equation}
+L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+\end{equation}
+\end{theoreme}
+
 
 \section{Facteurs $\gamma$ du carré extérieur}
 \label{gamma}
-Dans cette partie $F$ un corps local de caractéristique $0$ et $\psi$ un caractère non trivial de $F$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini une fonction L du carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notées $J(s, W, \phi)$, où $W \in \mathcal{W}(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F^n)$ est une fonction de Schwartz. Matringe a prouvé que, lorsque $F$ est non archimédien, ces intégrales $J(s,W,\phi)$ vérifient une équation fonctionnelle, ce qui permet de définir des facteurs $\gamma$, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$. 
+Dans cette partie $F$ désigne un corps local de caractéristique $0$ et $\psi$ un caractère non trivial de $F$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini une fonction L du carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notées $J(s, W, \phi)$, où $W \in \mathcal{W}(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F^n)$ est une fonction de Schwartz. Matringe a prouvé que, lorsque $F$ est non archimédien, ces intégrales $J(s,W,\phi)$ vérifient une équation fonctionnelle, ce qui permet de définir des facteurs $\gamma$, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$. 
 
 On montre que l'on a encore une équation fonctionnelle lorsque $F$ est archimédien et que les facteurs $\gamma$ sont égaux à une constante de module 1 prés à ceux définis par Shahidi, que l'on note $\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$. Plus exactement, il existe une constante $c(\pi)$ de module 1, telle que
 \begin{equation}
@@ -506,17 +569,7 @@ k & 0 \\
  \section{Limite spectrale}
  
  \label{seclimite}
- Dans cette partie $F$ est un corps $p$-adique. On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$. On équipe alors $A_M$ par la mesure $(d^\times x)^{\wedge dim(A)}$ où $d^\times x = \frac{dx}{|x|_F}$ est la mesure de Haar sur $F^\times$.
-
-Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
-\begin{equation}
-d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi},
-\end{equation}
-où $\gamma^*(0, 1, \psi) = \lim_{s \rightarrow 0^+} \frac{\gamma(s, 1, \psi)}{s log(q_F)}$. La mesure $d\chi$ est indépendante du caractère $\psi$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq Ind_M^G(\sigma)$ par la formule
-\begin{equation}
-d\pi  = |W(G, M)|^{-1} (Ind_M^G)_* d\sigma.
-\end{equation}
-La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
+ Dans cette partie $F$ est un corps $p$-adique. On renvoie à la section \ref{notations} pour la normalisation des mesures sur $Temp(G)$, pour un groupe $G$ réductif connexe sur $F$.
 
 On note $PG_{2n} = G_{2n}(F)/Z_{2n}(F)$. Soit $f \in \mathcal{S}(PG_{2n})$, pour $\pi \in Temp(PG_{2n})$, on définit $f_\pi$ par
 \begin{equation}
@@ -539,7 +592,7 @@ où $\gamma^*(0, \pi, \overline{Ad}, \psi) = \lim_{s \rightarrow 0} (s log(q_F)^{
 
 On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
 
-On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$. La correspondance de Langlands locale pour $SO(2m+1)$ nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. On sait caractériser l'image de l'application de transfert. Plus exactement,
+Rappelons (section \ref{notations}) que la correspondance de Langlands locale pour $SO(2m+1)$ nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. On sait caractériser l'image de l'application de transfert. Plus exactement,
 \begin{equation}
 \label{caracTransf}
 \pi \in T(Temp(SO(2n+1))/Stab) \iff \pi = \left( \bigtimes_{i=1}^k \tau_i \times \widetilde{\tau_i} \right) \times \bigtimes_{j=1}^l \mu_i
