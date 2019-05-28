@@ -34,7 +34,7 @@
 
 \section{Introduction}
 
-Sakellaridis et Venkatesh \cite{sak-ven} ont étudié des formules de Plancherel sur $L^2(X)$ où $X$ est une variété sphérique d'un groupe $p$-adique $G$.
+Sakellaridis et Venkatesh \cite{sak-ven} ont étudiés des formules de Plancherel sur $L^2(X)$ où $X$ est une variété sphérique d'un groupe $p$-adique $G$.
 On prouve un cas particulier de la
 \begin{conjecture}[Sakellaridis-Venkatesh \cite{sak-ven}]
 Soit $X$ une variété sphérique d'un groupe $p$-adique $G$. Il existe un groupe $G_X$ et une application $\iota_* : Temp(G_X) \rightarrow Temp(G)$ tels que l'on ait une décomposition spectrale
@@ -65,6 +65,7 @@ g & 0 \\
 
 L'essentiel de notre travail consiste alors à prouver la
 \begin{conjecture}[Sakellaridis-Venkatesh]
+\label{conjSV}
 Soit $k$ un corps $p$-adique. On pose $X = H_n(k) \backslash G_{2n}(k)$. On a une décomposition spectrale
 \begin{equation}
 L^2(X) = \int^{\oplus}_{Temp(SO(2n+1))/\sim} T(\sigma) d\mu_{SO(2n+1)}(\sigma),
@@ -99,12 +100,14 @@ On commence dans la section \ref{gamma} par prouver une relation sur les facteur
 
 \subsection{Notations}
 \label{notations}
-Dans la suite on notera $F$ un corps $p$-adique (sauf dans la section \ref{gamma} où $F$ peut désigner un corps archimédien) et $\psi$ un caractère non trivial de $F$. On note $q_F$ le cardinal du corps résiduel de $F$. On notera $G_{2n}$ le groupe $GL_{2n}(F)$ et $PG_{2n} = Z_n(F) \backslash GL_{2n}$. De plus, dans la suite on posera $H_n=H_n(F)$ le groupe de ses $F$-points. On note $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
+Dans la suite on notera $F$ un corps $p$-adique (sauf dans la section \ref{gamma} où $F$ peut désigner un corps archimédien) et $\psi$ un caractère non trivial de $F$. On note $q_F$ le cardinal du corps résiduel de $F$ et $|.|_F$ (ou simplement |.|) la valeur absolue sur $F$ normalisé par $|\omega|_F = q_F^{-1}$ où $\omega$ est une uniformisante de $F$. On notera $G_n$ le groupe $GL_n(F)$ et $PG_n = Z_n(F) \backslash GL_n$. De plus, dans la suite on posera $H_n=H_n(F)$ le groupe de ses $F$-points. On note $A_n$ le groupe des matrices diagonales inversibles, $B_n$ le sous groupe des matrices triangulaires supérieures inversibles, $\overline{B}_n$ ou $B_n^{-}$ le sous groupe des matrices triangulaires inférieures inversibles, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
 1_{n-1} & x \\
 0 & 1
-\end{pmatrix}$ pour $x \in F^{n-1}$ et $P_n = G_{n-1}U_n$ le sous-groupe mirabolique.
+\end{pmatrix}$ pour $x \in F^{n-1}$ et $P_n = G_{n-1}U_n$ le sous-groupe mirabolique. On note $\delta_{B_n}$ le caractère modulaire de $B_n$. On notera par des lettres gothiques les algèbres de Lie correspondantes et pour $\mathfrak{g}$ une algèbre de Lie $\mathcal{U}(\mathfrak{g})$ désignera l'algèbre enveloppante.
 
-Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, d'un sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G(F)$. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$.
+Lorsque $X$ est un espace totalement discontinu, on notera $C^\infty_c(X)$ ou $\mathcal{S}(X)$, l'espace des fonctions localement constante à support compact. Lorsque $G$ est un groupe algébrique réel ou complexe, on note $\mathcal{S}(G)$ l'espace des fonctions $C^\infty$ à décroissance rapide ainsi que toute ses dérivées. De plus, lorsque $\mathbb{A}_K$ l'anneau des adèles d'un corps de nombres $K$ et $G$ est un groupe algébrique sur $K$, on note $\mathcal{S}(G(\mathbb{A}))$ le produit restreint des espaces $\mathcal{S}(G(K_v))$ lorsque $v$ parcours l'ensemble des places de $K$ i.e. l'ensemble des fonctions $f = \otimes_v f_v$ avec $f_v \in \mathcal{S}(G(K_v))$ pour tout $v$ et $f_v = \mathbbm{1}_{\mathcal{O}_v}$ sauf pour un nombre fini de $v$, où $\mathcal{O}_v$ est l'anneau des entiers de $K$.
+
+Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, d'un sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G(F)$ et $\Pi_2(G) \subset Temp(G)$ le sous-ensemble des représentations de carré intégrable. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$.
 On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
 
 On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$, où $W_F'$ est le groupe de Weil-Deligne de $F$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$. La correspondance de Langlands locale pour $SO(2m+1)$ démontrée par Arthur \cite{arthur}, nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. 
@@ -118,9 +121,13 @@ Pour $\pi \in Temp(G)$ et $r$ une représentation admissible de ${}^L G$, on note
 où $n_{\pi,r}$ est l'ordre du zéro de $\gamma(s, \pi, r, \psi)$ en $s=0$.
 
 \subsection{Mesures}
-On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$. Pour $G$ un groupe réductif connexe sur $F$, on équipe $A_G$ de la mesure $(d^\times x)^{\wedge dim(A_G)}$ où $d^\times x = \frac{dx}{|x|_F}$ est la mesure de Haar sur $F^\times$.
+\label{mesures}
+On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$ et $F^\times$ de la mesure de Haar $d^\times x = \frac{dx}{|x|_F}$. 
+Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$ des mesures de Haar "produit des coordonnées". On équipe les groupes compact des mesures de Haar de masse totale égale à 1. Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ du produit des mesures sur $U_n$ et $G_{n-1}$. On équipe $\overline{B}_n$
+de la mesure $db = \prod_{i=1}^n d^\times b_{i,i} \prod_{1\leq j < i \leq n} d b_{i,j}$.
+On équipe $N_n \backslash G_n$ et $P_n \backslash G_n$ des mesures que l'on obtient par l'identification d'ouvert dense à $\overline{B}_n$ et $F^{n-1} \times F^\times$ respectivement.
 
-Décrivons comment on normalise la mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
+Pour $G$ un groupe réductif connexe sur $F$, on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$. Décrivons comment on normalise la mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi}.
 \end{equation}
@@ -131,14 +138,21 @@ d\pi  = |W(G, M)|^{-1} (Ind_M^G)_* d\sigma.
 \end{equation}
 La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
 
+
 \subsection{Résultats}
 Le résultat principal est le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
 \begin{equation}
-L^2(H_n(F) \backslash G_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+L^2(H_n(F) \backslash G_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
 \end{equation}
 \end{theoreme}
+
+Ce théorème est équivalent à la conjecture \ref{conjSV}. En effet, il suffit de calculer explicitement la mesure de Plancherel sur $SO(2n+1)$. Un analogue de la
+proposition \ref{propPlanch}, nous donne
+\begin{equation}
+d\mu_{SO(2n+1)}(\sigma) = \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+\end{equation}
 
 De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-invariant, on en déduit le
 \begin{theoreme}
@@ -151,7 +165,7 @@ L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq \int^{\oplus}_{Temp(SO(
 
 \section{Facteurs $\gamma$ du carré extérieur}
 \label{gamma}
-Dans cette partie $F$ désigne un corps local de caractéristique $0$ et $\psi$ un caractère non trivial de $F$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini une fonction L du carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notées $J(s, W, \phi)$, où $W \in \mathcal{W}(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F^n)$ est une fonction de Schwartz. Matringe a prouvé que, lorsque $F$ est non archimédien, ces intégrales $J(s,W,\phi)$ vérifient une équation fonctionnelle, ce qui permet de définir des facteurs $\gamma$, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$. 
+Dans cette partie $F$ désigne un corps local de caractéristique $0$ et $\psi$ un caractère non trivial de $F$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini une fonction L du carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notées $J(s, W, \phi)$, où $W \in \mathcal{W}(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F^n)$. Matringe a prouvé que, lorsque $F$ est non archimédien, ces intégrales $J(s,W,\phi)$ vérifient une équation fonctionnelle, ce qui permet de définir des facteurs $\gamma$, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$. 
 
 On montre que l'on a encore une équation fonctionnelle lorsque $F$ est archimédien et que les facteurs $\gamma$ sont égaux à une constante de module 1 prés à ceux définis par Shahidi, que l'on note $\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$. Plus exactement, il existe une constante $c(\pi)$ de module 1, telle que
 \begin{equation}
@@ -170,9 +184,9 @@ Les intégrales $J(s, W, \phi)$ sont définies par
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix}\right)\psi(-Tr(X))dX\phi(e_ng)|\det g|^s dg
+\end{pmatrix} \sigma_n^{-1} \right)\psi(-Tr(X))dX\phi(e_ng)|\det g|^s dg
  \end{equation}
-pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$. Le groupe $Lie(B_n)\backslash{M_n}$ correspond aux matrices triangulaires inférieures strictes, on l'équipe de la mesure de Haar $dX = \prod_{1 \leq j < i \leq n} dX_{i,j}$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
   \end{smallmatrix}\bigr).$
@@ -182,7 +196,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   Il existe $\eta > 0$ tel que les intégrales $J(s, W, \phi)$ convergent absolument pour $Re(s) > 1 - \eta$.
   \end{proposition}
   
-  Kewat montre, lorsque $F$ est p-adique, que ce sont des fractions rationnelles en $q^{s}$ où $q$ est le cardinal du corps résiduel de $F$. On aura aussi besoin d'avoir le prolongement méromorphe de ces intégrales lorsque $F$ est archimédien et d'un résultat de non annulation.
+  Kewat \cite{kewat} montre, lorsque $F$ est p-adique, que ce sont des fractions rationnelles en $q^{s}$ où $q$ est le cardinal du corps résiduel de $F$. On aura aussi besoin d'avoir le prolongement méromorphe de ces intégrales lorsque $F$ est archimédien et d'un résultat de non annulation.
   \begin{proposition}[Belt \cite{belt}]
   \label{nonzero}
   Fixons $s_0 \in \mathbb{C}$. Il existe $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$ tels que $J(s,W,\phi)$ admet un prolongement méromorphe à tout le plan complexe et ne s'annule pas en $s_0$. Si $F=\mathbb{R}$ ou $\mathbb{C}$, le point $s_0$ peut éventuellement être un pôle. Si $F$ est $p$-adique, on peut choisir $W$ et $\phi$ tels que $J(s, W, \phi)$ soit entière.
@@ -191,7 +205,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   Lorsque la représentation est non-ramifiée, on peut représenter la fonction L du carré extérieur obtenue par la correspondance de Langlands locale, que l'on note $L(s, \pi, \Lambda^2)$, (qui est égale à celle obtenue par la méthode de Langlands-Shahidi d'après un résultat d'Henniart \cite{henniart}) par ces intégrales.
   \begin{proposition}[Jacquet-Shalika \cite{jacquet-shalika}]
   \label{calculnr}
-  Supposons que $F$ est $p$-adique, le conducteur de $\psi$ est l'anneau des entiers $\mathcal{O}$ de $F$. Soit $\pi$ une représentation non ramifiée de $GL_{2n}(F)$. On note $\phi_0$ la fonction caractéristique de $\mathcal{O}^n$ et $W_0$ l'unique fonction de Whittaker invariante par $GL_{2n}(\mathcal{O})$ et qui vérifie $W(1)=1$. Alors
+  Supposons que $F$ est $p$-adique, le conducteur de $\psi$ est l'anneau des entiers $\mathcal{O}$ de $F$. Soit $\pi$ une représentation non ramifiée de $GL_{2n}(F)$. On note $\phi_0$ la fonction caractéristique de $\mathcal{O}^n$ et $W_0 \in \mathcal{W}(\pi, \psi)$ l'unique fonction de Whittaker invariante par $GL_{2n}(\mathcal{O})$ et qui vérifie $W(1)=1$. Alors
    \begin{equation}
    J(s,W_0,\phi_0) = L(s, \pi, \Lambda^2).
     \end{equation}
@@ -200,11 +214,15 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   Pour finir cette section, on énonce l'équation fonctionnelle démontrée par Matringe lorsque $F$ est un corps $p$-adique. Plus précisément, on a la
  \begin{proposition}[Matringe \cite{matringe}]
  \label{funcloc}
- Supposons que $F$ est un corps $p$-adique et $\pi$ générique. Il existe un monôme $\epsilon(s,\pi,\Lambda^2,\psi)$ en $q^s$, tel que pour tous $W \in \mathcal{W}(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, ont ait
+ Supposons que $F$ est un corps $p$-adique et $\pi$ générique. Il existe un monôme $\epsilon(s,\pi,\Lambda^2,\psi)$ en $q^s$ ou $q^{-s}$, tel que pour tous $W \in \mathcal{W}(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, ont ait
  \begin{equation}
  \epsilon(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\tilde{W},\hat{\phi})}{L(1-s,\tilde{\pi},\Lambda^2)},
  \end{equation}
- où $\hat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ et $\tilde{W} \in \mathcal{W}(\tilde{\pi}, \bar{\psi})$ est la fonction de Whittaker définie par $\tilde{W}(g) = W(w_n(g^t)^{-1})$, avec $w_n$ la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+ où $\hat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ définie par
+ \begin{equation}
+ \mathcal{F}_\psi(\phi)(y) = \int_{F^n} \phi(x)\psi(\sum_{i=1}^n x_i y_i)dx
+ \end{equation}
+ pour tout $y \in F^n$ et $\tilde{W} \in \mathcal{W}(\tilde{\pi}, \bar{\psi})$ est la fonction de Whittaker définie par $\tilde{W}(g) = W(w_n(g^t)^{-1})$ pour tout $g \in GL_{2n}(F)$, avec $w_n$ la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & \cdots & 2n  \\
     2n & \cdots &  1 
   \end{smallmatrix}\bigr)$
@@ -221,7 +239,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   \subsubsection{Théorie globale}
   La méthode que l'on utilise est une méthode de globalisation. Essentiellement, on verra $\pi$ comme une composante locale d'une représentation automorphe cuspidale. Pour ce faire, on aura besoin de l'équivalent global des intégrales $J(s, W, \phi)$.
   
-  Soit $K$ un corps de nombres et $\psi_\mathbb{A}$ un caractère non trivial de $\mathbb{A}_K/K$. Soit $\Pi$ une représentation automorphe cuspidale irréductible sur $GL_{2n}(\mathbb{A}_K)$. Pour $\varphi \in \Pi$, on considère
+  Soit $K$ un corps de nombres et $\psi_\mathbb{A}$ un caractère non trivial de $\mathbb{A}_K/K$. Soit $\Pi$ une représentation automorphe cuspidale irréductible de $GL_{2n}(\mathbb{A}_K)$. Pour $\varphi \in \Pi$, on considère
   \begin{equation}
   W_\varphi(g) = \int_{N_{2n}(K)\backslash{N_{2n}(\mathbb{A}_K)}} \varphi(ug)\psi_\mathbb{A}(u)du
   \end{equation}
@@ -247,7 +265,7 @@ g & 0 \\
  où $\tilde{W}_\varphi(g) = W_\varphi(w_n(g^t)^{-1})$ et $\hat{\Phi}$ est la transformée de Fourier de $\Phi$ par rapport au caractère $\psi_\mathbb{A}$.
  \end{proposition}
  
- Comme on peut s'y attendre, les intégrales globales sont reliées aux intégrales locales. Plus exactement, si $W=\prod_v W_v$ et $\Phi = \prod_v \Phi_v$, où $v$ décrit les places de $K$, on a
+ Comme on peut s'y attendre, les intégrales globales sont reliées aux intégrales locales. Plus exactement, si $W_\varphi=\prod_v W_v$ et $\Phi = \prod_v \Phi_v$, où $v$ décrit les places de $K$, on a
  \begin{equation}
  J(s,W_\varphi,\Phi)=\prod_v J(s, W_v, \Phi_v).
  \end{equation}
@@ -260,7 +278,7 @@ g & 0 \\
  Supposons que $F$ est un corps $p$-adique. Il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$.
  \end{lemme}
  
- On note $Temp(GL_{2n}(F))$ l'ensemble des classes d'isomorphismes de représentations tempérées irréductibles. On va définir une topologie sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$ et $\sigma$ une représentation irréductible de carré intégrable de $M$, on note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto i^G_M(\sigma \otimes \chi_\lambda) \in Temp(GL_{2n}(F))$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
+On va définir une topologie sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$, $P$ un parabolique de Levi $M$ et $\sigma \in \Pi_2(M)$. La classe d'équivalence de l'induction parabolique normalisé $i^G_P(\sigma)$ est indépendante du parabolique $P$ et on la notera $i^G_M(\sigma)$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto i^G_M(\sigma \otimes \chi_\lambda) \in Temp(GL_{2n}(F))$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
  
  Cette topologie sur $Temp(GL_{2n}(F))$ nous permet d'énoncer le résultat principal dont on aura besoin pour la méthode de globalisation.
  \begin{proposition}[Beuzart-Plessis \cite{beuzart-plessis}]
@@ -273,26 +291,24 @@ g & 0 \\
  
  L'espace des fonctions tempérées $C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ est l'espace des fonctions $f : GL_{2n}(F) \rightarrow \mathbb{C}$ telles que $f(ng) = \psi(n)f(g)$ pour tous $n \in N_{2n}(F)$ et $g \in GL_{2n}(F)$, on impose les conditions suivantes :
  \begin{itemize}
- \item Si $F$ est $p$-adique, $f$ est localement constante et il existe $d > 0$ et $C > 0$ tels que $|f(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O})$,
- \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ et $C > 0$ tels que $|(R(u)f)(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$, $k \in GL_{2n}(\mathcal{O})$ et $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$.
+ \item Si $F$ est $p$-adique, $f$ est invariante à droite par un sous-groupe compact ouvert et il existe $d > 0$ et $C > 0$ tels que $|f(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$, où $||a|| = max(|a_{i,i}|)$, pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O})$,
+ \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ tel que pour tout $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$, il existe $C > 0$ tel que $|(R(u)f)(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$, $k \in GL_{2n}(\mathcal{O})$.
  \end{itemize}
- 
- définir $||a||$ invariant sous la décomposition d'Iwasawa
  
  
 On rappelle la majoration des fonctions tempérées sur la diagonale,
-\begin{lemme}
+\begin{lemme}[Lemme 2.4.3 \cite{beuzart-plessis}]
 \label{majtemp}
-Soit $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$. Alors, pour tout $N \geq 1$, il existe $C > 0$ tel que
+Soit $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$. Il existe $d > 0$ tel que pour tout $N \geq 1$, il existe $C > 0$ tel que
 \begin{equation}
 |W(bk)| \leq C\prod_{i=1}^{2n-1} (1 + |\frac{b_i}{b_{i+1}}|)^{-N}\delta_{B_{2n}}(b)^{\frac{1}{2}}\log(||b||)^d,
 \end{equation}
 pour tous $b \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O})$.
 \end{lemme}
 
-\begin{lemme}
+\begin{lemme}[Lemme 2.4.4 \cite{beuzart-plessis}]
 \label{convergenceAn}
-Il existe $N$ tel que pour tous $s$ vérifiant $Re(s) > 0$ et $d > 0$, l'intégrale
+Pour tout $C > 0$, il existe $N$ tel que pour tous $s$ vérifiant $0 < Re(s) < C$ et $d > 0$, l'intégrale
 \begin{equation}
 \int_{A_n} \prod_{i=1}^{n-1} (1+|\frac{a_i}{a_{i+1}}|)^{-N}(1+|a_n|)^{-N}\log(||a||)^d|\det a|^s da
 \end{equation}
@@ -306,7 +322,7 @@ Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}
 \end{lemme}
  
  \begin{proof}
- D'après la décomposition d'Iwasawa, on a $N_n\backslash{G_n} = A_nK_n$. Il suffit de montrer la convergence de l'intégrale
+ Soit $G_n = N_nA_nK_n$ la décomposition d'Iwasawa de $G_n$. Il suffit de montrer la convergence de l'intégrale
  \begin{equation}
  \int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(\sigma_n \begin{pmatrix}
 1 & X \\
@@ -314,7 +330,7 @@ Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}
 \end{pmatrix}\begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix}\right) \phi(e_nak)\right| dX dk \left|\det a\right|^{Re(s)} \delta^{-1}(a) da.
+\end{pmatrix} \sigma_n^{-1}\right) \phi(e_nak)\right| dX dk \left|\det a\right|^{Re(s)} \delta_{B_n}^{-1}(a) da.
  \end{equation}
  
  On pose $u_X = \sigma_n \begin{pmatrix}
@@ -569,7 +585,7 @@ k & 0 \\
  \section{Limite spectrale}
  
  \label{seclimite}
- Dans cette partie $F$ est un corps $p$-adique. On renvoie à la section \ref{notations} pour la normalisation des mesures sur $Temp(G)$, pour un groupe $G$ réductif connexe sur $F$.
+ Dans cette partie $F$ est un corps $p$-adique. On renvoie à la section \ref{mesures} pour la normalisation des mesures sur $Temp(G)$, pour un groupe $G$ réductif connexe sur $F$.
 
 On note $PG_{2n} = G_{2n}(F)/Z_{2n}(F)$. Soit $f \in \mathcal{S}(PG_{2n})$, pour $\pi \in Temp(PG_{2n})$, on définit $f_\pi$ par
 \begin{equation}
@@ -578,6 +594,7 @@ f_\pi(g) = Tr(\pi(g)\pi(f^\vee)),
 pour tout $g \in PG_{2n}$, où $f^{\vee}(x) = f(x^{-1})$.
 
 \begin{proposition}[Harish-Chandra \cite{waldspurger}]
+\label{propPlanch}
 Il existe une unique mesure $\mu_{PG_{2n}}$ sur $Temp(PG_{2n})$ telle que
 \begin{equation}
 f(g) = \int_{Temp(PG_{2n})} f_{\pi}(g) d\mu_{PG_{2n}}(\pi),
