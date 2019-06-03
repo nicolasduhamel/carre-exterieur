@@ -100,14 +100,14 @@ On commence dans la section \ref{gamma} par prouver une relation sur les facteur
 
 \subsection{Notations}
 \label{notations}
-Dans la suite on notera $F$ un corps $p$-adique (sauf dans la section \ref{gamma} où $F$ peut désigner un corps archimédien) et $\psi$ un caractère non trivial de $F$. On note $q_F$ le cardinal du corps résiduel de $F$ et $|.|_F$ (ou simplement |.|) la valeur absolue sur $F$ normalisé par $|\omega|_F = q_F^{-1}$ où $\omega$ est une uniformisante de $F$. On notera $G_n$ le groupe $GL_n(F)$ et $PG_n = Z_n(F) \backslash GL_n$. De plus, dans la suite on posera $H_n=H_n(F)$ le groupe de ses $F$-points. On note $A_n$ le groupe des matrices diagonales inversibles, $B_n$ le sous groupe des matrices triangulaires supérieures inversibles, $\overline{B}_n$ ou $B_n^{-}$ le sous groupe des matrices triangulaires inférieures inversibles, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
+Dans la suite on notera $F$ un corps $p$-adique (sauf dans la section \ref{gamma} où $F$ peut désigner un corps archimédien) et $\psi$ un caractère non trivial de $F$. On note $q_F$ le cardinal du corps résiduel de $F$ et $|.|_F$ (ou simplement |.|) la valeur absolue sur $F$ normalisé par $|\omega|_F = q_F^{-1}$ où $\omega$ est une uniformisante de $F$. On notera $G_n$ le groupe $GL_n(F)$ et $PG_n = Z_n(F) \backslash GL_n$. De plus, dans la suite on posera $H_n=H_n(F)$ le groupe de ses $F$-points. On note $A_n$ le groupe des matrices diagonales inversibles, $B_n$ le sous groupe des matrices triangulaires supérieures inversibles, $\overline{B}_n$ ou $B_n^{-}$ le sous groupe des matrices triangulaires inférieures inversibles, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$, $\overline{N}_n$ le sous groupe des matrices triangulaires inférieures strictes et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
 1_{n-1} & x \\
 0 & 1
 \end{pmatrix}$ pour $x \in F^{n-1}$ et $P_n = G_{n-1}U_n$ le sous-groupe mirabolique. On note $\delta_{B_n}$ le caractère modulaire de $B_n$. On notera par des lettres gothiques les algèbres de Lie correspondantes et pour $\mathfrak{g}$ une algèbre de Lie $\mathcal{U}(\mathfrak{g})$ désignera l'algèbre enveloppante.
 
 Lorsque $X$ est un espace totalement discontinu, on notera $C^\infty_c(X)$ ou $\mathcal{S}(X)$, l'espace des fonctions localement constante à support compact. Lorsque $G$ est un groupe algébrique réel ou complexe, on note $\mathcal{S}(G)$ l'espace des fonctions $C^\infty$ à décroissance rapide ainsi que toute ses dérivées. De plus, lorsque $\mathbb{A}_K$ l'anneau des adèles d'un corps de nombres $K$ et $G$ est un groupe algébrique sur $K$, on note $\mathcal{S}(G(\mathbb{A}))$ le produit restreint des espaces $\mathcal{S}(G(K_v))$ lorsque $v$ parcours l'ensemble des places de $K$ i.e. l'ensemble des fonctions $f = \otimes_v f_v$ avec $f_v \in \mathcal{S}(G(K_v))$ pour tout $v$ et $f_v = \mathbbm{1}_{\mathcal{O}_v}$ sauf pour un nombre fini de $v$, où $\mathcal{O}_v$ est l'anneau des entiers de $K$.
 
-Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, d'un sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G(F)$ et $\Pi_2(G) \subset Temp(G)$ le sous-ensemble des représentations de carré intégrable. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$.
+Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, d'un sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G(F)$ et $\Pi_2(G) \subset Temp(G)$ le sous-ensemble des représentations de carré intégrable. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$. Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant la classe d'isomorphisme de $\sigma$.
 On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
 
 On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$, où $W_F'$ est le groupe de Weil-Deligne de $F$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$. La correspondance de Langlands locale pour $SO(2m+1)$ démontrée par Arthur \cite{arthur}, nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. 
@@ -123,11 +123,10 @@ où $n_{\pi,r}$ est l'ordre du zéro de $\gamma(s, \pi, r, \psi)$ en $s=0$.
 \subsection{Mesures}
 \label{mesures}
 On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$ et $F^\times$ de la mesure de Haar $d^\times x = \frac{dx}{|x|_F}$. 
-Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$ des mesures de Haar "produit des coordonnées". On équipe les groupes compact des mesures de Haar de masse totale égale à 1. Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ du produit des mesures sur $U_n$ et $G_{n-1}$. On équipe $\overline{B}_n$
-de la mesure $db = \prod_{i=1}^n d^\times b_{i,i} \prod_{1\leq j < i \leq n} d b_{i,j}$.
+Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_N$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ du produit des mesures sur $U_n$ et $G_{n-1}$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1. On équipe $Lie(B_n) \backslash M_n$ de la mesure obtenu par identification avec $\overline{N}_n$.
 On équipe $N_n \backslash G_n$ et $P_n \backslash G_n$ des mesures que l'on obtient par l'identification d'ouvert dense à $\overline{B}_n$ et $F^{n-1} \times F^\times$ respectivement.
 
-Pour $G$ un groupe réductif connexe sur $F$, on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$. Décrivons comment on normalise la mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant $\sigma$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
+Pour $G$ un groupe réductif connexe sur $F$, on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$. Décrivons comment on normalise la mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi}.
 \end{equation}
@@ -351,41 +350,65 @@ a & 0 \\
 \int_{A_n} \int_{K_n} \int_{Lie(B_n)\backslash{M_n}} \left|W\left(b u_X \sigma_n \begin{pmatrix}
 k & 0 \\
 0 & k
-\end{pmatrix}\right)\phi(e_nak)\right|dX dk |\det a|^{Re(s)} \delta^{-2}(a) da.
+\end{pmatrix} \sigma_n^{-1} \right)\phi(e_nak)\right|dX dk |\det a|^{Re(s)} \delta^{-2}(a) da.
  \end{equation}
  
- On écrit $u_X = n_Xt_Xk_X$ la décomposition d'Iwasawa de $u_x$ et on pose $k_\sigma = \sigma_n \begin{pmatrix}
+ On écrit $u_X = n_Xt_Xk_X$ la décomposition d'Iwasawa de $u_X$ et on pose $k_\sigma = \sigma_n \begin{pmatrix}
 k & 0 \\
 0 & k
-\end{pmatrix}$. Le lemme \ref{majtemp} donne alors
+\end{pmatrix} \sigma_n^{-1}$. Le lemme \ref{majtemp} donne alors
  \begin{equation}
- |W(bt_Xk_Xk_\sigma)| \leq C \prod_{i=1}^{2n-1} (1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d.
+ |W(bt_Xk_Xk_\sigma)| \leq C \prod_{i=1}^{2n-1} (1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-2N} \delta_{B_{2n}}^{\frac{1}{2}}(bt_X)\log(||bt_X||)^d.
  \end{equation}
  
  On aura besoin d'inégalités prouvées par Jacquet et Shalika concernant les $t_j$. On dispose de la
  \begin{proposition}[Jacquet-Shalika \cite{jacquet-shalika}]
+ \label{maj_tj}
  On a $|t_k| \geq 1$ lorsque $k$ est impair et $|t_k| \leq 1$ lorsque $k$ est pair. En particulier, $|\frac{t_j}{t_{j+1}}| \geq 1$ lorsque $j$ est impair et $|\frac{t_j}{t_{j+1}}| \leq 1$ lorsque $j$ est pair.
  \end{proposition}
  
- On combine alors cette proposition avec le fait que $\frac{b_j}{b_{j+1}} = 1$ lorsque $j$ est impair et $\frac{b_j}{b_{j+1}} = \frac{a_\frac{j}{2}}{a_{\frac{j}{2}+1}}$ lorsque $j$ est pair. Ce qui nous permet d'obtenir
- \begin{align}
- |W(bt_Xk_Xk_\sigma)| &\leq C 2^{-nN} \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N} \prod_{i=1}^{2n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d \\
- &\leq C 2^{-nN} m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}(bt_x)\log(||bt_X||)^d,
- \end{align}
- où $m(X) = sup(1, ||X||)$, la dernière inégalité provient de \cite[section 5.5]{jacquet-shalika}. D'autre part, il existe $C' > 0$ tel que
+ On combine alors cette proposition avec le fait que $\frac{b_j}{b_{j+1}} = 1$ lorsque $j$ est impair et $\frac{b_j}{b_{j+1}} = \frac{a_\frac{j}{2}}{a_{\frac{j}{2}+1}}$ lorsque $j$ est pair. Ce qui nous permet de majorer $(1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-2N}$ par $|\frac{t_j}{t_{j+1}}|^{-2N}$ lorsque $j$ est impair et par $|\frac{t_j}{t_{j+1}}|^{-N}(1+  |\frac{a_{j/2}}{a_{j/2+1}}|)^{-N}$ lorsque $j$ est pair. Ce qui donne
+ \begin{equation}
+ \begin{split}
+ |W(bt_Xk_Xk_\sigma)| &\leq C \prod_{j=1}^{2n-1}|\frac{t_j}{t_j+1}|^{-N} \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta_{B_{2n}}^{\frac{1}{2}}(bt_X)\log(||bt_X||)^d \\
+ &\leq C \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N}  \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta_{B_{2n}}^{\frac{1}{2}}(bt_X)\log(||bt_X||)^d,
+  \end{split}
+ \end{equation}
+ puisque $\prod_{j=1}^{2n-1}|\frac{t_j}{t_j+1}|^{-N} = |\frac{t_1}{t_{2n}}|^{-N} \leq 1$ d'après la proposition \ref{maj_tj}.
+ 
+ De plus, encore d'après la proposition \ref{maj_tj}, on a
+ \begin{equation}
+ \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N} \leq \prod_{j=1, \text{j impair}}^{2n-1} \frac{1}{|t_j|^N}.
+ \end{equation}
+ 
+ Pour finir, on aura besoin de la
+ \begin{proposition}[Jacquet-Shalika \cite{jacquet-shalika}]
+ Pour $X \in Lie(\overline{N}_n)$, on pose $||X|| = sup_{i,j} |X_{i,j}|$. On pose $m(X) = \sqrt{1+||X||}$ lorsque $F$ est archimédien et $m(X) = sup(1, ||X||)$ lorsque $F$ est non-archimédien. Il existe une constante $\alpha > 0$ telle que
+ pour tout $X \in Lie(\overline{N}_n)$, on ait
+ \begin{equation}
+\prod_{j=1, \text{j impair}}^{2n-1} |t_j| \geq m(X)^\alpha
+\end{equation}
+ \end{proposition}
+ 
+Grâce à cette proposition, on obtient la majoration
+ \begin{equation}
+ |W(bt_Xk_Xk_\sigma)| \leq C m(X)^{-\alpha N}  \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta_{B_{2n}}^{\frac{1}{2}}(bt_X)\log(||bt_X||)^d.
+ \end{equation}
+ 
+ D'autre part, il existe $C' > 0$ tel que
  \begin{equation}
  |\phi(e_nak)| \leq C'(1+|a_n|)^{-N}.
  \end{equation}
- L'intégrale est alors majorée (à une constante prés) par le produit des intégrales
+ 
+ L'intégrale $J(s, W, \phi)$ est alors majorée (à une constante près) par le maximum du produit des intégrales
  \begin{equation}
- \int_{Lie(B_n)\backslash{M_n}} m(X)^{-\alpha N} \delta^{\frac{1}{2}}(t_X)\log(||t_X||)^d dX
+ \int_{Lie(B_n)\backslash{M_n}} m(X)^{-\alpha N} \delta_{B_{2n}}^{\frac{1}{2}}(t_X)\log(||t_X||)^{d-j} dX
  \end{equation}
  et
  \begin{equation}
- \int_{A_n}  \prod_{i=1}^{n-1} (1+ |\frac{a_i}{a_{i+1}}|)^{-N} (1+|a_n|)^{-N}\log(||b||)^d|\det a|^{Re(s)} \delta_{B_{2n}}^{\frac{1}{2}}(b)\delta_{B_n}^{-2}(a) da.
+ \int_{A_n}  \prod_{i=1}^{n-1} (1+ |\frac{a_i}{a_{i+1}}|)^{-N} (1+|a_n|)^{-N}\log(||b||)^j |\det a|^{Re(s)} \delta_{B_{2n}}^{\frac{1}{2}}(b)\delta_{B_n}^{-2}(a) da,
  \end{equation}
- 
- La première intégrale converge pour $N$ assez grand et la deuxième pour $N$ assez grand lorsque $Re(s) > 0$. On a utilisé la relation $\delta_{B_{2n}}^{\frac{1}{2}}(b) = \delta_{B_n}^2(a)$. En effet,
+ pour $j$ compris entre $0$ et $d$. La première intégrale converge pour $N$ assez grand et la deuxième pour $N$ assez grand lorsque $Re(s) > 0$. On a utilisé la relation $\delta_{B_{2n}}^{\frac{1}{2}}(b) = \delta_{B_n}^2(a)$. En effet,
  \begin{align}
  \delta_{B_{2n}}(b) &= |a_1|^{1-2n}|a_1|^{3-2n}|a_2|^{5-2n}|a_2|^{7-2n}...|a_n|^{2n-3}|a_n|^{2n-1}, \\
  &= |a_1|^{4-4n}|a_2|^{12-4n}...|a_n|^{4n-4},\\
@@ -402,13 +425,13 @@ k & 0 \\
  Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On aura besoin d'un résultat sur la continuité du quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \hat{\phi})}{J(s, W, \phi)}$ lorsque l'on fait varier la représentation $\pi$, on dispose du
  \begin{lemme}
  \label{cont}
- Soient $W_0 \in \mathcal{W}(\pi, \psi))$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ tels que $W_0 = W_\pi$ et l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \hat{\phi})}{J(s, W_{\pi'}, \phi)}$ soit continue.
+ Soient $W_0 \in \mathcal{W}(\pi, \psi))$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ tels que $W_0 = W_\pi$ et l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ soit continue.
  
  En particulier, si $F$ est un corps $p$-adique, ce quotient est égal à $\gamma^{JS}(s, \pi', \Lambda^2, \psi)$ (proposition \ref{funcloc}); donc $\pi' \in V \mapsto \gamma^{JS}(s, \pi', \Lambda^2, \psi)$ est continue.
  \end{lemme}
  
  \begin{proof}
- On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ (Beuzart-Plessis). La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue, il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \hat{\phi})}{J(s, W_{\pi'}, \phi)}$ est alors bien une fonction continue de $\pi'$ sur $V$. 
+ On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ (Beuzart-Plessis). La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue, il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est alors bien une fonction continue de $\pi'$ sur $V$. 
  \end{proof}
  
  On étudie maintenant la dépendance du quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$ par rapport au caractère additif $\psi$, où l'on note $\mathcal{F}_\psi$ pour la transformée de Fourier par rapport à $\psi$. Les caractères additifs de $F$ sont de la forme $\psi_\lambda$ avec $\lambda \in F^*$ où $\psi_\lambda(x) = \psi(\lambda x)$.
@@ -424,7 +447,7 @@ k & 0 \\
  \begin{proof}
  En effet, la mesure de Haar auto-duale pour $\psi_\lambda$ est reliée à la mesure de Haar auto-duale pour $\psi$ par un facteur $|\lambda|^{\frac{n}{2}}$. On en déduit que $\mathcal{F}_{\psi_\lambda}(\phi)(x) = |\lambda|^{\frac{n}{2}}\mathcal{F}_\psi(\phi)(\lambda x)$. Le changement de variable $g \mapsto \lambda^{-1} g$ dans l'intégrale définissant $J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)(\lambda .))$ donne
  \begin{equation}
- J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)(\lambda.)) = |\lambda|^{n(s-1)}\omega(\lambda)J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)(\lambda.)) = |\lambda|^{n(s-1)}\omega_\pi(\lambda)J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
  \end{equation}
  On en déduit immédiatement le lemme.
  \end{proof}
@@ -433,7 +456,7 @@ k & 0 \\
  
  \begin{proposition}
  \label{proparch}
- Soit $F = \mathbb{R}$ ou $\mathbb{C}$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. 
+ Soit $F = \mathbb{R}$ ou $\mathbb{C}$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$.  Les intégrales $J(s, W, \phi)$ admettent un prolongement méromorphe à $\mathbb{C}$ pour tous $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$.
  
  Il existe une fonction méromorphe $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ telle que pour tous $s \in \mathbb{C}$, $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$, on ait
  \begin{equation}
@@ -447,16 +470,16 @@ k & 0 \\
  \end{proposition}
  
  \begin{proof}
- Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soient $v \neq v'$ deux places non archimédiennes distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_K/K$.
+ Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soient $v \neq v'$ deux places non archimédiennes distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$.
  
  D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
  
- On choisit maintenant des fonctions de Whittaker $W_w$ et des fonctions de Schwartz $\phi_w$ dans le but d'appliquer l'équation fonctionnelle globale. Pour $w \not\in \{\infty, v\}$, on prend les fonctions "non ramifiées" qui apparaissent dans la proposition \ref{calculnr}. Pour $w = \infty$ ou $v$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
+ On choisit des fonctions $W_w \in \mathcal{W}(\pi_w, (\phi_\mathbb{A})_w)$ et $\phi_w \in \mathcal{S}(k_w)$ dans le but d'appliquer l'équation fonctionnelle globale. On note $S = \{\infty, v\}$ l'ensemble des places où $\Pi$ est ramifiée et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est ramifié. Pour $w \not\in S \cup T$, on prend les fonctions "non ramifiées" qui apparaissent dans la proposition \ref{calculnr}. Pour $w = S \cup T$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
  \begin{equation}
  W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.
  \end{equation}
  
- On note $S = \{\infty, v\}$ l'ensemble des places où $\Pi$ est non ramifiée et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est non ramifié. D'après la proposition \ref{funcglob}, on a
+ D'après la proposition \ref{funcglob}, on a
  \begin{equation}
  \label{jacquet-shalika}
  \begin{split}
@@ -485,7 +508,7 @@ k & 0 \\
  \begin{equation}
  \frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = \frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, \psi_0)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, \psi_0)} = 1,
  \end{equation}
- d'après la proposition \ref{calculnr} (calcul non ramifié des intégrales de Jacquet-Shalika) et le calcul non ramifié des facteurs gamma de Shahidi (voir Henniart \cite{henniart}).
+ d'après la proposition \ref{calculnr} et le calcul non ramifié des facteurs gamma de Shahidi (voir Henniart \cite{henniart}).
  
  L'équation (\ref{equationlocalglobal}) devient alors
  \begin{equation}
@@ -504,12 +527,12 @@ k & 0 \\
  où $W \in \mathcal{W}(\pi, \psi)$, qui est bien indépendant des choix que l'on a fait.
  De plus, $R$ est une limite de fractions rationnelles en $q_v^s$ (les quotients $\frac{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}$); donc $R$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$.
  
-  En réutilisant le même raisonnement en la place $v'$, on voit que $R$ est aussi périodique de période $\frac{2i\pi}{\log q_{v'}}$. L'équation (\ref{facteurR}) s'écrit
+  En réutilisant le même raisonnement en une place $v'$ de caractéristique résiduelle distincte de celle de $v$, on voit que $R$ est aussi périodique de période $\frac{2i\pi}{\log q_{v'}}$. L'équation (\ref{facteurR}) s'écrit
    \begin{equation}
  \gamma^{JS}(s, \pi, \Lambda^2, \psi) = R(s)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  
-  La fonction $R$ est donc une fraction rationnelle en $q_v^s$ périodique de période $\frac{2i\pi}{\log q_{v'}}$. Ce qui est impossible sauf si $R$ est constante. Ce qui nous permet de voir qu'il existe une constante $c(\pi)=R$ telle que
+  La fonction $R$ est donc une fonction périodique de période $\frac{2i\pi}{\log q_v}$ et $\frac{2i\pi}{\log q_{v'}}$ avec $q_v$ et $q{v'}$ premier entre eux; ce qui est impossible sauf si $R$ est constante. Ce qui nous permet de voir qu'il existe une constante $c(\pi)=R$ telle que
  \begin{equation}
  \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
  \end{equation}
@@ -553,7 +576,7 @@ k & 0 \\
  \end{proposition}
  
  \begin{proof}
- D'après le lemme \ref{corpsglobal}, il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$. Soient $v,v'$ deux places distinctes non archimédiennes et différentes de $v_0$. Soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$.
+ D'après le lemme \ref{corpsglobal}, il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$. Soit $v$ une place non archimédiennes et de caractéristique résiduelle distincte de celle de $v_0$. Soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$.
  
  D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{v_0} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
  
@@ -593,7 +616,7 @@ f_\pi(g) = Tr(\pi(g)\pi(f^\vee)),
 \end{equation}
 pour tout $g \in PG_{2n}$, où $f^{\vee}(x) = f(x^{-1})$.
 
-\begin{proposition}[Harish-Chandra \cite{waldspurger}]
+\begin{proposition}[Harish-Chandra \cite{waldspurger}, Shahidi \cite{shahidi}, Silberger-Zink \cite{silberger-zink}]
 \label{propPlanch}
 Il existe une unique mesure $\mu_{PG_{2n}}$ sur $Temp(PG_{2n})$ telle que
 \begin{equation}
