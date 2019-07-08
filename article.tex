@@ -1525,7 +1525,7 @@ Pour finir, le modèle de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(
 Pour $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$, la restriction de $\beta$ à $\mathcal{W}(\pi, \psi)$ est un élément de $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$.
 \end{proposition}
 
-La preuve de ce lemme se fera après quelques préliminaires. On commence par prouver un lemme et introduire des notations.
+La preuve de cette proposition se fera après quelques préliminaires. On commence par prouver un lemme et introduire des notations.
 
 \begin{lemme}
 \label{limitezeta}
@@ -1589,9 +1589,16 @@ pour tous $g_1, g_2 \in G_{2n}$.
 
 Soit $f \in \mathcal{S}(G_{2n})$ et $\pi \in Temp(G_{2n})$, on pose $W_{f, \pi} = W_{f_\pi}$.
 
-\begin{proposition}[\cite{beuzart-plessis}]
+\begin{proposition}[Beuzart-Plessis \cite{beuzart-plessis}]
+\label{Wfpicontinue}
+L'application linéaire
+$$f \in \mathcal{S}(G_{2n}) \mapsto (\pi \mapsto W_{f, \pi}) \in \mathcal{S}(Temp(G_{2n}, C^w(N_{2n} \times N_{2n} \backslash G_{2n} \times G_{2n}, \psi \otimes \psi ^{-1})$$
+est continue.
+\end{proposition}
+
+\begin{proposition}[Beuzart-Plessis \cite{beuzart-plessis}]
 \label{decspecwhitt}
-Pour tout $f \in \mathcal{S}(PG_{2n})$. On pose $\widetilde{f}(g) = \int_{Z_n} f(zg) dz$, alors $\widetilde{f} \in PG_{2n}$. De plus, $\widetilde{f}_\pi = f_\pi$ pour tout $\pi \in Temp(PG_{2n})$. On a l'égalité
+Pour tout $f \in \mathcal{S}(PG_{2n})$. On pose $\widetilde{f}(g) = \int_{Z_n} f(zg) dz$, alors $\widetilde{f} \in PG_{2n}$. On a $\widetilde{f}_\pi = f_\pi$ pour tout $\pi \in Temp(PG_{2n})$. De plus,
 \begin{equation}
 W_{\widetilde{f}} = \int_{Temp(PG_{2n})} W_{f, \pi} d\mu_{PG_{2n}}(\pi).
 \end{equation}
@@ -1760,7 +1767,7 @@ Pour finir la preuve du corollaire, il suffit d'utiliser le lemme \ref{zetabeta}
 
 \subsection{Formule de Plancherel explicite sur $H_n \backslash G_{2n}$}
 
-On note $Y_n = H_n \backslash G_{2n}$. On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
+On note $Y_n = H_n \backslash G_{2n}$ munie de la mesure quotient. On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
 \begin{equation}
 \varphi_f(y) = \int_{H_n} f(hy) \theta(h)^{-1} dh,
 \end{equation}
@@ -1771,14 +1778,30 @@ Soit $\varphi_1, \varphi_2 \in \mathcal{S}(Y_n, \theta)$, il existe $f_1, f_2 \i
 \label{psf}
 (\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{H_n} f(h) \theta(h)^{-1} dh,
 \end{equation}
-où $f = f_1 * f_2^{*}$, on note $f_2^*(g) = \overline{f_2(g^{-1})}$. On pose
+où $f = f_1 * f_2^{*}$, on note $f_2^*(g) = \overline{f_2(g^{-1})}$. 
+
+En effet,
 \begin{equation}
-(\varphi_1, \varphi_2)_{Y_n, \pi} = \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta\left(W_{f,\pi}(\xi_p,.)\right) \theta(\xi_p) d\xi_p,
+(\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{Y_n} \int_{H_n \times H_n} f_1(h_1 y) \overline{f_2(h_2 y)} \theta(h_1)^{-1} \theta(h_2) dh_1 dh_2 dy.
+\end{equation}
+
+L'intégrale est absolument convergente. On effectue le changement de variable $h_1 \mapsto h_1h_2$ et on combine les intégrales selon $y$ et $h_2$ en une intégrale sur $G_{2n}$. Ce qui donne
+\begin{equation}
+(\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{G_{2n}} \int_{H_n} f_1(h_1 y) \overline{f_2(y)} \theta(h_1)^{-1} dh_1 dy.
+\end{equation}
+
+
+On pose
+\begin{equation}
+(\varphi_1, \varphi_2)_{Y_n, \pi} = (f_1, f_2)_{Y_n, \pi} = \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta\left(W_{f,\pi}(\xi_p,.)\right) \theta(\xi_p) d\xi_p,
 \end{equation}
 pour tout $\pi \in T(Temp(SO(2n+1)))$.
 
+On note $\mathcal{S}(Y_n, \theta)_\pi$ le quotient de $\mathcal{S}(Y_n, \theta)$ par l'intersection des noyaux de toutes les applications $\mathcal{S}(Y_n, \theta) \rightarrow \pi$ linéaires $G_{2n}$-équivariante.
+
 \begin{proposition}
-La forme bilinéaire $(., .)_{Y_n, \pi}$ sur $\mathcal{S}(Y_n, \theta)$ est une forme hermitienne semi-definie positive qui se factorise par les $\pi$-coinvariants ( elle est indépendante du choix de $f_1,f_2$).
+Supposons $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$.
+La forme bilinéaire $(., .)_{Y_n, \pi}$ sur $\mathcal{S}(G_{2n}))$ est une forme hermitienne continue semi-definie positive qui se factorise par $\mathcal{S}(Y_n, \theta)_\pi$.
 \end{proposition}
 
 \begin{proof}
@@ -1810,12 +1833,14 @@ Pour $W \in \mathcal{W}(\pi, \psi)$, la décomposition de $\pi(f^{\vee})W$ selon 
 
 Cette égalité nous permet grâce au produit scalaire $(.,.)^{Wh}$ de faire l'identification
 \begin{equation}
-\begin{split}
-\pi(f^\vee) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \overline{\pi}(f)\overline{W'} \\
-&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_2)W' \otimes \overline{\pi(f_1)W'},
-\end{split}
+\pi(f^\vee) = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \overline{\pi}(f)\overline{W'}.
 \end{equation}
-d'après la $G_{2n}$-invariance de  $(.,.)^{Wh}$ qui nous permet de déduire que $W' \otimes \overline{\pi}(f_1 * f_2^{*})\overline{W'}  = \pi(f_2)W' \otimes \overline{\pi(f_1)W'}$.
+La $G_{2n}$-invariance de  $(.,.)^{Wh}$ nous donne que $W' \otimes \overline{\pi}(f_1 * f_2^{*})\overline{W'}  = \pi(f_2)W' \otimes \overline{\pi(f_1)W'}$.
+
+On obtient alors
+\begin{equation}
+\pi(f^\vee)  = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_2)W' \otimes \overline{\pi(f_1)W'}.
+\end{equation}
 
 On en déduit que
 \begin{equation}
@@ -1829,41 +1854,26 @@ pour tous $g_1, g_2 \in G_{2n}$. La dernière égalité provient de \cite[Prop 2.14
 
 Le lemme \ref{decbase} donne la relation
 \begin{equation}
-(\varphi_1, \varphi_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(T(\sigma), \psi)_f} \overline{\beta(T(\sigma)(f_2)W')} \beta(T(\sigma)(f_1)W'),
+(f_1, f_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(T(\sigma), \psi)_f} \overline{\beta(T(\sigma)(f_2)W')} \beta(T(\sigma)(f_1)W')
 \end{equation}
-qui est bien indépendant du choix de $f_1,f_2$ puisque la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariante.
+qui est indépendant du choix de $f_1,f_2$ puisque la restriction de $\beta$ à $\mathcal{W}(T(\sigma), \psi)$ est $(H_n, \theta)$-invariante, d'après la proposition \ref{lemmebeta}. De plus, $(f_1, f_2)_{Y_n, T(\sigma)}$ dépend uniquement de $T(\sigma)(f_1)$ et $T(\sigma)(f_2)$. On en déduit que $(.,.)_{Y_n, \pi}$ se factorise par $\mathcal{S}(Y_n, \theta)_{T(\sigma)}$.
 
-Pour finir, \cite[prop 4.1.1]{beuzart-plessis} nous dit que les formes sesquilinéaires $(\varphi_1, \varphi_2) \mapsto (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))c_\beta(\sigma)$ sont automatiquement définies positives. On en déduit que 
+On remarque que
 \begin{equation}
-\gamma^*(0, \sigma, Ad, \psi) c(T(\sigma))c_\beta(\sigma) = |\gamma^*(0, \sigma, Ad, \psi)|.
+(f_1, f_2)_{Y_n, T(\sigma)} = (\beta \otimes \beta)(W_{f_1 * f_2^{*}, \pi}),
 \end{equation}
+ce qui nous permet de déduire, d'après la proposition \ref{Wfpicontinue} et le lemme \ref{betann}, que $(., .)_{Y_n, T(\sigma)}$ est continue.
 \end{proof}
 
 \begin{theoreme}
 \label{thPlanch}
-Soit $\varphi_1, \varphi_2 \in \mathcal{S}(Y_n, \theta)$. On a
+Soient $\varphi_1, \varphi_2 \in \mathcal{S}(Y_n, \theta)$. On a
 \begin{equation}
-(\phi_1, \phi_2)_{L^2(Y_n)} = \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+(\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
 \end{equation}
 \end{theoreme}
 
 \begin{proof}
-On a
-\begin{equation}
-(\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{Y_n} \int_{H_n \times H_n} f_1(h_1 y) \overline{f_2(h_2 y)} \theta(h_1)^{-1} \theta(h_2) dh_1 dh_2 dy.
-\end{equation}
-
-L'intégrale est absolument convergente. En effet,
-\begin{equation}
-(y,h_1,h_2) \in \mathcal{Y}_n \times H_n \times H_n \mapsto f_1(h_1 y) \overline{f_2(h_2 y)}
-\end{equation}
-est à support compact, ou $\mathcal{Y}_n$ est un système de représentant de $Y_n$.
-On effectue le changement de variable $h_1 \mapsto h_1h_2$ et on combine les intégrales selon $y$ et $h_2$ en une intégrale sur $G_{2n}$. Ce qui donne
-\begin{equation}
-(\varphi_1, \varphi_2)_{L^2(Y_n)} = \int_{G_{2n}} \int_{H_n} f_1(h_1 y) \overline{f_2(y)} \theta(h_1)^{-1} dh_1 dy,
-\end{equation}
-qui est bien la relation \ref{psf}.
-
 D'après \ref{unfolding} et \ref{corolim}, on a
 \begin{equation}
 \label{intfin}
@@ -1874,11 +1884,11 @@ D'après \ref{unfolding} et \ref{corolim}, on a
 \end{equation}
 
 \begin{lemme}
-La fonction $(\xi_p, \sigma) \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est à support compact, l'intégrale \ref{intfin} est donc absolument convergente.
+La fonction $\sigma \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est à support compact.
 \end{lemme}
 
 \begin{proof}
-La fonction $\xi_p \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est lisse donc à support compact. De plus, d'après la définition de $f_\pi$, $W_{f,\pi}$ est nul dès que $\pi(f)$ l'est.
+D'après la définition de $f_\pi$, $W_{f,\pi}$ est nul dès que $\pi(f)$ l'est.
 
 Soit $K_f$ un sous-groupe ouvert compact tel que $f$ est biinvariant par $K_f$. Alors $\pi(f) \neq 0$, seulement lorsque $\pi$ admet des vecteurs $K_f$-invariant non nuls.
 
@@ -1887,11 +1897,21 @@ D'après Harish-Chandra (ref), il n'y a qu'un nombre fini de représentations $\ta
 Comme toute représentation $\pi \in Temp(G_{2n})$ est une induite d'une telle représentation $\tau$ pour un bon choix de sous-groupe de Levi $M$, on en déduit le lemme.
 \end{proof}
 
-On échange les intégrales pour obtenir
+D'après la proposition \ref{Wfpicontinue} et le lemme \ref{betann}, on sait que $\xi_p \mapsto \beta(W_{f, \pi}(\xi_p, .))$ est continue. On en déduit que
+\begin{equation}
+\int_{Temp(SO(2n+1))/Stab} \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|}c(T(\sigma))c_\beta(\sigma) d\sigma
+\end{equation}
+est absoluement convergente.
+
+De plus, l'intégration extérieure $\int_{H_n \cap N_{2n} \backslash H^P_n} \theta(\xi_p)d\xi_p$ n'est autre que la forme linéaire continue $\overline{\beta}(\bar{.})$, on en déduit que l'on peut échanger l'ordre d'intégration pour obtenir
 \begin{equation}
 \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))c_\beta(\sigma)d\sigma.
 \end{equation}
 
+Pour finir, \cite[prop 4.1.1]{beuzart-plessis} nous dit que les formes sesquilinéaires $(\varphi_1, \varphi_2) \mapsto (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))c_\beta(\sigma)$ sont automatiquement définies positives. On en déduit que 
+\begin{equation}
+\gamma^*(0, \sigma, Ad, \psi) c(T(\sigma))c_\beta(\sigma) = |\gamma^*(0, \sigma, Ad, \psi)|.
+\end{equation}
 \end{proof}
 
 \subsection{Formule de Plancherel abstraite sur $G_n \times G_n \backslash G_{2n}$}
