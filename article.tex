@@ -1517,7 +1517,7 @@ pour tout $k \in K^P_n$. D'après la preuve du lemme \ref{convtemp}, on obtient l
 \end{equation}
 pour tout $N \geq 1$. Cette dernière intégrale est convergente pour $N$ suffisamment grand par le même argument que dans la preuve du lemme \ref{convtemp}.
 
-Pour finir, le modèle de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(N_{2n} \backslash P_{2n}, \psi)$ (ref)(Gelfand-Kazhdan). En particulier, il existe une fonction de Whittaker dont la restriction a $A_{2n-1}K^P_{2n}$ est l'indicatrice de $A_{2n-1}(\mathcal{O}_F)$, alors $\beta$ est non nulle sur cette fonction.
+Pour finir, le modèle de Kirillov $\mathcal{K}(\pi, \psi)$ contient $C^\infty_c(N_{2n} \backslash P_{2n}, \psi)$ \cite{gelfand-kazhdan}. En particulier, il existe une fonction de Whittaker dont la restriction a $A_{2n-1}K^P_{2n}$ est l'indicatrice de $A_{2n-1}(\mathcal{O}_F)$, alors $\beta$ est non nulle sur cette fonction.
 \end{proof}
 
 \begin{proposition}
@@ -1604,6 +1604,30 @@ W_{\widetilde{f}} = \int_{Temp(PG_{2n})} W_{f, \pi} d\mu_{PG_{2n}}(\pi).
 \end{equation}
 \end{proposition}
 
+\begin{lemme}
+\label{choixf}
+Soit $W \in \mathcal{W}(\pi, \psi)$, alors il existe $f \in \mathcal{S}(G_{2n})$ tel que $W_{f, \pi}(1,.) = W$.
+\end{lemme}
+
+\begin{proof}
+On a
+\begin{equation}
+W_{f, \pi}(1, .) = \int_{N_{2n}} f_\pi(u.) \psi(u)^{-1} du.
+\end{equation}
+
+D'autre part, soit $f \in \mathcal{S}(G_{2n})$ alors $f$ est bi-invariante par un sous-groupe ouvert compact $K$. On a une décomposition $V_{\pi} = V_{\pi}^K \oplus V_\pi(K)$, où $V_\pi(K)$ est l'espace des vecteurs $K$-invariants. Comme $\pi$ est admissible, $V_\pi^K$ est de dimension finie. On note $\mathcal{B}_\pi^K$ une base de cet espace. Alors pour tout $g \in G_{2n}$, on a $f_\pi(g) = Tr(\pi(g) \pi(f^\vee)) = \sum_{v \in \mathcal{B}_\pi^K} <\pi(g)\pi(f^\vee)v, v^\vee>$, où $(v^\vee)_{v \in \mathcal{B}_\pi^K}$ est la base duale de $\mathcal{B}_\pi^K$. On en déduit que $f_\pi$ est une somme (finie) de coefficient matriciel.
+
+On note $Coeff^K = \{g \mapsto <\pi(g)v, \widetilde{v}>, v \in V_\pi, \widetilde{v} \in V_{\widetilde{\pi}}\}$.
+Alors toute somme finie de $Coeff^K$ est de la forme $f_\pi$ avec $f \in \mathcal{S}(G_{2n}, K)$. En effet, $f \in \mathcal{S}(G_{2n}, K) \mapsto \pi(f^\vee) \in End(V_\pi^K)$ est surjective, où l'on a noté $\mathcal{S}(G_{2n}, K)$ le sous espace de $\mathcal{S}(G_{2n}, K)$ des fonctions bi-invariante par $K$. La surjectivité est une conséquence du lemme de Burnside et du fait que $V_\pi^K$ est un $\mathcal{S}(G_{2n}, K)$-module irréductible de dimension finie. L'isomorphe de représentation nous donne $End(V_\pi^K) \simeq \pi^K \boxtimes \widetilde{\pi}^K$ le résultat.
+
+Pour montrer le lemme, il nous faut montrer qu'il existe un coefficient matriciel $c = <\pi(.)v, \widetilde{v}>$ tel que $W = \int_{N_{2n}} c(u.) \psi(u)^{-1}du$. Or
+\begin{equation}
+v \mapsto \int_{N_{2n}} c(u.) \psi(u)^{-1} du = \int_{N_{2n}} <\pi(u.)v, \widetilde{v}> \psi(u)^{-1} du
+\end{equation}
+est une fonctionnelle de Whittaker. Il suffit donc de montrer que l'on peut choisir $\widetilde{v}$ pour que cette fonctionnelle soit non nulle.
+C'est le contenu de \cite[Théorème 6.4.1]{sak-ven}.
+\end{proof}
+
 \begin{corollaire}[de la limite spectrale]
 \label{corolim}
 Soit $f \in \mathcal{S}(G_{2n})$ et $g \in G_{2n}$, alors
@@ -1679,7 +1703,7 @@ g & 0 \\
 \end{split}
 \end{equation}
 
-On choisit $f \in \mathcal{S}(G_{2n})$ tel que $\rho(w_{n,n})W_{f,\pi}(1,.) = W$. D'après ce que l'on vient de dire précédemment, on en déduit que $J(1, \widetilde{W}, \widehat{\phi})$ vérifie la relation $J(1, R(\xi)\widetilde{W}, \widehat{\phi}) = \theta(\xi)J(1, \widetilde{W}, \widehat{\phi})$, pour tout $\xi \in H_n$.
+D'après le lemme \ref{choixf}, on choisit $f \in \mathcal{S}(G_{2n})$ tel que $W_{f,\pi}(1,.) = \rho(w_{n,n}^{-1})W$. D'après ce que l'on vient de dire précédemment, on en déduit que $J(1, \widetilde{W}, \widehat{\phi})$ vérifie la relation $J(1, R(\xi)\widetilde{W}, \widehat{\phi}) = \theta(\xi)J(1, \widetilde{W}, \widehat{\phi})$, pour tout $\xi \in H_n$.
 
 Comme $\widehat{\phi}(e_ng)$ est arbitraire parmi les fonctions invariante à gauche par $G_{n-1}U_{n-1}$, on en déduit que
 \begin{equation}
@@ -1888,11 +1912,11 @@ La fonction $\sigma \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est à su
 \end{lemme}
 
 \begin{proof}
-D'après la définition de $f_\pi$, $W_{f,\pi}$ est nul dès que $\pi(f)$ l'est.
+D'après la définition de $f_\pi$, $W_{f,\pi}$ est nul dès que $\pi(f^\vee)$ l'est.
 
-Soit $K_f$ un sous-groupe ouvert compact tel que $f$ est biinvariant par $K_f$. Alors $\pi(f) \neq 0$, seulement lorsque $\pi$ admet des vecteurs $K_f$-invariant non nuls.
+Soit $K$ un sous-groupe ouvert compact tel que $f^\vee$ est biinvariant par $K$. Alors $\pi(f\vee) \neq 0$, seulement lorsque $\pi$ admet des vecteurs $K$-invariant non nuls.
 
-D'après Harish-Chandra (ref), il n'y a qu'un nombre fini de représentations $\tau \in \Pi_2(M)$ modulo $X^*(M) \otimes i\mathbb{R}$ qui admettent des vecteurs $K_f$-invariant non nuls.
+D'après Harish-Chandra \cite[Théorème VIII.1.2]{waldspurger}, il n'y a qu'un nombre fini de représentations $\tau \in \Pi_2(M)$ modulo $X^*(M) \otimes i\mathbb{R}$ qui admettent des vecteurs $K_f$-invariant non nuls.
 
 Comme toute représentation $\pi \in Temp(G_{2n})$ est une induite d'une telle représentation $\tau$ pour un bon choix de sous-groupe de Levi $M$, on en déduit le lemme.
 \end{proof}
@@ -1914,11 +1938,19 @@ Pour finir, \cite[prop 4.1.1]{beuzart-plessis} nous dit que les formes sesquilin
 \end{equation}
 \end{proof}
 
+\begin{corollaire}
+\label{planchab}
+On a une décomposition de Plancherel abstraite sur $L^2(H_n \backslash G_{2n})$ :
+\begin{equation}
+L^2(H_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+\end{equation}
+\end{corollaire}
+
 \subsection{Formule de Plancherel abstraite sur $G_n \times G_n \backslash G_{2n}$}
 
 \begin{lemme}
 \label{lemmeiso}
-On dispose d'un isomorphisme d'espace de Hilbert
+On dispose d'un isomorphisme $G_{2n}$-équivariant d'espace de Hilbert
 \begin{equation}
 L^2(G_n \times G_n \backslash G_{2n}) \simeq L^2(H_n \backslash G_{2n}, \theta).
 \end{equation}
@@ -1934,7 +1966,9 @@ On considère l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \map
 \end{equation}
 pour tout $g \in G_{2n}$.
 
-Commençons par montrer que l'application est bien définie. En effet, pour $g' \in G_n$ et $x \in M_n$, on a $\begin{pmatrix}
+Commençons par montrer que l'application est bien définie. En effet, pour $g' \in G_n$ et $X \in M_n$, on a
+\begin{equation}
+\begin{pmatrix}
 g' & X \\
 0 & g'
 \end{pmatrix}\begin{pmatrix}
@@ -1943,14 +1977,16 @@ g' & X \\
 \end{pmatrix} = \begin{pmatrix}
 g' \gamma & X\gamma \\
 0 & g'
-\end{pmatrix}$,
-on en déduit que $f\left( \sigma_n \begin{pmatrix}
+\end{pmatrix}.
+\end{equation}
+
+On note $K$ un compact tel que $supp(f) \subset H_nK$. On en déduit que $f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma_n^{-1} \right)$ est nul sauf si $\begin{pmatrix}
+\end{pmatrix}g \sigma_n^{-1} \right)$ est nul sauf si il existe $g' \in G_n$ tel que $\begin{pmatrix}
 g' \gamma & X\gamma \\
 0 & g'
-\end{pmatrix}$ est dans un compact pour un certain $g'$, autrement dit, si $\gamma$ est dans un compact. L'intégrale est donc absoluement convergente. De plus,
+\end{pmatrix} \in K$. On en déduit alors que $\gamma$ est dans un compact. L'intégrale est donc absoluement convergente. De plus,
 pour tous $g_1, g_2 \in G_n$ et $g \in G_{2n}$, on a
 \begin{equation}
 \begin{split}
@@ -2001,7 +2037,7 @@ g_2 & x \\
 \end{pmatrix} k \sigma_n^{-1} \right) \psi(Tr(\gamma x))d\gamma
 \end{split}
 \end{equation}
-Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact, à savoir la fonction $\phi_k$ définie par $\phi_k(y) = f\left( \sigma_n \begin{pmatrix}
+Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact sur $M_n$, à savoir la fonction $\phi_k$ définie par $\phi_k(y) = f\left( \sigma_n \begin{pmatrix}
 y & 0 \\
 0 & 1
 \end{pmatrix} k \sigma_n^{-1} \right)|\det y|^{-n}$ si $y \in G_n$ et $0$ sinon. Le facteur $|\det y|^{-n}$ provient de la transformation de la mesure multiplicative $d\gamma$ en une mesure additive. On en déduit que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$.
@@ -2010,9 +2046,9 @@ Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta)
 Cette application est linéaire et injective. En effet, si $\widetilde{f} = 0$, alors $\phi_k = 0$ pour tout $k \in K$, donc $f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right)$ pour tout $\gamma \in G_n$ et $k \in K$. On en déduit que $f = 0$ car elle est $(H_n, \theta)$-invariante.
+\end{pmatrix} k \sigma_n^{-1} \right) = 0$ pour tout $\gamma \in G_n$ et $k \in K$. On en déduit que $f = 0$ car elle est $(H_n, \theta)$-invariante.
 
-Pour finir, montrons qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = ||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$. Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ s'étend en un isomorphisme d'espace de Hilbert.
+Pour finir, montrons qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = c||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$. Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ s'étend en un isomorphisme d'espace de Hilbert $L^2(H_n \backslash G_{2n}, \theta) \simeq L^2(G_n \times G_n \backslash G_{2n})$.
 
 En effet,
 \begin{equation}
@@ -2039,7 +2075,7 @@ La transformé de Fourier conserve la norme $L^2$ avec un choix de constante appr
 \end{pmatrix} k \sigma_n^{-1} \right)|^2 \frac{d\gamma}{|\det \gamma|^n} dk.
 \end{split}
 \end{equation}
-On met l'accent sur le fait que l'on a modifié la mesure additive sur $M_n$ restreinte à $G_n$ en une mesure multiplicative sur $G_n$. La mesure $\frac{d\gamma}{|\det \gamma|^n} dk$ est une mesure de Haar sur $G_n K \simeq H_n \backslash G_{2n}$. On en déduit bien qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = ||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$.
+On met l'accent sur le fait que l'on a modifié la mesure additive sur $M_n$ restreinte à $G_n$ en une mesure multiplicative sur $G_n$. La mesure $\frac{d\gamma}{|\det \gamma|^n} dk$ est une mesure de Haar sur $G_n K \simeq H_n \backslash G_{2n}$. On en déduit bien qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = c||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$.
 \end{proof}
 
 Cet isomorphisme d'espace $L^2$ nous permet de faire le lien entre les formules de Plancherel sur  $G_n \times G_n \backslash G_{2n}$ et sur $H_n \backslash G_n$. En effet, on dispose du
@@ -2051,7 +2087,7 @@ L^2(G_n \times G_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\s
 \end{theoreme}
 
 \begin{proof}
-C'est une conséquence du lemme \ref{lemmeiso} et de la décomposition de Planchrel abstraite déduite du théorème \ref{thPlanch}.
+C'est une conséquence du lemme \ref{lemmeiso} et du corollaire \ref{planchab}.
 \end{proof}
 
  \bibliographystyle{siam}
