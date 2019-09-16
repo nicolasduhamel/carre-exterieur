@@ -60,6 +60,7 @@ où $d\mu_{G_X}$ est la mesure de Plancherel sur $G_X$ et $\widetilde{T}_X(\sigma
 Spécifions maintenant au cas où $G = GL_{2n}$ et $X = GL_n \times GL_n \backslash GL_{2n}$. On a $\check{G}_X = Sp_{2n}$ et $G_X = SO(2n+1)$. L'essentiel de notre
 travail consiste alors à prouver la
 \begin{conjecture}
+\label{conjSV}
 Il existe un isomorphisme $G$-équivariant de représentations unitaires
 \begin{equation}
 L^2(GL_n \times GL_n \backslash GL_{2n}) \simeq \int^{\oplus}_{Temp(SO(2n+1))/\sim} T(\sigma) d\mu(\sigma),
@@ -146,19 +147,38 @@ où $n_{\pi,r}$ est l'ordre du zéro de $\gamma(s, \pi, r, \psi)$ en $s=0$.
 On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$ et $F^\times$ de la mesure de Haar $d^\times x = \frac{dx}{|x|_F}$. 
 Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_N$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ du produit des mesures sur $U_n$ et $G_{n-1}$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1. On équipe $N_n \backslash G_n$ et $P_n \backslash G_n$ des mesures que l'on obtient par l'identification d'ouvert dense à $\overline{B}_n$ et $F^{n-1} \times F^\times$ respectivement.
 
-Pour $G$ un groupe réductif connexe sur $F$, on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$. Décrivons comment on normalise la mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
+Pour $G$ un groupe réductif connexe sur $F$, on fixe un isomorphisme $A_G \simeq (F^\times)^{\dim(A_G)}$ et on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$ provenant de l'isomorphisme avec $(F^\times)^{\dim(A_G)}$. Décrivons le choix de la normalisation d'une mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi}.
 \end{equation}
 
-La mesure $d\chi$ est indépendante du caractère $\psi$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq Ind_M^G(\sigma)$ par la formule
+La mesure $d\chi$ est indépendante du caractère $\psi$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. Soit $P$ un sous groupe parabolique de $G$ de Levi $M$. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq i_P^G(\sigma)$ par la formule
 \begin{equation}
-d\pi  = |W(G, M)|^{-1} (Ind_M^G)_* d\sigma.
+d\pi  = |W(G, M)|^{-1} (i_P^G)_* d\sigma,
 \end{equation}
-La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
+où $(i_P^G)_* d\sigma$ est la mesure $d\sigma$ tirée en arrière en une mesure sur $Temp(G)$ par l'application $i_P^G$. Cette mesure ne dépend pas du choix du groupe parabolique. La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
 
+Les mesures de Plancherel sur $G$ sont uniques modulo multiplication par une fonction positive presque partout non nulle, on parlera alors de la classe d'une mesure de Plancherel sur $G$.
 
 \subsection{Résultats}
+
+Soit $F$ un corps $p$-adique. Rappelons que l'on note $H_n(F)$ le groupe des matrices de la forme $\sigma_n \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma_n^{-1}$ avec $X \in M_n(F)$ et $g \in GL_n(F)$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+    1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
+    1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
+  \end{smallmatrix}\bigr).$
+De plus, $\theta$ est le caractère sur $H_n(F)$ qui envoie $\sigma_n \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma_n^{-1}$ sur $\psi(Tr(X))$.
 Le résultat principal est le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
@@ -167,13 +187,17 @@ L^2(H_n(F) \backslash G_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))
 \end{equation}
 \end{theoreme}
 
-Ce théorème est équivalent à la conjecture \ref{conjSV}. En effet, il suffit de calculer explicitement la mesure de Plancherel sur $SO(2n+1)$. Un analogue de la
-proposition \ref{propPlanch}, nous donne
+Ce théorème est équivalent à la conjecture \ref{conjSV}. En effet, il suffit de calculer explicitement la (classe de la) mesure de Plancherel sur $SO(2n+1)$. La mesure de Plancherel d'une groupe réductif $p$-adique $G$ a été calculé par Waldspurger \cite{waldspurger} sous la forme
+\begin{equation}
+d\mu_G(\sigma) = d(\sigma)j(\sigma)^{-1}d\sigma,
+\end{equation}
+où $d(\sigma)$ est le degré formel de $\sigma$ et $j(\sigma)$ est un scalaire produit d'opérateurs d'entrelacements (voir \cite{waldspurger}). Le degré formel pour $SO(2n+1)$ a été calculé par Ichino-Lapid-Mao \cite{ichino} et le facteur $j$ pour $SO(2n+1)$ découle de la normalisation des opérateurs d'entrelacements d'Arthur \cite{arthur}.
+Finalement, on obtient que la (classe de la) mesure de Plancherel pour $SO(2n+1)$ est
 \begin{equation}
 d\mu_{SO(2n+1)}(\sigma) = \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
 \end{equation}
 
-De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-invariant, on en déduit le
+De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-invariant (lemme \ref{lemmeiso}), on en déduit le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
 \begin{equation}
