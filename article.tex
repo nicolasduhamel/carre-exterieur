@@ -35,19 +35,19 @@
 \section{Introduction}
 
 Soit $F$ un corps $p$-adique, $G$ un groupe réductif déployé sur $F$ et $X = H \backslash G$ une variété sphérique homogène admettant une mesure bi-invariante. 
-Sakellaridis et Venkatesh \cite{sak-ven} introduisent un système de racines $\Phi_X$ associé à $X$. Sous certaines conditions sur $\Phi_X$, on peut associer un groupe réductif complexe $\check{G}_X$ que l'on appelle le groupe dual de la variété sphérique $X$. On note alors $G_X$ le groupe réductif déployé sur $F$ dont le groupe dual est $\check{G}_X$.
+Sakellaridis et Venkatesh \cite{sak-ven} introduisent un système de racines $\Phi_X$ associé à $X$. Sous certaines conditions sur $\Phi_X$, on peut associer au système de racines dual $\check{\Phi}_X$ un groupe réductif complexe $\check{G}_X$ qu'ils appellent le groupe dual de la variété sphérique $X$. On note $G_X$ le groupe réductif déployé sur $F$ dont le groupe dual est $\check{G}_X$, le groupe $G_X$ est associé au système de racines $\Phi_X$.
 Sakellaridis et Venkatesh introduisent aussi une application $\iota_X : \check{G}_X \times SL_2(\mathbb{C}) \rightarrow \check{G}$. Supposons que $\iota_X$ est trivial sur $SL_2(\mathbb{C})$ et la correspondance de Langlands locale pour $G$.
-
+Rappellons la
 
 \begin{conjecture}[Sakellaridis-Venkatesh \cite{sak-ven}]
 Il existe un isomorphisme $G$-équivariant de représentations unitaires
 \begin{equation}
 L^2(X) \simeq \int^{\oplus}_{\Phi_{temp}(G_X)} \mathcal{H}_\phi d\phi,
 \end{equation}
-où $\Phi_{temp}(\check{G}_X)$ est l'ensemble des paramètres de Langlands tempérés de $G_X$ modulo $\check{G}_X$-conjugaison, $d\phi$ est dans la classe naturelle des mesures sur $\Phi_{temp}(\check{G}_X)$ et $\mathcal{H}_\phi$ est une somme directe sans multiplicité de représentations dans $\Pi^G(\iota_X \circ \phi)$.
+où $\Phi_{temp}(G_X)$ est l'ensemble des paramètres de Langlands tempérés de $G_X$ modulo $\check{G}_X$-conjugaison, $d\phi$ est dans la classe naturelle des mesures sur $\Phi_{temp}(G_X)$ et $\mathcal{H}_\phi$ est une somme directe sans multiplicité de représentations dans $\Pi^G(\iota_X \circ \phi)$. La classe naturelle des mesures sur $\Phi_{temp}(G_X)$ est la classe de la mesure de Haar sur le quotient $\Phi_{temp}(G_X)/\check{G}_X-conj$ (???).
 \end{conjecture}
 
-Supposons de plus la correspondance de Langlands locale sur $G_X$, alors on dispose d'un transfert fonctoriel $T_X : {Temp(G_X)\slash{\sim}} \rightarrow Unit(G)\slash{\sim}$, où $\sim$ est la relation d'équivalence des représentations. Ce transfert associe à une classe d'équivalence de représentations tempérés de $G_X$ un ensemble fini de classes d'équivalence de repésentations unitaires de $G$. On obtient alors la
+Supposons de plus la correspondance de Langlands locale sur $G_X$, on dispose alors d'une correspondance fonctorielle $T_X : {Temp(G_X)\slash{\sim}} \rightarrow Unit(G)\slash{\sim}$, où $\sim$ est la relation d'équivalence des représentations. Cette correspondance associe à une classe d'équivalence de représentations tempérés de $G_X$ un ensemble fini de classes d'équivalence de repésentations unitaires de $G$. On obtient alors la
 
 \begin{conjecture}[Sakellaridis-Venkatesh \cite{sak-ven}]
 Il existe un isomorphisme $G$-équivariant de représentations unitaires
@@ -71,17 +71,17 @@ où $d\mu(\sigma)$ est la mesure de Plancherel sur $SO(2n+1)$ et $T : {Temp(SO(2n
 
 
 Soit $F$ un corps de nombres et $\psi$ un caractère non trivial de $\mathbb{A}_F$.
-On note $H_n$ le groupe des matrices de la forme $\sigma_n \begin{pmatrix}
+On note $H_n(\mathbb{A}_F)$ le groupe des matrices de la forme $\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma_n^{-1}$ avec $X \in M_n$ et $g \in GL_n$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+\end{pmatrix} \sigma_n^{-1}$ avec $X \in M_n(\mathbb{A}_F)$ et $g \in GL_n(\mathbb{A}_F)$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
   \end{smallmatrix}\bigr).$
-Soit $\theta$ le caractère sur $H_n$ qui envoie $\sigma_n \begin{pmatrix}
+Soit $\theta$ le caractère sur $H_n(\mathbb{A}_F)$ qui envoie $\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -183,11 +183,11 @@ Le résultat principal est le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
 \begin{equation}
-L^2(H_n(F) \backslash G_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+L^2(H_n(F) \backslash GL_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
 \end{equation}
 \end{theoreme}
 
-Ce théorème est équivalent à la conjecture \ref{conjSV}. En effet, il suffit de calculer explicitement la (classe de la) mesure de Plancherel sur $SO(2n+1)$. La mesure de Plancherel d'une groupe réductif $p$-adique $G$ a été calculé par Waldspurger \cite{waldspurger} sous la forme
+Ce théorème est équivalent à la conjecture \ref{conjSV}. En effet, il suffit de calculer explicitement la (classe de la) mesure de Plancherel sur $SO(2n+1)$. La mesure de Plancherel d'un groupe réductif $p$-adique $G$ a été calculée par Waldspurger \cite{waldspurger} sous la forme
 \begin{equation}
 d\mu_G(\sigma) = d(\sigma)j(\sigma)^{-1}d\sigma,
 \end{equation}
