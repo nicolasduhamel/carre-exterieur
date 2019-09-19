@@ -197,25 +197,35 @@ où $n_{\pi,r}$ est l'ordre du zéro de $\gamma(s, \pi, r, \psi)$ en $s=0$.
 \subsection{Mesures}
 \label{mesures}
 On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$ et $F^\times$ de la mesure de Haar $d^\times x = \frac{dx}{|x|_F}$. 
-Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_n$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ du produit des mesures sur $U_n$ et $G_{n-1}$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1. On équipe $N_n \backslash G_n$ et $P_n \backslash G_n$ des mesures que l'on obtient par l'identification d'ouvert dense à $\overline{B}_n$ et $F^{n-1} \times F^\times$ respectivement.
-
+Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_n$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ la mesure de Haar à droite obtenu comme produit des mesures sur $G_{n-1}$ sur $U_n$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1. On équipe $N_n \backslash G_n$ de la mesure
+\begin{equation}
+\int_{N_n \backslash G_n} f(g) dg = \int_{\overline{B}_n} f(b)db
+\end{equation}
+pour tout $f \in \mathcal{S}(G_n)$ invariante par $N_n$. On a l'isomorphisme $P_n \backslash G_n \simeq F^n\slash{0}$, on équipe $P_n \backslash G_n$ de la mesure $dg$ telle que $|\det g|dg$ s'identifie à la mesure $(dx)^n$ sur $F^n$. Si l'on identifie $P_n \backslash G_n$ à l'ouvert dense $F^{n-1} \times F^\times$, cela revient à identifier la mesure sur $P_n \backslash G_n$ à la mesure $(dx)^{n-1}\times d^\times y$ sur $F^{n-1} \times F^\times$. La mesure sur $P_n \backslash G_n$ n'est pas invariante. Cependant on a la formule d'intégration suivante
+\begin{equation}
+\int_{G_n} f(g) dg  = \int_{P_n \backslash G_n} \int_{P_n} f(pg) |\det p|^{-1} dp dg,
+\end{equation}
+ pour tout $f \in \mathcal{S}(G_n)$.
+ 
 Pour $G$ un groupe réductif connexe sur $F$, on fixe un isomorphisme $A_G \simeq (F^\times)^{\dim(A_G)}$ et on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$ provenant de l'isomorphisme avec $(F^\times)^{\dim(A_G)}$. Décrivons le choix de la normalisation d'une mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi}.
 \end{equation}
 
-La mesure $d\chi$ est indépendante du caractère $\psi$. Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. Soit $P$ un sous groupe parabolique de $G$ de Levi $M$. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq i_P^G(\sigma)$ par la formule
+La mesure $d\chi$ est indépendante du caractère $\psi$. 
+
+On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto \sigma \otimes \chi_\lambda \in \Pi_2(M)$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $\sigma$ dans $\Pi_2(M)$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
+
+Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. Soit $P$ un sous groupe parabolique de $G$ de Levi $M$. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq i_P^G(\sigma)$ par la formule
 \begin{equation}
 d\pi  = |W(G, M)|^{-1} (i_P^G)_* d\sigma,
 \end{equation}
-où $(i_P^G)_* d\sigma$ est la mesure $d\sigma$ tirée en arrière en une mesure sur $Temp(G)$ par l'application $i_P^G$. Cette mesure ne dépend pas du choix du groupe parabolique. La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
-
-Les mesures de Plancherel sur $G$ sont uniques modulo multiplication par une fonction positive presque partout non nulle, on parlera alors de la classe d'une mesure de Plancherel sur $G$.
+où $(i_P^G)_* d\sigma$ est la mesure $d\sigma$ poussée en avant en une mesure sur $Temp(G)$ par l'application $i_P^G$. Cette mesure ne dépend pas du choix du groupe parabolique. La mesure $d\pi$ est choisie pour vérifier la relation \ref{mesurePlanch}.
 
 \subsection{Résultats}
 \label{resultats}
 
-Soit $F$ un corps $p$-adique. Rappelons que l'on note $H_n(F)$ le groupe des matrices de la forme $\sigma_n \begin{pmatrix}
+Soit $F$ un corps $p$-adique et $\psi$ un caractère non trivial de $F$. Rappelons que l'on note $H_n(F)$ le groupe des matrices de la forme $\sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -236,38 +246,57 @@ Le résultat principal est le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
 \begin{equation}
-L^2(H_n(F) \backslash GL_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+L^2(H_n(F) \backslash GL_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) d\sigma.
 \end{equation}
 \end{theoreme}
 
-Ce théorème est équivalent au théorème \ref{conjSV}. En effet, il suffit de calculer explicitement la (classe de la) mesure de Plancherel sur $SO(2n+1)$. La mesure de Plancherel d'un groupe réductif $p$-adique $G$ a été calculée par Waldspurger \cite{waldspurger} sous la forme
+Ce théorème est équivalent au théorème \ref{conjSV}. En effet, il suffit de calculer explicitement la (classe de la) mesure de Plancherel sur $SO(2n+1)$. La mesure de Plancherel d'un groupe réductif $p$-adique $G$ a été calculée par Waldspurger et Harish-Chandra \cite{waldspurger} sous la forme
 \begin{equation}
 d\mu_G(\sigma) = d(\sigma)j(\sigma)^{-1}d\sigma,
 \end{equation}
 où $d(\sigma)$ est le degré formel de $\sigma$ et $j(\sigma)$ est un scalaire produit d'opérateurs d'entrelacements (voir \cite{waldspurger}). Le degré formel pour $SO(2n+1)$ a été calculé par Ichino-Lapid-Mao \cite{ichino} et le facteur $j$ pour $SO(2n+1)$ découle de la normalisation des opérateurs d'entrelacements d'Arthur \cite{arthur}.
-Finalement, on obtient que la (classe de la) mesure de Plancherel pour $SO(2n+1)$ est
+Finalement, on obtient que la mesure de Plancherel pour $SO(2n+1)$ est
 \begin{equation}
 d\mu_{SO(2n+1)}(\sigma) = \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
 \end{equation}
+
+On renvoie à l'article de Beuzart-Plessis \cite[Proposition 2.13.2]{beuzart-plessis} pour l'analogue de ce résultat pour les groupes unitaires.
 
 De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-invariant (lemme \ref{lemmeiso}), on en déduit le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
 \begin{equation}
-L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F))/Stab} T(\sigma) d\sigma.
 \end{equation}
 \end{theoreme}
 
+Rappelons que ces deux formules de Plancherel abstraite sont obtenu en prouvant une formule de Plancherel explicite sur $H_N \backslash G_n$.
+\begin{theoreme}
+On pose $Y_n = H_n \backslash G_{2n}$. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. On a
+\begin{equation}
+(\varphi_1, \varphi_2)_{L^2(Y_n, \theta)} = \int_{Temp(SO(2n+1))\slash{\sim}} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma,
+\end{equation}
+La quantité $(\varphi_1, \varphi_2)_{Y_n, T(\sigma)}$ est définie de manière explicite dans la section \ref{secPlanchExpl}. Le facteur $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est défini dans la section \ref{notations}.
+\end{theoreme}
+
+Pour finir, au cours de la preuve de la formule de Plancherel explicite, on a besoin d'une égalité sur des facteurs gamma définie de deux manière différentes. On prouve le
+\begin{theoreme}
+Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma}.
+Alors il existe une constante $c(\pi)$ de module 1 telle que tout $s \in \mathbb{C}$, on a
+\begin{equation}
+\gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma(s,\pi,\Lambda^2,\psi).
+\end{equation}
+\end{theoreme}
 
 \section{Facteurs $\gamma$ du carré extérieur}
 \label{gamma}
 Dans cette partie $F$ désigne un corps local de caractéristique $0$ et $\psi$ un caractère non trivial de $F$. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. Jacquet et Shalika ont défini une fonction L du carré extérieur $L_{JS}(s, \pi, \Lambda^2)$ par des intégrales notées $J(s, W, \phi)$, où $W \in \mathcal{W}(\pi, \psi)$ est un élément du modèle de Whittaker de $\pi$ et $\phi \in \mathcal{S}(F^n)$. Matringe a prouvé que, lorsque $F$ est non archimédien, ces intégrales $J(s,W,\phi)$ vérifient une équation fonctionnelle, ce qui permet de définir des facteurs $\gamma$, que l'on note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$. 
 
-On montre que l'on a encore une équation fonctionnelle lorsque $F$ est archimédien et que les facteurs $\gamma$ sont égaux à une constante de module 1 prés à ceux définis par Shahidi, que l'on note $\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$. Plus exactement, il existe une constante $c(\pi)$ de module 1, telle que
+On montre que l'on a encore une équation fonctionnelle lorsque $F$ est archimédien et que les facteurs $\gamma$ sont égaux à une constante de module 1 prés à ceux définis par Shahidi, que l'on note $\gamma^{Sh}(s,\pi,\Lambda^2,\psi)$. Plus exactement, des constantes $c^{Sh}(\pi)$ et $c(\pi)$ de module 1, telle que
 \begin{equation}
-\gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma^{Sh}(s,\pi,\Lambda^2,\psi),
+\gamma^{JS}(s,\pi,\Lambda^2,\psi)=c^{Sh}(\pi)\gamma^{Sh}(s,\pi,\Lambda^2,\psi) = c(\pi)\gamma(s, \pi, \Lambda^2, \psi),
 \end{equation}
-pour tout $s \in \mathbb{C}$. La preuve se fait par une méthode de globalisation, on considère $\pi$ comme une composante locale d'une représentation automorphe cuspidale.
+pour tout $s \in \mathbb{C}$. La dernière égalité est une conséquence de l'égalité des facteurs gamma de Shahidi et d'Artin pour le carré extérieur à une racine de l'unité prés prouvée par Henniart \cite{henniart}. La preuve se fait par une méthode de globalisation, on considère $\pi$ comme une composante locale d'une représentation automorphe cuspidale.
 
 \subsection{Préliminaires}
 
@@ -280,9 +309,9 @@ Les intégrales $J(s, W, \phi)$ sont définies par
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma_n^{-1} \right)\psi(-Tr(X))dX\phi(e_ng)|\det g|^s dg
+\end{pmatrix} \sigma_n^{-1} \right)dX\phi(e_ng)|\det g|^s dg
  \end{equation}
-pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$. Le groupe $V_n$ est matrices triangulaires inférieures strictes, on l'équipe de la mesure de Haar $dX = \prod_{1 \leq j < i \leq n} dX_{i,j}$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$. Le groupe $V_n$ est l'ensemble des matrices triangulaires inférieures strictes, on l'équipe de la mesure de Haar $dX = \prod_{1 \leq j < i \leq n} dX_{i,j}$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
   \end{smallmatrix}\bigr).$
@@ -293,7 +322,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   \end{proposition}
   
   Kewat \cite{kewat} montre, lorsque $F$ est p-adique, que ce sont des fractions rationnelles en $q^{s}$ où $q$ est le cardinal du corps résiduel de $F$. On aura aussi besoin d'avoir le prolongement méromorphe de ces intégrales lorsque $F$ est archimédien et d'un résultat de non annulation.
-  \begin{proposition}[Belt \cite{belt}]
+  \begin{proposition}[Belt \cite{belt}, Matringe \cite{matringe}]
   \label{nonzero}
   Fixons $s_0 \in \mathbb{C}$. Il existe $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$ tels que $J(s,W,\phi)$ admet un prolongement méromorphe à tout le plan complexe et ne s'annule pas en $s_0$. Si $F=\mathbb{R}$ ou $\mathbb{C}$, le point $s_0$ peut éventuellement être un pôle. Si $F$ est $p$-adique, on peut choisir $W$ et $\phi$ tels que $J(s, W, \phi)$ soit entière.
   \end{proposition}
@@ -310,9 +339,9 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   Pour finir cette section, on énonce l'équation fonctionnelle démontrée par Matringe lorsque $F$ est un corps $p$-adique. Plus précisément, on a la
  \begin{proposition}[Matringe \cite{matringe}]
  \label{funcloc}
- Supposons que $F$ est un corps $p$-adique et $\pi$ générique. Il existe un monôme $\epsilon(s,\pi,\Lambda^2,\psi)$ en $q^s$ ou $q^{-s}$, tel que pour tous $W \in \mathcal{W}(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, ont ait
+ Supposons que $F$ est un corps $p$-adique et $\pi$ générique. Il existe un monôme $\epsilon^{JS}(s,\pi,\Lambda^2,\psi)$ en $q^s$ ou $q^{-s}$, tel que pour tous $W \in \mathcal{W}(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, on ait
  \begin{equation}
- \epsilon(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\tilde{W},\hat{\phi})}{L(1-s,\tilde{\pi},\Lambda^2)},
+ \epsilon^{JS}(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\tilde{W},\hat{\phi})}{L(1-s,\tilde{\pi},\Lambda^2)},
  \end{equation}
  où $\hat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ définie par
  \begin{equation}
@@ -323,12 +352,12 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
     2n & \cdots &  1 
   \end{smallmatrix}\bigr)$
   et
- $w_{n,n} = \begin{pmatrix}
+ $w_{n,n} = \sigma_n \begin{pmatrix}
 0 & 1_n \\
 1_n & 0
-\end{pmatrix}$. On définit alors le facteur $\gamma$ de Jacquet-Shalika par la relation
+\end{pmatrix} \sigma_n^{-1}$. On définit alors le facteur $\gamma$ de Jacquet-Shalika par la relation
 \begin{equation}
-\gamma^{JS}(s,\pi,\Lambda^2,\psi)  = \epsilon(s,\pi,\Lambda^2,\psi)\frac{L(1-s,\tilde{\pi},\Lambda^2)}{L(s,\pi,\Lambda^2)}.
+\gamma^{JS}(s,\pi,\Lambda^2,\psi)  = \epsilon^{JS}(s,\pi,\Lambda^2,\psi)\frac{L(1-s,\tilde{\pi},\Lambda^2)}{L(s,\pi,\Lambda^2)}.
 \end{equation}
  \end{proposition}
  
@@ -337,7 +366,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
   
   Soit $K$ un corps de nombres et $\psi_\mathbb{A}$ un caractère non trivial de $\mathbb{A}_K/K$. Soit $\Pi$ une représentation automorphe cuspidale irréductible de $GL_{2n}(\mathbb{A}_K)$. Pour $\varphi \in \Pi$, on considère
   \begin{equation}
-  W_\varphi(g) = \int_{N_{2n}(K)\backslash{N_{2n}(\mathbb{A}_K)}} \varphi(ug)\psi_\mathbb{A}(u)du
+  W_\varphi(g) = \int_{N_{2n}(K)\backslash{N_{2n}(\mathbb{A}_K)}} \varphi(ug)\psi_\mathbb{A}(u)^{-1}du
   \end{equation}
   la fonction de Whittaker associée. On considère $\psi_\mathbb{A}$ comme un caractère de $N_{2n}(\mathbb{A}_K)$ en posant $\psi_\mathbb{A}(u) = \psi_\mathbb{A}(\sum_{i=1}^{2n-1} u_{i,i+1})$. Pour $\Phi \in \mathcal{S}(\mathbb{A}_K^n)$ une fonction de Schwartz, on note $J(s, W_\varphi, \Phi)$ l'intégrale
   \begin{equation}
@@ -347,7 +376,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
 \end{pmatrix}\begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix}\right)\psi_\mathbb{A}(Tr(X))dX\Phi(e_ng)|\det g|^s dg
+\end{pmatrix} \sigma_n^{^-1}\right)dX\Phi(e_ng)|\det g|^s dg
  \end{equation}
  où l'on note $G_n$ le groupe $GL_n(\mathbb{A}_K)$, $B_n$ le sous groupe des matrices triangulaires supérieures, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $\mathbb{A}_K$.
  
@@ -385,10 +414,12 @@ On va définir une topologie sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de L
  \subsubsection{Fonctions tempérées}
  On aura besoin dans la suite de connaître la dépendance que $J(s, W, \phi)$ lorsque l'on fait varier la représentation $\pi$. Pour ce faire, on introduit la notion de fonction tempérée et on étend la définition de $J(s,W,\phi)$ pour ces fonctions tempérées.
  
- L'espace des fonctions tempérées $C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ est l'espace des fonctions $f : GL_{2n}(F) \rightarrow \mathbb{C}$ telles que $f(ng) = \psi(n)f(g)$ pour tous $n \in N_{2n}(F)$ et $g \in GL_{2n}(F)$, on impose les conditions suivantes :
+On note $K_{2n}$ le sous-groupe compact maximal de $GL_{2n}(F)$ défini par $K_{2n} = GL_{2n}(\mathcal{O}_F)$ lorsque $F$ est p-adique et $K_{2n} = \{ g \in GL_{2n}(F), g \overline{g}^t = I_n\}$ lorsque $F = \mathbb{R}$ ou $\mathbb{C}$.
+
+L'espace des fonctions tempérées $C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ est l'espace des fonctions $f : GL_{2n}(F) \rightarrow \mathbb{C}$ telles que $f(ng) = \psi(n)f(g)$ pour tous $n \in N_{2n}(F)$ et $g \in GL_{2n}(F)$, on impose les conditions suivantes :
  \begin{itemize}
- \item Si $F$ est $p$-adique, $f$ est invariante à droite par un sous-groupe compact ouvert et il existe $d > 0$ et $C > 0$ tels que $|f(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$, où $||a|| = max(|a_{i,i}|)$, pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O}_F)$,
- \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ tel que pour tout $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$, il existe $C > 0$ tel que $|(R(u)f)(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$, $k \in GL_{2n}(\mathcal{O}_F)$.
+ \item Si $F$ est $p$-adique, $f$ est invariante à droite par un sous-groupe compact ouvert et il existe $d > 0$ et $C > 0$ tels que $|f(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$, où $||a|| = 1 + max(|a_{i,i}|)$, pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$ et $k \in K_{2n}$,
+ \item Si $F$ est archimédien, $f$ est $C^\infty$ et il existe $d > 0$ tel que pour tout $u \in \mathcal{U}(\mathfrak{gl}_{2n}(F))$, il existe $C > 0$ tel que $|(R(u)f)(nak)| \leq C \delta_{B_{2n}}(a)^{\frac{1}{2}} \log(||a||)^d$ pour tous $n \in N_{2n}(F)$, $a \in A_{2n}(F)$, $k \in K_{2n}$.
  \end{itemize}
  
  
@@ -399,7 +430,7 @@ Soit $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$. Il existe $d > 0$ tel q
 \begin{equation}
 |W(bk)| \leq C\prod_{i=1}^{2n-1} (1 + |\frac{b_i}{b_{i+1}}|)^{-N}\delta_{B_{2n}}(b)^{\frac{1}{2}}\log(||b||)^d,
 \end{equation}
-pour tous $b \in A_{2n}(F)$ et $k \in GL_{2n}(\mathcal{O}_F)$.
+pour tous $b \in A_{2n}(F)$ et $k \in K_{2n}$.
 \end{lemme}
 
 \begin{lemme}[Lemme 2.4.4 \cite{beuzart-plessis}]
@@ -561,16 +592,16 @@ Grâce à cette proposition, on obtient la majoration
  \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
  \end{equation}
  
- De plus, il existe une constante $c(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$,
+ De plus, il existe une constante $c^{Sh}(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$,
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c^{Sh}(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  \end{proposition}
  
  \begin{proof}
  Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soient $v \neq v'$ deux places non archimédiennes distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$.
  
- D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
+ D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v, v_{0}$.
  
  On choisit des fonctions $W_w \in \mathcal{W}(\pi_w, (\phi_\mathbb{A})_w)$ et $\phi_w \in \mathcal{S}(k_w)$ dans le but d'appliquer l'équation fonctionnelle globale. On note $S = \{\infty, v\}$ l'ensemble des places où $\Pi$ est ramifiée et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est ramifié. Pour $w \not\in S \cup T$, on prend les fonctions "non ramifiées" qui apparaissent dans la proposition \ref{calculnr}. Pour $w = S \cup T$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
  \begin{equation}
@@ -630,12 +661,12 @@ Grâce à cette proposition, on obtient la majoration
  \gamma^{JS}(s, \pi, \Lambda^2, \psi) = R(s)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  
-  La fonction $R$ est donc une fonction périodique de période $\frac{2i\pi}{\log q_v}$ et $\frac{2i\pi}{\log q_{v'}}$ avec $q_v$ et $q{v'}$ premier entre eux; ce qui est impossible sauf si $R$ est constante. Ce qui nous permet de voir qu'il existe une constante $c(\pi)=R$ telle que
+  La fonction $R$ est donc une fonction périodique de période $\frac{2i\pi}{\log q_v}$ et $\frac{2i\pi}{\log q_{v'}}$ avec $q_v$ et $q{v'}$ premier entre eux; ce qui est impossible sauf si $R$ est constante. Ce qui nous permet de voir qu'il existe une constante $c^{Sh}(\pi)=R$ telle que
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c^{Sh}(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  
- Il ne nous reste plus qu'à montrer que la constante $c(\pi)$ est de module 1. Reprenons l'équation fonctionnelle locale archimédienne,
+ Il ne nous reste plus qu'à montrer que la constante $c^{Sh}(\pi)$ est de module 1. Reprenons l'équation fonctionnelle locale archimédienne,
  \begin{equation}
  \label{funcarch}
  \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
@@ -661,15 +692,15 @@ Grâce à cette proposition, on obtient la majoration
  |\gamma^{JS}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1.
  \end{equation}
  
- D'autre part, le facteur $\gamma$ de Shahidi vérifie aussi $|\gamma^{Sh}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1$; on en déduit donc que $c(\pi)$ est bien de module 1.
+ D'autre part, le facteur $\gamma$ de Shahidi vérifie aussi $|\gamma^{Sh}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1$; on en déduit donc que $c^{Sh}(\pi)$ est bien de module 1.
  \end{proof}
  
  \begin{proposition}
  Supposons que $F$ est un corps $p$-adique. Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. 
  
- Le facteur $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ est défini par la proposition \ref{funcloc}. Alors il existe une constante $c(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$,
+ Le facteur $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ est défini par la proposition \ref{funcloc}. Alors il existe une constante $c^{Sh}(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$,
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) = c^{Sh}(\pi)\gamma^{Sh}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  \end{proposition}
  
@@ -695,7 +726,7 @@ Grâce à cette proposition, on obtient la majoration
  
  On rappelle que lors de la preuve de la proposition précédente, on a démontré que $\frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = 1$ pour $w \in T$. En utilisant les propositions \ref{funcloc} et \ref{proparch}, on obtient donc la relation
  \begin{equation}
- \prod_{v_\infty \in S_\infty} c(\Pi_{v_\infty}) \frac{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}\frac{\gamma^{JS}(s, \Pi_{v_0}, \Lambda^2, \psi)}{\gamma^{Sh}(s, \Pi_{v_0}, \Lambda^2, \psi)} = 1.
+ \prod_{v_\infty \in S_\infty} c^{Sh}(\Pi_{v_\infty}) \frac{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}\frac{\gamma^{JS}(s, \Pi_{v_0}, \Lambda^2, \psi)}{\gamma^{Sh}(s, \Pi_{v_0}, \Lambda^2, \psi)} = 1.
  \end{equation}
  
  Le reste du raisonnement est maintenant identique à la fin de la preuve de la proposition \ref{proparch}. Par continuité, le quotient $\frac{\gamma^{JS}(s, \pi, \Lambda^2, \psi)}{\gamma^{Sh}(s, \pi, \Lambda^2, \psi)}$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$. Or c'est une fraction rationnelle en $q_{v_0}^s$, on obtient que c'est une constante. En évaluant $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ en $s=\frac{1}{2}$, on montre que cette constante est de module $1$.
