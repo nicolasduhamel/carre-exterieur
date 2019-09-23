@@ -566,13 +566,13 @@ Grâce à cette proposition, on obtient la majoration
  \label{depcaradd}
  Soient $\lambda \in F^*$, $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W, \phi) \neq 0$. Alors
  \begin{equation}
- \frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} =  \omega_\pi(\lambda)^{2n+1}|\lambda|^{n(2n-1)(s-\frac{1}{2})}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_\psi(\phi))}{J(s, W_r, \phi)},
+ \frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} =  \omega_\pi(\lambda)^{2n-1}|\lambda|^{n(2n-1)(s-\frac{1}{2})}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_\psi(\phi))}{J(s, W_r, \phi)},
  \end{equation}
- où $W_r$ est la translation à gauche de $W$ par $r(\lambda) = diag(\lambda, 1, \lambda, 1, ...)$.
+ où $W_r$ est la translation à droite de $W$ par $diag(\lambda, ..., \lambda, 1, ..., 1)$. En particulier, $W_r \in \mathcal{W}(\pi, \psi)$.
  
  Lorsque $F$ est un corps $p$-adique, on en déduit que
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi_\lambda) = \omega_\pi(\lambda)^{2n+1}|\lambda|^{n(2n-1)(s-\frac{1}{2})} \gamma^{JS}(s, \pi, \Lambda^2, \psi).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi_\lambda) = \omega_\pi(\lambda)^{2n-1}|\lambda|^{n(2n-1)(s-\frac{1}{2})} \gamma^{JS}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  \end{lemme}
  
@@ -594,34 +594,35 @@ g & 0 \\
 \end{pmatrix} \sigma_n^{-1} \right)dX\widehat{\phi}(e_ng)|\det g|^s dg.
 \end{equation}
 
-On décompose $a(\lambda) \sigma_n$ sous la forme $r(\lambda) diag(b(\lambda), b(\lambda))$ où l'on note $b(\lambda) = diag(\lambda^{2n-2}, \lambda^{2n-4}, ..., 1)$ et $r(\lambda) = diag(\lambda, 1, \lambda, 1, ...)$. Après les changements de variables, $X \mapsto b(\lambda)^{-1} X b(\lambda)$ et $g \mapsto b(\lambda)^{-1}g$, on obtient la relation
+On décompose $a(\lambda) \sigma_n$ sous la forme $\sigma_n diag(r(\lambda)b(\lambda), r(\lambda)b(\lambda))$ où l'on note $b(\lambda) = diag(\lambda^{2n-2}, \lambda^{2n-4}, ..., 1)$ et $r(\lambda) = diag(\lambda, 1, \lambda, 1, ...)$. Après les changements de variables, $X \mapsto (r(\lambda)b(\lambda))^{-1} X r(\lambda)b(\lambda)$, $g \mapsto b(\lambda)^{-1}g$ et $g \mapsto r(\lambda)^{-1} g r(\lambda)$, on obtient la relation
 \begin{equation}
 \label{deplambda1}
-J(s, W_\lambda, \widehat{\phi}) = \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{-s}|\lambda|^{x(n)}J(s, L(r(\lambda)^{-1})W, \widehat{\phi}),
+J(s, W_\lambda, \widehat{\phi}) = \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{-s}|\lambda|^{x(n)}J(s, R(diag(\lambda, ..., 1, ...))W, \widehat{\phi}),
 \end{equation}
-où $L(g)$ est la translation à gauche par $g^{-1}$ et le facteur $|\lambda|^{x(n)}$ (que l'on n'explicite pas) provient du changement de variable $X \mapsto b(\lambda)^{-1} X b(\lambda)$.
+où $R(g)$ est la translation à droite par $g$ et le facteur $|\lambda|^{x(n)}$ (que l'on n'explicite pas) provient du changement de variable $X \mapsto (r(\lambda)b(\lambda))^{-1} X r(\lambda)b(\lambda)$.
 
 De plus, pour tout $g \in GL_{2n}(F)$, on a
 \begin{equation}
 \widetilde{(W_\lambda)}(g) = W(a(\lambda)w_n(g^t)^{-1}) = \widetilde{W}(w_n a(\lambda)^{-1}w_n^{-1}g) = \omega_{\pi}(\lambda)^{2n-1}(\widetilde{W})_\lambda(g),
 \end{equation}
-où l'on a utilisé la relation $w_na(\lambda)^{-1}w_n^{-1} = \lambda^{-(2n-1)}a(\lambda)$. Ce qui donne l'égalité
+où l'on a utilisé la relation $w_na(\lambda)^{-1}w_n^{-1} = \lambda^{-(2n-1)}a(\lambda)$. Ce qui donne en utilisant \ref{deplambda1} l'égalité
 \begin{equation}
 \label{deplambda2}
 \begin{split}
 J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \widehat{\phi}) = &\omega_\pi(\lambda)^{2n-1} \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{s-1}|\lambda|^{x(n)} \\
-&J(1-s, \rho(w_{n,n})L(r(\lambda)^{-1})\widetilde{W}, \widehat{\phi}).
+&J(1-s, \rho(w_{n,n})R(diag(\lambda, ..., 1, ...))\widetilde{W}, \widehat{\phi}).
 \end{split}
 \end{equation}
 
 Pour finir, on remarque que l'on a pour tout $g \in GL_{2n}(F)$,
 \begin{equation}
-L(r(\lambda)^{-1})\widetilde{W}(g) = \widetilde{W}(w_n r(\lambda)^{-1} w_n^{-1} g) = \omega_\pi(\lambda) \widetilde{L(r(\lambda)^{-1})W} = \omega_\pi(\lambda) \widetilde{W_r}.
+R(diag(\lambda, ..., 1, ...))\widetilde{W}(g) = W(w_n (g^t diag(\lambda, ..., 1, ...)^{-1})^{-1}) = \omega_\pi(\lambda)^{-1}\widetilde{W_r}(g),
 \end{equation}
+où $W_r$ est le translation à droite de $W$ par $diag(\lambda, ..., 1, ...)$.
 
 On déduit de \ref{deplambda1} et \ref{deplambda2} la relation suivante
 \begin{equation}
-\frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \widehat{\phi})}{J(s, W_\lambda, \phi)} = \omega_\pi(\lambda)^{2n} |\lambda|^{n(n-1)(2s-1)}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \widehat{\phi})}{J(s, W_r, \phi)},
+\frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \widehat{\phi})}{J(s, W_\lambda, \phi)} = \omega_\pi(\lambda)^{2n-2} |\lambda|^{n(n-1)(2s-1)}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \widehat{\phi})}{J(s, W_r, \phi)},
 \end{equation}
 où l'on a utilisé l'égalité $\det b(\lambda) = \lambda^{n(n-1)}$.
 On déduit le lemme grâce à la relation \ref{depFourier}.
