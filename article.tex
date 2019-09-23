@@ -282,7 +282,7 @@ La quantité $(\varphi_1, \varphi_2)_{Y_n, T(\sigma)}$ est définie de manière exp
 Pour finir, au cours de la preuve de la formule de Plancherel explicite, on a besoin d'une égalité sur des facteurs gamma définie de deux manière différentes. On prouve le
 \begin{theoreme}
 Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma}.
-Alors il existe une constante $c(\pi)$ de module 1 telle que tout $s \in \mathbb{C}$, on a
+Alors il existe une constante $c(\pi)$ de module 1 telle que tout $s \in \mathbb{C}$, on ait
 \begin{equation}
 \gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma(s,\pi,\Lambda^2,\psi).
 \end{equation}
@@ -341,13 +341,13 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
  \label{funcloc}
  Supposons que $F$ est un corps $p$-adique et $\pi$ générique. Il existe un monôme $\epsilon^{JS}(s,\pi,\Lambda^2,\psi)$ en $q^s$ ou $q^{-s}$, tel que pour tous $W \in \mathcal{W}(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, on ait
  \begin{equation}
- \epsilon^{JS}(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\tilde{W},\hat{\phi})}{L(1-s,\tilde{\pi},\Lambda^2)},
+ \epsilon^{JS}(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\widetilde{W},\hat{\phi})}{L(1-s,\widetilde{\pi},\Lambda^2)},
  \end{equation}
  où $\hat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ définie par
  \begin{equation}
  \mathcal{F}_\psi(\phi)(y) = \int_{F^n} \phi(x)\psi(\sum_{i=1}^n x_i y_i)dx
  \end{equation}
- pour tout $y \in F^n$ et $\tilde{W} \in \mathcal{W}(\tilde{\pi}, \bar{\psi})$ est la fonction de Whittaker définie par $\tilde{W}(g) = W(w_n(g^t)^{-1})$ pour tout $g \in GL_{2n}(F)$, avec $w_n$ la matrice associée à la permutation $\bigl(\begin{smallmatrix}
+ pour tout $y \in F^n$ et $\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \bar{\psi})$ est la fonction de Whittaker définie par $\widetilde{W}(g) = W(w_n(g^t)^{-1})$ pour tout $g \in GL_{2n}(F)$, avec $w_n$ la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & \cdots & 2n  \\
     2n & \cdots &  1 
   \end{smallmatrix}\bigr)$
@@ -357,7 +357,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
 1_n & 0
 \end{pmatrix} \sigma_n^{-1}$. On définit alors le facteur $\gamma$ de Jacquet-Shalika par la relation
 \begin{equation}
-\gamma^{JS}(s,\pi,\Lambda^2,\psi)  = \epsilon^{JS}(s,\pi,\Lambda^2,\psi)\frac{L(1-s,\tilde{\pi},\Lambda^2)}{L(s,\pi,\Lambda^2)}.
+\gamma^{JS}(s,\pi,\Lambda^2,\psi)  = \epsilon^{JS}(s,\pi,\Lambda^2,\psi)\frac{L(1-s,\widetilde{\pi},\Lambda^2)}{L(s,\pi,\Lambda^2)}.
 \end{equation}
  \end{proposition}
  
@@ -385,9 +385,9 @@ g & 0 \\
  \label{funcglob}
  Les intégrales $J(s, W_\varphi, \Phi)$ convergent absolument pour $Re(s)$ suffisamment grand. De plus, $J(s, W_\varphi, \Phi)$ admet un prolongement méromorphe à tout le plan complexe et vérifie l'équation fonctionnelle suivante
  \begin{equation}
- J(s,W_\varphi,\Phi)=J(1-s, \rho(w_{n,n})\tilde{W}_\varphi, \hat{\Phi}),
+ J(s,W_\varphi,\Phi)=J(1-s, \rho(w_{n,n})\widetilde{W}_\varphi, \hat{\Phi}),
  \end{equation}
- où $\tilde{W}_\varphi(g) = W_\varphi(w_n(g^t)^{-1})$ et $\hat{\Phi}$ est la transformée de Fourier de $\Phi$ par rapport au caractère $\psi_\mathbb{A}$.
+ où $\widetilde{W}_\varphi(g) = W_\varphi(w_n(g^t)^{-1})$ et $\hat{\Phi}$ est la transformée de Fourier de $\Phi$ par rapport au caractère $\psi_\mathbb{A}$.
  \end{proposition}
  
  Comme on peut s'y attendre, les intégrales globales sont reliées aux intégrales locales. Plus exactement, si $W_\varphi=\prod_v W_v$ et $\Phi = \prod_v \Phi_v$, où $v$ décrit les places de $K$, on a
@@ -424,7 +424,7 @@ L'espace des fonctions tempérées $C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ es
  
  
 On rappelle la majoration des fonctions tempérées sur la diagonale,
-\begin{lemme}[Lemme 2.4.3 \cite{beuzart-plessis}]
+\begin{lemme}[{\cite[Lemme 2.4.3]{beuzart-plessis}}]
 \label{majtemp}
 Soit $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$. Il existe $d > 0$ tel que pour tout $N \geq 1$, il existe $C > 0$ tel que
 \begin{equation}
@@ -433,7 +433,7 @@ Soit $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$. Il existe $d > 0$ tel q
 pour tous $b \in A_{2n}(F)$ et $k \in K_{2n}$.
 \end{lemme}
 
-\begin{lemme}[Lemme 2.4.4 \cite{beuzart-plessis}]
+\begin{lemme}[{\cite[Lemme 2.4.4]{beuzart-plessis}}]
 \label{convergenceAn}
 Pour tout $C > 0$, il existe $N$ tel que pour tous $s$ vérifiant $0 < Re(s) < C$ et $d > 0$, l'intégrale
 \begin{equation}
@@ -445,7 +445,7 @@ converge absolument.
 On étend la définition des intégrales $J(s, W, \phi)$ aux fonctions tempérées $W$, on montre maintenant la convergence de ces intégrales
 \begin{lemme}
 \label{convtemp}
-Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 0$.
+Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 0$. De plus, pour tous $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $Re(s) > 0$, la forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W,  \phi)$ est continue.
 \end{lemme}
  
  \begin{proof}
@@ -478,7 +478,7 @@ a & 0 \\
 \int_{A_n} \int_{K_n} \int_{V_n} \left|W\left(b u_X \sigma_n \begin{pmatrix}
 k & 0 \\
 0 & k
-\end{pmatrix} \sigma_n^{-1} \right)\phi(e_nak)\right|dX dk |\det a|^{Re(s)} \delta^{-2}(a) da.
+\end{pmatrix} \sigma_n^{-1} \right)\phi(e_nak)\right|dX dk |\det a|^{Re(s)} \delta_{B_n}^{-2}(a) da.
  \end{equation}
  
  On écrit $u_X = n_Xt_Xk_X$ la décomposition d'Iwasawa de $u_X$ et on pose $k_\sigma = \sigma_n \begin{pmatrix}
@@ -498,7 +498,7 @@ k & 0 \\
  On combine alors cette proposition avec le fait que $\frac{b_j}{b_{j+1}} = 1$ lorsque $j$ est impair et $\frac{b_j}{b_{j+1}} = \frac{a_\frac{j}{2}}{a_{\frac{j}{2}+1}}$ lorsque $j$ est pair. Ce qui nous permet de majorer $(1+  |\frac{t_jb_j}{t_{j+1}b_{j+1}}|)^{-2N}$ par $|\frac{t_j}{t_{j+1}}|^{-2N}$ lorsque $j$ est impair et par $|\frac{t_j}{t_{j+1}}|^{-N}(1+  |\frac{a_{j/2}}{a_{j/2+1}}|)^{-N}$ lorsque $j$ est pair. Ce qui donne
  \begin{equation}
  \begin{split}
- |W(bt_Xk_Xk_\sigma)| &\leq C \prod_{j=1}^{2n-1}|\frac{t_j}{t_j+1}|^{-N} \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta_{B_{2n}}^{\frac{1}{2}}(bt_X)\log(||bt_X||)^d \\
+ |W(bt_Xk_Xk_\sigma)| &\leq C \prod_{j=1}^{2n-1}|\frac{t_j}{t_{j+1}}|^{-N} \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta_{B_{2n}}^{\frac{1}{2}}(bt_X)\log(||bt_X||)^d \\
  &\leq C \prod_{j=1, \text{j impair}}^{2n-1} |\frac{t_j}{t_{j+1}}|^{-N}  \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta_{B_{2n}}^{\frac{1}{2}}(bt_X)\log(||bt_X||)^d,
   \end{split}
  \end{equation}
@@ -537,13 +537,8 @@ Grâce à cette proposition, on obtient la majoration
  \begin{equation}
  \int_{A_n}  \prod_{i=1}^{n-1} (1+ |\frac{a_i}{a_{i+1}}|)^{-N} (1+|a_n|)^{-N}\log(||b||)^j |\det a|^{Re(s)} \delta_{B_{2n}}^{\frac{1}{2}}(b)\delta_{B_n}^{-2}(a) da,
  \end{equation}
- pour $j$ compris entre $0$ et $d$. La première intégrale converge pour $N$ assez grand et la deuxième pour $N$ assez grand lorsque $Re(s) > 0$. On a utilisé la relation $\delta_{B_{2n}}^{\frac{1}{2}}(b) = \delta_{B_n}^2(a)$. En effet,
- \begin{align}
- \delta_{B_{2n}}(b) &= |a_1|^{1-2n}|a_1|^{3-2n}|a_2|^{5-2n}|a_2|^{7-2n}...|a_n|^{2n-3}|a_n|^{2n-1}, \\
- &= |a_1|^{4-4n}|a_2|^{12-4n}...|a_n|^{4n-4},\\
- &= \delta_{B_n}^4(a).
- \end{align}
-  \end{proof}
+ pour $j$ compris entre $0$ et $d$. La première intégrale converge pour $N$ assez grand et la deuxième pour $N$ assez grand lorsque $Re(s) > 0$ d'après le lemme \ref{convergenceAn} où l'on a utilisé la relation $\delta_{B_{2n}}^{\frac{1}{2}}(b) = \delta_{B_n}^2(a)$.
+ \end{proof}
   
  \subsection{Facteurs $\gamma$}
  
@@ -551,34 +546,71 @@ Grâce à cette proposition, on obtient la majoration
  
  On commence à montrer cette égalité pour les facteurs $\gamma$ archimédiens. Pour le moment, les résultats connus ne nous donnent même pas l'existence du facteur $\gamma^{JS}$ dans le cas archimédien, ce sera une conséquence de la méthode de globalisation.
  
- Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On aura besoin d'un résultat sur la continuité du quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \hat{\phi})}{J(s, W, \phi)}$ lorsque l'on fait varier la représentation $\pi$, on dispose du
+ Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On aura besoin d'un résultat sur la continuité du quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \hat{\phi})}{J(s, W, \phi)}$ lorsque l'on fait varier la représentation $\pi$, on dispose du
  \begin{lemme}
  \label{cont}
- Soient $W_0 \in \mathcal{W}(\pi, \psi))$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ tels que $W_0 = W_\pi$ et l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ soit continue.
+ Soient $W_0 \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ qui vérifient que $W_0 = W_\pi$, $W_{\pi'} \in \mathcal{W}(\pi', \psi)$ pour tout $\pi' \in Temp(GL_{2n}(F))$ et l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est bien définie et continue.
  
  En particulier, si $F$ est un corps $p$-adique, ce quotient est égal à $\gamma^{JS}(s, \pi', \Lambda^2, \psi)$ (proposition \ref{funcloc}); donc $\pi' \in V \mapsto \gamma^{JS}(s, \pi', \Lambda^2, \psi)$ est continue.
  \end{lemme}
  
  \begin{proof}
- On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ (Beuzart-Plessis). La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue, il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est alors bien une fonction continue de $\pi'$ sur $V$. 
+ On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ \cite[Corollaire 2.7.1]{beuzart-plessis2}. La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue, il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est alors bien une fonction continue de $\pi'$ sur $V$. 
  \end{proof}
  
- On étudie maintenant la dépendance du quotient $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$ par rapport au caractère additif $\psi$, où l'on note $\mathcal{F}_\psi$ pour la transformée de Fourier par rapport à $\psi$. Les caractères additifs de $F$ sont de la forme $\psi_\lambda$ avec $\lambda \in F^*$ où $\psi_\lambda(x) = \psi(\lambda x)$.
+ On étudie maintenant la dépendance du quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$ par rapport au caractère additif $\psi$, où l'on note $\mathcal{F}_\psi$ pour la transformée de Fourier par rapport à $\psi$. Les caractères additifs de $F$ sont de la forme $\psi_\lambda$ avec $\lambda \in F^*$ où $\psi_\lambda(x) = \psi(\lambda x)$. On dispose d'un isomorphisme $W \in \mathcal{W}(\pi, \psi) \mapsto W_\lambda \in \mathcal{W}(\pi, \psi_\lambda)$ donné par $W_\lambda(g) = W(a(\lambda)g)$ pour tout $g \in GL_{2n}(F)$ où $a(\lambda) = diag(\lambda^{2n-1}, \lambda^{2n-2}, ..., \lambda, 1)$.
  
  \begin{lemme}
  \label{depcaradd}
  Soient $\lambda \in F^*$, $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W, \phi) \neq 0$. Alors
  \begin{equation}
- \frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W, \phi)} =  |\lambda|^{n(s-\frac{1}{2})}\omega_\pi(\lambda)\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)} .
+ \frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} =  \omega_\pi(\lambda)^{2n}|\lambda|^{n(2n-3)(s-\frac{1}{2})}\frac{J(1-s, \rho(w_{n,n})L(r(\lambda)^{-1})\widetilde{W}, \mathcal{F}_\psi(\phi))}{J(s, L(r(\lambda)^{-1})W, \phi)},
  \end{equation}
+ où $L(g)$ est la translation à gauche par $g^{-1}$ et $r(\lambda) = diag(\lambda, 1, \lambda, 1, ...)$.
  \end{lemme}
  
  \begin{proof}
- En effet, la mesure de Haar auto-duale pour $\psi_\lambda$ est reliée à la mesure de Haar auto-duale pour $\psi$ par un facteur $|\lambda|^{\frac{n}{2}}$. On en déduit que $\mathcal{F}_{\psi_\lambda}(\phi)(x) = |\lambda|^{\frac{n}{2}}\mathcal{F}_\psi(\phi)(\lambda x)$. Le changement de variable $g \mapsto \lambda^{-1} g$ dans l'intégrale définissant $J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)(\lambda .))$ donne
+La mesure de Haar auto-duale pour $\psi_\lambda$ est reliée à la mesure de Haar auto-duale pour $\psi$ par un facteur $|\lambda|^{\frac{n}{2}}$. On en déduit que $\mathcal{F}_{\psi_\lambda}(\phi)(x) = |\lambda|^{\frac{n}{2}}\mathcal{F}_\psi(\phi)(\lambda x)$. Le changement de variable $g \mapsto \lambda^{-1} g$ dans l'intégrale définissant $J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi)(\lambda .))$ donne
  \begin{equation}
- J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)(\lambda.)) = |\lambda|^{n(s-1)}\omega_\pi(\lambda)J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ \label{depFourier}
+ J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_{\psi_\lambda}(\phi)) = |\lambda|^{-n(s-\frac{1}{2})}\omega_\pi(\lambda)J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi)).
  \end{equation}
- On en déduit immédiatement le lemme.
+
+D'autre part,
+\begin{equation}
+J(s, W_\lambda, \widehat{\phi}) = \int_{N_n\backslash{G_n}} \int_{V_n} W\left(a(\lambda) \sigma_n \begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+g & 0 \\
+0 & g
+\end{pmatrix} \sigma_n^{-1} \right)dX\widehat{\phi}(e_ng)|\det g|^s dg.
+\end{equation}
+
+On décompose $a(\lambda) \sigma_n$ sous la forme $r(\lambda) diag(b(\lambda), b(\lambda))$ où l'on note $b(\lambda) = diag(\lambda^{2n-2}, \lambda^{2n-4}, ..., 1)$ et $r(\lambda) = diag(\lambda, 1, \lambda, 1, ...)$. Après les changements de variables, $X \mapsto b(\lambda)^{-1} X b(\lambda)$ et $g \mapsto b(\lambda)^{-1}g$, on obtient la relation
+\begin{equation}
+\label{deplambda1}
+J(s, W_\lambda, \widehat{\phi}) = \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{-s}|\lambda|^{x(n)}J(s, L(r(\lambda)^{-1})W, \widehat{\phi}),
+\end{equation}
+où $L(g)$ est la translation à gauche par $g^{-1}$ et le facteur $|\lambda|^{x(n)}$ provient du changement de variable $X \mapsto b(\lambda)^{-1} X b(\lambda)$ que l'on n'explicite pas.
+
+De plus, pour tout $g \in GL_{2n}(F)$, on a
+\begin{equation}
+\widetilde{(W_\lambda)}(g) = W(a(\lambda)w_n(g^t)^{-1}) = \widetilde{W}(w_n a(\lambda)^{-1}w_n^{-1}g) = \omega_{\pi}(\lambda)^{2n-1}(\widetilde{W})_\lambda(g),
+\end{equation}
+où l'on a utilisé la relation $w_na(\lambda)^{-1}w_n^{-1} = \lambda^{-(2n-1)}a(\lambda)$. Ce qui donne l'égalité
+\begin{equation}
+\label{deplambda2}
+J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \widehat{\phi}) = 
+\omega_\pi(\lambda)^{2n-1} \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{s-1}|\lambda|^{x(n)} J(1-s, \rho(w_{n,n})L(r(\lambda)^{-1})\widetilde{W}, \widehat{\phi})
+\end{equation}
+
+On déduit de \ref{deplambda1} et \ref{deplambda2} la relation suivante
+\begin{equation}
+\frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \widehat{\phi})}{J(s, W_\lambda, \phi)} = \omega_\pi(\lambda)^{2n-1} |\lambda|^{n(n-1)(2s-1)}\frac{J(1-s, \rho(w_{n,n})L(r(\lambda)^{-1})\widetilde{W}, \widehat{\phi})}{J(s, L(r(\lambda)^{-1})W, \phi)},
+\end{equation}
+où l'on a utilisé l'égalité $\det b(\lambda) = \lambda^{n(n-1)}$.
+On déduit le lemme grâce à la relation \ref{depFourier}.
  \end{proof}
  
  Les facteurs $\gamma$ de Shahidi du carré extérieur vérifient la même dépendance par rapport au caractère additif $\psi$ (voir Henniart \cite{henniart}). Dans la suite, on pourra donc choisir arbitrairement un caractère additif non trivial, les relations seront alors vérifiées pour tous les caractères additifs, en particulier pour le caractère $\psi$ que l'on a fixé.
@@ -589,7 +621,7 @@ Grâce à cette proposition, on obtient la majoration
  
  Il existe une fonction méromorphe $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ telle que pour tous $s \in \mathbb{C}$, $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$, on ait
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi)).
  \end{equation}
  
  De plus, il existe une constante $c^{Sh}(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$,
@@ -613,20 +645,20 @@ Grâce à cette proposition, on obtient la majoration
  \label{jacquet-shalika}
  \begin{split}
  & \prod_{w \in S \cup T} J(s, W_w, \phi_w) L^{S \cup T}(s, \Pi, \Lambda^2) \\
- &= \prod_{w \in S \cup T} J(1-s, \rho(w_{n,n})\tilde{W}_w, \mathcal{F}_{(\psi_\mathbb{A})_w}(\phi_w)) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2),
+ &= \prod_{w \in S \cup T} J(1-s, \rho(w_{n,n})\widetilde{W}_w, \mathcal{F}_{(\psi_\mathbb{A})_w}(\phi_w)) L^{S \cup T}(1-s, \widetilde{\Pi}, \Lambda^2),
  \end{split}
  \end{equation}
  où  $L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T} L(s, \Pi_w, \Lambda^2)$ est la fonction L partielle. D'autre part, les facteurs $\gamma$ de Shahidi vérifient une relation similaire (voir Henniart \cite{henniart}),
  \begin{equation}
  \label{shahidi}
- L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T} \gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2).
+ L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T} \gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^{S \cup T}(1-s, \widetilde{\Pi}, \Lambda^2).
  \end{equation}
  
  Les équations (\ref{jacquet-shalika}) et (\ref{shahidi}), en utilisant la proposition \ref{funcloc} pour les places $w \in \{v\} \cup T$, donne
  \begin{equation}
  \label{equationlocalglobal}
  \begin{split}
- & J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty)) = \\
+ & J(1-s, \rho(w_{n,n})\widetilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty)) = \\
  & J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty) \prod_{w \in \{v\} \cup T} \frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}.
  \end{split}
  \end{equation}
@@ -642,16 +674,16 @@ Grâce à cette proposition, on obtient la majoration
  L'équation (\ref{equationlocalglobal}) devient alors
  \begin{equation}
  \begin{split}
- & J(1-s, \rho(w_{n,n})\tilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty)) = \\
+ & J(1-s, \rho(w_{n,n})\widetilde{W}_\infty, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty)) = \\
  & J(s, W_\infty, \phi_\infty)\gamma^{Sh}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty) \frac{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}.
  \end{split}
  \end{equation}
  
- On choisit maintenant pour $U$ une base de voisinage contenant $\pi$, en utilisant le lemme \ref{cont} et la continuité des facteurs $\gamma$ de Shahidi sur $Temp(GL_{2n}(F))$, on en déduit que $\frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$
+ On choisit maintenant pour $U$ une base de voisinage contenant $\pi$, en utilisant le lemme \ref{cont} et la continuité des facteurs $\gamma$ de Shahidi sur $Temp(GL_{2n}(F))$, on en déduit que $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$
  est une fonction méromorphe indépendante de $W$ et de $\phi$, que l'on note $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$, qui est le produit de $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ et d'une fonction, que l'on note $R(s)$. La fonction $R(s)$ ne dépend pas du choix de la base de voisinage et des choix qui sont fait lors de l'utilisation de la proposition \ref{globalisation}. En effet, on a
  \begin{equation}
  \label{facteurR}
- R(s) = \frac{J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty))}{J(s, W, \phi_\infty)\gamma^{Sh}(s, \pi, \Lambda^2, (\psi_\mathbb{A})_\infty)},
+ R(s) = \frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty))}{J(s, W, \phi_\infty)\gamma^{Sh}(s, \pi, \Lambda^2, (\psi_\mathbb{A})_\infty)},
  \end{equation}
  où $W \in \mathcal{W}(\pi, \psi)$, qui est bien indépendant des choix que l'on a fait.
  De plus, $R$ est une limite de fractions rationnelles en $q_v^s$ (les quotients $\frac{\gamma^{Sh}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}{\gamma^{JS}(s, \Pi_v, \Lambda^2, (\psi_\mathbb{A})_v)}$); donc $R$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$.
@@ -669,17 +701,17 @@ Grâce à cette proposition, on obtient la majoration
  Il ne nous reste plus qu'à montrer que la constante $c^{Sh}(\pi)$ est de module 1. Reprenons l'équation fonctionnelle locale archimédienne,
  \begin{equation}
  \label{funcarch}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi)).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi)).
  \end{equation}
  
- On utilise maintenant l'équation fonctionnelle sur la représentation $\tilde{\pi}$ pour transformer le facteur $J(1-s, \rho(w_{n,n})\tilde{W}, \mathcal{F}_\psi(\phi))$, ce qui nous donne
+ On utilise maintenant l'équation fonctionnelle sur la représentation $\widetilde{\pi}$ pour transformer le facteur $J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi))$, ce qui nous donne
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = \frac{J(s, W, \mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)))}{\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\psi})}.
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi) J(s, W, \phi) = \frac{J(s, W, \mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)))}{\gamma^{JS}(1-s, \widetilde{\pi}, \Lambda^2, \bar{\psi})}.
  \end{equation}
  
  Puisque $\mathcal{F}_{\bar{\psi}}(\mathcal{F}_\psi(\phi)) = \phi$, on obtient donc la relation 
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi)\gamma^{JS}(1-s, \tilde{\pi}, \Lambda^2, \bar{\psi}) = 1.
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi)\gamma^{JS}(1-s, \widetilde{\pi}, \Lambda^2, \bar{\psi}) = 1.
  \end{equation}
  
  D'autre part, en conjuguant l'équation \ref{funcarch}, on obtient
@@ -687,7 +719,7 @@ Grâce à cette proposition, on obtient la majoration
  \overline{\gamma^{JS}(s, \pi, \Lambda^2, \psi)} = \gamma^{JS}(\bar{s}, \bar{\pi}, \Lambda^2, \bar{\psi}).
  \end{equation}
  
- Comme $\pi$ est tempérée, $\pi$ est unitaire, donc $\tilde{\pi} \simeq \bar{\pi}$. On en déduit, pour $s = \frac{1}{2}$,
+ Comme $\pi$ est tempérée, $\pi$ est unitaire, donc $\widetilde{\pi} \simeq \bar{\pi}$. On en déduit, pour $s = \frac{1}{2}$,
  \begin{equation}
  |\gamma^{JS}(\frac{1}{2}, \pi, \Lambda^2, \psi)|^2=1.
  \end{equation}
@@ -716,12 +748,12 @@ Grâce à cette proposition, on obtient la majoration
  \begin{equation}
  \begin{split}
  &\prod_{w \in S \cup T} J(s, W_w, \phi_w) L^{S \cup T}(s, \Pi, \Lambda^2)\\
- &= \prod_{w \in S \cup T} J(1-s, \rho(w_{n,n})\tilde{W}_w, \mathcal{F}_{(\psi_\mathbb{A})_w}(\phi_w)) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2),
+ &= \prod_{w \in S \cup T} J(1-s, \rho(w_{n,n})\widetilde{W}_w, \mathcal{F}_{(\psi_\mathbb{A})_w}(\phi_w)) L^{S \cup T}(1-s, \widetilde{\Pi}, \Lambda^2),
  \end{split}
  \end{equation}
   où $L^{S \cup T}(s, \Pi, \Lambda^2)$ est la fonction L partielle. Les facteurs $\gamma$ de Shahidi vérifient (voir Henniart \cite{henniart})
  \begin{equation}
- L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T}\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^{S \cup T}(1-s, \tilde{\Pi}, \Lambda^2).
+ L^{S \cup T}(s, \Pi, \Lambda^2) = \prod_{w \in S \cup T}\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w) L^{S \cup T}(1-s, \widetilde{\Pi}, \Lambda^2).
  \end{equation}
  
  On rappelle que lors de la preuve de la proposition précédente, on a démontré que $\frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)} = 1$ pour $w \in T$. En utilisant les propositions \ref{funcloc} et \ref{proparch}, on obtient donc la relation
