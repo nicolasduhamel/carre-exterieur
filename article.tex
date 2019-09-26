@@ -38,7 +38,7 @@ Soit $F$ un corps $p$-adique, $G$ un groupe réductif déployé sur $F$ et $X = H \
 Sakellaridis et Venkatesh \cite{sak-ven} introduisent une donnée radicielle associé à $X$, qui n'existe que sous certaines conditions sur $X$. On peut associer à la donnée radicielle duale un groupe réductif complexe $\check{G}_X$ qu'ils appellent le groupe dual de la variété sphérique $X$. On note $G_X$ le groupe réductif déployé sur $F$ dont le groupe dual est $\check{G}_X$, le groupe $G_X$ est associé à la donnée radicielle de $X$.
 Sakellaridis et Venkatesh introduisent aussi un morphisme de groupes algébriques $\iota_X : \check{G}_X \times SL_2(\mathbb{C}) \rightarrow \check{G}$ sous certaines hypothèses. L'existence de l'application $\iota_X$ a ensuite été vérifiée par Knop et Schalke \cite{knop} sans ces hypothèses. Supposons que $\iota_X$ est trivial sur $SL_2(\mathbb{C})$.
 
-La correspondance de Langlands locale pour $G$ donne une application surjective $Irr(G) \rightarrow \Phi(G)$ à fibres finies entre l'ensemble $Irr(G)$ des classes d'isomorphisme de représentations irréductibles de $G$ et l'ensemble $\Phi(G)$ des paramètres de Langlands. Elle donne une partition de $Irr(G)$ en $L$-paquets
+La correspondance de Langlands locale pour $G$ donne une application surjective $Irr(G) \rightarrow \Phi(G)$ à fibres finies entre l'ensemble $Irr(G)$ des classes d'isomorphisme de représentations irréductibles de $G$ et l'ensemble $\Phi(G) = \{\phi : W_F' \rightarrow {}^LG \text{ admissible}\}$ des paramètres de Langlands, où $W_F'$ est le groupe de Weil-Deligne de $F$. La correspondance de Langlands locale donne une partition de $Irr(G)$ en $L$-paquets
 \begin{equation}
 Irr(G)  = \bigcup_{\phi \in \Phi(G)} \Pi^G(\phi),
 \end{equation}
@@ -123,6 +123,14 @@ On a
 \end{equation}
 Le facteur $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est défini dans la section \ref{notations}.
 \end{theoreme}
+La preuve de ce théorème est purement locale, elle se base sur la théorie des fonctions zêta introduite par Jacquet-Shalika \cite{jacquet-shalika}. Une fois les préliminaires introduit il s'agit essentiellement de montrer que l'on peut échanger deux intégrales (voir la preuve du théorème \ref{thPlanch}). L'utilisation des résultats de Jacquet-Shalika nous amène à prouver un résultat sur les facteurs gamma.
+\begin{theoreme}
+Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma}.
+Alors il existe une constante $c(\pi)$ de module 1 telle que tout $s \in \mathbb{C}$, on ait
+\begin{equation}
+\gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma(s,\pi,\Lambda^2,\psi).
+\end{equation}
+\end{theoreme}
 
 Dans la suite de cette introduction, $F$ désigne un corps de nombres et $\psi$ un caractère non trivial de $\mathbb{A}_F$.
 On définit $H_n(\mathbb{A}_F)$ et $\theta$ de la même manière que précédemment de manière globale.
@@ -141,21 +149,25 @@ Sakellaridis et Venkatesh conjecturent une factorisation du produit scalaire
  
  Si $\pi$ est le transfert d'une représentation automorphe cuspidale $\sigma$ de $SO(2n+1)(\mathbb{A}_F)$ alors cette factorisation prend la forme suivante
 \begin{equation}
+\label{introFact}
 <(\Sigma \phi_1)_\pi, (\Sigma \phi_2)_\pi>_{Pet} = q \prod_v' <\phi_{1,v}, \phi_{2,v}>_{\sigma_v},
 \end{equation}
-où $q$ est un rationnel. Les quantités $<\phi_{1,v}, \phi_{2,v}>_{\sigma_v}$ sont des formes hermitiennes $(H_n(F_v), \theta_v)$-invariante. On renvoie à \cite[section 17.5]{sak-ven} pour la signification du produit $\prod_v'$. En effet, le produit n'est pas absolument convergent et on doit l'interpréter comme l'évaluation d'une fonction $L$. Si $\pi$ n'est pas le transfert d'une représentation automorphe cuspidale de $SO(2n+1)(\mathbb{A}_F)$ alors
+où $q$ est un rationnel. Cette factorisation est une conséquence de la factorisation de la période globale en produit de périodes locales, produite par Jacquet-Shalika dans le cas qui nous intéresse (voir plus loin). Les quantités $<\phi_{1,v}, \phi_{2,v}>_{\sigma_v}$ sont des formes hermitiennes $(H_n(F_v), \theta_v)$-invariante. On renvoie à \cite[section 17.5]{sak-ven} pour la signification du produit $\prod_v'$. En effet, le produit n'est pas absolument convergent et on doit l'interpréter comme l'évaluation d'une fonction $L$. Si $\pi$ n'est pas le transfert d'une représentation automorphe cuspidale de $SO(2n+1)(\mathbb{A}_F)$ alors
 \begin{equation}
 <(\Sigma \phi_1)_\pi, (\Sigma \phi_2)_\pi>_{Pet} = 0.
 \end{equation}
 Sakellaridis et Venkatesh conjecturent que les formes hermitiennes $<\phi_{1,v}, \phi_{2,v}>_{\sigma_v}$ (pour $\sigma_v$ tempérée) sont reliées aux formes $(\phi_{1,v}, \phi_{2,v})_{Y_{n,v}, \pi_v}$ qui l'on a définit précédemment. Plus précisement,
 \begin{conjecture}[Sakellaridis-Venkatesh {\cite[section 17]{sak-ven}}]
+\label{introConj}
 On a l'égalité
 \begin{equation}
 <\phi_{1,v}, \phi_{2,v}>_{\sigma_v} = (\phi_{1,v}, \phi_{2,v})_{Y_{n,v}, T(\sigma_v)}.
 \end{equation}
 \end{conjecture}
 
-De manière duale, on conjecture une factorisation de la période globale $\mathcal{P}_{H_n, \theta}$ en produit de périodes locales $\mathcal{P}_{H_n, \theta, v}$. C'est cette factorisation et le lien avec la formule de Plancherel qui va nous permettre d'obtenir une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$. Plus précisément, pour $\Phi$ une fonction de Schwartz sur $\mathbb{A}_F^n$ et $W_\varphi$ la fonction de Whittaker associée à $\varphi$, on introduit dans la suite des fonctions zêta globales $J(s, W_\varphi, \Phi)$, qui sont reliées à la période globale par la relation
+De manière duale, la relation \ref{introFact} est équivalente à une factorisation de la période globale $\mathcal{P}_{H_n, \theta}$ en produit de périodes locales $\mathcal{P}_{H_n, \theta, v}$. Cette factorisation est obtenue par Jacquet-Shalika \cite{jacquet-shalika} à travers leur théorie des fonctions zêta que l'on explicite dans la section \ref{gamma}.
+
+La relation \ref{introLien} entre la période locale et la forme $\beta$ va nous permettre d'obtenir une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$ prouvant ainsi la conjecture \ref{introConj}. Plus précisément, pour $\Phi$ une fonction de Schwartz sur $\mathbb{A}_F^n$ et $W_\varphi$ la fonction de Whittaker associée à $\varphi$, on introduit dans la suite des fonctions zêta globales $J(s, W_\varphi, \Phi)$, qui sont reliées à la période globale par la relation
 \begin{equation}
 Res_{s=1} J(s, W_\varphi, \Phi) = \mathcal{P}_{H_n, \theta}(\varphi) \widehat{\Phi}(0).
 \end{equation}
@@ -171,6 +183,7 @@ où $S$ est un ensemble de places suffisamment grand. On obtient alors une factor
 
 Supposons que $Res_{s=1} L^S(s, \pi, \Lambda^2) \neq 0$. Le terme $\mathcal{P}_{H_n, \theta}(\varphi)$ ne dépend pas de $\Phi$, on en déduit que les facteurs $\frac{J(1, W_v, \Phi_v)}{\widehat{\Phi}_v(0)}$ ne dépend pas de $\Phi$. On montrera l'égalité
 \begin{equation}
+\label{introLien}
 J(1, \widetilde{W_v}, \widehat{\Phi_v}) = \pm \Phi_v(0) \beta(W_v),
 \end{equation} c'est le lemme \ref{zetabeta}. La forme linéaire $\beta$ nous servira à prouver le théorème \ref{introPlanchExp}.
 
@@ -187,23 +200,23 @@ g & 0 \\
 \end{pmatrix} \sigma_n^{-1}$ avec $X \in M_n(F)$ et $g \in GL_n(F)$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
-  \end{smallmatrix}\bigr).$. On note $SO(2m+1)$ la forme déployé du groupe spécial orthogonal sur un espace de dimension $2m+1$. On note $A_n$ le sous groupe de $G_n$ des matrices diagonales inversibles, $B_n$ le sous groupe des matrices triangulaires supérieures inversibles, $\overline{B}_n$ le sous groupe des matrices triangulaires inférieures inversibles, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$, $\overline{N}_n = {}^tN_n$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $V_n$ le sous-groupe de $M_n$ des matrices triangulaires inférieures strictes. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
+  \end{smallmatrix}\bigr).$. On note $SO(2m+1)$ la forme déployé du groupe spécial orthogonal sur un espace de dimension $2m+1$. On note $A_n$ le sous-groupe de $G_n$ des matrices diagonales inversibles, $B_n$ le sous groupe des matrices triangulaires supérieures inversibles, $\overline{B}_n$ le sous groupe des matrices triangulaires inférieures inversibles, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$, $\overline{N}_n = {}^tN_n$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $V_n$ le sous-espace de $M_n$ des matrices triangulaires inférieures strictes. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
 1_{n-1} & x \\
 0 & 1
 \end{pmatrix}$ pour $x \in F^{n-1}$ et $P_n = G_{n-1}U_n$ le sous-groupe mirabolique. On note $\delta_{B_n}$ le caractère modulaire de $B_n$. On notera par des lettres gothiques les algèbres de Lie correspondantes et pour $\mathfrak{g}$ une algèbre de Lie $\mathcal{U}(\mathfrak{g})$ désignera l'algèbre enveloppante.
 
-Lorsque $X$ est un espace totalement discontinu, on notera $C^\infty_c(X)$ ou $\mathcal{S}(X)$, l'espace des fonctions localement constante à support compact. Lorsque $G$ est un groupe algébrique réel ou complexe, on note $\mathcal{S}(G)$ l'espace des fonctions $C^\infty$ à décroissance rapide ainsi que toute ses dérivées. De plus, lorsque $\mathbb{A}_K$ l'anneau des adèles d'un corps de nombres $K$ et $G$ est un groupe algébrique sur $K$, on note $\mathcal{S}(G(\mathbb{A}))$ le produit restreint des espaces $\mathcal{S}(G(K_v))$ lorsque $v$ parcours l'ensemble des places de $K$ i.e. l'ensemble des combinaisons linéaires des fonctions $f = \otimes_v f_v$ avec $f_v \in \mathcal{S}(G(K_v))$ pour tout $v$ et $f_v = \mathbbm{1}_{G(\mathcal{O}_v)}$ sauf pour un nombre fini de $v$, où $\mathcal{O}_v$ est l'anneau des entiers de $K_v$.
+Lorsque $X$ est un espace totalement discontinu, on notera $C^\infty_c(X)$ ou $\mathcal{S}(X)$, l'espace des fonctions localement constante à support compact. Lorsque $G$ est un groupe algébrique réel ou complexe, on note $\mathcal{S}(G)$ l'espace des fonctions $C^\infty$ à décroissance rapide ainsi que toutes ses dérivées tel que défini par Aizenbud et Gourevitch \cite{aizenbud}. De plus, lorsque $\mathbb{A}_K$ est l'anneau des adèles d'un corps de nombres $K$ et $G$ est un groupe algébrique sur $K$, on note $\mathcal{S}(G(\mathbb{A}))$ le produit restreint des espaces $\mathcal{S}(G(K_v))$ lorsque $v$ parcours l'ensemble des places de $K$ i.e. l'ensemble des combinaisons linéaires des fonctions $f = \otimes_v f_v$ avec $f_v \in \mathcal{S}(G(K_v))$ pour tout $v$ et $f_v = \mathbbm{1}_{G(\mathcal{O}_v)}$ sauf pour un nombre fini de $v$, où $\mathcal{O}_v$ est l'anneau des entiers de $K_v$.
 
-Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, d'un sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphismes de représentations irréductibles tempérées de $G(F)$ et $\Pi_2(G) \subset Temp(G)$ le sous-ensemble des représentations de carré intégrable. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$. Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant la classe d'isomorphisme de $\sigma$.
-On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
+Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $SO_{2n+1}$ ou un quotient, d'un sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphisme de représentations irréductibles tempérées de $G(F)$ et $\Pi_2(G) \subset Temp(G)$ le sous-ensemble des représentations de carré intégrable. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$. Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant la classe d'isomorphisme de $\sigma$.
+On note $W_F'$ est le groupe de Weil-Deligne de $F$ et $\Phi(G) = \{\phi : W_F' \rightarrow {}^LG \text{ admissible d'image bornée}\}$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
 
 Pour $P=MN$ un sous-groupe parabolique de $G$, on note $i_P^G(\sigma)$ l'induction parabolique normalisée lorsque $\sigma$ est une représentation lisse de $M$ : c'est la représentation régulière à droite de $G$ sur l'espace des fonctions localement constantes $f : G \mapsto \sigma$ qui vérifient $f(mng) = \delta_P(m)^{\frac{1}{2}}\sigma(m)f(g)$ pour tous $m \in M$, $n \in N$ et $g \in G$. Lorsque $G = G_n$ et $M = G_{n_1} \times ... \times G_{n_k}$, on note $\pi_1 \times ... \times \pi_k = i_P^G(\pi_1 \boxtimes ... \boxtimes \pi_k)$ pour $\pi_i$ des représentations lisses de $G_{n_i}$. Lorsque $G = SO(2n+1)$ et $M=G_{n_1} \times ... \times G_{n_k} \times SO(2m+1)$, on note $\pi_1 \times ... \times \pi_k \rtimes \sigma_0 = i_P^G(\pi_1 \boxtimes ... \boxtimes \pi_k \boxtimes \sigma_0)$ pour $\pi_i$ des représentations lisses de $G_{n_i}$ et $\sigma_0$ une représentation lisse de $SO(2m+1)$.
 
- On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$, où $W_F'$ est le groupe de Weil-Deligne de $F$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$ grâce à la correspondance de Langlands locale pour $GL_{2m}$. La correspondance de Langlands locale pour $SO(2m+1)$ et pour $GL_{2m}$, nous permettent de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. 
+ On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$ grâce à la correspondance de Langlands locale pour $GL_{2m}$. La correspondance de Langlands locale pour $SO(2m+1)$ et pour $GL_{2m}$, nous permettent de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. 
 
 Dans les mesures de Plancherel, on verra apparaître des termes $|S_{\sigma}|$ pour $\sigma \in Temp(SO(2n+1))$ ou $Temp(PG_{2n})$. On n'explicite pas les ensembles $S_{\sigma}$ et on se contente de donner leur cardinal. Pour $\sigma \in Temp(SO(2n+1))$ sous-représentation de $\pi_1 \times ... \times \pi_l \rtimes \sigma_0$, avec $\pi_i \in \Pi_{2}(G_{n_i})$ et $\sigma_0 \in \Pi_2(SO(2m+1))$, le facteur $|S_{\sigma}|$ est le produit $|S_{\pi_1}|...|S_{\pi_l}||S_{\sigma_0}|$; où $|S_{\sigma_0}|=2^k$ tel que $T(\sigma_0) \simeq \tau_1 \times ... \times \tau_k$ avec $\tau_i \in \Pi_2(G_{m_i})$ et $|S_{\pi_i}| = n_i$.
 
-Pour $\pi \in Temp(G)$ et $r$ une représentation admissible de ${}^L G$, on note $L(s, \pi, r)$ la fonction $L$ associée par la correspondance de Langlands locale et $\gamma(s, \pi, r, \psi)$ le facteur $\gamma$ associée. Lorsque $r$ est la représentation standard, on l'omettra. De plus, on note $\gamma^*(0, \pi, r, \psi)$ la régularisation du facteur $\gamma$ en $0$, défini par la relation
+Pour $\pi \in Temp(G)$ et $r$ une représentation admissible de ${}^L G$, on note $L(s, \pi, r)$ la fonction $L$ associée par la correspondance de Langlands locale et $\gamma(s, \pi, r, \psi)$ le facteur $\gamma$ associé. Lorsque $r$ est la représentation standard, on l'omettra. De plus, on note $\gamma^*(0, \pi, r, \psi)$ la régularisation du facteur $\gamma$ en $0$, défini par la relation
 \begin{equation}
 \gamma^*(0, \pi, r, \psi) = \lim_{s \rightarrow 0^+} \frac{\gamma(s, \pi, r, \psi)}{(s log(q_F))^{n_{\pi,r}}},
 \end{equation}
