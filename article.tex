@@ -72,7 +72,7 @@ Il existe un isomorphisme $GL_{2n}$-équivariant de représentations unitaires
 \begin{equation}
 L^2(GL_n \times GL_n \backslash GL_{2n}) \simeq \int^{\oplus}_{Temp(SO(2n+1))/\sim} T(\sigma) d\sigma,
 \end{equation}
-où $d\sigma$ est la mesure spectrale sur $SO(2n+1)$ et $T : {Temp(SO(2n+1))\slash{\sim}} \rightarrow Temp(GL_{2n})\slash{\sim}$ est l'application de transfert provenant de la correspondance de Langlands locale.
+où $d\sigma$ est la mesure spectrale sur $SO(2n+1)$ et $T : {Temp(SO(2n+1))\slash{\sim}} \rightarrow Temp(GL_{2n})$ est l'application de transfert provenant de la correspondance de Langlands locale.
 \end{theoreme}
 
 On note $H_n$ le groupe des matrices de la forme $\sigma_n \begin{pmatrix}
@@ -103,7 +103,7 @@ où $T : {Temp(SO(2n+1))\slash{\sim}} \rightarrow Temp(GL_{2n})$ est l'applicatio
 \end{theoreme}
 
 Ce dernier est une conséquence de la formule de Plancherel explicte que l'on prouve dans la section \ref{plancherel}. 
-Soit $\psi$ un caractère additif non trivial de $F$. On pose $Y_n = H_n \backslash GL_{2n}$. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. Il existe $f_1, f_2 \in \mathcal{S}(G_{2n})$ tel que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On pose $f = f_1 * f_2^{*}$, où $f_2^*(g) = \overline{f_2(g^{-1})}$. 
+Soit $\psi$ un caractère additif non trivial de $F$. On pose $Y_n = H_n \backslash GL_{2n}$. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. Il existe $f_1, f_2 \in C^\infty_c(G_{2n})$ tel que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On pose $f = f_1 * f_2^{*}$, où $f_2^*(g) = \overline{f_2(g^{-1})}$. 
 Pour $W \in \mathcal{C}^w(N_{2n} \backslash GL_{2n})$, on note
 \begin{equation}
 \beta(W) = \int_{H^P_n \cap N_{2n} \backslash H^P_n} W(\xi_p) \theta(\xi_p)^{-1} d\xi_p.
@@ -114,7 +114,7 @@ où $H^P_n = H_n \bigcap P_n$, on définit la mesure $d\xi_p$ dans la section \ref
 \end{equation}
 pour tout $\pi \in T(Temp(SO(2n+1)))$, où $W_{f,\pi}(g_1,g_2) = \int_{N_{2n}} f_\pi(g_1^{-1}ug_2) \psi(u)^{-1} du$ et on renvoie à la section \ref{seclimite} pour la notation $f_\pi$.
 
-On prouve alors le
+On prouve alors la formule de Plancherel explicite sur $H_n \backslash GL_{2n}$ sous la forme du
 \begin{theoreme}
 \label{introPlanchExp}
 On a
@@ -133,7 +133,7 @@ Alors il existe une constante $c(\pi)$ de module 1 telle que tout $s \in \mathbb
 \end{theoreme}
 
 Dans la suite de cette introduction, $F$ désigne un corps de nombres et $\psi$ un caractère non trivial de $\mathbb{A}_F$.
-On définit $H_n(\mathbb{A}_F)$ et $\theta$ de la même manière que précédemment de manière globale.
+On définit $H_n(\mathbb{A}_F)$ et $\theta$ de la même manière que précédemment de façon globale.
 
 Soit $\pi$ une représentation automorphe cuspidale irréductible de $GL_{2n}(\mathbb{A}_F)$ et $\phi_1, \phi_2 \in C^\infty_c(H_n(\mathbb{A}_F) \backslash GL_{2n}(\mathbb{A}_F), \theta) = \bigotimes_v^{'} C^\infty_c(H_n(F_v) \backslash GL_{2n}(F_v), \theta_v)$. On note $\Sigma \phi_i \in C^\infty([GL_{2n}])$, pour $i=1,2$, la fonction définie par $\Sigma \phi_i(g) = \sum_{x \in H_n(F) \backslash GL_{2n}(F)} \phi_i(xg)$ pour tout $g \in GL_{2n}(\mathbb{A}_F)$. D'autre part, pour $\varphi \in \pi$, on introduit la période globale
 \begin{equation}
@@ -181,13 +181,13 @@ où $S$ est un ensemble de places suffisamment grand. On obtient alors une factor
 \mathcal{P}_{H_n, \theta}(\varphi) = \frac{Res_{s=1} L^S(s, \pi, \Lambda^2)}{\widehat{\Phi}^S(0)} \prod_{v \in S} \frac{J(1, W_v, \Phi_v)}{\widehat{\Phi}_v(0)}.
 \end{equation}
 
-Supposons que $Res_{s=1} L^S(s, \pi, \Lambda^2) \neq 0$. Le terme $\mathcal{P}_{H_n, \theta}(\varphi)$ ne dépend pas de $\Phi$, on en déduit que les facteurs $\frac{J(1, W_v, \Phi_v)}{\widehat{\Phi}_v(0)}$ ne dépend pas de $\Phi$. On montrera l'égalité
+Supposons que $Res_{s=1} L^S(s, \pi, \Lambda^2) \neq 0$. Le terme $\mathcal{P}_{H_n, \theta}(\varphi)$ ne dépend pas de $\Phi$, on en déduit que les facteurs $\frac{J(1, W_v, \Phi_v)}{\widehat{\Phi}_v(0)}$ ne dépendent pas de $\Phi$. On montrera l'égalité
 \begin{equation}
 \label{introLien}
 J(1, \widetilde{W_v}, \widehat{\Phi_v}) = \pm \Phi_v(0) \beta(W_v),
 \end{equation} c'est le lemme \ref{zetabeta}. La forme linéaire $\beta$ nous servira à prouver le théorème \ref{introPlanchExp}.
 
-On commence dans la section \ref{gamma} par prouver une relation sur les facteurs $\gamma$ du carré extérieur. Les sections \ref{seclimite} et \ref{formInv} sont des préliminaires pour le théorème \ref{thPlanch}. On fini dans la section \ref{plancherel} par prouver une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$ et une décomposition de Plancherel abstraite sur $L^2(GL_n \times GL_n \backslash GL_{2n})$.
+On commence dans la section \ref{gamma} par prouver une relation sur les facteurs $\gamma$ du carré extérieur. Les sections \ref{seclimite} et \ref{formInv} sont des préliminaires pour le théorème \ref{thPlanch}. On fini dans la section \ref{plancherel} par prouver une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$ et des décompositions de Plancherel abstraite sur $L^2(H_n \backslash GL_{2n})$ et $L^2(GL_n \times GL_n \backslash GL_{2n})$.
 
 \subsection{Notations}
 \label{notations}
@@ -225,17 +225,23 @@ où $n_{\pi,r}$ est l'ordre du zéro de $\gamma(s, \pi, r, \psi)$ en $s=0$.
 \subsection{Mesures}
 \label{mesures}
 On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$ et $F^\times$ de la mesure de Haar $d^\times x = \frac{dx}{|x|_F}$. 
-Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_n$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ la mesure de Haar à droite obtenu comme produit des mesures sur $G_{n-1}$ sur $U_n$. On équipe $\overline{B}_n$ de la mesure $\prod_{i=1}^n d^\times b_{i,i} \prod_{\substack{i,j = 1,..,n \\ j < i}}db_{i,j}$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1. On équipe $N_n \backslash G_n$ de la mesure
+Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_n$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ la mesure de Haar à droite obtenu comme produit des mesures sur $G_{n-1}$ et ssur $U_n$. On équipe $\overline{B}_n$ de la mesure $\prod_{i=1}^n d^\times b_{i,i} \prod_{\substack{i,j = 1,..,n \\ j < i}}db_{i,j}$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1.
+
+On équipe $N_n \backslash G_n$ de la mesure
 \begin{equation}
-\int_{N_n \backslash G_n} f(g) dg = \int_{\overline{B}_n} f(b)db
+\int_{N_n \backslash G_n} f(g) dg = \int_{\overline{B}_n} f(b)db,
 \end{equation}
-pour tout $f \in \mathcal{S}(G_n)$ invariante par $N_n$. On a l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on équipe $P_n \backslash G_n$ de la semi-mesure (ou mesure tordue) $dg$ telle que $|\det g|dg$ s'identifie à la mesure $(dx)^n$ sur $F^n$. À travers l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on effectue l'identification d'un ouvert dense de $P_n \backslash G_n$ avec $F^{n-1} \times F^\times$, ce qui nous permet d'identifier la mesure tordue sur $P_n \backslash G_n$ à la mesure $(dx)^{n-1}\times d^\times y$ sur $F^{n-1} \times F^\times$. La mesure tordue sur $P_n \backslash G_n$ n'est pas invariante, ce n'est pas une mesure sur le quotient $P_n \backslash G_n$. Cependant on a la formule d'intégration suivante
+pour tout $f \in \mathcal{S}(G_n)$ invariante par $N_n$.
+
+On a l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on équipe $P_n \backslash G_n$ de la semi-mesure (ou mesure tordue) $dg$ telle que $|\det g|dg$ s'identifie à la mesure $(dx)^n$ sur $F^n$. À travers l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on effectue l'identification d'un ouvert dense de $P_n \backslash G_n$ avec $F^{n-1} \times F^\times$, ce qui nous permet d'identifier la mesure tordue sur $P_n \backslash G_n$ à la mesure $(dx)^{n-1}\times d^\times y$ sur $F^{n-1} \times F^\times$. La mesure tordue sur $P_n \backslash G_n$ n'est pas invariante, ce n'est pas une mesure sur le quotient $P_n \backslash G_n$. Cependant on a la formule d'intégration suivante
 \begin{equation}
 \int_{G_n} f(g) dg  = \int_{P_n \backslash G_n} \int_{P_n} f(pg) |\det p|^{-1} dp dg,
 \end{equation}
  pour tout $f \in \mathcal{S}(G_n)$.
  
-Pour $G$ un groupe réductif connexe sur $F$, on fixe un isomorphisme $A_G \simeq (F^\times)^{\dim(A_G)}$ et on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$ provenant de l'isomorphisme avec $(F^\times)^{\dim(A_G)}$. Décrivons le choix de la normalisation d'une mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
+Pour $G$ un groupe réductif connexe sur $F$, on fixe un isomorphisme $A_G \simeq (F^\times)^{\dim(A_G)}$ et on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$ provenant de l'isomorphisme avec $(F^\times)^{\dim(A_G)}$.
+
+Décrivons le choix de la normalisation d'une mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi}.
 \end{equation}
@@ -244,7 +250,7 @@ La mesure $d\chi$ est indépendante du caractère $\psi$.
 
 On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto \sigma \otimes \chi_\lambda \in \Pi_2(M)$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $\sigma$ dans $\Pi_2(M)$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
 
-Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ tel que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. Soit $P$ un sous groupe parabolique de $G$ de Levi $M$. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq i_P^G(\sigma)$ par la formule
+Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ telle que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. Soit $P$ un sous groupe parabolique de $G$ de Levi $M$. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq i_P^G(\sigma)$ par la formule
 \begin{equation}
 d\pi  = |W(G, M)|^{-1} (i_P^G)_* d\sigma,
 \end{equation}
@@ -279,18 +285,6 @@ L^2(H_n(F) \backslash GL_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F)
 où $T : {Temp(SO(2n+1))\slash{\sim}} \rightarrow Temp(GL_{2n})$ est l'application de transfert provenant de la correspondance de Langlands locale.
 \end{theoreme}
 
-Ce théorème est équivalent au théorème \ref{conjSV}. En effet, il suffit de calculer explicitement la (classe de la) mesure de Plancherel sur $SO(2n+1)$. La mesure de Plancherel d'un groupe réductif $p$-adique $G$ a été calculée par Waldspurger et Harish-Chandra \cite{waldspurger} sous la forme
-\begin{equation}
-d\mu_G(\sigma) = d(\sigma)j(\sigma)^{-1}d\sigma,
-\end{equation}
-où $d(\sigma)$ est le degré formel de $\sigma$ et $j(\sigma)$ est un scalaire produit d'opérateurs d'entrelacements (voir \cite{waldspurger}). Le degré formel pour $SO(2n+1)$ a été calculé par Ichino-Lapid-Mao \cite{ichino} et le facteur $j$ pour $SO(2n+1)$ découle de la normalisation des opérateurs d'entrelacements d'Arthur \cite{arthur}.
-Finalement, on obtient que la mesure de Plancherel pour $SO(2n+1)$ est
-\begin{equation}
-d\mu_{SO(2n+1)}(\sigma) = \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
-\end{equation}
-
-On renvoie à l'article de Beuzart-Plessis \cite[Proposition 2.13.2]{beuzart-plessis} pour l'analogue de ce résultat pour les groupes unitaires.
-
 De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-invariant (lemme \ref{lemmeiso}), on en déduit le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
@@ -299,7 +293,7 @@ L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq \int^{\oplus}_{Temp(SO(
 \end{equation}
 \end{theoreme}
 
-Rappelons que ces deux formules de Plancherel abstraite sont obtenu en prouvant une formule de Plancherel explicite sur $H_n \backslash G_n$.
+Rappelons que ces deux décompositions de Plancherel abstraite sont obtenu en prouvant une formule de Plancherel explicite sur $H_n \backslash G_n$.
 \begin{theoreme}
 On pose $Y_n = H_n \backslash G_{2n}$. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. On pose
 \begin{equation}
@@ -309,10 +303,21 @@ pour tout $\pi \in T(Temp(SO(2n+1)))$, où $H^P_n = H_n \bigcap P_n$. Les notatio
 \begin{equation}
 (\varphi_1, \varphi_2)_{L^2(Y_n, \theta)} = \int_{Temp(SO(2n+1))\slash{\sim}} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma,
 \end{equation}
-La quantité $(\varphi_1, \varphi_2)_{Y_n, T(\sigma)}$ est définie de manière explicite dans la section \ref{secPlanchExpl}. Le facteur $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est défini dans la section \ref{notations}.
+La quantité $(\varphi_1, \varphi_2)_{Y_n, T(\sigma)}$ est définie en fonction de $\beta$ dans l'introduction. Le facteur $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est défini dans la section \ref{notations}.
 \end{theoreme}
 
-Pour finir, au cours de la preuve de la formule de Plancherel explicite, on a besoin d'une égalité sur des facteurs gamma définie de deux manière différentes. On prouve le
+La mesure $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma$ n'est rien d'autre que la mesure de Plancherel pour SO(2n+1). En effet, la mesure de Plancherel d'un groupe réductif $p$-adique $G$ a été calculée par Waldspurger et Harish-Chandra \cite{waldspurger} sous la forme
+\begin{equation}
+d\mu_G(\sigma) = d(\sigma)j(\sigma)^{-1}d\sigma,
+\end{equation}
+où $d(\sigma)$ est le degré formel de $\sigma$ et $j(\sigma)$ est un scalaire produit d'opérateurs d'entrelacements (voir \cite{waldspurger}). Le degré formel pour $SO(2n+1)$ a été calculé par Ichino-Lapid-Mao \cite{ichino} et le facteur $j$ pour $SO(2n+1)$ découle de la normalisation des opérateurs d'entrelacements d'Arthur \cite{arthur}.
+Finalement, on obtient que la mesure de Plancherel pour $SO(2n+1)$ est
+\begin{equation}
+d\mu_{SO(2n+1)}(\sigma) = \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma.
+\end{equation}
+On renvoie à l'article de Beuzart-Plessis \cite[Proposition 2.13.2]{beuzart-plessis} pour l'analogue de ce résultat pour les groupes unitaires.
+
+Pour finir, au cours de la preuve de la formule de Plancherel explicite, on aura besoin d'une égalité sur des facteurs gamma définie de deux manière différentes. On prouve le
 \begin{theoreme}
 Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma}.
 Alors il existe une constante $c(\pi)$ de module 1 telle que tout $s \in \mathbb{C}$, on ait
