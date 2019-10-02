@@ -379,9 +379,9 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
  \label{funcloc}
  Supposons que $F$ est un corps $p$-adique et $\pi$ générique. Il existe un monôme $\epsilon^{JS}(s,\pi,\Lambda^2,\psi)$ en $q^s$ ou $q^{-s}$, tel que pour tous $W \in \mathcal{W}(\pi,\psi)$ et $\phi \in \mathcal{S}(F^n)$, on ait
  \begin{equation}
- \epsilon^{JS}(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\widetilde{W},\hat{\phi})}{L(1-s,\widetilde{\pi},\Lambda^2)},
+ \epsilon^{JS}(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\widetilde{W},\widehat{\phi})}{L(1-s,\widetilde{\pi},\Lambda^2)},
  \end{equation}
- où $\hat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ définie par
+ où $\widehat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ définie par
  \begin{equation}
  \mathcal{F}_\psi(\phi)(y) = \int_{F^n} \phi(x)\psi(\sum_{i=1}^n x_i y_i)dx
  \end{equation}
@@ -423,9 +423,9 @@ g & 0 \\
  \label{funcglob}
  Les intégrales $J(s, W_\varphi, \Phi)$ convergent absolument pour $Re(s)$ suffisamment grand. De plus, $J(s, W_\varphi, \Phi)$ admet un prolongement méromorphe à tout le plan complexe et vérifie l'équation fonctionnelle suivante
  \begin{equation}
- J(s,W_\varphi,\Phi)=J(1-s, \rho(w_{n,n})\widetilde{W}_\varphi, \hat{\Phi}),
+ J(s,W_\varphi,\Phi)=J(1-s, \rho(w_{n,n})\widetilde{W}_\varphi, \widehat{\Phi}),
  \end{equation}
- où $\widetilde{W}_\varphi(g) = W_\varphi(w_n(g^t)^{-1})$ et $\hat{\Phi}$ est la transformée de Fourier de $\Phi$ par rapport au caractère $\psi_\mathbb{A}$.
+ où $\widetilde{W}_\varphi(g) = W_\varphi(w_n(g^t)^{-1})$ et $\widehat{\Phi}$ est la transformée de Fourier de $\Phi$ par rapport au caractère $\psi_\mathbb{A}$.
  \end{proposition}
  
  Comme on peut s'y attendre, les intégrales globales sont reliées aux intégrales locales. Plus exactement, si $W_\varphi=\prod_v W_v$ et $\Phi = \prod_v \Phi_v$, où $v$ décrit les places de $K$, on a
@@ -442,7 +442,7 @@ g & 0 \\
  Supposons que $F$ est un corps $p$-adique. Il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$.
  \end{lemme}
  
-On va définir une topologie sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$, $P$ un parabolique de Levi $M$ et $\sigma \in \Pi_2(M)$. La classe d'équivalence de l'induction parabolique normalisé $i^G_P(\sigma)$ est indépendante du parabolique $P$ et on la notera $i^G_M(\sigma)$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto i^G_M(\sigma \otimes \chi_\lambda) \in Temp(GL_{2n}(F))$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
+Rappelons la topologie que l'on a défini sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$, $P$ un parabolique de Levi $M$ et $\sigma \in \Pi_2(M)$. La classe d'équivalence de l'induction parabolique normalisé $i^G_P(\sigma)$ est indépendante du parabolique $P$ et on la notera $i^G_M(\sigma)$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto i^G_M(\sigma \otimes \chi_\lambda) \in Temp(GL_{2n}(F))$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
  
  Cette topologie sur $Temp(GL_{2n}(F))$ nous permet d'énoncer le résultat principal dont on aura besoin pour la méthode de globalisation.
  \begin{proposition}[Beuzart-Plessis \cite{beuzart-plessis}]
@@ -495,10 +495,10 @@ Pour tout $C > 0$, il existe $N$ tel que pour tous $s$ vérifiant $0 < Re(s) < C$
 converge absolument.
 \end{lemme}
 
-On étend la définition des intégrales $J(s, W, \phi)$ aux fonctions tempérées $W$, on montre maintenant la convergence de ces intégrales
+On étend la définition des intégrales $J(s, W, \phi)$ aux fonctions tempérées $W$, on montre maintenant la convergence de ces intégrales dans le
 \begin{lemme}
 \label{convtemp}
-Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 0$. De plus, pour tous $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $Re(s) > 0$, la forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W,  \phi)$ est continue.
+Pour $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et $\phi \in \mathcal{S}(F^n)$, l'intégrale $J(s, W, \phi)$ converge absolument pour tout $s \in \mathbb{C}$ vérifiant $Re(s) > 0$. De plus, pour tous $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tels que $Re(s) > 0$, la forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W,  \phi)$ est continue.
 \end{lemme}
  
  \begin{proof}
@@ -601,31 +601,31 @@ Grâce à cette proposition, on obtient la majoration
  
  On commence à montrer cette égalité pour les facteurs $\gamma$ archimédiens. Pour le moment, les résultats connus ne nous donnent même pas l'existence du facteur $\gamma^{JS}$ dans le cas archimédien, ce sera une conséquence de la méthode de globalisation.
  
- Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On aura besoin d'un résultat sur la continuité du quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \hat{\phi})}{J(s, W, \phi)}$ lorsque l'on fait varier la représentation $\pi$, on dispose du
+ Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On aura besoin d'un résultat sur la continuité du quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \widehat{\phi})}{J(s, W, \phi)}$ lorsque l'on fait varier la représentation $\pi$, on dispose du
  \begin{lemme}
  \label{cont}
- Soient $W_0 \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ qui vérifient que $W_0 = W_\pi$, $W_{\pi'} \in \mathcal{W}(\pi', \psi)$ pour tout $\pi' \in Temp(GL_{2n}(F))$ et l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est bien définie et continue.
+ Soient $W_0 \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W_0, \phi) \neq 0$. Alors il existe une application continue  $\pi' \in Temp(GL_{2n}(F)) \mapsto W_{\pi'} \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi)$ et un voisinage $V \subset Temp(GL_{2n}(F))$ de $\pi$ qui vérifient que $W_0 = W_\pi$ et $W_{\pi'} \in \mathcal{W}(\pi', \psi)$ pour tout $\pi' \in Temp(GL_{2n}(F))$. De plus, l'application $\pi' \in V \mapsto \frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est bien définie et continue.
  
  En particulier, si $F$ est un corps $p$-adique, ce quotient est égal à $\gamma^{JS}(s, \pi', \Lambda^2, \psi)$ (proposition \ref{funcloc}); donc $\pi' \in V \mapsto \gamma^{JS}(s, \pi', \Lambda^2, \psi)$ est continue.
  \end{lemme}
  
  \begin{proof}
- On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ \cite[Corollaire 2.7.1]{beuzart-plessis2}. La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue (lemme \ref{convtemp}), il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est alors bien une fonction continue de $\pi'$ sur $V$. 
+ On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ \cite[Corollaire 2.7.1]{beuzart-plessis2}. La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue (lemme \ref{convtemp}), il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est alors bien définie et continue sur $V$. 
  \end{proof}
  
- On étudie maintenant la dépendance du quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$ par rapport au caractère additif $\psi$, où l'on note $\mathcal{F}_\psi$ pour la transformée de Fourier par rapport à $\psi$. Les caractères additifs non-triviaux de $F$ sont de la forme $\psi_\lambda$ avec $\lambda \in F^*$ où $\psi_\lambda(x) = \psi(\lambda x)$. On dispose d'un isomorphisme $W \in \mathcal{W}(\pi, \psi) \mapsto W_\lambda \in \mathcal{W}(\pi, \psi_\lambda)$ donné par $W_\lambda(g) = W(a(\lambda)g)$ pour tout $g \in GL_{2n}(F)$ où $a(\lambda) = diag(\lambda^{2n-1}, \lambda^{2n-2}, ..., \lambda, 1)$.
+ On étudie maintenant la dépendance du quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$ par rapport au caractère additif $\psi$, où l'on note $\mathcal{F}_\psi$ pour la transformée de Fourier par rapport à $\psi$. Les caractères additifs non-triviaux de $F$ sont de la forme $\psi_\lambda$ avec $\lambda \in F^*$ où $\psi_\lambda(x) = \psi(\lambda x)$. On dispose d'un isomorphisme $W \in \mathcal{W}(\pi, \psi) \mapsto W_\lambda \in \mathcal{W}(\pi, \psi_\lambda)$ donné par $W_\lambda(g) = W(a(\lambda)g)$ pour tout $g \in GL_{2n}(F)$, où $a(\lambda) = diag(\lambda^{2n-1}, \lambda^{2n-2}, ..., \lambda, 1)$.
  
  \begin{lemme}
  \label{depcaradd}
- Soient $\lambda \in F^*$, $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tel que $0 < Re(s) < 1$. Supposons que $J(s, W, \phi) \neq 0$. Alors
+ Soient $\lambda \in F^*$, $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tels que $0 < Re(s) < 1$. Supposons que $J(s, W_\lambda, \phi) \neq 0$. Alors
  \begin{equation}
- \frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} =  \omega_\pi(\lambda)^{2n-1}|\lambda|^{n(2n-1)(s-\frac{1}{2})}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_\psi(\phi))}{J(s, W_r, \phi)},
+ \frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} =  \omega_\pi(\lambda)^{2n+1}|\lambda|^{n(2n-1)(s-\frac{1}{2})}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_\psi(\phi))}{J(s, W_r, \phi)},
  \end{equation}
  où $W_r$ est la translation à droite de $W$ par $diag(\lambda, 1, \lambda, 1, ...)$. En particulier, $W_r \in \mathcal{W}(\pi, \psi)$.
  
  Lorsque $F$ est un corps $p$-adique, on en déduit que
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi_\lambda) = \omega_\pi(\lambda)^{2n-1}|\lambda|^{n(2n-1)(s-\frac{1}{2})} \gamma^{JS}(s, \pi, \Lambda^2, \psi).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi_\lambda) = \omega_\pi(\lambda)^{2n+1}|\lambda|^{n(2n-1)(s-\frac{1}{2})} \gamma^{JS}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  \end{lemme}
  
@@ -638,7 +638,7 @@ La mesure de Haar auto-duale pour $\psi_\lambda$ est reliée à la mesure de Haar 
 
 D'autre part,
 \begin{equation}
-J(s, W_\lambda, \widehat{\phi}) = \int_{N_n\backslash{G_n}} \int_{V_n} W\left(a(\lambda) \sigma_n \begin{pmatrix}
+J(s, W_\lambda, \phi) = \int_{N_n\backslash{G_n}} \int_{V_n} W\left(a(\lambda) \sigma_n \begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix}\begin{pmatrix}
@@ -650,9 +650,9 @@ g & 0 \\
 On décompose $a(\lambda) \sigma_n$ sous la forme $\sigma_n diag(\lambda b(\lambda), b(\lambda))$ où l'on note $b(\lambda) = diag(\lambda^{2n-2}, \lambda^{2n-4}, ..., 1)$. Après les changements de variables, $X \mapsto b(\lambda)^{-1} X b(\lambda)$ et $g \mapsto b(\lambda)^{-1}g$ , on obtient la relation
 \begin{equation}
 \label{deplambda1}
-J(s, W_\lambda, \widehat{\phi}) = \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{-s}|\lambda|^{x(n)}J(s, R(r(\lambda))W, \widehat{\phi}),
+J(s, W_\lambda, \phi) = \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{-s}|\lambda|^{x(n)}J(s, \rho(r(\lambda))W, \phi),
 \end{equation}
-où $R(g)$ est la translation à droite par $g$, $r(\lambda) = \sigma_n diag(\lambda, ..., \lambda, 1, ..., 1) \sigma_n^{-1} = diag(\lambda, 1, \lambda, 1, ...)$ et le facteur $|\lambda|^{x(n)}$ (que l'on n'explicite pas) provient du changement de variable $X \mapsto b(\lambda)^{-1} X b(\lambda)$.
+où $\rho(g)$ est la translation à droite par $g$, $r(\lambda) = \sigma_n diag(\lambda, ..., \lambda, 1, ..., 1) \sigma_n^{-1} = diag(\lambda, 1, \lambda, 1, ...)$ et le facteur $|\lambda|^{x(n)}$ (que l'on n'explicite pas) provient du changement de variable $X \mapsto b(\lambda)^{-1} X b(\lambda)$.
 
 De plus, pour tout $g \in GL_{2n}(F)$, on a
 \begin{equation}
@@ -662,20 +662,23 @@ où l'on a utilisé la relation $w_na(\lambda)^{-1}w_n^{-1} = \lambda^{-(2n-1)}a(\
 \begin{equation}
 \label{deplambda2}
 \begin{split}
-J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \widehat{\phi}) = &\omega_\pi(\lambda)^{2n-1} \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{s-1}|\lambda|^{x(n)} \\
-&J(1-s, \rho(w_{n,n})R(r(\lambda))\widetilde{W}, \widehat{\phi}).
+J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi)) &= \omega_\pi(\lambda)^{2n-1} \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{s-1}|\lambda|^{x(n)} \\
+&J(1-s, \rho(r(\lambda))\rho(w_{n,n})\widetilde{W}, \mathcal{F}_{\psi_\lambda}(\phi)).
 \end{split}
 \end{equation}
 
 Pour finir, on remarque que l'on a pour tout $g \in GL_{2n}(F)$,
 \begin{equation}
-R(r(\lambda))\widetilde{W}(g) = W(w_n (g^t r(\lambda)^{-1})^{-1}) = \omega_\pi(\lambda)^{-1}\widetilde{W_r}(g),
+\begin{split}
+\rho(r(\lambda))\rho(w_{n,n})\widetilde{W}(g) &= W\left(w_n \left((gw_{n,n}r(\lambda)^{-1})^t\right)^{-1}\right) = W\left(\lambda w_{n}\left((gr(\lambda))^t\right)^{-1}w_{n,n}\right) \\
+&= \omega_\pi(\lambda) \rho(w_{n,n})\widetilde{W_r}(g),
+\end{split}
 \end{equation}
-où $W_r$ est le translation à droite de $W$ par $r(\lambda)$.
+où $W_r$ est la translation à droite de $W$ par $r(\lambda)$, où l'on a utilisé la relation $w_{n,n}r(\lambda)^{-1} = \lambda^{-1}r(\lambda)w_{n,n}$.
 
 On déduit de \ref{deplambda1} et \ref{deplambda2} la relation suivante
 \begin{equation}
-\frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \widehat{\phi})}{J(s, W_\lambda, \phi)} = \omega_\pi(\lambda)^{2n-2} |\lambda|^{n(n-1)(2s-1)}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \widehat{\phi})}{J(s, W_r, \phi)},
+\frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} = \omega_\pi(\lambda)^{2n} |\lambda|^{n(n-1)(2s-1)}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_r, \phi)},
 \end{equation}
 où l'on a utilisé l'égalité $\det b(\lambda) = \lambda^{n(n-1)}$.
 On déduit le lemme grâce à la relation \ref{depFourier}.
