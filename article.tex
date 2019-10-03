@@ -619,13 +619,13 @@ Grâce à cette proposition, on obtient la majoration
  \label{depcaradd}
  Soient $\lambda \in F^*$, $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in \mathbb{C}$ tels que $0 < Re(s) < 1$. Supposons que $J(s, W_\lambda, \phi) \neq 0$. Alors
  \begin{equation}
- \frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} =  \omega_\pi(\lambda)^{2n+1}|\lambda|^{n(2n-1)(s-\frac{1}{2})}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_\psi(\phi))}{J(s, W_r, \phi)},
+ \frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} =  \omega_\pi(\lambda)^{2n-1}|\lambda|^{n(2n-1)(s-\frac{1}{2})}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_\psi(\phi))}{J(s, W_r, \phi)},
  \end{equation}
  où $W_r$ est la translation à droite de $W$ par $diag(\lambda, 1, \lambda, 1, ...)$. En particulier, $W_r \in \mathcal{W}(\pi, \psi)$.
  
  Lorsque $F$ est un corps $p$-adique, on en déduit que
  \begin{equation}
- \gamma^{JS}(s, \pi, \Lambda^2, \psi_\lambda) = \omega_\pi(\lambda)^{2n+1}|\lambda|^{n(2n-1)(s-\frac{1}{2})} \gamma^{JS}(s, \pi, \Lambda^2, \psi).
+ \gamma^{JS}(s, \pi, \Lambda^2, \psi_\lambda) = \omega_\pi(\lambda)^{2n-1}|\lambda|^{n(2n-1)(s-\frac{1}{2})} \gamma^{JS}(s, \pi, \Lambda^2, \psi).
  \end{equation}
  \end{lemme}
  
@@ -663,22 +663,22 @@ où l'on a utilisé la relation $w_na(\lambda)^{-1}w_n^{-1} = \lambda^{-(2n-1)}a(\
 \label{deplambda2}
 \begin{split}
 J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi)) &= \omega_\pi(\lambda)^{2n-1} \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{s-1}|\lambda|^{x(n)} \\
-&J(1-s, \rho(r(\lambda))\rho(w_{n,n})\widetilde{W}, \mathcal{F}_{\psi_\lambda}(\phi)).
+&J(1-s, \rho(w_{n,n})\rho(r(\lambda))\widetilde{W}, \mathcal{F}_{\psi_\lambda}(\phi)).
 \end{split}
 \end{equation}
 
 Pour finir, on remarque que l'on a pour tout $g \in GL_{2n}(F)$,
 \begin{equation}
 \begin{split}
-\rho(r(\lambda))\rho(w_{n,n})\widetilde{W}(g) &= W\left(w_n \left((gw_{n,n}r(\lambda)^{-1})^t\right)^{-1}\right) = W\left(\lambda w_{n}\left((gr(\lambda))^t\right)^{-1}w_{n,n}\right) \\
-&= \omega_\pi(\lambda) \rho(w_{n,n})\widetilde{W_r}(g),
+\rho(w_{n,n})\rho(r(\lambda))\widetilde{W}(g) &= W\left(w_n \left((g r(\lambda)w_{n,n})^t\right)^{-1} \right) = W\left(\lambda^{-1} w_n \left((gw_{n,n}r(\lambda)^{-1})^t\right)^{-1} \right) \\
+& = \omega_\pi(\lambda)^{-1} W\left(w_{n}\left((gw_{n,n})^t\right)^{-1}r(\lambda) \right) = \omega_\pi(\lambda)^{-1} \rho(w_{n,n})\widetilde{W_r}(g),
 \end{split}
 \end{equation}
-où $W_r$ est la translation à droite de $W$ par $r(\lambda)$, où l'on a utilisé la relation $w_{n,n}r(\lambda)^{-1} = \lambda^{-1}r(\lambda)w_{n,n}$.
+où $W_r$ est la translation à droite de $W$ par $r(\lambda)$, où l'on a utilisé la relation $r(\lambda)w_{n,n} = \lambda w_{n,n}r(\lambda)^{-1}$.
 
 On déduit de \ref{deplambda1} et \ref{deplambda2} la relation suivante
 \begin{equation}
-\frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} = \omega_\pi(\lambda)^{2n} |\lambda|^{n(n-1)(2s-1)}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_r, \phi)},
+\frac{J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_\lambda, \phi)} = \omega_\pi(\lambda)^{2n-2} |\lambda|^{n(n-1)(2s-1)}\frac{J(1-s, \rho(w_{n,n})\widetilde{W_r}, \mathcal{F}_{\psi_\lambda}(\phi))}{J(s, W_r, \phi)},
 \end{equation}
 où l'on a utilisé l'égalité $\det b(\lambda) = \lambda^{n(n-1)}$.
 On déduit le lemme grâce à la relation \ref{depFourier}.
