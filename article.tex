@@ -906,7 +906,7 @@ où
 
 On note $M = \left( \prod_{i=1}^t G_{d_i}^{m_i+n_i} \times \prod_{j=1}^u G_{e_j}^{p_j} \times \prod_{k=1}^v G_{f_k}^{q_k} \right) / Z_{2n}$ et $P$ un parabolique de $PG_{2n}$ de Levi $M$. Alors $\pi = i_P^{PG_{2n}}(\tau)$ pour une certaine représentation $\tau$ de $M$.
 
-On note $X^*(M)$ le groupe des caractères algébriques de $M$. On note $\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ qui est l'hyperplan défini par la condition que la somme des coordonnées est nulle.
+On note $X^*(M)$ le groupe des caractères algébriques de $M$. On note $\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ l'hyperplan défini par la condition que la somme des coordonnées est nulle.
 
 On équipe $(i\mathbb{R})_M$ du produit des mesures de Lebesgue sur $i\mathbb{R}$ et $\mathcal{A}$ de la mesure de Haar telle que la mesure quotient sur $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$ soit la mesure de Lebesgue.
 
@@ -933,7 +933,7 @@ Quitte à restreindre $U$, cette dernière induit un homéomorphisme $U \simeq V/W(
 \end{equation}
 d'après la relation \ref{mesurePlanch}. 
 
-Rappelons que la mesure $d\pi$ est choisie en fonction de la mesure sur $\widehat{A}_M$ que l'on a normalisé avec un facteur $\left(\frac{2\pi}{log(q_F)}\right)^{dim(A_M)}$. Les mesures $d\pi$ et $d\lambda$ vérifient alors la relation de compatibilité suivante
+Rappelons que la mesure $d\pi$ est choisie en fonction de la mesure sur $\widehat{A_M}$ que l'on a normalisé avec un facteur $\left(\frac{2\pi}{log(q_F)}\right)^{dim(A_M)}$. Les mesures $d\pi$ et $d\lambda$ vérifient alors la relation de compatibilité suivante
 \begin{equation}
 \int_{U} f(\pi) d\pi = \frac{1}{|W(PG_{2n}, \tau)|} \left(\frac{log(q_F)}{2\pi}\right)^{dim(A_M)}\int_{V} f(\pi_\lambda) d\lambda,
 \end{equation}
@@ -1086,7 +1086,7 @@ Cette dernière intégrale est égale à
 De plus, on remarque que $s \mapsto \gamma(s, \pi_{\lambda'}, \Lambda^2, \psi)^{-1}$ a un pôle d'ordre $N$ en $s=0$. Notre membre de gauche est donc égal à
 \begin{equation}
 \label{finalgauche}
-\frac{D\left(2\pi\right)^{N-1}2^{-c}log(q_F)}{|W'|P} \left(\frac{log(q_F)}{2\pi}\right)^{dim(\mathcal{A})} \int_{\mathcal{A}'} \varphi(\lambda') \frac{\gamma^*(0, \sigma_{\lambda'}, Ad, \psi)}{log(q_F)^N} d\lambda';
+\frac{D\left(2\pi\right)^{N-1}2^{-c}log(q_F)}{|W'|P} \left(\frac{log(q_F)}{2\pi}\right)^{dim(\mathcal{A})} \int_{\mathcal{A}'} \varphi(\lambda') \frac{\gamma^*(0, \sigma_{\lambda'}, Ad, \psi)}{log(q_F)^N} d\lambda'.
 \end{equation}
 On a utilisé les relations $\gamma^*(0, 1, \psi)\gamma^*(0, \pi_{\lambda'}, \overline{Ad}, \psi) = \gamma^*(0, \pi_{\lambda'}, Ad, \psi)$ et
 \begin{equation}
@@ -1141,7 +1141,7 @@ g & 0 \\
 \label{unfolding}
 Soit $f \in \mathcal{S}(G_{2n})$, alors on a
 \begin{equation}
-\int_{H_n} f(s) \theta(s)^{-1} ds = \int_{H^P_n \cap N_{2n} \backslash{H^P_n}} \int_{H_n \cap N_{2n} \backslash{H_n}} W_f(\xi_p, \xi) \theta(\xi)^{-1} \theta(\xi_p) d\xi d\xi_p .
+\int_{H_n} f(s) \theta(s)^{-1} ds = \int_{H^P_n \cap N_{2n} \backslash{H^P_n}} \int_{H_n \cap N_{2n} \backslash{H_n}} W_f(\xi_p, \xi) \theta(\xi)^{-1} \theta(\xi_p) d\xi d\xi_p,
 \end{equation}
 où $W_f$ est la fonction de $G_{2n} \times G_{2n}$ définie par
 \begin{equation}
@@ -1645,7 +1645,7 @@ Il suffit de vérifier la convergence de l'intégrale
 \begin{equation}
 \label{conv}
 \begin{split}
-&\int_{V_n} \int_{A_{n-1}} \int_{\bar{\mathfrak{n}}_n} \int_{A_n} (1+|a_n|)^{-N} |\det a(a')^{-1}| \\
+&\int_{V_n} \int_{A_{n-1}} \int_{V_n} \int_{A_n} (1+|a_n|)^{-N} |\det a(a')^{-1}| \\
 & W_{r^N |\det|^{-\frac{1}{2}}f}\left(\sigma_n \begin{pmatrix}
 1 & X' \\
 0 & 1
@@ -1692,7 +1692,7 @@ où $b' = diag(a_1', a_1', a_2', a_2', ...)$.
 On effectue les changements de variables $X \mapsto (ak)X(ak)^{-1}$ et $X' \mapsto (a'k')X'(a'k')^{-1}$. D'après les lemme \ref{majtemp} et la preuve du lemme \ref{convtemp}, il existe $d > 0$ tel que pour tout $N \geq 1$, l'intégrale \ref{conv} est alors majorée à une constante près par
 \begin{equation}
 \begin{split}
-\int_{V_n} \int_{A_{n-1}} \int_{v_n} \int_{A_n} (1+|a_n|)^{-N} |\det a(a')^{-1}| m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}_{B_{2n}}(bt_X)\log(||bt_X||)^d \\
+\int_{V_n} \int_{A_{n-1}} \int_{V_n} \int_{A_n} (1+|a_n|)^{-N} |\det a(a')^{-1}| m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}_{B_{2n}}(bt_X)\log(||bt_X||)^d \\
 m(X')^{-\alpha' N} \prod_{i=1}^{n-1} (1 + |\frac{a'_i}{a'_{i+1}}|)^{-N} \delta^{\frac{1}{2}}_{B_{2n}}(b't_{X'})\log(||b't_{X'}||)^d \delta_{B_n}^{-2}(a) \delta_{B_{n-1}}^{-2}(a') da dX da' dX'.
 \end{split}
 \end{equation}
@@ -1731,7 +1731,7 @@ On a $\delta^{\frac{1}{2}}_{B_{2n}}(b')\delta_{B_{n-1}}^{-2}(a') = |\det a'|^2$.
 
 \begin{lemme}
 \label{betann}
-L'intégrale \ref{beta} est absolument convergente. La forme linéaire $W \in \mathcal{C}^w(N_{2n} \backslash G_{2n}) \mapsto \beta(W)$ est continue. De plus, la restriction de $\beta$ a $\mathcal{W}(\pi, \psi)$ est non nulle.
+L'intégrale \ref{beta} est absolument convergente. La forme linéaire $W \in \mathcal{C}^w(N_{2n} \backslash G_{2n}) \mapsto \beta(W)$ est continue. De plus, la restriction de $\beta$ à $\mathcal{W}(\pi, \psi)$ est non nulle.
 \end{lemme}
 
 \begin{proof}
@@ -1796,7 +1796,7 @@ où l'on a posé $\phi_k(x) = \phi(xe_nk)$ pour tous $x \in F$ et $k \in K_n$. Ce 
 \lim_{s \rightarrow 0+} \gamma(ns, 1, \psi)\int_{Z_n} \phi(e_nzk) |\det z|^s dz = \int_{F} \widehat{\phi_k}(x)dx = \phi(0).
 \end{equation}
 
-On en déduit, aussi par convergence dominée, que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est égal a
+On en déduit, aussi par convergence dominée, que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est égal à
 \begin{equation}
 \begin{split}
 \phi(0)\int_{Z_n \backslash A_n} \int_{K_n} \int_{V_n}
@@ -1958,7 +1958,7 @@ g & 0 \\
 est $(H_n, \theta)$-invariant en tant que fonction de $\widetilde{W}$. D'après l'isomorphisme $G_{2n}$-équivariant $W \in \mathcal{W}(\pi, \psi) \mapsto \widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1})$, $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant, ce qui termine la preuve de la proposition \ref{lemmebeta}.
 
 \begin{remarque}
-Cette preuve que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant est quelque peut détournée dû au fait qu'il nous manque un résultat. On conjecture que $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ qui est de dimension au plus $1$. En utilisant le fait que $\pi \simeq \widetilde{\pi}$ donc $\pi$ est $(H_n, \theta)$-distinguée, on a $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$. On en déduirait alors que la restriction de $\beta$ à $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un élément de $Hom_{H_n}(\pi, \theta)$. Ce qui simplifierait légèrement la preuve à condition de prouver le résultat de dimension $1$.
+Cette preuve que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant est quelque peut détournée dû au fait qu'il nous manque un résultat. On conjecture que $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ est de dimension au plus $1$. Comme $\pi \simeq \widetilde{\pi}$, on obtient que $\pi$ est $(H_n, \theta)$-distinguée, on a $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$. On en déduirait alors que la restriction de $\beta$ à $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un élément de $Hom_{H_n}(\pi, \theta)$. Ce qui simplifierait légèrement la preuve à condition de prouver le résultat de dimension $1$.
 \end{remarque}
 
 \begin{proposition}
@@ -2180,9 +2180,13 @@ Pour finir, \cite[prop 4.1.1]{beuzart-plessis} nous dit que les formes sesquilin
 \label{planchab}
 On a une décomposition de Plancherel abstraite sur $L^2(H_n \backslash G_{2n})$ :
 \begin{equation}
-L^2(H_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+L^2(H_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) d\sigma.
 \end{equation}
 \end{corollaire}
+
+\begin{proof}
+C'est une conséquence du théorème \ref{thPlanch} et du fait que $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est presque partout non nul.
+\end{proof}
 
 \subsection{Formule de Plancherel abstraite sur $G_n \times G_n \backslash G_{2n}$}
 
@@ -2272,7 +2276,7 @@ g_2 & x \\
 &= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right) \psi(Tr(\gamma x))d\gamma
+\end{pmatrix} k \sigma_n^{-1} \right) \psi(Tr(\gamma x))d\gamma.
 \end{split}
 \end{equation}
 Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact sur $M_n$, à savoir la fonction $\phi_k$ définie par $\phi_k(y) = f\left( \sigma_n \begin{pmatrix}
@@ -2320,7 +2324,7 @@ Cet isomorphisme d'espace $L^2$ nous permet de faire le lien entre les formules 
 \begin{theoreme}
 Une décomposition de Plancherel abstraite sur $L^2(G_n \times G_n \backslash G_{2n})$ est obtenue par la relation
 \begin{equation}
-L^2(G_n \times G_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|} d\sigma.
+L^2(G_n \times G_n \backslash G_{2n}) = \int^{\oplus}_{Temp(SO(2n+1))/Stab} T(\sigma) d\sigma.
 \end{equation}
 \end{theoreme}
 
