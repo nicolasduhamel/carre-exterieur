@@ -14,6 +14,8 @@
 
 \usepackage{eulervm}
 
+\usepackage{todonotes}
+
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{conjecture}{Conjecture}[section]
 \newtheorem{propriete}{Propriété}[section]
@@ -863,6 +865,16 @@ d\mu_{PG_{2n}}(\pi) = \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_\pi|} d\pi
 où $\gamma^*(0, \pi, \overline{Ad}, \psi) = \lim_{s \rightarrow 0} (s log(q_F))^{-n_{\pi, \overline{Ad}}} \gamma(s, \pi, \overline{Ad}, \psi)$, avec $n_{\pi, \overline{Ad}}$ l'ordre du zéro de $\gamma(s, \pi, \overline{Ad}, \psi)$ en $s=0$. Pour $\pi \in Temp(PG_{2n})$ isomorphe à $\pi_1 \times ... \times \pi_k$, avec $\pi_i \in \Pi_{2}(G_{n_i})$, le facteur $|S_{\pi}|$ est le produit $\prod_{i=1}^k n_i$.
 \end{proposition}
 
+\begin{proof}
+La mesure de Plancherel d'un groupe réductif p-adique $G$ est de la forme $d\mu_G(\pi) = \mu_G(\pi) d\pi$. Rappelons que la densité de Plancherel $\mu_G$ a été calculé par Waldspurger et Harish-Chandra \cite{waldspurger} sous la forme
+\begin{equation}
+\mu_G(\pi) = d(\sigma)j(\sigma)^{-1},
+\end{equation}
+où $\pi = i_P^G(\sigma)$ avec $P=MU$ un sous-groupe parabolique de $G$ et $\sigma \in \Pi_2(M)$, $d(\sigma)$ est le degré formel de $\sigma$ et $j(\sigma)$ est un scalaire produit d'opérateurs d'entralecements.
+
+\todo{Explications} On a $\mu_{PG_{2n}}(\pi) = \mu_{G_{2n}}(\pi)$ pour tout $\pi \in Temp(PG_{2n})$. Pour $G = G_{2n}$, le degré formel $d(\sigma)$ a été calculé par Silberger-Zink \cite{silberger-zink} et le facteur $j(\sigma)^{-1}$ par Shahidi \cite{shahidi}. On renvoie à \cite[Proposition 2.13.2]{beuzart-plessis} pour le calcul du produit qui donne la relation \ref{mesurePlanch}.
+\end{proof}
+
 On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
 
 Rappelons (section \ref{notations}) que la correspondance de Langlands locale pour $SO(2m+1)$ nous permet de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. On sait caractériser l'image de l'application de transfert. Plus exactement,
@@ -889,6 +901,7 @@ Pour $\sigma \in Temp(SO(2n+1))$ sous-représentation de $\pi_1 \times ... \times
 \begin{proof}
 D'après la relation \ref{mesurePlanch}, on a
 \begin{equation}
+\label{int123}
 \int_{Temp(PG_{2n})} \phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{PG_{2n}}(\pi) = 
 \int_{Temp(PG_{2n})} \phi(\pi) \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_\pi|\gamma(s, \pi, \Lambda^2, \psi)} d\pi.
 \end{equation}
@@ -918,7 +931,14 @@ Dans la suite, on notera les coordonnées de $\lambda \in \mathcal{A}$ de la mani
 \end{itemize}
 pour tout $\lambda \in \mathcal{A}$.
 
-On équipe $\widehat{A_M}$ de la mesure $\left(\frac{2\pi}{log(q_F)}\right)^{dim(A_M)}d\chi$. Grâce à l'isomorphisme local $\lambda \in \mathcal{A} \mapsto |\det|^\lambda \in \widehat{A_M}$ , où l'on note $|\det|^{\lambda} = \prod_{i=1}^t \prod_{l=1}^{m_i} |\det|^{\frac{x_{i,l}(\lambda)}{d_i}} |\det|^{\frac{\widetilde{x_{i,l}}(\lambda)}{d_i}} \times \prod_{j=1}^u \prod_{l=1}^{p_j}  |\det|^{\frac{y_{j,l}(\lambda)}{e_j}} \times \prod_{k=1}^v \prod_{l=1}^{q_k} |\det|^{\frac{z_{k,l}(\lambda)}{f_k}}$, on dispose d'une application $\lambda \in \mathcal{A} \mapsto \pi_\lambda \in Temp(PG_{2n})$, où
+On équipe $i\mathcal{A}^*_M = X^*(M) \otimes i\mathbb{R}$ de l'unique mesure de Haar telle que $i\mathcal{A}^*_M \slash (\frac{2i\pi}{\log(q_F)})X^*(M)$ a pour volume $1$. Pour $\lambda = \chi \otimes \mu \in i\mathcal{A}^*_M$, on note $\tau_\lambda = \tau \otimes |\chi|^\mu$. On rappelle que $W(PG_{2n}, \tau)$ est le sous-groupe de $W(PG_{2n}, M)$ fixant la représentation $\tau$. Soit $V_M$ un voisinage ouvert de $0$ suffisamment petit $W(PG_{2n},\tau)$-invariant dans $i\mathcal{A}^*_M$ telle que l'application $\lambda \in i\mathcal{A}^*_M \mapsto \pi_\lambda = i_{P}^{PG_{2n}}(\tau_\lambda) \in Temp(PG_{2n})$ induit un isomorphisme topologique entre $V_M \slash W(PG_{2n}, \tau)$ et un voisinage ouvert $U$ de $\pi$ dans $Temp(PG_{2n})$. On a la formule d'intégration suivante
+\begin{equation}
+\label{formuleIntegration}
+\int_U f(\pi) d\pi = \frac{1}{W(PG_{2n}, \tau)} \int_{V} f(\pi_\lambda) d\lambda,
+\end{equation}
+pour toute fonction $f$ continue à support compact.
+
+Il existe un isomorphisme d'espace vectoriel $\mathcal{A} \simeq i\mathcal{A}^*_M$ tel que lorsqu'on le compose avec l'application $\lambda \in i\mathcal{A}^*_M \mapsto \pi_\lambda\in Temp(PG_{2n})$, on obtient l'application $\lambda \in \mathcal{A} \mapsto \pi_\lambda \in Temp(PG_{2n})$ où
 \begin{equation}
 \begin{split}
 \pi_{\lambda} = &\left( \bigtimes_{i=1}^t \left( \bigtimes_{l=1}^{m_i} \tau_i \otimes |\det|^{\frac{x_{i,l}(\lambda)}{d_i}} \right) \times \left( \bigtimes_{l=1}^{n_i} \widetilde{\tau_i} \otimes |\det|^{\frac{\widetilde{x_{i,l}}(\lambda)}{d_i}} \right) \right) \\
@@ -926,19 +946,9 @@ On équipe $\widehat{A_M}$ de la mesure $\left(\frac{2\pi}{log(q_F)}\right)^{dim(
 \end{split}
 \end{equation}
 
-Quitte à restreindre $U$, cette dernière induit un homéomorphisme $U \simeq V/W(PG_{2n}, \tau)$, où $V$ est un voisinage de 0 dans $\mathcal{A}$ et $W(PG_{2n}, \tau)$ est le sous-groupe de $W(PG_{2n}, M)$ fixant la représentation $\tau$. Alors
-\begin{equation}
-\label{int123}
-\int_U \phi(\pi) \gamma(s, \pi, \Lambda^2, \psi)^{-1} d\mu_{PG_{2n}}(\pi) = \int_U \phi(\pi) \frac{\gamma^*(0, \pi, \overline{Ad}, \psi)}{|S_{\pi}|\gamma(s, \pi, \Lambda^2, \psi)}  d\pi
-\end{equation}
-d'après la relation \ref{mesurePlanch}. 
+Quitte à restreindre $U$, cette dernière induit un homéomorphisme $U \simeq V/W(PG_{2n}, \tau)$, où $V$ est un voisinage de 0 dans $\mathcal{A}$.
 
-Rappelons que la mesure $d\pi$ est choisie en fonction de la mesure sur $\widehat{A_M}$ que l'on a normalisé avec un facteur $\left(\frac{2\pi}{log(q_F)}\right)^{dim(A_M)}$. Les mesures $d\pi$ et $d\lambda$ vérifient alors la relation de compatibilité suivante
-\begin{equation}
-\int_{U} f(\pi) d\pi = \frac{1}{|W(PG_{2n}, \tau)|} \left(\frac{log(q_F)}{2\pi}\right)^{dim(A_M)}\int_{V} f(\pi_\lambda) d\lambda,
-\end{equation}
-pour toute fonction $f$ continue à support compact sur $U$.
-L'intégrale \ref{int123} est donc égale à
+L'isomorphisme $\mathcal{A} \simeq i\mathcal{A}^*_M$ envoie la mesure de Haar de $\mathcal{A}$ sur $\left(\frac{\log(q_F)}{2\pi}\right)^{\dim(A_M)}$ fois la mesure de Haar sur $i\mathcal{A}^*_M$. On en déduit, grâce à \ref{formuleIntegration}, que l'intégrale \ref{int123} est égale à
 \begin{equation}
 \frac{1}{|W(PG_{2n}, \tau)|} \left(\frac{log(q_F)}{2\pi}\right)^{dim(\mathcal{A})}\int_{V} \phi(\pi_\lambda) \frac{\gamma^*(0, \pi_\lambda, \overline{Ad}, \psi)}{|S_{\pi_\lambda}|\gamma(s, \pi_\lambda, \Lambda^2, \psi)} d\lambda,
 \end{equation}
