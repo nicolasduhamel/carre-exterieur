@@ -873,7 +873,8 @@ La mesure de Plancherel d'un groupe réductif p-adique $G$ est de la forme $d\mu_
 \end{equation}
 où $\pi = i_P^G(\sigma)$ avec $P=MU$ un sous-groupe parabolique de $G$ et $\sigma \in \Pi_2(M)$, $d(\sigma)$ est le degré formel de $\sigma$ et $j(\sigma)$ est un scalaire produit d'opérateurs d'entralecements.
 
-\todo{Explications} On a $\mu_{PG_{2n}}(\pi) = \mu_{G_{2n}}(\pi)$ pour tout $\pi \in Temp(PG_{2n})$. Pour $G = G_{2n}$, le degré formel $d(\sigma)$ a été calculé par Silberger-Zink \cite{silberger-zink} et le facteur $j(\sigma)^{-1}$ par Shahidi \cite{shahidi}. On renvoie à \cite[Proposition 2.13.2]{beuzart-plessis} pour le calcul du produit qui donne la relation \ref{mesurePlanch}.
+Par désintégration de la mesure sur $Temp(G_{2n})$ et inversion de Fourier sur $\widehat{Z}_{2n}$, on a $\mu_{PG_{2n}}(\pi) = \gamma(0,1, \psi)^{-1}\mu_{G_{2n}}(\pi)$ pour tout $\pi \in Temp(PG_{2n})$.
+Pour $G = G_{2n}$, le degré formel $d(\sigma)$ a été calculé par Silberger-Zink \cite{silberger-zink} et le facteur $j(\sigma)^{-1}$ par Shahidi \cite{shahidi}. On renvoie à \cite[Proposition 2.13.2]{beuzart-plessis} pour le calcul du produit qui donne la relation \ref{mesurePlanch}.
 \end{proof}
 
 On note $\Phi(G)$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
@@ -932,7 +933,7 @@ Dans la suite, on notera les coordonnées de $\lambda \in \mathcal{A}$ de la mani
 \end{itemize}
 pour tout $\lambda \in \mathcal{A}$.
 
-On équipe $i\mathcal{A}^*_M = X^*(M) \otimes i\mathbb{R}$ de l'unique mesure de Haar telle que $i\mathcal{A}^*_M \slash (\frac{2i\pi}{\log(q_F)})X^*(M)$ a pour volume $1$. Pour $\lambda = \chi \otimes \mu \in i\mathcal{A}^*_M$, on note \todo{Vérif} $\tau_\lambda = \tau \otimes |\chi|^\mu$. On rappelle que $W(PG_{2n}, \tau)$ est le sous-groupe de $W(PG_{2n}, M)$ fixant la représentation $\tau$. Soit $V_M$ un voisinage ouvert de $0$ suffisamment petit $W(PG_{2n},\tau)$-invariant dans $i\mathcal{A}^*_M$ telle que l'application $\lambda \in i\mathcal{A}^*_M \mapsto \pi_\lambda = i_{P}^{PG_{2n}}(\tau_\lambda) \in Temp(PG_{2n})$ induit un isomorphisme topologique entre $V_M \slash W(PG_{2n}, \tau)$ et un voisinage ouvert $U$ de $\pi$ dans $Temp(PG_{2n})$. On a la formule d'intégration suivante
+On équipe $i\mathcal{A}^*_M = X^*(M) \otimes i\mathbb{R}$ de l'unique mesure de Haar telle que $i\mathcal{A}^*_M \slash (\frac{2i\pi}{\log(q_F)})X^*(M)$ a pour volume $1$. Pour $\lambda = \chi \otimes \mu \in i\mathcal{A}^*_M$, on note $\tau_\lambda = \tau \otimes |\chi|^\mu$. On rappelle que $W(PG_{2n}, \tau)$ est le sous-groupe de $W(PG_{2n}, M)$ fixant la représentation $\tau$. Soit $V_M$ un voisinage ouvert de $0$ suffisamment petit $W(PG_{2n},\tau)$-invariant dans $i\mathcal{A}^*_M$ telle que l'application $\lambda \in i\mathcal{A}^*_M \mapsto \pi_\lambda = i_{P}^{PG_{2n}}(\tau_\lambda) \in Temp(PG_{2n})$ induit un isomorphisme topologique entre $V_M \slash W(PG_{2n}, \tau)$ et un voisinage ouvert $U$ de $\pi$ dans $Temp(PG_{2n})$. On a la formule d'intégration suivante
 \begin{equation}
 \label{formuleIntegration}
 \int_U f(\pi) d\pi = \frac{1}{W(PG_{2n}, \tau)} \int_{V} f(\pi_\lambda) d\lambda,
@@ -2129,7 +2130,9 @@ Pour finir la preuve du corollaire, il suffit d'utiliser le lemme \ref{zetabeta}
 \subsection{Formule de Plancherel explicite sur $H_n \backslash G_{2n}$}
 \label{secPlanchExpl}
 
-On note $Y_n = H_n \backslash G_{2n}$ munie de la mesure quotient. On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
+On note $Y_n = H_n \backslash G_{2n}$ munie de la mesure quotient. On note $\mathcal{S}(Y_n, \theta)$ l'ensemble des fonctions lisses sur $G_{2n}$, $(H_n, \theta)$-invariante et à support compact modulo $H_n$. 
+
+On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
 \begin{equation}
 \varphi_f(y) = \int_{H_n} f(hy) \theta(h)^{-1} dh,
 \end{equation}
@@ -2158,6 +2161,7 @@ puisque $f(h) = \int_{G_{2n}} f_1(h y) \overline{f_2(y)} dy$ et l'intégrale doub
 
 On pose
 \begin{equation}
+\label{defps}
 (\varphi_1, \varphi_2)_{Y_n, \pi} = (f_1, f_2)_{Y_n, \pi} = \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta\left(W_{f,\pi}(\xi_p,.)\right) \theta(\xi_p) d\xi_p,
 \end{equation}
 pour tout $\pi \in T(Temp(SO(2n+1)))$.
@@ -2181,7 +2185,7 @@ pour tous $W, W' \in \mathcal{W}(\pi, \psi)$.
 
 L'opérateur $\pi(f^{\vee}) : \mathcal{W}(\pi, \psi) \rightarrow \mathcal{W}(\pi, \psi)$ est de rang fini. Notons $\mathcal{B}(\pi, \psi)_f$ une base finie orthonormée de son image. Alors
 \begin{equation}
-W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_2)W' \otimes \overline{\pi(f_1)W'}.
+W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\pi(f)W'} \otimes W'.
 \end{equation}
 \end{lemme}
 
@@ -2192,40 +2196,37 @@ Pour $W \in \mathcal{W}(\pi, \psi)$, la décomposition de $\pi(f^{\vee})W$ selon 
 \begin{equation}
 \begin{split}
 \pi(f^{\vee})W &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (\pi(f^{\vee})W, W')^{Wh}W' \\
-&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (W, \pi(\overline{f})W')^{Wh}W'.
+&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (W, \pi(f)W')^{Wh}W'.
 \end{split}
 \end{equation}
 
 Cette égalité nous permet grâce au produit scalaire $(.,.)^{Wh}$ de faire l'identification
 \begin{equation}
-\pi(f^\vee) = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \overline{\pi}(f)\overline{W'}.
-\end{equation}
-La $G_{2n}$-invariance de  $(.,.)^{Wh}$ nous donne que $W' \otimes \overline{\pi}(f_1 * f_2^{*})\overline{W'}  = \pi(f_2)W' \otimes \overline{\pi(f_1)W'}$.
-
-On obtient alors
-\begin{equation}
-\pi(f^\vee)  = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_2)W' \otimes \overline{\pi(f_1)W'}.
+\pi(f^\vee) = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \overline{\pi(f)W'}.
 \end{equation}
 
-On en déduit que
+\todo{Justification}On en déduit que
 \begin{equation}
 \begin{split}
-W_{f, \pi}(g_1, g_2) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{N_{2n}}^* (\pi(ug_2)\pi(f_1)W', \pi(g_1)\pi(f_2)W')\psi(u)^{-1}du \\
-&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \pi(f_1)W'(g_2)\overline{\pi(f_2)W'}(g_1),
+W_{f, \pi}(g_1, g_2) &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{N_{2n}}^* (\pi(ug_2)W', \pi(g_1)\pi(f)W')\psi(u)^{-1}du \\
+&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W'(g_2) \overline{\pi(f)W'}(g_1),
 \end{split}
 \end{equation}
 pour tous $g_1, g_2 \in G_{2n}$. La dernière égalité provient de \cite[Prop 2.14.3]{beuzart-plessis}.
 \end{proof}
 
-Le lemme \ref{decbase} donne la relation
+La définition \ref{defps} et le lemme \ref{decbase} donne la relation
 \begin{equation}
-(f_1, f_2)_{Y_n, T(\sigma)} = \sum_{W' \in \mathcal{B}(T(\sigma), \psi)_f} \overline{\beta(T(\sigma)(f_2)W')} \beta(T(\sigma)(f_1)W')
+\begin{split}
+(f_1, f_2)_{Y_n, T(\sigma)} &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta(W') \overline{\pi(f)W'}(\xi_p)\theta(\xi_p) d\xi_p\\
+& = \sum_{W' \in \mathcal{B}(T(\sigma), \psi)_f} \beta(W') \overline{\beta(T(\sigma)(f_1)T(\sigma)(f_2^*)W')}
+\end{split}
 \end{equation}
-qui ne dépend que de $\varphi_1$ et $\varphi_2$ puisque la restriction de $\beta$ à $\mathcal{W}(T(\sigma), \psi)$ est $(H_n, \theta)$-invariante, d'après la proposition \ref{lemmebeta}. De plus, $(f_1, f_2)_{Y_n, T(\sigma)}$ dépend uniquement de $T(\sigma)(f_1)$ et $T(\sigma)(f_2)$. On en déduit que $(.,.)_{Y_n, \pi}$ se factorise par $\mathcal{S}(Y_n, \theta)_{T(\sigma)}$.
+qui ne dépend que de $\varphi_1$ et $f_2$ puisque la restriction de $\beta$ à $\mathcal{W}(T(\sigma), \psi)$ est $(H_n, \theta)$-invariante, d'après la proposition \ref{lemmebeta}. En échangeant les rôles de $\varphi_1$ et $\varphi_2$, on voit que $(f_1, f_2)_{Y_n, T(\sigma)}$ ne dépend que de $\varphi_1$ et $\varphi_2$. De plus, $(f_1, f_2)_{Y_n, T(\sigma)}$ dépend uniquement de $T(\sigma)(f_1)$ et $T(\sigma)(f_2)$. On en déduit que $(.,.)_{Y_n, \pi}$ se factorise par $\mathcal{S}(Y_n, \theta)_{T(\sigma)}$.
 
 On remarque que
 \begin{equation}
-(f_1, f_2)_{Y_n, T(\sigma)} = (\beta \otimes \beta)(W_{f_1 * f_2^{*}, \pi}),
+(f_1, f_2)_{Y_n, T(\sigma)} = (\overline{\beta(\bar{.})} \otimes \beta)(W_{f, \pi}),
 \end{equation}
 ce qui nous permet de déduire, d'après la proposition \ref{Wfpicontinue} et le lemme \ref{betann}, que $(., .)_{Y_n, T(\sigma)}$ est continue.
 \end{proof}
