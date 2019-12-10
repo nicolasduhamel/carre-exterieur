@@ -44,7 +44,7 @@ La correspondance de Langlands locale pour $G$ donne une application surjective 
 \begin{equation}
 Irr(G)  = \bigcup_{\phi \in \Phi(G)} \Pi^G(\phi),
 \end{equation}
-où $\Pi^G(\phi)$ est l'ensemble des classes d'isomorphismes de représentations qui ont pour paramètre de Langlands $\phi$. La correspondance de Langlands locale est prouvée pour $GL_n(F)$ par Harris-Taylor \cite{harris}, Henniart \cite{henniart2}, Scholze \cite{scholze} et pour les groupes orthogonaux impairs par Arthur \cite{arthur}.
+où $\Pi^G(\phi)$ est l'ensemble des classes d'isomorphisme de représentations qui ont pour paramètre de Langlands $\phi$. La correspondance de Langlands locale est prouvée pour $GL_n(F)$ par Harris-Taylor \cite{harris}, Henniart \cite{henniart2}, Scholze \cite{scholze} et pour les groupes orthogonaux impairs par Arthur \cite{arthur}.
 Rappellons la
 
 \begin{conjecture}[Sakellaridis-Venkatesh {\cite[Conjecture 16.2.2]{sak-ven}}]
@@ -55,7 +55,7 @@ L^2(X) \simeq \int^{\oplus}_{\Phi_{temp}(G_X)} \mathcal{H}_\phi d\phi,
 où $\Phi_{temp}(G_X)$ est l'ensemble des paramètres de Langlands tempérés de $G_X$ modulo $\check{G}_X$-conjugaison, $d\phi$ est dans la classe naturelle des mesures sur $\Phi_{temp}(G_X)$ et $\mathcal{H}_\phi$ est une somme directe sans multiplicité de représentations dans $\Pi^G(\iota_X \circ \phi)$.
 \end{conjecture}
 
-Supposons de plus la correspondance de Langlands locale pour $G_X$, on dispose alors d'une correspondance fonctorielle $T_X : Temp(G_X) \rightarrow Temp(G)$. Cette correspondance associe à une classe d'isomorphisme de représentations tempérées de $G_X$ un ensemble fini de classes d'isomorphisme de représentations tempérées de $G$. On obtient alors la
+On note $Temp(G)$ (resp. $Temp(G_X)$) l'ensemble des classes d'isomorphisme de représentations irréductibles tempérées de $G$ (resp. $G_X$). Supposons la correspondance de Langlands locale pour $G_X$, on dispose alors d'une correspondance fonctorielle $T_X : Temp(G_X) \rightarrow Temp(G)$. Cette correspondance associe à une classe d'isomorphisme de représentations tempérées de $G_X$ un ensemble fini de classes d'isomorphisme de représentations tempérées de $G$. On obtient alors la
 
 \begin{conjecture}[Sakellaridis-Venkatesh]
 On note $d\sigma$ la mesure spectrale sur $G_X$ (voir section \ref{mesures}). Supposons que la mesure spectrale $d\sigma$ sur $G_X$ se descend en une mesure sur $Temp(G_X)\slash{\sim}$, où $\sim$ est la relation d'équivalence "égalité des paramètres de Langlands". Alors il existe un isomorphisme $G$-équivariant de représentations unitaires
@@ -66,8 +66,8 @@ où $\widetilde{T}_X(\sigma)$ est une somme directe sans multiplicité de représen
 \end{conjecture}
 
 Spécifions maintenant au cas où $G = GL_{2n}$ et $X = GL_n \times GL_n \backslash GL_{2n}$. On a $\check{G}_X = Sp_{2n}$ et $G_X = SO(2n+1)$.
-La correspondance de Langlands locale est prouvé pour $G$ et $G_X$ par Harris-Taylor \cite{harris}, Henniart \cite{henniart2} et Arthur \cite{arthur}.
-De plus, la mesure $d\sigma$ se descend à $Temp(G_X)\slash{\sim}$ d'après Ichino-Lapid-Mao \cite{ichino}. L'essentiel de notre travail consiste alors à prouver le
+La correspondance de Langlands locale est prouvée pour $G$ et $G_X$ par Harris-Taylor \cite{harris}, Henniart \cite{henniart2} et Arthur \cite{arthur}.
+De plus, la mesure $d\sigma$ se descend à $Temp(G_X)\slash{\sim}$. L'essentiel de notre travail consiste alors à prouver le
 \begin{theoreme}
 \label{conjSV}
 Il existe un isomorphisme $GL_{2n}$-équivariant de représentations unitaires
@@ -104,17 +104,21 @@ L^2(H_n \backslash GL_{2n}, \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1))/\sim} T
 où $T : {Temp(SO(2n+1))\slash{\sim}} \rightarrow Temp(GL_{2n})$ est l'application de transfert provenant de la correspondance de Langlands locale.
 \end{theoreme}
 
-Ce dernier est une conséquence de la formule de Plancherel explicte que l'on prouve dans la section \ref{plancherel}. 
-Soit $\psi$ un caractère additif non trivial de $F$. On pose $Y_n = H_n \backslash GL_{2n}$. On note $C^\infty_c(Y_n, \theta)$ l'ensemble des fonctions lisse sur $G_n$, $(H_n, \theta)$-invariante et à support compact modulo $H_n$. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. Il existe $f_1, f_2 \in C^\infty_c(G_{2n})$ tel que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On pose $f = f_1 * f_2^{*}$, où $f_2^*(g) = \overline{f_2(g^{-1})}$. 
-Pour $W \in C^w(N_{2n} \backslash GL_{2n}, \psi)$, on note
+Ce dernier est une conséquence de la formule de Plancherel explicite que l'on prouve dans la section \ref{plancherel}. 
+Soit $\psi$ un caractère additif non trivial de $F$. On pose $Y_n = H_n \backslash GL_{2n}$. On note $C^\infty_c(Y_n, \theta)$ l'ensemble des fonctions lisse sur $G_n$, $(H_n, \theta)$-équivariante à gauche et à support compact modulo $H_n$. Pour $f \in C^\infty_c(G_{2n})$, on note
+\begin{equation}
+\varphi_f(y) = \int_{H_n} f(hy) \theta(h)^{-1} dh,
+\end{equation}
+pour tout $y \in G_{2n}$. L'application $f \in C^\infty_c(G_{2n}) \mapsto \varphi_f \in C^\infty_c(Y_n, \theta)$ est surjective. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. Il existe $f_1, f_2 \in C^\infty_c(G_{2n})$ telles que que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On pose $f = f_1 * f_2^{*}$, où $f_2^*(g) = \overline{f_2(g^{-1})}$. 
+Pour $W \in \mathcal{W}(\pi, \psi)$, on note
 \begin{equation}
 \beta(W) = \int_{H^P_n \cap N_{2n} \backslash H^P_n} W(\xi_p) \theta(\xi_p)^{-1} d\xi_p.
 \end{equation}
-où $H^P_n = H_n \bigcap P_n$, on définit la mesure $d\xi_p$ dans la section \ref{formInv}, voir la section \ref{notations} pour les notations $N_{2n}, P_n$ et on renvoie à la section \ref{fonctiontemperees} pour la définition de l'espace $C^w(N_{2n} \backslash GL_{2n}, \psi)$. On pose
+où $H^P_n = H_n \bigcap P_n$, on définit la mesure $d\xi_p$ dans la section \ref{formInv}, voir la section \ref{notations} pour les notations $N_{2n}, P_n$ et $\mathcal{W}(\pi, \psi)$ est le modèle de Whittaker de $\pi$. On pose
 \begin{equation}
-(\varphi_1, \varphi_2)_{Y_n, \pi} = \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta\left(W_{f,\pi}(\xi_p,.)\right) \theta(\xi_p) d\xi_p,
+(\varphi_1, \varphi_2)_{Y_n, \pi} = \sum_{W \in \mathcal{B}(\pi, \psi)} \beta(W) \overline{\beta(\pi(\overline{f}_1)\pi(f_2^\vee)W)},
 \end{equation}
-pour tout $\pi \in T(Temp(SO(2n+1)))$, où $W_{f,\pi}(g_1,g_2) = \int_{N_{2n}} f_\pi(g_1^{-1}ug_2) \psi(u)^{-1} du$ et $f_\pi(g) = Tr(\pi(g)\pi(f^\vee))$, avec $f^\vee(g) = f(g^{-1})$.
+pour tout $\pi \in T(Temp(SO(2n+1)))$, où $f_2^\vee(g) = f_2(g^{-1})$ et $\mathcal{B}(\pi, \psi)$ est une base orthonormée de $\mathcal{W}(\pi, \psi)$.
 
 On prouve alors la formule de Plancherel explicite sur $H_n \backslash GL_{2n}$ sous la forme du
 \begin{theoreme}
@@ -127,7 +131,7 @@ Le facteur $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est défini dans 
 \end{theoreme}
 La preuve de ce théorème est purement locale, elle se base sur la théorie des fonctions zêta introduite par Jacquet-Shalika \cite{jacquet-shalika}. Une fois que l'on aura introduit les préliminaires, il s'agit essentiellement de montrer que l'on peut échanger deux intégrales (voir la preuve du théorème \ref{thPlanch}). L'utilisation des résultats de Jacquet-Shalika nous amène à prouver un résultat sur les facteurs gamma.
 \begin{theoreme}
-Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma}.
+Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma} et $\gamma(s, \pi, \Lambda^2, \psi)$ le facteur gamma d'Artin défini via la correspondance de Langlands.
 Alors il existe une constante $c(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$, on ait
 \begin{equation}
 \gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma(s,\pi,\Lambda^2,\psi).
@@ -154,7 +158,7 @@ Sakellaridis et Venkatesh conjecturent une factorisation du produit scalaire
 \label{introFact}
 <(\Sigma \phi_1)_\pi, (\Sigma \phi_2)_\pi>_{Pet} = q \prod_v' <\phi_{1,v}, \phi_{2,v}>_{\sigma_v},
 \end{equation}
-où $q$ est un rationnel. Cette factorisation est une conséquence de la factorisation de la période globale en produit de périodes locales, produite par Jacquet-Shalika dans le cas qui nous intéresse (voir plus loin). Les quantités $<\phi_{1,v}, \phi_{2,v}>_{\sigma_v}$ sont des formes hermitiennes $(H_n(F_v), \theta_v)$-invariante. On renvoie à \cite[section 17.5]{sak-ven} pour la signification du produit $\prod_v'$. En effet, le produit n'est pas absolument convergent et on doit l'interpréter comme l'évaluation d'une fonction $L$. Si $\pi$ n'est pas le transfert d'une représentation automorphe cuspidale de $SO(2n+1)(\mathbb{A}_F)$ alors
+où $q$ est un rationnel. Cette factorisation est une conséquence de la factorisation de la période globale en produit de périodes locales, produite par Jacquet-Shalika dans le cas qui nous intéresse (voir plus loin). Les quantités $<\phi_{1,v}, \phi_{2,v}>_{\sigma_v}$ sont des formes hermitiennes $(H_n(F_v), \theta_v)$-équivariante. On renvoie à \cite[section 17.5]{sak-ven} pour la signification du produit $\prod_v'$. En effet, le produit n'est pas absolument convergent et on doit l'interpréter comme l'évaluation d'une fonction $L$. Si $\pi$ n'est pas le transfert d'une représentation automorphe cuspidale de $SO(2n+1)(\mathbb{A}_F)$ alors
 \begin{equation}
 <(\Sigma \phi_1)_\pi, (\Sigma \phi_2)_\pi>_{Pet} = 0.
 \end{equation}
@@ -207,19 +211,24 @@ g & 0 \\
 \end{pmatrix} \sigma_n^{-1}$ avec $X \in M_n(F)$ et $g \in GL_n(F)$. L'élément $\sigma_n$ est la matrice associée à la permutation $\bigl(\begin{smallmatrix}
     1 & 2 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
     1 & 3 & \cdots &  2n-1  & 2 & 4 & \cdots & 2n
-  \end{smallmatrix}\bigr).$ On note $SO(2m+1)$ la forme déployé du groupe spécial orthogonal sur un espace de dimension $2m+1$. On note $A_n$ le sous-groupe de $G_n$ des matrices diagonales inversibles, $B_n$ le sous groupe des matrices triangulaires supérieures inversibles, $\overline{B}_n$ le sous groupe des matrices triangulaires inférieures inversibles, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$, $\overline{N}_n = {}^tN_n$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $V_n$ le sous-espace de $M_n$ des matrices triangulaires inférieures strictes. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
+  \end{smallmatrix}\bigr).$ On note $SO(2m+1)$ la forme déployée du groupe spécial orthogonal sur un espace de dimension $2m+1$. On note $A_n$ le sous-groupe de $G_n$ des matrices diagonales inversibles, $B_n$ le sous groupe des matrices triangulaires supérieures inversibles, $\overline{B}_n$ le sous groupe des matrices triangulaires inférieures inversibles, $N_n$ le sous-groupe de $B_n$ des matrices dont les éléments diagonaux sont $1$, $\overline{N}_n = {}^tN_n$ et $M_n$ l'ensemble des matrices de taille $n \times n$ à coefficients dans $F$. On note $V_n$ le sous-espace de $M_n$ des matrices triangulaires inférieures strictes. On note $U_n$ le groupe des matrices de la forme $\begin{pmatrix}
 1_{n-1} & x \\
 0 & 1
 \end{pmatrix}$ pour $x \in F^{n-1}$ et $P_n = G_{n-1}U_n$ le sous-groupe mirabolique. On note $\delta_{B_n}$ le caractère modulaire de $B_n$. On notera par des lettres gothiques les algèbres de Lie correspondantes et pour $\mathfrak{g}$ une algèbre de Lie $\mathcal{U}(\mathfrak{g})$ désignera l'algèbre enveloppante.
 
 Lorsque $X$ est un espace totalement discontinu, on notera $C^\infty_c(X)$ ou $\mathcal{S}(X)$, l'espace des fonctions localement constante à support compact. Lorsque $G$ est un groupe algébrique réel ou complexe, on note $\mathcal{S}(G)$ l'espace des fonctions $C^\infty$ à décroissance rapide ainsi que toutes ses dérivées tel que défini par Aizenbud et Gourevitch \cite{aizenbud}. De plus, lorsque $\mathbb{A}_K$ est l'anneau des adèles d'un corps de nombres $K$ et $G$ est un groupe algébrique sur $K$, on note $\mathcal{S}(G(\mathbb{A}))$ le produit restreint des espaces $\mathcal{S}(G(K_v))$ lorsque $v$ parcours l'ensemble des places de $K$ i.e. l'ensemble des combinaisons linéaires des fonctions $f = \otimes_v f_v$ avec $f_v \in \mathcal{S}(G(K_v))$ pour tout $v$ et $f_v = \mathbbm{1}_{G(\mathcal{O}_v)}$ sauf pour un nombre fini de $v$, où $\mathcal{O}_v$ est l'anneau des entiers de $K_v$.
 
-Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $PGL_{2n}$, $SO_{2n+1}$ ou un quotient, sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphisme de représentations irréductibles tempérées de $G(F)$ et $\Pi_2(G) \subset Temp(G)$ le sous-ensemble des représentations de carré intégrable. On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$. Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant la classe d'isomorphisme de $\sigma$.
-On note $W_F'$ est le groupe de Weil-Deligne de $F$ et $\Phi(G) = \{\phi : W_F' \rightarrow {}^LG \text{ admissible d'image bornée}\}$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
+Pour $G$ un groupe réductif connexe sur $F$ (dans la suite $G$ sera $GL_{2n}$, $PGL_{2n}$, $SO_{2n+1}$ ou un quotient, sous-groupe de Levi de ces groupes), on note $Temp(G)$ l'ensemble des classes d'isomorphisme de représentations irréductibles tempérées de $G(F)$ et $\Pi_2(G) \subset Temp(G)$ le sous-ensemble des représentations de carré intégrable. 
 
-Pour $P=MN$ un sous-groupe parabolique de $G$, on note $i_P^G(\sigma)$ l'induction parabolique normalisée lorsque $\sigma$ est une représentation lisse de $M$ : c'est la représentation régulière à droite de $G$ sur l'espace des fonctions localement constantes $f : G \mapsto \sigma$ qui vérifient $f(mng) = \delta_P(m)^{\frac{1}{2}}\sigma(m)f(g)$ pour tous $m \in M$, $n \in N$ et $g \in G$, où $\delta_P$ est le caractère modulaire de $P$. Lorsque $G = G_n$ et $M = G_{n_1} \times ... \times G_{n_k}$, on note $\pi_1 \times ... \times \pi_k = i_P^G(\pi_1 \boxtimes ... \boxtimes \pi_k)$ pour $\pi_i$ des représentations lisses de $G_{n_i}$. Lorsque $G = SO(2n+1)$ et $M=G_{n_1} \times ... \times G_{n_k} \times SO(2m+1)$, on note $\pi_1 \times ... \times \pi_k \rtimes \sigma_0 = i_P^G(\pi_1 \boxtimes ... \boxtimes \pi_k \boxtimes \sigma_0)$ pour $\pi_i$ des représentations lisses de $G_{n_i}$ et $\sigma_0$ une représentation lisse de $SO(2m+1)$.
+On peut voir le caractère $\psi$ comme un caractère sur $N_n$ par la formule $\psi(u) = \psi(\sum_{i=1}^{n-1} u_{i,i+1})$,
+pour tous $u \in N_n$. On dit qu'une représentation $\pi$ de $G_n$ est générique, si elle est irréductible et $\Hom_{N_n}(\pi, \psi) \neq 0$. Dans ce cas, $\Hom_{N_n}(\pi, \psi)$ est de dimension $1$. Soit $\lambda \in \Hom_{N_n}(\pi, \psi)$ non nul. On note $\mathcal{W}(\pi, \psi)$ le modèle de Whittaker de $\pi$, c'est l'espace des fonctions $W : G_n \rightarrow \mathbb{C}$ telles que $W(g) = \lambda(\pi(g)v)$ pour $v \in V_\pi$, où $V_\pi$ est l'espace sous-jacent à $\pi$. Le groupe $G_n$ agit par translation à droite sur $\mathcal{W}(\pi, \psi)$ et on a $W(ug) = \psi(u)W(g)$ pour $u \in N_n$ et $g \in G_n$. Les représentations tempérées sont génériques.
 
- On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$ grâce à la correspondance de Langlands locale pour $GL_{2m}$. La correspondance de Langlands locale pour $SO(2m+1)$ et pour $GL_{2m}$, nous permettent de définir une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. 
+On note $Z_G$ le centre de $G(F)$ et $A_G$ le tore déployé maximal dans $Z_G$. Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. On note $W(G, M)$ le groupe de Weyl associé au couple $(G,M)$ et $W(G, \sigma)$ le sous-groupe de $W(G, M)$ fixant la classe d'isomorphisme de $\sigma$.
+On note $W_F$ (resp. $W_F'$) le groupe de Weil (resp. Weil-Deligne) de $F$ et $\Phi(G) = \{\phi : W_F' \rightarrow {}^LG \text{ admissible dont l'image de $W_F$ est bornée}\}$ l'ensemble des paramètres de Langlands tempérés de $G$ et $Temp(G)/Stab$ le quotient de $Temp(G)$ par la relation d'équivalence $\pi \equiv \pi' \iff \varphi_\pi = \varphi_{\pi'}$, où $\varphi_\pi$ est le paramètre de Langlands associé à $\pi$.
+
+Pour $P=MN$ un sous-groupe parabolique de $G$, on note $i_P^G(\sigma)$ l'induction parabolique normalisée lorsque $\sigma$ est une représentation lisse de $M$ : c'est la représentation régulière à droite de $G$ sur l'espace des fonctions localement constantes $f : G \mapsto \sigma$ qui vérifient $f(mng) = \delta_P(m)^{\frac{1}{2}}\sigma(m)f(g)$ pour tous $m \in M$, $n \in N$ et $g \in G$, où $\delta_P$ est le caractère modulaire de $P$. On note $\rho$ la représentation régulière à droite par $g$ i.e. $\rho(g)f(g_0) = f(g_0g)$ pour tous $g,g_0 \in G$. On notera $\rho(g)$ la translation à droite par $g$ dans d'autres contextes. Lorsque $G = G_n$, $M = G_{n_1} \times ... \times G_{n_k}$ et $P$ est le sous groupe parabolique standard de $G$ de Levi $M$, on note $\pi_1 \times ... \times \pi_k = i_P^G(\pi_1 \boxtimes ... \boxtimes \pi_k)$ pour $\pi_i$ des représentations lisses de $G_{n_i}$. Lorsque $G = SO(2n+1)$, $M=G_{n_1} \times ... \times G_{n_k} \times SO(2m+1)$ et $P$ un sous groupe parabolique de $G$ de Levi $M$, on note $\pi_1 \times ... \times \pi_k \rtimes \sigma_0 = i_P^G(\pi_1 \boxtimes ... \boxtimes \pi_k \boxtimes \sigma_0)$ pour $\pi_i$ des représentations lisses de $G_{n_i}$ et $\sigma_0$ une représentation lisse de $SO(2m+1)$.
+
+ On peut définir une application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$, rappelons qu'un élément de $\Phi(SO(2m+1))$ est un morphisme admissible $\phi : W_F' \rightarrow {}^L SO(2m+1)$. Or ${}^L SO(2m+1) = Sp_{2m}(\mathbb{C})$, l'application $\Phi(SO(2m+1)) \rightarrow \Phi(G_{2m})$ est définie par l'injection de $Sp_{2m}(\mathbb{C})$ dans $GL_{2m}(\mathbb{C})$. La correspondance de Langlands locale pour $SO(2m+1)$ et pour $GL_{2m}$, nous permettent d'en déduire une application de transfert $T : Temp(SO(2m+1))/Stab \rightarrow Temp(G_{2m})$. 
 
 Dans les mesures de Plancherel, on verra apparaître des termes $|S_{\sigma}|$ pour $\sigma \in Temp(SO(2n+1))$ ou $Temp(PG_{2n})$. On n'explicite pas les ensembles $S_{\sigma}$ et on se contente de donner leur cardinal. Pour $\sigma \in Temp(SO(2n+1))$ sous-représentation de $\pi_1 \times ... \times \pi_l \rtimes \sigma_0$, avec $\pi_i \in \Pi_{2}(G_{n_i})$ et $\sigma_0 \in \Pi_2(SO(2m+1))$, le facteur $|S_{\sigma}|$ est le produit $|S_{\pi_1}|...|S_{\pi_l}||S_{\sigma_0}|$; où $|S_{\sigma_0}|=2^k$ tel que $T(\sigma_0) \simeq \tau_1 \times ... \times \tau_k$ avec $\tau_i \in \Pi_2(G_{m_i})$ et $|S_{\pi_i}| = n_i$.
 
@@ -232,15 +241,15 @@ où $n_{\pi,r}$ est l'ordre du zéro de $\gamma(s, \pi, r, \psi)$ en $s=0$.
 \subsection{Mesures}
 \label{mesures}
 On équipe $F$ avec la mesure de Haar $dx$ qui est autoduale par rapport à $\psi$ et $F^\times$ de la mesure de Haar $d^\times x = \frac{dx}{|x|_F}$. 
-Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_n$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ la mesure de Haar à droite obtenu comme produit des mesures sur $G_{n-1}$ et sur $U_n$. On équipe $\overline{B}_n$ de la mesure $\prod_{i=1}^n d^\times b_{i,i} \prod_{\substack{i,j = 1,..,n \\ j < i}}db_{i,j}$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1.
+Pour $m \geq 1$, on équipe $F^m$ de la mesure produit $(dx)^m$ et $(F^\times)^m$ de la mesure $(d^\times x)^m$. On équipe les groupes $M_n$, $U_n$, $N_n$, $\overline{N}_n$ des mesures de Haar "produit des coordonnées". Par exemple, on équipe $M_n$ de la mesure $dX = \prod_{i,j=1}^n dX_{i,j}$ où $dX_{i,j}$ est la mesure de Haar sur $F$ que l'on a fixé précédemment. On équipe $G_n$ de la mesure $dg = |\det g|_F^{-n} \prod_{i,j=1}^n dg_{i,j}$ et $P_n$ la mesure de Haar à droite obtenu comme produit des mesures sur $G_{n-1}$ et sur $U_n$. On équipe $\overline{B}_n$ de la mesure de Haar à droite $\prod_{i=1}^n |b_{i,i}|^{i-n-1} \prod_{\substack{i,j = 1,..,n \\ j \leq i}}db_{i,j}$. On équipe les groupes compact des mesures de Haar de masse totale égale à 1.
 
 On équipe $N_n \backslash G_n$ et $N_n \backslash P_n \simeq N_{n-1} \backslash G_{n-1}$ des mesures quotient. On identifiera ces mesures à des mesures d'un sous-groupe de $G_n$. Plus exactement, $\overline{B}_n$ s'identifie à un ouvert dense de $N_n \backslash G_n$, on obtient alors l'égalité
 \begin{equation}
 \int_{N_n \backslash G_n} f(g) dg = \int_{\overline{B}_n} f(b)db,
 \end{equation}
-pour tout $f$ lisse sur $G_n$, $N_n$-invariante et à support compact modulo $N_n$.
+pour tout $f$ lisse sur $G_n$, $N_n$-équivariante et à support compact modulo $N_n$.
 
-On a l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on équipe $P_n \backslash G_n$ de la semi-mesure (ou mesure tordue) $dg$ telle que $|\det g|dg$ s'identifie à la mesure $(dx)^n$ sur $F^n$. À travers l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on effectue l'identification d'un ouvert dense de $P_n \backslash G_n$ avec $F^{n-1} \times F^\times$, ce qui nous permet d'identifier la mesure tordue sur $P_n \backslash G_n$ à la mesure $(dx)^{n-1}\times d^\times y$ sur $F^{n-1} \times F^\times$. La mesure tordue sur $P_n \backslash G_n$ n'est pas invariante, ce n'est pas une mesure sur le quotient $P_n \backslash G_n$. Cependant on a la formule d'intégration suivante
+On a l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on équipe $P_n \backslash G_n$ de la semi-mesure (ou mesure tordue) $dg$ telle que $|\det g|dg$ s'identifie à la mesure $(dx)^n$ sur $F^n$. La mesure tordue sur $P_n \backslash G_n$ n'est pas invariante, ce n'est pas une mesure sur le quotient $P_n \backslash G_n$. Cependant on a la formule d'intégration suivante
 \begin{equation}
 \int_{G_n} f(g) dg  = \int_{P_n \backslash G_n} \int_{P_n} f(pg) |\det p|^{-1} dp dg,
 \end{equation}
@@ -248,7 +257,7 @@ On a l'isomorphisme $P_n \backslash G_n \simeq F^n\backslash{\{0\}}$, on équipe 
  
 Pour $G$ un groupe réductif connexe sur $F$, on fixe un isomorphisme $A_G \simeq (F^\times)^{\dim(A_G)}$ et on équipe $A_G$ de la mesure $(d^\times x)^{dim(A_G)}$ provenant de l'isomorphisme avec $(F^\times)^{\dim(A_G)}$.
 
-Décrivons le choix de la normalisation d'une mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
+Décrivons le choix de la normalisation d'une mesure sur Temp(G). Soit $M$ un sous-groupe de Levi de $G$ et $\sigma \in \Pi_2(M)$. Soit $\widehat{A_M}$ le dual unitaire de $A_M$ et $d\widetilde{\chi}$ la mesure de Haar duale de celle de $A_M$. On équipe alors $\widehat{A_M}$ de la mesure $d\chi$ définie par
 \begin{equation}
 d\chi = \gamma^*(0, 1, \psi)^{-dim(A_M)}d\widetilde{\chi}.
 \end{equation}
@@ -257,7 +266,7 @@ La mesure $d\chi$ est indépendante du caractère $\psi$.
 
 On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto \sigma \otimes \chi_\lambda \in \Pi_2(M)$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $\sigma$ dans $\Pi_2(M)$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
 
-Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ telle que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures. Soit $P$ un sous groupe parabolique de $G$ de Levi $M$. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq i_P^G(\sigma)$ par la formule
+Il existe une unique mesure $d\sigma$ sur $\Pi_2(M)$ telle que l'isomorphisme local $\sigma \in \Pi_2(M) \mapsto \omega_{\sigma} \in \widehat{A_M}$ préserve localement les mesures, où $\omega_\sigma$ est le caractère central de $\sigma$ restreint à $A_M$. Soit $P$ un sous groupe parabolique de $G$ de Levi $M$. On définit alors la mesure $d\pi$ sur $Temp(G)$ localement autour de $\pi \simeq i_P^G(\sigma)$ par la formule
 \begin{equation}
 d\pi  = |W(G, M)|^{-1} (i_P^G)_* d\sigma,
 \end{equation}
@@ -292,7 +301,7 @@ L^2(H_n(F) \backslash GL_{2n}(F), \theta) \simeq \int^{\oplus}_{Temp(SO(2n+1)(F)
 où $T : {Temp(SO(2n+1))\slash{\sim}} \rightarrow Temp(GL_{2n})$ est l'application de transfert provenant de la correspondance de Langlands locale.
 \end{theoreme}
 
-De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-invariant (lemme \ref{lemmeiso}), on en déduit le
+De l'isomorphisme $L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq L^2(H_n(F) \backslash G_{2n}(F), \theta)$ $GL_{2n}$-équivariant (lemme \ref{lemmeiso}), on en déduit le
 \begin{theoreme}
 On a un isomorphisme de représentations unitaires
 \begin{equation}
@@ -300,17 +309,17 @@ L^2(GL_n(F) \times GL_n(F) \backslash GL_{2n}(F)) \simeq \int^{\oplus}_{Temp(SO(
 \end{equation}
 \end{theoreme}
 
-Rappelons que ces deux décompositions de Plancherel abstraite sont obtenues en prouvant une formule de Plancherel explicite sur $H_n \backslash G_n$.
+Rappelons que ces deux décompositions de Plancherel abstraites sont obtenues en prouvant une formule de Plancherel explicite sur $H_n \backslash G_n$.
 \begin{theoreme}
-On pose $Y_n = H_n \backslash G_{2n}$. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. On pose
+On pose $Y_n = H_n \backslash G_{2n}$. Soient $\varphi_1, \varphi_2 \in C^\infty_c(Y_n, \theta)$. Il existe $f_1, f_2 \in C^\infty_c(G_{2n})$ telles que que $\varphi_i = \varphi_{f_i}$ pour $i = 1,2$. On pose
 \begin{equation}
-(\varphi_1, \varphi_2)_{Y_n, \pi} = \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta\left(W_{f,\pi}(\xi_p,.)\right) \theta(\xi_p) d\xi_p,
+(\varphi_1, \varphi_2)_{Y_n, \pi} = \sum_{W \in \mathcal{B}(\pi, \psi)} \beta(W) \overline{\beta(\pi(\overline{f}_1)\pi(f_2^\vee)W)},
 \end{equation}
-pour tout $\pi \in T(Temp(SO(2n+1)))$, où $H^P_n = H_n \bigcap P_n$. Les notations $\beta$ et $W_{f,\pi}$ ont été introduite dans l'introduction. On a alors
+pour tout $\pi \in T(Temp(SO(2n+1)))$. Les notations $\beta$ et $\mathcal{B}(\pi, \psi)$ ont été introduite dans l'introduction. On a alors
 \begin{equation}
 (\varphi_1, \varphi_2)_{L^2(Y_n, \theta)} = \int_{Temp(SO(2n+1))\slash{\sim}} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma,
 \end{equation}
-La quantité $(\varphi_1, \varphi_2)_{Y_n, T(\sigma)}$ est définie en fonction de $\beta$ dans l'introduction. Le facteur $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est défini dans la section \ref{notations}.
+Le facteur $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}$ est défini dans la section \ref{notations}.
 \end{theoreme}
 
 La mesure $\frac{|\gamma^*(0, \sigma, Ad, \psi)|}{|S_\sigma|}d\sigma$ n'est rien d'autre que la mesure de Plancherel pour SO(2n+1). En effet, la mesure de Plancherel d'un groupe réductif $p$-adique $G$ a été calculée par Waldspurger et Harish-Chandra \cite{waldspurger} sous la forme
@@ -327,7 +336,7 @@ On renvoie à l'article de Beuzart-Plessis \cite[Proposition 2.13.2]{beuzart-ples
 Pour finir, au cours de la preuve de la formule de Plancherel explicite, on aura besoin d'une égalité sur des facteurs gamma définie de deux manière différentes. On prouve le
 \begin{theoreme}
 \label{egalitegamma}
-Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma}.
+Soit $\pi$ une représentation tempérée irréductible de $GL_{2n}(F)$. On note $\gamma^{JS}(s,\pi,\Lambda^2,\psi)$ le facteur gamma de Jacquet-Shalika, voir section \ref{gamma} et $\gamma(s, \pi, \Lambda^2, \psi)$ le facteur gamma d'Artin défini via la correspondance de Langlands.
 Alors il existe une constante $c(\pi)$ de module 1 telle que pour tout $s \in \mathbb{C}$, on ait
 \begin{equation}
 \gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma(s,\pi,\Lambda^2,\psi).
@@ -389,7 +398,7 @@ pour tous $W \in \mathcal{W}(\pi, \psi)$, $\phi \in \mathcal{S}(F^n)$ et $s \in 
  \begin{equation}
  \epsilon^{JS}(s, \pi, \Lambda^2, \psi) \frac{J(s,W,\phi)}{L(s,\pi,\Lambda^2)}  = \frac{J(1-s,\rho(w_{n,n})\widetilde{W},\widehat{\phi})}{L(1-s,\widetilde{\pi},\Lambda^2)},
  \end{equation}
- où $\widehat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ définie par
+ où $\rho$ désigne la translation à droite, $\widehat{\phi} = \mathcal{F}_\psi(\phi)$ est la transformée de Fourier de $\phi$ par rapport au caractère $\psi$ définie par
  \begin{equation}
  \mathcal{F}_\psi(\phi)(y) = \int_{F^n} \phi(x)\psi(\sum_{i=1}^n x_i y_i)dx
  \end{equation}
@@ -450,13 +459,15 @@ g & 0 \\
  Supposons que $F$ est un corps $p$-adique. Il existe un corps de nombres $k$ et une place $v_0$ telle que $k_{v_0} = F$, où $v_0$ est l'unique place de $k$ au dessus de $p$.
  \end{lemme}
  
-Rappelons la topologie que l'on a défini sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$, $P$ un parabolique de Levi $M$ et $\sigma \in \Pi_2(M)$. La classe d'équivalence de l'induction parabolique normalisé $i^G_P(\sigma)$ est indépendante du parabolique $P$ et on la notera $i^G_M(\sigma)$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto i^G_M(\sigma \otimes \chi_\lambda) \in Temp(GL_{2n}(F))$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
+Rappelons la topologie que l'on a défini sur $Temp(GL_{2n}(F))$. Soit $M$ un sous-groupe de Levi de $GL_{2n}(F)$, $P$ un parabolique de Levi $M$ et $\sigma \in \Pi_2(M)$. La classe d'isomorphisme de l'induction parabolique normalisé $i^G_P(\sigma)$ est indépendante du parabolique $P$ et on la notera $i^G_M(\sigma)$. On note $X^*(M)$ le groupe des caractères algébriques de $M$, on dispose alors d'une application $\chi \otimes \lambda \in X^*(M) \otimes i\mathbb{R} \mapsto i^G_M(\sigma \otimes \chi_\lambda) \in Temp(GL_{2n}(F))$ où $\chi_\lambda(g) = |\chi(g)|^\lambda$. On définit alors une base de voisinage de $i^G_M(\sigma)$ dans $Temp(GL_{2n}(F))$ comme l'image d'une base de voisinage de $0$ dans $X^*(M) \otimes i\mathbb{R}$.
  
  Cette topologie sur $Temp(GL_{2n}(F))$ nous permet d'énoncer le résultat principal dont on aura besoin pour la méthode de globalisation.
- \begin{proposition}[Beuzart-Plessis {\cite[Théorème 3.7.1]{beuzart-plessis}}]
+ \begin{proposition}[Beuzart-Plessis {\cite[Théorème 3.7.1]{beuzart-plessis}}, Finis-Lapid-Muller \cite{flm}]
  \label{globalisation}
  Soient $k$ un corps de nombres, $v_0,v_1$ deux places distinctes de $k$ avec $v_1$ non archimédienne. Soit $U$ un ouvert de $Temp(GL_{2n}(k_{v_0}))$. Alors il existe une représentation automorphe cuspidale irréductible $\Pi$ de $GL_{2n}(\mathbb{A}_k)$ telle que $\Pi_{v_0} \in U$ et $\Pi_v$ est non ramifiée pour toute place non archimédienne $v \not \in \{v_0,v_1\}$.
  \end{proposition}
+ 
+ Cette proposition de Beuzart-Plessis est une conséquence des résultats de Finis-Lapid-Muller \cite{flm}.
  
  \subsubsection{Fonctions tempérées}
  \label{fonctiontemperees}
@@ -618,7 +629,7 @@ Grâce à cette proposition, on obtient la majoration
  \end{lemme}
  
  \begin{proof}
- On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ \cite[Corollaire 2.7.1]{beuzart-plessis2}. La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue (lemme \ref{convtemp}), il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est alors bien définie et continue sur $V$. 
+ On utilise l'existence de bonnes sections $\pi' \mapsto W_{\pi'}$ \cite[Corollaire 2.7.1]{beuzart-plessis2}. La forme linéaire $W \in C^w(N_{2n}(F)\backslash{GL_{2n}(F)}, \psi) \mapsto J(s, W, \phi)$ est continue (lemme \ref{convtemp}), il existe donc un voisinage $V$ de $\pi$ tel que $J(s, W_{\pi'}, \phi) \neq 0$ pour tous $\pi' \in V$. Le quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}_{\pi'}, \mathcal{F}_{\psi}(\phi))}{J(s, W_{\pi'}, \phi)}$ est alors bien définie et continue sur $V$. 
  \end{proof}
  
  On étudie maintenant la dépendance du quotient $\frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_\psi(\phi))}{J(s, W, \phi)}$ par rapport au caractère additif $\psi$, où l'on note $\mathcal{F}_\psi$ pour la transformée de Fourier par rapport à $\psi$. Les caractères additifs non-triviaux de $F$ sont de la forme $\psi_\lambda$ avec $\lambda \in F^*$ où $\psi_\lambda(x) = \psi(\lambda x)$. On dispose d'un isomorphisme $W \in \mathcal{W}(\pi, \psi) \mapsto W_\lambda \in \mathcal{W}(\pi, \psi_\lambda)$ donné par $W_\lambda(g) = W(a(\lambda)g)$ pour tout $g \in GL_{2n}(F)$, où $a(\lambda) = diag(\lambda^{2n-1}, \lambda^{2n-2}, ..., \lambda, 1)$.
@@ -655,12 +666,12 @@ g & 0 \\
 \end{pmatrix} \sigma_n^{-1} \right)dX\widehat{\phi}(e_ng)|\det g|^s dg.
 \end{equation}
 
-On décompose $a(\lambda) \sigma_n$ sous la forme $\sigma_n diag(\lambda b(\lambda), b(\lambda))$ où l'on note $b(\lambda) = diag(\lambda^{2n-2}, \lambda^{2n-4}, ..., 1)$. Après les changements de variables, $X \mapsto b(\lambda)^{-1} X b(\lambda)$ et $g \mapsto b(\lambda)^{-1}g$ , on obtient la relation
+On décompose $a(\lambda) \sigma_n$ sous la forme $\sigma_n diag(\lambda b(\lambda), b(\lambda))$ où l'on note $b(\lambda) = diag(\lambda^{2n-2}, \lambda^{2n-4}, ..., 1)$. Après les changements de variables, $X \mapsto b(\lambda)^{-1} X b(\lambda)$, $X \mapsto \lambda^{-1}X$ et $g \mapsto b(\lambda)^{-1}g$ , on obtient la relation
 \begin{equation}
 \label{deplambda1}
-J(s, W_\lambda, \phi) = \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{-s}|\lambda|^{x(n)}J(s, \rho(r(\lambda))W, \phi),
+J(s, W_\lambda, \phi) = \delta_{B_n}(b(\lambda))^2|\det b(\lambda)|^{-s}|\lambda|^{-dim(V_n)}J(s, \rho(r(\lambda))W, \phi),
 \end{equation}
-où $\rho(g)$ est la translation à droite par $g$, $r(\lambda) = \sigma_n diag(\lambda, ..., \lambda, 1, ..., 1) \sigma_n^{-1} = diag(\lambda, 1, \lambda, 1, ...)$ et le facteur $|\lambda|^{x(n)}$ (que l'on n'explicite pas) provient du changement de variable $X \mapsto b(\lambda)^{-1} X b(\lambda)$.
+où $\rho(g)$ est la translation à droite par $g$, $r(\lambda) = \sigma_n diag(\lambda, ..., \lambda, 1, ..., 1) \sigma_n^{-1} = diag(\lambda, 1, \lambda, 1, ...)$.
 
 De plus, pour tout $g \in GL_{2n}(F)$, on a
 \begin{equation}
@@ -670,19 +681,19 @@ où l'on a utilisé la relation $w_na(\lambda)^{-1}w_n^{-1} = \lambda^{-(2n-1)}a(\
 \begin{equation}
 \label{deplambda2}
 \begin{split}
-J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi)) &= \omega_\pi(\lambda)^{2n-1} \delta_{B_n}(b(\lambda))|\det b(\lambda)|^{s-1}|\lambda|^{x(n)} \\
-&J(1-s, \rho(w_{n,n})\rho(r(\lambda))\widetilde{W}, \mathcal{F}_{\psi_\lambda}(\phi)).
+J(1-s, \rho(w_{n,n})\widetilde{(W_\lambda)}, \mathcal{F}_{\psi_\lambda}(\phi)) &= \omega_\pi(\lambda)^{2n-1} \delta_{B_n}(b(\lambda))^2|\det b(\lambda)|^{s-1}|\lambda|^{-dim(V_n)} \\
+&J(1-s, \rho(r(\lambda))\rho(w_{n,n})\widetilde{W}, \mathcal{F}_{\psi_\lambda}(\phi)).
 \end{split}
 \end{equation}
 
 Pour finir, on remarque que l'on a pour tout $g \in GL_{2n}(F)$,
 \begin{equation}
 \begin{split}
-\rho(w_{n,n})\rho(r(\lambda))\widetilde{W}(g) &= W\left(w_n \left((g r(\lambda)w_{n,n})^t\right)^{-1} \right) = W\left(\lambda^{-1} w_n \left((gw_{n,n}r(\lambda)^{-1})^t\right)^{-1} \right) \\
+\rho(r(\lambda))\rho(w_{n,n})\widetilde{W}(g) &= W\left(w_n \left((g r(\lambda) w_{n,n})^t\right)^{-1} \right) = W\left(w_n (g^t)^{-1} r(\lambda)^{-1} w_{n,n} \right) \\
 & = \omega_\pi(\lambda)^{-1} W\left(w_{n}\left((gw_{n,n})^t\right)^{-1}r(\lambda) \right) = \omega_\pi(\lambda)^{-1} \rho(w_{n,n})\widetilde{W_r}(g),
 \end{split}
 \end{equation}
-où $W_r$ est la translation à droite de $W$ par $r(\lambda)$, où l'on a utilisé la relation $r(\lambda)w_{n,n} = \lambda w_{n,n}r(\lambda)^{-1}$.
+où $W_r$ est la translation à droite de $W$ par $r(\lambda)$, où l'on a utilisé la relation $r(\lambda)^{-1}w_{n,n} = \lambda^{-1} w_{n,n} r(\lambda)$.
 
 On déduit de \ref{deplambda1} et \ref{deplambda2} la relation suivante
 \begin{equation}
@@ -710,16 +721,16 @@ On déduit le lemme grâce à la relation \ref{depFourier}.
  \end{proposition}
  
  \begin{proof}
- Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soient $v \neq v'$ deux places non archimédiennes distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$.
+ Soit $k$ un corps de nombres, on suppose que $k$ a une seule place archimédienne, elle est réelle (respectivement complexe) lorsque $F=\mathbb{R}$ (respectivement $F=\mathbb{C}$); par exemple, $k=\mathbb{Q}$ si $F=\mathbb{R}$ et $k=\mathbb{Q}(i)$ si $F=\mathbb{C}$. Soient $v \neq v'$ deux places non archimédiennes de caractéristiques résiduelles distinctes, soit $U \subset Temp(GL_{2n}(F))$ un ouvert contenant $\pi$. On choisit un caractère non trivial $\psi_\mathbb{A}$ de $\mathbb{A}_k/k$.
  
- D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
+ D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ de $GL_{2n}(\mathbb{A}_k)$ telle que $\Pi_{\infty} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v$.
  
- On choisit des fonctions $W_w \in \mathcal{W}(\pi_w, (\psi_\mathbb{A})_w)$ et $\phi_w \in \mathcal{S}(k_w)$ dans le but d'appliquer l'équation fonctionnelle globale. On note $S = \{\infty, v\}$ l'ensemble des places où $\Pi$ est ramifiée et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est ramifié. Pour $w \not\in S \cup T$, on prend les fonctions "non ramifiées" qui apparaissent dans la proposition \ref{calculnr}. Pour $w \in S \cup T$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
+ On choisit des fonctions $W_w \in \mathcal{W}(\Pi_w, (\psi_\mathbb{A})_w)$ et $\phi_w \in \mathcal{S}(k_w)$ dans le but d'appliquer l'équation fonctionnelle globale. On note $S = \{\infty, v\}$ l'ensemble des places où $\Pi$ est ramifiée et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est ramifié. Pour $w \not\in S \cup T$, on prend les fonctions "non ramifiées" qui apparaissent dans la proposition \ref{calculnr}. Pour $w \in S \cup T$, on fait un choix, d'après la proposition \ref{nonzero}, tel que $J(s, W_w, \phi_w) \neq 0$. On pose alors
  \begin{equation}
  W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.
  \end{equation}
  
- D'après la proposition \ref{funcglob}, on a
+ D'après les propositions \ref{funcglob} et \ref{calculnr}, on a
  \begin{equation}
  \label{jacquet-shalika}
  \begin{split}
@@ -742,7 +753,7 @@ On déduit le lemme grâce à la relation \ref{depFourier}.
  \end{split}
  \end{equation}
  
- Ce qui prouve la première partie de la proposition pour $\Pi_\infty$, l'existence du facteur $\gamma^{JS}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty)$.
+ Ce qui prouve la première partie de la proposition pour $\Pi_\infty$, l'existence du facteur $\gamma^{JS}(s, \Pi_\infty, \Lambda^2, (\psi_\mathbb{A})_\infty)$ ainsi que le prolongement méromorphe d'après le lemme \ref{convtemp}.
  
  On s'occupe tout de suite du quotient $\frac{\gamma^{Sh}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}{\gamma^{JS}(s, \Pi_w, \Lambda^2, (\psi_\mathbb{A})_w)}$ lorsque $w \in T$. En effet, $\Pi_w$ est non ramifiée, une combinaison de la proposition \ref{calculnr} et du lemme \ref{depcaradd} va nous permettre de calculer ce quotient. Il existe $\lambda \in F^*$ et un caractère non ramifié $\psi_0$ de $F$ tel que $(\psi_\mathbb{A})_w(x) = \psi_0(\lambda x)$. La remarque suivant le lemme \ref{depcaradd} nous dit que les facteurs $\gamma^{JS}(s, \pi, \Lambda^2, \psi)$ et $\gamma^{Sh}(s, \pi, \Lambda^2, \psi)$ ont la même dépendance par rapport au caractère additif. On en déduit que
  \begin{equation}
@@ -762,7 +773,7 @@ On déduit le lemme grâce à la relation \ref{depFourier}.
  \begin{equation}
  R(s) = \frac{J(1-s, \rho(w_{n,n})\widetilde{W}, \mathcal{F}_{(\psi_\mathbb{A})_\infty}(\phi_\infty))}{J(s, W, \phi)\gamma^{Sh}(s ,\pi, \Lambda^2, \psi)},
  \end{equation}
-pour tout $W \in \mathcal{W}(\pi, (\psi_\mathbb{A})_\infty)$, qui est à priori bien définie pour $0 < Re(s) < 1$, est une fonction méromorphe indépendante de $W$ et de $\phi_\infty$. La fonction $R(s)$ ne dépend pas du choix de la base de voisinage et des choix qui sont fait lors de l'utilisation de la proposition \ref{globalisation}.
+pour tout $W \in \mathcal{W}(\pi, (\psi_\mathbb{A})_\infty)$, qui est à priori bien définie pour $0 < Re(s) < 1$, est une fonction indépendante de $W$ et de $\phi_\infty$. La fonction $R(s)$ ne dépend pas du choix de la base de voisinage et des choix qui sont fait lors de l'utilisation de la proposition \ref{globalisation}.
  De plus, $R$ est une limite de fractions rationnelles en $q_v^s$, donc $R$ est une fonction périodique de période $\frac{2i\pi}{\log q_v}$.
  
   En réutilisant le même raisonnement en une place $v'$ de caractéristique résiduelle distincte de celle de $v$, on voit que $R$ est aussi périodique de période $\frac{2i\pi}{\log q_{v'}}$.
@@ -816,10 +827,10 @@ pour tout $W \in \mathcal{W}(\pi, (\psi_\mathbb{A})_\infty)$, qui est à priori b
  
  D'après la proposition \ref{globalisation}, il existe une représentation automorphe cuspidale irréductible $\Pi$ telle que $\Pi_{v_0} \in U$ et $\Pi_w$ soit non ramifiée pour toute place non archimédienne $w \neq v,v_0$.
  
- Pour $w = v_0,v$ ou une place archimédienne, on choisit d'après la proposition \ref{nonzero}, des fonctions de Whittaker $W_w$ et des fonctions de Schwartz $\phi_w$ telles que $J(s, W_w, \phi_w) \neq 0$. Pour les places non ramifiées, on choisit les fonctions "non ramifiées" de la proposition \ref{calculnr}. On pose alors
+On note $S_\infty$ l'ensemble des places archimédienne, $S = S_\infty \cup \{v,v_0\}$ et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est ramifié. Pour $w \in S \cup T$, on choisit d'après la proposition \ref{nonzero}, des fonctions de Whittaker $W_w$ et des fonctions de Schwartz $\phi_w$ telles que $J(s, W_w, \phi_w) \neq 0$. Pour $w \not \in S \cup T$, on choisit les fonctions "non ramifiées" de la proposition \ref{calculnr}. On pose alors
  $$W = \prod_w W_w \quad \text{et} \quad \Phi  = \prod_w \phi_w.$$
  
- On note $S_\infty$ l'ensemble des places archimédienne, $S = S_\infty \cup \{v,v_0\}$ et $T$ l'ensemble des places où $\psi_\mathbb{A}$ est ramifié. D'après l'équation fonctionnelle globale (proposition \ref{funcglob}), on a
+ D'après l'équation fonctionnelle globale (proposition \ref{funcglob}), on a
  \begin{equation}
  \begin{split}
  &\prod_{w \in S \cup T} J(s, W_w, \phi_w) L^{S \cup T}(s, \Pi, \Lambda^2)\\
@@ -844,13 +855,19 @@ pour tout $W \in \mathcal{W}(\pi, (\psi_\mathbb{A})_\infty)$, qui est à priori b
  \section{Limite spectrale}
  
  \label{seclimite}
- Dans cette partie $F$ est un corps $p$-adique. On renvoie à la section \ref{mesures} pour la normalisation des mesures sur $Temp(G)$, pour un groupe $G$ réductif connexe sur $F$.
+ Dans cette partie $F$ est un corps $p$-adique, $\psi$ un caractère additif non trivial. On renvoie à la section \ref{mesures} pour la normalisation des mesures sur $Temp(G)$, pour un groupe $G$ réductif connexe sur $F$.
 
-On note $PG_{2n} = G_{2n}(F)/Z_{2n}(F)$. Soit $f \in \mathcal{S}(PG_{2n})$, pour $\pi \in Temp(PG_{2n})$, on définit $f_\pi$ par
+On note $PG_{2n} = G_{2n}(F)/Z_{2n}(F)$ muni la mesure quotient. Soit $f \in \mathcal{S}(PG_{2n})$, pour $\pi \in Temp(PG_{2n})$, on note $\pi(f) : V_\pi \rightarrow V_\pi$, l'opérateur défini par $\pi(f)v = \int_{PG_{2n}} f(g) \pi(g)v dg$ pour tout $v \in V_\pi$ (cette intégrale est en fait une somme finie), où $V_\pi$ est l'espace sous-jacent à la représentation $\pi$. On définit alors $f_\pi$ par
 \begin{equation}
 f_\pi(g) = Tr(\pi(g)\pi(f^\vee)),
 \end{equation}
 pour tout $g \in PG_{2n}$, où $f^{\vee}(x) = f(x^{-1})$.
+
+On note $Ad$ la représentation adjointe de $G_{2n}$ sur $M_{2n}$. On pose alors
+\begin{equation}
+\gamma(s, \pi, \overline{Ad}, \psi) = \frac{\gamma(s, \pi, Ad, \psi)}{\gamma(s, 1, \psi)},
+\end{equation}
+pour tous $\pi \in Temp(PG_{2n})$ et $s \in \mathbb{C}$.
 
 \begin{proposition}[Harish-Chandra \cite{waldspurger}, Shahidi \cite{shahidi}, Silberger-Zink \cite{silberger-zink}]
 \label{propPlanch}
@@ -873,7 +890,7 @@ La mesure de Plancherel d'un groupe réductif p-adique $G$ est de la forme $d\mu_
 \end{equation}
 où $\pi = i_P^G(\sigma)$ avec $P=MU$ un sous-groupe parabolique de $G$ et $\sigma \in \Pi_2(M)$, $d(\sigma)$ est le degré formel de $\sigma$ et $j(\sigma)$ est un scalaire produit d'opérateurs d'entralecements.
 
-Par désintégration de la mesure sur $Temp(G_{2n})$ et inversion de Fourier sur $Z_{2n}$, on a $\mu_{PG_{2n}}(\pi) = \gamma(0,1, \psi)^{-1}\mu_{G_{2n}}(\pi)$ pour tout $\pi \in Temp(PG_{2n})$.
+Par désintégration de la mesure sur $Temp(G_{2n})$ et inversion de Fourier sur $Z_{2n}$, on a $\mu_{PG_{2n}}(\pi) = \gamma^*(0,1, \psi)^{-1}\mu_{G_{2n}}(\pi)$ pour tout $\pi \in Temp(PG_{2n})$.
 Pour $G = G_{2n}$, le degré formel $d(\sigma)$ a été calculé par Silberger-Zink \cite{silberger-zink} et le facteur $j(\sigma)^{-1}$ par Shahidi \cite{shahidi}. On renvoie à \cite[Proposition 2.13.2]{beuzart-plessis} pour le calcul du produit qui donne la relation \ref{mesurePlanch}.
 \end{proof}
 
@@ -888,7 +905,7 @@ avec $\tau_i \in \Pi_2(G_{n_i})$ et $\mu_j \in T(Temp(SO(2m_j+1))/Stab) \cap \Pi
 
 \begin{proposition}
 \label{limitespectrale}
-Soit $\phi$ une fonction localement constante à support compact sur $Temp(PG_{2n})$, on a 
+Soit $\phi$ une fonction régulière à support compact sur $Temp(PG_{2n})$, on a 
 
 \begin{equation}
 \begin{split}
@@ -897,7 +914,7 @@ Soit $\phi$ une fonction localement constante à support compact sur $Temp(PG_{2n
  \end{split}
 \end{equation}
 
-Pour $\sigma \in Temp(SO(2n+1))$ sous-représentation de $\pi_1 \times ... \times \pi_l \rtimes \sigma_0$, avec $\pi_i \in \Pi_{2}(G_{n_i})$ et $\sigma_0 \in \Pi_2(SO(2m+1))$, le facteur $|S_{\pi}|$ est le produit $|S_{\pi_1}|...|S_{\pi_l}||S_{\sigma_0}|$; où $|S_{\sigma_0}|=2^k$ tel que $T(\sigma_0) \simeq \tau_1 \times ... \times \tau_k$ avec $\tau_i \in \Pi_2(G_{m_i})$.
+où pour $\sigma \in Temp(SO(2n+1))$ sous-représentation de $\pi_1 \times ... \times \pi_l \rtimes \sigma_0$, avec $\pi_i \in \Pi_{2}(G_{n_i})$ et $\sigma_0 \in \Pi_2(SO(2m+1))$, le facteur $|S_{\pi}|$ est le produit $|S_{\pi_1}|...|S_{\pi_l}||S_{\sigma_0}|$; où $|S_{\sigma_0}|=2^k$ tel que $T(\sigma_0) \simeq \tau_1 \times ... \times \tau_k$ avec $\tau_i \in \Pi_2(G_{m_i})$.
 \end{proposition}
 
 \begin{proof}
@@ -921,9 +938,9 @@ où
 
 On note $M = \left( \prod_{i=1}^t G_{d_i}^{m_i+n_i} \times \prod_{j=1}^u G_{e_j}^{p_j} \times \prod_{k=1}^v G_{f_k}^{q_k} \right) / Z_{2n}$ et $P$ un parabolique de $PG_{2n}$ de Levi $M$. Alors $\pi = i_P^{PG_{2n}}(\tau)$ pour une certaine représentation $\tau$ de $M$.
 
-On note $X^*(M)$ le groupe des caractères algébriques de $M$. On note $\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ l'hyperplan défini par la condition que la somme des coordonnées est nulle.
+On note $X^*(M)$ le groupe des caractères algébriques de $M$. On note $\mathcal{A} \subset \prod_{i=1}^t (i\mathbb{R})^{m_i+n_i} \times \prod_{j=1}^u (i\mathbb{R})^{p_j} \times \prod_{k=1}^v (i\mathbb{R})^{q_k} = (i\mathbb{R})_M$ l'hyperplan défini par la condition que la somme des coordonnées est nulle. La forme linéaire "somme des coordonnées" induit un isomorphisme $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$.
 
-On équipe $(i\mathbb{R})_M$ du produit des mesures de Lebesgue sur $i\mathbb{R}$ et $\mathcal{A}$ de la mesure de Haar telle que la mesure quotient sur $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$ soit la mesure de Lebesgue.
+On équipe $(i\mathbb{R})_M$ du produit des mesures de Lebesgue sur $i\mathbb{R}$ et $\mathcal{A}$ de la mesure de Haar telle que la mesure quotient sur $(i\mathbb{R})_M/\mathcal{A} \simeq i\mathbb{R}$ (l'isomorphisme étant induit par la "somme des coordonnées") soit la mesure de Lebesgue.
 
 Dans la suite, on notera les coordonnées de $\lambda \in \mathcal{A}$ de la manière suivante :
 \begin{itemize}
@@ -933,7 +950,7 @@ Dans la suite, on notera les coordonnées de $\lambda \in \mathcal{A}$ de la mani
 \end{itemize}
 pour tout $\lambda \in \mathcal{A}$.
 
-On équipe $i\mathcal{A}^*_M = X^*(M) \otimes i\mathbb{R}$ de l'unique mesure de Haar telle que $i\mathcal{A}^*_M \slash (\frac{2i\pi}{\log(q_F)})X^*(M)$ a pour volume $1$. Pour $\lambda = \chi \otimes \mu \in i\mathcal{A}^*_M$, on note $\tau_\lambda = \tau \otimes |\chi|^\mu$. On rappelle que $W(PG_{2n}, \tau)$ est le sous-groupe de $W(PG_{2n}, M)$ fixant la représentation $\tau$. Soit $V_M$ un voisinage ouvert de $0$ suffisamment petit $W(PG_{2n},\tau)$-invariant dans $i\mathcal{A}^*_M$ telle que l'application $\lambda \in i\mathcal{A}^*_M \mapsto \pi_\lambda = i_{P}^{PG_{2n}}(\tau_\lambda) \in Temp(PG_{2n})$ induit un isomorphisme topologique entre $V_M \slash W(PG_{2n}, \tau)$ et un voisinage ouvert $U$ de $\pi$ dans $Temp(PG_{2n})$. On a la formule d'intégration suivante
+Pour $\lambda = \chi \otimes \mu \in i\mathcal{A}^*_M$, on note $\tau_\lambda = \tau \otimes |\chi|^\mu$. On rappelle que $W(PG_{2n}, \tau)$ est le sous-groupe de $W(PG_{2n}, M)$ fixant la représentation $\tau$. Soit $V_M$ un voisinage ouvert de $0$ suffisamment petit $W(PG_{2n},\tau)$-invariant dans $i\mathcal{A}^*_M$ telle que l'application $\lambda \in i\mathcal{A}^*_M \mapsto \pi_\lambda = i_{P}^{PG_{2n}}(\tau_\lambda) \in Temp(PG_{2n})$ induit un isomorphisme topologique entre $V_M \slash W(PG_{2n}, \tau)$ et un voisinage ouvert $U$ de $\pi$ dans $Temp(PG_{2n})$. On équipe $i\mathcal{A}^*_M = X^*(M) \otimes i\mathbb{R}$ de l'unique mesure de Haar qui vérifie la formule d'intégration suivante
 \begin{equation}
 \label{formuleIntegration}
 \int_U f(\pi) d\pi = \frac{1}{W(PG_{2n}, \tau)} \int_{V_M} f(\pi_\lambda) d\lambda,
@@ -969,7 +986,7 @@ On en déduit l'égalité suivante :
 \int_{\mathcal{A}} \varphi(\lambda) \frac{\gamma^*(0, \pi_\lambda, \overline{Ad}, \psi)}{\gamma(s, \pi_\lambda, \Lambda^2, \psi)} d\lambda,
 \end{split}
 \end{equation}
-où $\varphi(\lambda) = \phi(\pi_\lambda)$ si $\lambda \in V$ et $0$ sinon. La fonction $\varphi$ est $W(PG_{2n}, \tau)$-invariante à support compact.
+où $\varphi(\lambda) = \phi(\pi_\lambda)$ si $\lambda \in V$ et $0$ sinon. La fonction $\varphi$ est $W(PG_{2n}, \tau)$-équivariante à support compact.
 
 Décrivons maintenant la forme des facteurs $\gamma$, on aura besoin des propriétés de ces derniers.
 \begin{propriete}
@@ -993,7 +1010,7 @@ On en déduit que
 \left( \prod_{k=1}^v \prod_{1 \leq l \neq l' \leq q_k} (\frac{z_{k,l}(\lambda)-z_{k,l'}(\lambda)}{f_k}) \right) F(\lambda),
 \end{split}
 \end{equation}
-où $F$ est une fonction $W(PG_{2n}, \tau)$-invariante $C^\infty$ qui ne s'annule pas sur le voisinage $V$ (quitte à rétrécir $V$), il s'agit d'un produit de facteur $\gamma$ ne s'annulant pas sur $V$. De même, on a
+où $F$ est une fonction $W(PG_{2n}, \tau)$-équivariante $C^\infty$ qui ne s'annule pas sur le voisinage $V$ (quitte à rétrécir $V$), il s'agit d'un produit de facteur $\gamma$ ne s'annulant pas sur $V$. De même, on a
 \begin{equation}
 \begin{split}
 & \gamma(s, \pi_\lambda, \Lambda^2, \psi)^{-1} = \left( \prod_{i=1}^t \prod_{\substack{1 \leq l \leq m_i \\ 1\leq l' \leq n_i}} (s+\frac{x_{i,l}(\lambda)+\widetilde{x_{i,l'}}(\lambda)}{d_i})^{-1} \right) \\ &
@@ -1001,7 +1018,7 @@ où $F$ est une fonction $W(PG_{2n}, \tau)$-invariante $C^\infty$ qui ne s'annule
  \left( \prod_{k=1}^v \prod_{1 \leq l \leq l' \leq q_k} (s+\frac{z_{k,l}(\lambda)+z_{k,l'}(\lambda)}{f_k})^{-1} \right) G(2\lambda+s),
  \end{split}
 \end{equation}
-où la fonction $G$ est une fonction $W(PG_{2n}, \tau)$-invariante méromorphe sur $\mathcal{A} \otimes \mathbb{C}$ tel que ses diviseurs polaires ne rencontrent pas $\frac{1}{2}V+\mathcal{H}$ (quitte à rétrécir $V$); ici $\mathcal{H} = \{z \in \mathbb{C}, Re(z) > 0\} \cup \{0\}$ s'injecte dans $\mathcal{A} \otimes \mathbb{C}$ par l'application $s \in \mathcal{H} \mapsto \lambda_s \in \mathcal{A} \otimes \mathbb{C}$ dont les coordonnées sont $x_i(\lambda_s) = d_i(s, ..., s)$, $y_j(\lambda_s) = e_j(s, ..., s)$ et $z_k(\lambda_s) = f_k(s, ..., s)$.
+où la fonction $G$ est une fonction $W(PG_{2n}, \tau)$-équivariante méromorphe sur $\mathcal{A} \otimes \mathbb{C}$ tel que ses diviseurs polaires ne rencontrent pas $2V+\mathcal{H}$ (quitte à rétrécir $V$); ici $\mathcal{H} = \{z \in \mathbb{C}, Re(z) > 0\} \cup \{0\}$ s'injecte dans $\mathcal{A} \otimes \mathbb{C}$ par l'application $s \in \mathcal{H} \mapsto \lambda_s \in \mathcal{A} \otimes \mathbb{C}$ dont les coordonnées sont $x_i(\lambda_s) = d_i(s, ..., s)$, $y_j(\lambda_s) = e_j(s, ..., s)$ et $z_k(\lambda_s) = f_k(s, ..., s)$.
 
 On énonce maintenant le résultat fondamental de \cite{beuzart-plessis}, qui permet d'obtenir la proposition pour la représentation d'Asai. En reprenant les notations de \cite[Proposition 3.2.1]{beuzart-plessis}, on écrit
 \begin{equation}
@@ -1010,7 +1027,7 @@ On énonce maintenant le résultat fondamental de \cite{beuzart-plessis}, qui perm
 \end{equation}
 où $\varphi_s(\lambda) = \varphi(\lambda) F(\lambda) G(2\lambda+s)$. 
 La fonction $s \in \mathcal{H} \cup \{0\} \mapsto \varphi_s \in C^\infty_c(\mathcal{A})$ est continue.
-De plus, $\varphi_s$ est $W(PG_{2n}, \tau)$-invariante à support compact. Les lettres $P, Q, R$ désignent des fractions rationnelles qui apparaissent dans le quotient des facteurs $\gamma$ (voir \cite[section 3]{beuzart-plessis}).
+De plus, $\varphi_s$ est $W(PG_{2n}, \tau)$-équivariante à support compact. Les lettres $P, Q, R$ désignent des fractions rationnelles qui apparaissent dans le quotient des facteurs $\gamma$ (voir \cite[section 3]{beuzart-plessis}).
 \begin{proposition}[Beuzart-Plessis {\cite[Proposition 3.3.1]{beuzart-plessis}}]
 \label{beuzart-plessis}
 La limite
@@ -1049,7 +1066,7 @@ qui correspond à la projection consistant à supprimer les coordonnées redondante
 \begin{proof}
 Il nous faut donner une petite explication par rapport à la proposition 3.3.1 dans \cite{beuzart-plessis}. En effet, on l'utilise pour une famille $\varphi_s$ alors qu'elle est énoncée pour une unique fonction $\varphi$. Notons, comme dans \cite[section 3.3]{beuzart-plessis},
 \begin{equation}
-D_s(\varphi) = \frac{1}{|W|} \int_{\mathcal{A}} \varphi(\lambda) 
+D_s(\varphi) = \int_{\mathcal{A}} \varphi(\lambda) 
 \prod_{i=1}^t P_{m_i,n_i,s}(\frac{x_i(\lambda)}{d_i}) \prod_{j=1}^u Q_{p_j,s}(\frac{y_j(\lambda)}{e_j}) \prod_{i=1}^v R_{q_k,s}(\frac{z_k(\lambda)}{f_k}) d\lambda,
 \end{equation}
 \begin{equation}
@@ -1060,7 +1077,7 @@ D'(\varphi) &= \frac{D(2\pi)^{N-1}2^{-c}}{n} \\
 \end{equation}
 pour tout $\varphi \in C^\infty_c(\mathcal{A})$.
 
-On se contente du cas où $m_i = n_i$ pour tout $1 \leq i \leq t$ et que $p_j$ est pair pour tout $1 \leq j \leq u$, l'autre cas se fait en utilisant le même raisonnement en remplaçant $D'$ par $0$. On note $C^\infty_c(\mathcal{A})^W$ le sous-espace de $C^\infty_c(\mathcal{A})$ des fonctions $W$-invariantes. D'après la proposition 3.3.1 de \cite{beuzart-plessis}, pour tout $\varphi \in C^\infty_c(\mathcal{A})^W$, on a
+On se contente du cas où $m_i = n_i$ pour tout $1 \leq i \leq t$ et que $p_j$ est pair pour tout $1 \leq j \leq u$, l'autre cas se fait en utilisant le même raisonnement en remplaçant $D'$ par $0$. On note $C^\infty_c(\mathcal{A})^W$ le sous-espace de $C^\infty_c(\mathcal{A})$ des fonctions $W$-équivariantes. D'après la proposition 3.3.1 de \cite{beuzart-plessis}, pour tout $\varphi \in C^\infty_c(\mathcal{A})^W$, on a
 \begin{equation}
 \lim_{s \rightarrow 0^+} sD_s(\varphi) = \frac{|W|}{|W'|}D'(\varphi).
 \end{equation}
@@ -1268,8 +1285,9 @@ travers l'isomorphisme $(\widetilde{z}, \widetilde{l}, \widetilde{l}_{n-1}) \in 
 0_{n-1} & 0 \\
 \widetilde{z} & 0
 \end{pmatrix}$ et $\widetilde{p} = \begin{pmatrix}
-1_{n-1} & 0 \\
-\widetilde{l} & \widetilde{l}_n
+1_{n-2} & 0 & 0 \\
+\widetilde{l} & \widetilde{l}_{n-1} & 0 \\
+0 & 0 & 1
 \end{pmatrix}$.
 
 On équipe $\Omega_n$, $\widetilde{\Omega}_n$, $\Omega^P_n$, $\widetilde{\Omega}^P_n$ des mesures suivantes :
@@ -1314,7 +1332,7 @@ On utilise ces décompositions pour écrire le membre de droite de la proposition 
 \end{equation}
 On a choisi les représentants des matrices $Y$ et $\widetilde{Y}$ de sorte que le caractère $\theta$ soit trivial.
 
-On fixe $\widetilde{\xi}_p \in \widetilde{\Omega}_{n-1}$ et $\widetilde{\xi} \in \widetilde{\Omega}_n$. On pose $f' = L(\widetilde{\xi}_p)R(\widetilde{\xi})f$, on a alors
+On fixe $\widetilde{\xi}_p \in \widetilde{\Omega}_n^P$ et $\widetilde{\xi} \in \widetilde{\Omega}_n$. On pose $f' = L(\widetilde{\xi}_p)R(\widetilde{\xi})f$, on a alors
  \begin{equation}
  \begin{split}
  & \int_{\Omega^P_{n-1}} \int_{\Omega_{n-1}} W_f(\xi_p'\widetilde{\xi}_p, \xi'\widetilde{\xi}) |\det \xi_p'\xi'|^{-1} d\xi' d\xi_p'= \\
@@ -1365,17 +1383,21 @@ travers l'isomorphisme $(\widetilde{z}, \widetilde{l}, \widetilde{l}_{n-1}) \in 
 0_{n-1} & 0 \\
 \widetilde{z} & 0
 \end{pmatrix}$ et $\widetilde{p} = \begin{pmatrix}
-1_{n-1} & 0 \\
-\widetilde{l} & \widetilde{l}_n
+1_{n-2} & 0 & 0 \\
+\widetilde{l} & \widetilde{l}_{n-1} & 0 \\
+0 & 0 & 1
 \end{pmatrix}$. On obtient alors
 \begin{equation}
-\int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{H_{n-1}} |\det s|^{-1} \int_V f\left(\sigma_n \begin{pmatrix}
+\begin{split}
+\int_{F^{n-2} \times F^*} \int_{F^{n-1}} \int_{\widetilde{\Omega}_n} \int_{H_{n-1}} |\det s|^{-1} \int_V &f\left(\sigma_n \begin{pmatrix}
 \widetilde{p}^{-1} & 0 \\
 0 & \widetilde{p}^{-1}
 \end{pmatrix} \begin{pmatrix}
 1 & -\widetilde{Z} \\
 0 & 1
-\end{pmatrix} \sigma_n^{-1} v s \widetilde{\xi}\right) \theta(s)^{-1} \psi(v)^{-1} dv ds d\widetilde{\xi} d\widetilde{Z} d\widetilde{p}.
+\end{pmatrix} \sigma_n^{-1} v s \widetilde{\xi}\right) \\
+&\theta(s)^{-1} \psi(v)^{-1} dv ds d\widetilde{\xi} d\widetilde{Z} d\widetilde{p}.
+\end{split}
 \end{equation}
 
 La conjugaison de $v$ par $\sigma_n^{-1}$ s'écrit sous la forme $\begin{pmatrix}
@@ -1469,7 +1491,7 @@ Soit $F \in \mathcal{S}(M_n)$, alors
 On rappelle que l'on identifie $F^{n-2} \times F^*$ à l'ensemble des matrices de la forme $\begin{pmatrix}
 1_{n-2} & 0 \\
 \widetilde{l} & \widetilde{l}_{n-1}
-\end{pmatrix}$ avec $\widetilde{l} \in F^{n-2}$ et $\widetilde{l}_{n} \in F^*$. 
+\end{pmatrix}$ avec $\widetilde{l} \in F^{n-2}$ et $\widetilde{l}_{n-1} \in F^*$. 
 \end{lemme}
 
 \begin{proof}
@@ -1650,7 +1672,7 @@ g & 0 \\
 \end{pmatrix} \sigma_n^{-1} \right) \psi(-Tr(X))  dX dg.
 \end{equation}
 
-On remarquera que l'on a pris garde à ne pas échanger l'intégrale sur $V$ avec les intégrales sur $\widetilde{H}$, $H_{n-1}$, $\widetilde{\Omega}_{n-1}$ et $H^P_{n-1}$ qui chacune est absolument convergente mais l'intégrale totale ne l'est pas. On s'est contenté d'échanger des intégrales sur les différents $H$ d'une part, d'échanger des intégrales sur les $n_1$, $n_2$, $t$, $y$ qui compose l'intégrale sur $V$ d'autre part. On doit seulement vérifier qu'il n'y a pas de problème de convergence lorsque l'on combine l'intégration en $X$ sur $M_n$ (cf. intégrale \ref{combX}) et lorsque l'on échange l'intégrale sur $U_n$ et $M_n$ (cf. intégrale \ref{combg}). Pour ce qui est de la dernière intégrale, on intègre sur un sous-groupe fermé  et $f \in \mathcal{S}(G_{2n})$ donc l'intégrale est absolument convergente. Pour ce qui est de l'intégrale \ref{combX}, à part l'intégration sur $\widetilde{Z}$, on intègre sur un sous-groupe fermé donc on peut bien combiner les intégrales.
+On remarquera que l'on a pris garde à ne pas échanger l'intégrale sur $V$ avec les intégrales sur $\widetilde{\Omega}_n$, $\widetilde{\Omega}^P_n$ et $H_{n-1}$ qui chacune est absolument convergente mais l'intégrale totale ne l'est pas. On s'est contenté d'échanger des intégrales sur $\widetilde{\Omega}_n$, $\widetilde{\Omega}^P_n$ et $H_{n-1}$ d'une part, d'échanger des intégrales sur les $n_1$, $n_2$, $t$, $y$ qui compose l'intégrale sur $V$ d'autre part. On doit seulement vérifier qu'il n'y a pas de problème de convergence lorsque l'on combine l'intégration en $X$ sur $M_n$ (cf. intégrale \ref{combX}) et lorsque l'on échange l'intégrale sur $U_n$ et $M_n$ (cf. intégrale \ref{combg}). Pour ce qui est de la dernière intégrale, on intègre sur un sous-groupe fermé  et $f \in \mathcal{S}(G_{2n})$ donc l'intégrale est absolument convergente. Pour ce qui est de l'intégrale \ref{combX}, à part l'intégration sur $\widetilde{Z}$, on intègre sur un sous-groupe fermé donc on peut bien combiner les intégrales.
 
 Finissons par montrer la convergence absolue de notre membre de droite. Notons $r(g) = 1 + ||e_{2n}g||_\infty$. On a
 \begin{equation}
@@ -1720,7 +1742,7 @@ pour $N$ suffisamment grand. On note $u_X  = \sigma_n \begin{pmatrix}
 \end{pmatrix} \begin{pmatrix}
 ak & 0 \\
 0 & ak
-\end{pmatrix} \sigma_n^{-1} = b \sigma_n k \sigma_n^{-1} u_{(ak)^{-1}X(ak)},
+\end{pmatrix} \sigma_n^{-1} = b u_{a^{-1}Xa}\sigma_n diag(k,k) \sigma_n^{-1},
 \end{equation}
 où $b = diag(a_1, a_1, a_2, a_2, ...)$ et \begin{equation}
 \sigma_n \begin{pmatrix}
@@ -1729,11 +1751,11 @@ où $b = diag(a_1, a_1, a_2, a_2, ...)$ et \begin{equation}
 \end{pmatrix} \begin{pmatrix}
 a'k' & 0 \\
 0 & a'k'
-\end{pmatrix} \sigma_n^{-1} = b' \sigma_n k' \sigma_n^{-1} u_{(a'k')^{-1}X'(a'k')},
+\end{pmatrix} \sigma_n^{-1} = b' u_{{a'}^{-1}X'a'}\sigma_n diag(k' ,k') \sigma_n^{-1},
 \end{equation}
 où $b' = diag(a_1', a_1', a_2', a_2', ...)$.
 
-On effectue les changements de variables $X \mapsto (ak)X(ak)^{-1}$ et $X' \mapsto (a'k')X'(a'k')^{-1}$. D'après les lemme \ref{majtemp} et la preuve du lemme \ref{convtemp}, il existe $d > 0$ tel que pour tout $N \geq 1$, l'intégrale \ref{conv} est alors majorée à une constante près par
+On effectue les changements de variables $X \mapsto aXa^{-1}$ et $X' \mapsto a'X'{a'}^{-1}$. D'après le lemme \ref{majtemp} et la preuve du lemme \ref{convtemp}, il existe $d > 0$ tel que pour tout $N \geq 1$, l'intégrale \ref{conv} est alors majorée à une constante près par
 \begin{equation}
 \begin{split}
 \int_{V_n} \int_{A_{n-1}} \int_{V_n} \int_{A_n} (1+|a_n|)^{-N} |\det a(a')^{-1}| m(X)^{-\alpha N} \prod_{i=1}^{n-1} (1 + |\frac{a_i}{a_{i+1}}|)^{-N} \delta^{\frac{1}{2}}_{B_{2n}}(bt_X)\log(||bt_X||)^d \\
@@ -1807,7 +1829,7 @@ Pour $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$, la restriction de $\bet
 
 La preuve de cette proposition se fera après quelques préliminaires. On commence par prouver un lemme et introduire des notations.
 
-On note $\mathcal{S}(Z_{2n}N_{2n} \backslash G_{2n})$ l'ensemble des fonctions lisse sur $G_{2n}$, $Z_{2n}N_{2n}$-invariante et à support compact modulo $Z_{2n}N_{2n}$.
+On note $\mathcal{S}(Z_{2n}N_{2n} \backslash G_{2n})$ l'ensemble des fonctions lisse sur $G_{2n}$, $Z_{2n}N_{2n}$-équivariante à gauche et à support compact modulo $Z_{2n}N_{2n}$.
 \begin{lemme}
 \label{limitezeta}
 Pour $W \in \mathcal{S}(Z_{2n} N_{2n} \backslash G_{2n})$ et $\phi \in \mathcal{S}(F^n)$, on a
@@ -1840,7 +1862,13 @@ où l'on a posé $\phi_k(x) = \phi(xe_nk)$ pour tous $x \in F$ et $k \in K_n$. Ce 
 \lim_{s \rightarrow 0+} \gamma(ns, 1, \psi)\int_{Z_n} \phi(e_nzk) |\det z|^s dz = \int_{F} \widehat{\phi_k}(x)dx = \phi(0).
 \end{equation}
 
-D'autre part, d'après  \cite[lemme 4.1]{kewat}, on sait que
+D'autre part, $W$ est à support compact modulo $Z_{2n}N_{2n}$ et l'intersection de $Z_{2n}N_{2n}$ avec l'ensemble des matrices de la forme $\sigma_n\begin{pmatrix}
+1 & X \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+ak & 0 \\
+0 & ak
+\end{pmatrix} \sigma_n^{-1}$ pour $X \in V_n, a \in A_{n-1}, k \in K_n$ est à support compact. On en déduit que l'intégrale
 \begin{equation}
 \int_{A_{n-1}} \int_{V_n} W\left(\sigma_n\begin{pmatrix}
 1 & X \\
@@ -1850,9 +1878,9 @@ ak & 0 \\
 0 & ak
 \end{pmatrix} \sigma_n^{-1}\right) dX |\det a|^s \delta_{B_n}(a)^{-1} da,
 \end{equation}
-converge absolument pour tout $k \in K_n$ et pour $Re(s) > -\epsilon$ pour un certain $\epsilon > 0$.
+converge absolument pour tout $k \in K_n$ et tout $s \in \mathbb{C}$.
 
-On en déduit, que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est égal à
+On en déduit par convergence dominée, que $\lim_{s \rightarrow 0^+}\gamma(ns, 1, \psi) J(s, W, \phi)$ est égal à
 \begin{equation}
 \phi(0)\int_{Z_n \backslash A_n} \int_{K_n} \int_{V_n}
 W\left(\sigma_n\begin{pmatrix}
@@ -1873,7 +1901,7 @@ On introduit l'espace $C^w(G_{2n})$ des fonctions tempérées sur $G_{2n}$ comme l
 \label{ineqTemp}
 |f(g)| \leq C \delta_{B_{2n}}(m)^{\frac{1}{2}} \sigma(g)^d,
 \end{equation}
-pour tout $g \in G_{2n}$, où $g=mk$ avec $m \in B_{2n}$ et $k \in GL_{2n}(\mathbb{Z}_p)$ d'après la décomposition de Cartan. On note $C^w_d(G_{2n})$ le sous-espace de $C^w(G_{2n})$ des fonctions qui vérifient \ref{ineqTemp}. Ce dernier est muni de la norme $\sup_{g \in G_{2n}} \frac{|f(g)|}{|\delta_{B_{2n}}(m)^{\frac{1}{2}} \sigma(g)^d|}$ qui en fait un espace de Banach. On munit $C^w(G_{2n}) = \bigcup_d C^w_d(G_{2n})$ de la topologie limite inductive.
+pour tout $g \in G_{2n}$, où $g=mk$ avec $m \in B_{2n}$ et $k \in GL_{2n}(\mathbb{Z}_p)$ d'après la décomposition de Cartan. On note $C^w_d(G_{2n})$ le sous-espace de $C^w(G_{2n})$ des fonctions qui vérifient \ref{ineqTemp}. Ce dernier est muni de la norme $\sup_{g \in G_{2n}} \frac{|f(g)|}{\delta_{B_{2n}}(m)^{\frac{1}{2}} \sigma(g)^d}$ qui en fait un espace de Banach. On munit $C^w(G_{2n}) = \bigcup_d C^w_d(G_{2n})$ de la topologie limite inductive.
 
 On étend la forme linéaire $f \in \mathcal{S}(G_{2n}) \mapsto \int_{N_{2n}} f(u)\psi(u)^{-1} du$ par continuité en une forme linéaire sur $C^w(G_{2n})$ \cite{beuzart-plessis}, que l'on note
 \begin{equation}
@@ -1886,24 +1914,17 @@ W_f(g_1, g_2) = \int_{N_{2n}}^* f(g_1^{-1}ug_2)\psi(u)^{-1} du,
 \end{equation}
 pour tous $g_1, g_2 \in G_{2n}$.
 
-Soit $f \in \mathcal{S}(G_{2n})$ et $\pi \in Temp(G_{2n})$, on pose $W_{f, \pi} = W_{f_\pi}$.
+Soient $f \in \mathcal{S}(G_{2n})$ et $\pi \in Temp(G_{2n})$, on pose $W_{f, \pi} = W_{f_\pi}$ où $f_\pi(g) = Tr(\pi(g)\pi(f^\vee))$ pour tout $g \in G_{2n}$.
 
 On introduit l'espace $C^w(N_{2n} \times N_{2n} \backslash G_{2n} \times G_{2n}, \psi \otimes \psi ^{-1})$ de manière analogue à l'espace des fonctions tempérées sur $N_{2n} \backslash G_{2n}$ dans la section \ref{fonctiontemperees}. On a
 \begin{equation}
 C^w(N_{2n} \times N_{2n} \backslash G_{2n} \times G_{2n}, \psi \otimes \psi ^{-1}) = C^w(N_{2n} \backslash G_{2n}, \psi) \widehat{\otimes} C^w(N_{2n}  \backslash G_{2n}, \psi ^{-1}),
 \end{equation}
-où $\widehat{\otimes}$ est le produit tensoriel complété.
-
-\begin{proposition}[Beuzart-Plessis {\cite[Lemme 2.14.1]{beuzart-plessis}}]
-\label{Wfpicontinue}
-Soit $\pi \in Temp(G_{2n})$.
-L'application linéaire $f \in \mathcal{S}(G_{2n}) \mapsto W_{f, \pi} \in C^w(N_{2n} \times N_{2n} \backslash G_{2n} \times G_{2n}, \psi \otimes \psi ^{-1})$
-est continue.
-\end{proposition}
+où $\widehat{\otimes}$ est le produit tensoriel complété \cite[A.5]{bpannexe}.
 
 \begin{proposition}[Beuzart-Plessis {\cite[Proposition 2.14.2]{beuzart-plessis}}]
 \label{decspecwhitt}
-Pour tout $f \in \mathcal{S}(PG_{2n})$. On pose $\widetilde{f}(g) = \int_{Z_n} f(zg) dz$, alors $\widetilde{f} \in \mathcal{S}(PG_{2n})$. On a $\widetilde{f}_\pi = f_\pi$ pour tout $\pi \in Temp(PG_{2n})$. De plus, on a l'égalité
+Soit $f \in \mathcal{S}(G_{2n})$. On pose $\widetilde{f}(g) = \int_{Z_n} f(zg) dz$, alors $\widetilde{f} \in \mathcal{S}(PG_{2n})$. On a $\widetilde{f}_\pi = f_\pi$ pour tout $\pi \in Temp(PG_{2n})$. De plus, on a l'égalité
 \begin{equation}
 W_{\widetilde{f}} = \int_{Temp(PG_{2n})} W_{f, \pi} d\mu_{PG_{2n}}(\pi)
 \end{equation}
@@ -1936,7 +1957,7 @@ C'est le contenu de \cite[Théorème 6.4.1]{sak-ven}.
 
 Pour $W \in C^w(N_{2n} \backslash G_{2n}, \psi^{-1})$, on note
 \begin{equation}
-\widetilde{\beta}(W) = \int_{H_n \cap N_{2n} \backslash H_n} W(\xi_p) \theta(\xi_p) d\xi_p.
+\widetilde{\beta}(W) = \int_{H_n^P \cap N_{2n} \backslash H_n^P} W(\xi_p) \theta(\xi_p) d\xi_p.
 \end{equation}
 On dispose du lemme \ref{betann} pour la forme linéaire $\widetilde{\beta}$ avec la même preuve.
 
@@ -1948,7 +1969,7 @@ pour tout $W \in \mathcal{W}(\pi, \psi)$.
 
 \begin{corollaire}[de la limite spectrale]
 \label{corolim}
-Soit $f \in \mathcal{S}(G_{2n})$ et $g \in G_{2n}$, alors
+Soient $f \in \mathcal{S}(G_{2n})$ et $g \in G_{2n}$, alors
 \begin{equation}
 \begin{split}
 \int_{H_n \cap N_{2n} \backslash H_n} W_f(g, \xi) \theta(\xi)^{-1} d\xi = &\int_{Temp(SO(2n+1))/Stab} \beta(W_{f,T(\sigma)}(g,.)) \\
@@ -1972,7 +1993,7 @@ On choisit $\phi \in \mathcal{S}(F^n)$ tel que $\phi(0) = 1$. D'après le lemme \
 \end{split}
 \end{equation}
 
-D'après l'équation fonctionnelle \ref{funcloc}, on a
+D'après l'équation fonctionnelle \ref{funcloc} et le théorème \ref{egalitegamma}, on a
 \begin{equation}
 \begin{split}
 &\int_{H_n \cap N_{2n} \backslash H_n} W_f(1, \xi) \theta(\xi)^{-1} d\xi = \\
@@ -1996,17 +2017,17 @@ En remplaçant $f$ par $\rho(h)f$, $h \in H_n$, dans le membre de gauche; cela re
 pour tout $\xi \in H_n$, où $d\mu(\sigma) = c(T(\sigma))^{-1} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} d\sigma$.
 
 D'après le lemme de séparation spectrale \cite[Lemme 5.7.2]{beuzart-plessis} et la continuité de $\sigma \mapsto J(1, \rho(w_{n,n})\widetilde{W_{f, T(\sigma)}}(1, .), \widehat{\phi})$, on en déduit que
-$J(1, \rho(w_{n,n})\widetilde{W_{\rho(\xi)f, T(\sigma)}(1,.)}, \widehat{\phi}) = \theta(\xi)J(1, \rho(w_{n,n})\widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi})$ pour tout $\xi \in H_n$ et donc que $f \mapsto J(1, \rho(w_{n,n})\widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi})$ est $(H_n, \theta)$-invariant.
+$J(1, \rho(w_{n,n})\widetilde{W_{\rho(\xi)f, T(\sigma)}(1,.)}, \widehat{\phi}) = \theta(\xi)J(1, \rho(w_{n,n})\widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi})$ pour tous $\xi \in H_n$, $\sigma \in Temp(SO(2n+1)$ et donc que $f \mapsto J(1, \rho(w_{n,n})\widetilde{W_{f, T(\sigma)}(1,.)}, \widehat{\phi})$ est $(H_n, \theta)$-équivariante.
 
 \begin{lemme}
 \label{zetabeta}
-Soit $\sigma \in Temp(SO(2n+1))$ et $\pi = T(\sigma)$. Alors
+Soient $\sigma \in Temp(SO(2n+1))$ et $\pi = T(\sigma)$. Alors
 \begin{equation}
 J(1, \rho(w_{n,n})\widetilde{W}, \widehat{\phi}) = \phi(0)c_\beta(\sigma)\beta(W),
 \end{equation}
 pour tous $W \in \mathcal{W}(\pi, \psi)$ et $\phi \in \mathcal{S}(F^n)$. Rappelons que $c_{\beta}(\sigma)$ est le signe qui vérifie la relation
 \begin{equation}
-\beta(\widetilde{W}) = c_\beta(\sigma) \beta(W),
+\widetilde{\beta}(\rho(w_{n,n})\widetilde{W}) = c_\beta(\sigma) \beta(W),
 \end{equation}
 pour tous $W \in \mathcal{W}(\pi, \psi)$.
 \end{lemme}
@@ -2026,27 +2047,30 @@ g & 0 \\
 \end{split}
 \end{equation}
 
-D'après le lemme \ref{choixf}, on choisit $f \in \mathcal{S}(G_{2n})$ tel que $W_{f,\pi}(1,.) = \rho(w_{n,n}^{-1})W$. D'après ce que l'on vient de dire précédemment, on en déduit que $J(1, \widetilde{W}, \widehat{\phi})$ vérifie la relation $J(1, \rho((\xi^t)^{-1})\widetilde{W}, \widehat{\phi}) = \theta(\xi)J(1, \widetilde{W}, \widehat{\phi})$, ou encore, $J(1, \rho(\xi)\widetilde{W}, \widehat{\phi}) = \theta(\xi)^{-1}J(1, \widetilde{W}, \widehat{\phi})$, pour tout $\xi \in H_n$.
+D'après le lemme \ref{choixf}, on choisit $f \in \mathcal{S}(G_{2n})$ tel que $W_{f,\pi}(1,.) = W$. D'après ce que l'on vient de dire précédemment, on en déduit que $J(1, \rho(w_{n,n})\widetilde{W}, \widehat{\phi})$ vérifie la relation $J(1, \rho(w_{n,n})\widetilde{\rho(\xi)W}, \widehat{\phi}) = \theta(\xi)J(1, \rho(w_{n,n})\widetilde{W}, \widehat{\phi})$, ou encore $J(1, \rho(\xi)\rho(w_{n,n})\widetilde{W}, \widehat{\phi}) = \theta(\xi)^{-1}J(1, \rho(w_{n,n})\widetilde{W}, \widehat{\phi})$, pour tout $\xi \in H_n$.
 
-Comme $\widehat{\phi}(e_ng)$ est arbitraire parmi les fonctions invariante à gauche par $G_{n-1}U_{n-1}$, on en déduit que
+Comme $\widehat{\phi}(e_ng)$ est arbitraire parmi les fonctions invariante à gauche par $P_n$, on en déduit que
 \begin{equation}
-\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1}) \mapsto \int_{N_n \backslash P_n} \int_{V_n} \widetilde{W}\left(\sigma_n\begin{pmatrix}
+\begin{split}
+\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1}) \mapsto &\int_{N_n \backslash P_n} \int_{V_n} \widetilde{W}\left(\sigma_n\begin{pmatrix}
 1 & X \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 g & 0 \\
 0 & g
-\end{pmatrix} \sigma_n^{-1}\right) dX dg
+\end{pmatrix} \sigma_n^{-1}\right) dX dg \\
+& = \widetilde{\beta}(\widetilde{W})
+\end{split}
 \end{equation}
-est $(H_n, \theta^{-1})$-invariant. On en déduit que $\widetilde{\beta}$ restreint à $\mathcal{W}(\widetilde{\pi}, \psi^{-1})$ est $(H_n, \theta^{-1})$. En remplaçant $\psi$ par $\psi^{-1}$ et comme $\widetilde{\pi} \simeq \pi$ d'après la caractérisation \ref{caracTransf}, on en déduit que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant, ce qui termine la preuve de la proposition \ref{lemmebeta}.
+est $(H_n, \theta^{-1})$-équivariante. Ce qui nous permet d'en déduire que $\widetilde{\beta}$ restreint à $\mathcal{W}(\widetilde{\pi}, \psi^{-1})$ est $(H_n, \theta^{-1})$-équivariante. En remplaçant $\psi$ par $\psi^{-1}$ et comme $\widetilde{\pi} \simeq \pi$ d'après la caractérisation \ref{caracTransf}, on en déduit que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-équivariante, ce qui termine la preuve de la proposition \ref{lemmebeta}.
 
 \begin{remarque}
-Cette preuve que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-invariant est quelque peu détournée dû au fait qu'il nous manque un résultat. On conjecture que $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ est de dimension au plus $1$. Comme $\pi = T(\sigma)$, d'après \ref{caracTransf}, la classification des séries discrètes admettant un modèle de Shalika \cite{matringe3} et le passage à l'induction parabolique \cite{matringe2}, on obtient que $\pi$ admet un modèle de Shalika. Autrement dit, on a $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$. On en déduirait alors que la restriction de $\beta$ à $\mathcal{W}(\pi, \psi)$, qui est bien $H_n \cap P_{2n}$-invariant, est un élément de $Hom_{H_n}(\pi, \theta)$. Ce qui simplifierait légèrement la preuve à condition de prouver le résultat de dimension $1$.
+Cette preuve que $\beta$ restreint à $\mathcal{W}(\pi, \psi)$ est $(H_n, \theta)$-équivariante est quelque peu détournée dû au fait qu'il nous manque un résultat. On conjecture que, pour $\pi$ tempérée, $Hom_{H_n \cap P_{2n}}(\pi, \theta)$ est de dimension au plus $1$. Comme $\pi = T(\sigma)$, d'après \ref{caracTransf}, la classification des séries discrètes admettant un modèle de Shalika \cite{matringe3} et le passage à l'induction parabolique \cite{matringe2}, on obtient que $\pi$ admet un modèle de Shalika. Autrement dit, on a $Hom_{H_n}(\pi, \theta) \neq 0$. Ce dernier est un sous-espace de $Hom_{H_n \cap P_{2n}}(\pi, \theta)$. On en déduirait alors que la restriction de $\beta$ à $\mathcal{W}(\pi, \psi)$, qui est bien $(H_n \cap P_{2n}, \theta)$-équivariante, est un élément de $Hom_{H_n}(\pi, \theta)$. Ce qui simplifierait légèrement la preuve à condition de prouver le résultat de dimension $1$.
 \end{remarque}
 
 \begin{proposition}
 \label{constbeta}
-Soit $\sigma \in Temp(SO(2n+1))$, on pose $\pi = T(\sigma)$ le transfert de $\sigma$ dans $Temp(G_{2n})$. La forme linéaire $W \in \mathcal{W}(\pi, \psi) \mapsto \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$ est un élément de $\Hom_{H_n}(\widetilde{\pi}, \theta^{-1})$. Il existe un signe $c_\beta(\sigma) = c_\beta(\pi)$ tel que
+Soit $\sigma \in Temp(SO(2n+1))$, on pose $\pi = T(\sigma)$ le transfert de $\sigma$ dans $Temp(G_{2n})$. La forme linéaire $W \in \mathcal{W}(\pi, \psi) \mapsto \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$ est un élément de $\Hom_{H_n}(\mathcal{W}(\pi, \psi), \theta)$. Il existe un signe $c_\beta(\sigma) = c_\beta(\pi)$ tel que
 \begin{equation}
 \label{eqconstbeta}
 \widetilde{\beta}(\rho(w_{n,n})\widetilde{W}) = c_\beta(\sigma)\beta(W),
@@ -2055,29 +2079,33 @@ pour tout $W \in \mathcal{W}(\pi, \psi)$.
 \end{proposition}
 
 \begin{proof}
-On a montré que $\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1}) \mapsto \widetilde{\beta}(\widetilde{W})$ est $(H_n, \theta^{-1})$-invariante. Calculons l'action de $H_n$ à travers l'application $W \mapsto \rho(w_{n,n})\widetilde{W}$. Pour $h \in H_n$, l'action de $H_n$ sur $W$ composé avec cette application, donne la fonction qui a $g \in G_{2n}$ associe
-\begin{equation}
-\rho(w_{n,n})\widetilde{\rho(h)W}(g) = W(w_n \left((gh)^t\right)^{-1}w_{n,n}) = W(w_n (g^t)^{-1} (h^t)^{-1} w_{n,n}).
-\end{equation}
-Cette dernière est l'action de $H_n$ composé avec l'involution $h \mapsto (h^t)^{-1} w_{n,n}$ sur $\mathcal{W}(\widetilde{\pi}, \psi^{-1})$. L'involution $h \mapsto (h^t)^{-1} w_{n,n}$ est l'application qui a $h \in H_n$ de la forme $\sigma_n\begin{pmatrix}
-1 & X \\
-0 & 1
-\end{pmatrix} \begin{pmatrix}
-g & 0 \\
-0 & g
-\end{pmatrix} \sigma_n^{-1}$ associe
-\begin{equation}
-\sigma_n\begin{pmatrix}
-1 & -X \\
-0 & 1
-\end{pmatrix} \begin{pmatrix}
-(g^t)^{-1} & 0 \\
-0 & (g^t)^{-1}
-\end{pmatrix} \sigma_n^{-1},
-\end{equation}
-cette dernière envoie le caractère $\theta$ sur le caractère $\theta^{-1}$. On en déduit que $W \in \mathcal{W}(\pi, \psi) \mapsto \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$ est $(H_n, \theta)$-invariante.
+%Calculons l'action de $H_n$ à travers l'application $W \mapsto \rho(w_{n,n})\widetilde{W}$. Pour $h \in H_n$, l'action de $H_n$ sur $W$ composé avec cette application, donne la fonction qui a $g \in G_{2n}$ associe
+%\begin{equation}
+%\rho(w_{n,n})\widetilde{\rho(h)W}(g) = W(w_n \left((gh)^t\right)^{-1}w_{n,n}) = W(w_n (g^t)^{-1} (h^t)^{-1} w_{n,n}).
+%\end{equation}
+%Cette dernière est l'action de $H_n$ composé avec l'involution $h \mapsto (h^t)^{-1} w_{n,n}$ sur $\mathcal{W}(\widetilde{\pi}, \psi^{-1})$. L'involution $h \mapsto (h^t)^{-1} w_{n,n}$ est l'application qui a $h \in H_n$ de la forme $\sigma_n\begin{pmatrix}
+%1 & X \\
+%0 & 1
+%\end{pmatrix} \begin{pmatrix}
+%g & 0 \\
+%0 & g
+%\end{pmatrix} \sigma_n^{-1}$ associe
+%\begin{equation}
+%\sigma_n\begin{pmatrix}
+%1 & -X \\
+%0 & 1
+%\end{pmatrix} \begin{pmatrix}
+%(g^t)^{-1} & 0 \\
+%0 & (g^t)^{-1}
+%\end{pmatrix} \sigma_n^{-1},
+%\end{equation}
+%cette dernière envoie le caractère $\theta$ sur le caractère $\theta^{-1}$.
 
-Montrons maintenant l'égalité \ref{eqconstbeta}. En effet, $\Hom_{H_n}(\pi, \theta)$ est de dimension au plus 1, d'après l'unicité du modèle de Shalika \cite{jacquet-rallis}. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$. Pour finir, en appliquant l'équation \ref{eqconstbeta}, pour $\widetilde{\pi}$, on obtient $\beta(\rho(w_{n,n})W) = c_\beta(\widetilde{\pi}) \widetilde{\beta}(\widetilde{W})$. En remplaçant $W$ par $\rho(w_{n,n})W$, on obtient $\beta(W) = c_\beta(\widetilde{\pi}) \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$. Si $\beta$ est nulle le résultat est vrai, sinon comme $\widetilde{\pi} \simeq \pi$, on a $c_\beta(\widetilde{\pi}) = c_\beta(\pi)$. On en déduit que $\widetilde{\beta}(\rho(w_{n,n})\widetilde{W}) = c_\beta(\pi)^2 \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$ et donc que $c_\beta(\pi)$ est un signe.
+On a montré que $\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1}) \mapsto \widetilde{\beta}(\widetilde{W})$ est $(H_n, \theta^{-1})$-équivariante. L'isomorphisme $W \in \mathcal{W}(\pi, \psi) \mapsto \rho(w_{n,n})\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1})$ transforme le caractère $\theta$ en $\theta^{-1}$.
+On en déduit que $W \in \mathcal{W}(\pi, \psi) \mapsto \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$ est $(H_n, \theta)$-équivariante.
+
+Montrons maintenant l'égalité \ref{eqconstbeta}. En effet, $\Hom_{H_n}(\pi, \theta)$ est de dimension au plus 1, d'après l'unicité du modèle de Shalika \cite{jacquet-rallis}. On en déduit l'existence de $c_\beta(\pi) \in \mathbb{C}$ vérifiant $\widetilde{\beta}(\rho(w_{n,n})\widetilde{W}) = c_\beta(\sigma)\beta(W)$
+pour tout $W \in \mathcal{W}(\pi, \psi)$. En remplaçant $\psi$ par $\psi^{-1}$ l'équation \ref{eqconstbeta} devient $\beta(\rho(w_{n,n})\widetilde{W}) = c_\beta(\pi) \widetilde{\beta}(W)$ pour tout $W \in \mathcal{W}(\pi, \psi^{-1})$. L'isomorphisme $W \in \mathcal{W}(\pi, \psi^{-1}) \mapsto \rho(w_{n,n})\widetilde{W} \in \mathcal{W}(\widetilde{\pi}, \psi^{-1})$ donne alors $\beta(W) = c_\beta(\pi) \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$. Comme $\pi \simeq \widetilde{\pi}$, on identifie $\mathcal{W}(\pi, \psi)$ et $\mathcal{W}(\widetilde{\pi}, \psi)$. On en déduit que $\widetilde{\beta}(\rho(w_{n,n})\widetilde{W}) = c_\beta(\pi)^2 \widetilde{\beta}(\rho(w_{n,n})\widetilde{W})$. Si $\widetilde{\beta}$ est nulle sur $\mathcal{W}(\widetilde{\pi}, \psi^{-1})$ le résultat est vrai, sinon $c_\beta(\pi)$ est un signe d'après la relation précédente.
 \end{proof}
 
 Finissons la preuve du lemme \ref{zetabeta}, on remarque que l'on a
@@ -2117,7 +2145,7 @@ h & 0 \\
 &= \widetilde{\beta}(\widetilde{W}),
 \end{split}
 \end{equation}
-puisque $\widetilde{\beta}$ est $(H_n, \theta^{-1})$-invariant. D'autre part,
+puisque $\widetilde{\beta}$ est $(H_n, \theta^{-1})$-équivariante. D'autre part,
 \begin{equation}
 \begin{split}
 \int_{P_n \backslash G_n}  \widehat{\phi}(e_nh) |\det h| dh &= \int_{F^n} \widehat{\phi}(x) dx \\
@@ -2135,7 +2163,7 @@ Pour finir la preuve du corollaire, il suffit d'utiliser le lemme \ref{zetabeta}
 \subsection{Formule de Plancherel explicite sur $H_n \backslash G_{2n}$}
 \label{secPlanchExpl}
 
-On note $Y_n = H_n \backslash G_{2n}$ munie de la mesure quotient. On note $\mathcal{S}(Y_n, \theta)$ l'ensemble des fonctions lisses sur $G_{2n}$, $(H_n, \theta)$-invariante et à support compact modulo $H_n$. 
+On note $Y_n = H_n \backslash G_{2n}$ munie de la mesure quotient. On note $\mathcal{S}(Y_n, \theta)$ l'ensemble des fonctions lisses sur $G_{2n}$, $(H_n, \theta)$-équivariante à gauche et à support compact modulo $H_n$. 
 
 On dispose d'une surjection $f \in \mathcal{S}(G_{2n}) \mapsto \varphi_f \in \mathcal{S}(Y_n, \theta)$ avec
 \begin{equation}
@@ -2171,11 +2199,11 @@ On pose
 \end{equation}
 pour tout $\pi \in T(Temp(SO(2n+1)))$.
 
-On note $\mathcal{S}(Y_n, \theta)_\pi$ le quotient de $\mathcal{S}(Y_n, \theta)$ par l'intersection des noyaux de toutes les applications $\mathcal{S}(Y_n, \theta) \rightarrow \pi$ linéaires $G_{2n}$-équivariante.
+On note $\mathcal{S}(Y_n, \theta)_\pi$ le quotient de $\mathcal{S}(Y_n, \theta)$ par l'intersection des noyaux de toutes les applications $\mathcal{S}(Y_n, \theta) \rightarrow \pi$ linéaires $G_{2n}$-équivariantes.
 
 \begin{proposition}
 Supposons $\pi = T(\sigma)$ avec $\sigma \in Temp(SO(2n+1))$.
-La forme sesquilinéaire $(., .)_{Y_n, \pi}$ sur $\mathcal{S}(G_{2n}))$ est une forme hermitienne continue semi-definie positive qui se factorise par $\mathcal{S}(Y_n, \theta)_\pi$.
+La forme sesquilinéaire $(., .)_{Y_n, \pi}$ sur $\mathcal{S}(G_{2n})$ est une forme hermitienne semi-definie positive qui se factorise par $\mathcal{S}(Y_n, \theta)_\pi$.
 \end{proposition}
 
 \begin{proof}
@@ -2190,53 +2218,52 @@ pour tous $W, W' \in \mathcal{W}(\pi, \psi)$.
 
 L'opérateur $\pi(f^{\vee}) : \mathcal{W}(\pi, \psi) \rightarrow \mathcal{W}(\pi, \psi)$ est de rang fini. Notons $\mathcal{B}(\pi, \psi)_f$ une base finie orthonormée de son image. Alors
 \begin{equation}
-W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\pi(f)W'} \otimes W'.
+W_{f,\pi} = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \overline{\pi(\overline{f})W'} \otimes W'.
 \end{equation}
 \end{lemme}
 
 \begin{proof}
-Le produit scalaire $(.,.)^{Wh}$ est $P_{2n}$-invariant, d'après Bernstein \cite{bernstein}, il est aussi $G_{2n}$-invariant.
+Le produit scalaire $(.,.)^{Wh}$ est $P_{2n}$-équivariant, d'après Bernstein \cite{bernstein}, il est aussi $G_{2n}$-équivariant.
 
 Pour $W \in \mathcal{W}(\pi, \psi)$, la décomposition de $\pi(f^{\vee})W$ selon ce produit scalaire est
 \begin{equation}
 \label{decpif}
 \begin{split}
 \pi(f^{\vee})W &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (\pi(f^{\vee})W, W')^{Wh}W' \\
-&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (W, \pi(f)W')^{Wh}W'.
+&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} (W, \pi(\overline{f})W')^{Wh}W'.
 \end{split}
 \end{equation}
 
 Cette égalité nous permet grâce au produit scalaire $(.,.)^{Wh}$ de faire l'identification
 \begin{equation}
-\pi(f^\vee) = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \overline{\pi(f)W'}.
+\pi(f^\vee) = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W' \otimes \overline{\pi(\overline{f})W'}.
 \end{equation}
 
 On en déduit, d'après \ref{decpif}, que
 \begin{equation}
 \begin{split}
 W_{f, \pi}(g_1, g_2) &= \int_{N_{2n}}^* Tr(\pi(g_1^{-1}ug_2)\pi(f^\vee)) \psi(u)^{-1} du \\
-& = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{N_{2n}}^* (\pi(ug_2)W', \pi(g_1)\pi(f)W')\psi(u)^{-1}du \\
-&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W'(g_2) \overline{\pi(f)W'}(g_1),
+& = \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{N_{2n}}^* (\pi(ug_2)W', \pi(g_1)\pi(\overline{f})W')\psi(u)^{-1}du \\
+&= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} W'(g_2) \overline{\pi(\overline{f})W'}(g_1),
 \end{split}
 \end{equation}
-pour tous $g_1, g_2 \in G_{2n}$. La dernière égalité provient de \cite[Prop 2.14.3]{beuzart-plessis}.
+pour tous $g_1, g_2 \in G_{2n}$. La dernière égalité provient de \cite[Lemme 4.4]{lapid-mao}.
 \end{proof}
 
 La définition \ref{defps} et le lemme \ref{decbase} donne la relation
 \begin{equation}
 \begin{split}
-(f_1, f_2)_{Y_n, T(\sigma)} &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta(W') \overline{\pi(f)W'}(\xi_p)\theta(\xi_p) d\xi_p\\
-& = \sum_{W' \in \mathcal{B}(T(\sigma), \psi)_f} \beta(W') \overline{\beta(T(\sigma)(f_1)T(\sigma)(f_2^*)W')}
+(f_1, f_2)_{Y_n, T(\sigma)} &= \sum_{W' \in \mathcal{B}(\pi, \psi)_f} \int_{H^P_n \cap N_{2n} \backslash H^P_n} \beta(W') \overline{\pi(\overline{f})W'}(\xi_p)\theta(\xi_p) d\xi_p\\
+& = \sum_{W' \in \mathcal{B}(T(\sigma), \psi)_f} \beta(W') \overline{\beta(T(\sigma)(\overline{f}_1)T(\sigma)(f_2^\vee)W')}
 \end{split}
 \end{equation}
-qui ne dépend que de $\varphi_1$ et $f_2$ puisque la restriction de $\beta$ à $\mathcal{W}(T(\sigma), \psi)$ est $(H_n, \theta)$-invariante, d'après la proposition \ref{lemmebeta}. En échangeant les rôles de $\varphi_1$ et $\varphi_2$, on voit que $(f_1, f_2)_{Y_n, T(\sigma)}$ ne dépend que de $\varphi_1$ et $\varphi_2$. De plus, $(f_1, f_2)_{Y_n, T(\sigma)}$ dépend uniquement de $T(\sigma)(f_1)$ et $T(\sigma)(f_2)$. On en déduit que $(.,.)_{Y_n, \pi}$ se factorise par $\mathcal{S}(Y_n, \theta)_{T(\sigma)}$.
-
-On remarque que
-\begin{equation}
-(f_1, f_2)_{Y_n, T(\sigma)} = (\widetilde{\beta} \otimes \beta)(W_{f, \pi}),
-\end{equation}
-ce qui nous permet de déduire, d'après la proposition \ref{Wfpicontinue} et le lemme \ref{betann}, que $(., .)_{Y_n, T(\sigma)}$ est continue.
+qui ne dépend que de $\varphi_1$ et $f_2$ puisque la restriction de $\beta$ à $\mathcal{W}(T(\sigma), \psi)$ est $(H_n, \theta)$-équivariante, d'après la proposition \ref{lemmebeta}. En échangeant les rôles de $\varphi_1$ et $\varphi_2$, on voit que $(f_1, f_2)_{Y_n, T(\sigma)}$ ne dépend que de $\varphi_1$ et $\varphi_2$. De plus, $(f_1, f_2)_{Y_n, T(\sigma)}$ dépend uniquement de $T(\sigma)(f_1)$ et $T(\sigma)(f_2)$. On en déduit que $(.,.)_{Y_n, \pi}$ se factorise par $\mathcal{S}(Y_n, \theta)_{T(\sigma)}$.
 \end{proof}
+
+On remarque pour la suite que l'on a
+\begin{equation}
+(\varphi_1, \varphi_2)_{Y_n, T(\sigma)} = (f_1, f_2)_{Y_n, T(\sigma)} = (\widetilde{\beta}\otimes\beta)(W_{f,\pi}).
+\end{equation}
 
 \begin{theoreme}
 \label{thPlanch}
@@ -2263,11 +2290,11 @@ La fonction $\sigma \mapsto \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right)$ est à su
 \begin{proof}
 D'après la définition de $f_\pi$, $W_{f,\pi}$ est nul dès que $\pi(f^\vee)$ l'est.
 
-Soit $K$ un sous-groupe ouvert compact tel que $f^\vee$ est biinvariant par $K$. Alors $\pi(f^\vee) \neq 0$, seulement lorsque $\pi$ admet des vecteurs $K$-invariant non nuls.
+Soit $K$ un sous-groupe ouvert compact (que l'on choisit distingué dans $GL_{2n}(\mathbb{Z}_p)$) tel que $f^\vee$ est biinvariant par $K$. Alors $\pi(f^\vee) \neq 0$, seulement lorsque $\pi$ admet des vecteurs $K$-invariant non nuls.
 
-D'après Harish-Chandra \cite[Théorème VIII.1.2]{waldspurger}, il n'y a qu'un nombre fini de représentations $\tau \in \Pi_2(M)$ modulo $X^*(M) \otimes i\mathbb{R}$ qui admettent des vecteurs $K$-invariant non nuls.
+Pour $M$ un sous-groupe de Levi de $G_{2n}$, d'après Harish-Chandra \cite[Théorème VIII.1.2]{waldspurger}, il n'y a qu'un nombre fini de représentations $\tau \in \Pi_2(M)$ modulo $X^*(M) \otimes i\mathbb{R}$ qui admettent des vecteurs $(K \cap M)$-invariant non nuls.
 
-Comme toute représentation $\pi \in Temp(G_{2n})$ est une induite d'une telle représentation $\tau$ pour un bon choix de sous-groupe de Levi $M$, on en déduit le lemme.
+Comme toute représentation $\pi \in Temp(G_{2n})$ est une induite d'une telle représentation $\tau$ pour un bon choix de sous-groupe de Levi $M$ et que $\pi$ admet des vecteurs $K$-invariant non nuls si et seulement si $\tau$ admet des vecteurs $(K \cap M)$-invariants non nuls, on en déduit le lemme.
 \end{proof}
 
 On en déduit que
@@ -2276,9 +2303,13 @@ On en déduit que
 \end{equation}
 est absolument convergente.
 
-De plus, l'intégration extérieure $\int_{H_n \cap N_{2n} \backslash H^P_n} \theta(\xi_p)d\xi_p$ n'est autre que la forme linéaire continue $\widetilde{\beta}$, on en déduit que l'on peut échanger l'ordre d'intégration pour obtenir
+De plus, l'intégration extérieure $\int_{H_n \cap N_{2n} \backslash H^P_n} \theta(\xi_p)d\xi_p$ n'est autre que la forme linéaire continue $\widetilde{\beta}$, on en déduit que l'intégrale \ref{intfin} devient
 \begin{equation}
-\int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))^{-1}c_\beta(\sigma)d\sigma.
+\begin{split}
+&\widetilde{\beta}\left(x_p \mapsto \int_{Temp(SO(2n+1))/Stab} \beta\left(W_{f,T(\sigma)}(\xi_p,.)\right) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|}c(T(\sigma))^{-1}c_\beta(\sigma) d\sigma\right) \\
+&= \int_{Temp(SO(2n+1))} (\widetilde{\beta}\otimes\beta)(W_{f, T(\sigma)}) \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))^{-1}c_\beta(\sigma)d\sigma \\
+&= \int_{Temp(SO(2n+1))/Stab} (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))^{-1}c_\beta(\sigma)d\sigma.
+\end{split}
 \end{equation}
 
 Pour finir, \cite[prop 4.1.1]{beuzart-plessis} nous dit que les formes sesquilinéaires $(\varphi_1, \varphi_2) \mapsto (\varphi_1, \varphi_2)_{Y_n, T(\sigma)} \frac{\gamma^*(0, \sigma, Ad, \psi)}{|S_\sigma|} c(T(\sigma))^{-1}c_\beta(\sigma)$ sont automatiquement définies positives. On en déduit que 
@@ -2303,20 +2334,20 @@ C'est une conséquence du théorème \ref{thPlanch} et du fait que $\frac{|\gamma^*
 
 \begin{lemme}
 \label{lemmeiso}
-On dispose d'un isomorphisme $G_{2n}$-équivariant d'espace de Hilbert
+On dispose d'un isomorphisme $G_{2n}$-équivariant d'espaces de Hilbert
 \begin{equation}
 L^2(G_n \times G_n \backslash G_{2n}) \simeq L^2(H_n \backslash G_{2n}, \theta).
 \end{equation}
 \end{lemme}
 
 \begin{proof}
-On note $\mathcal{S}(G_n \times G_n \backslash G_{2n})$ l'ensemble des fonctions lisse sur $G_{2n}$, $G_n \times G_n$-invariante et à support compact modulo $G_n \times G_n$.
+On note $\mathcal{S}(G_n \times G_n \backslash G_{2n})$ l'ensemble des fonctions lisse sur $G_{2n}$, $G_n \times G_n$-équivariante et à support compact modulo $G_n \times G_n$.
 On considère l'application $f \in \mathcal{S}(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in \mathcal{S}(G_n \times G_n \backslash G_{2n})$, où $\widetilde{f}$ est définie par
 \begin{equation}
 \widetilde{f}(g) = \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma_n^{-1} \right) d\gamma
+\end{pmatrix}g\right) d\gamma
 \end{equation}
 pour tout $g \in G_{2n}$.
 
@@ -2329,7 +2360,7 @@ g' & X \\
 \gamma & 0 \\
 0 & 1_n
 \end{pmatrix} = \begin{pmatrix}
-g' \gamma & X\gamma \\
+g' \gamma & X \\
 0 & g'
 \end{pmatrix}.
 \end{equation}
@@ -2337,13 +2368,13 @@ g' \gamma & X\gamma \\
 On note $K$ un compact tel que $supp(f) \subset H_nK$. On en déduit que $f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma_n^{-1} \right)$ est nul sauf si il existe $g' \in G_n$ tel que $\begin{pmatrix}
-g' \gamma & X\gamma \\
+\end{pmatrix}g \right)$ est nul sauf si il existe $g' \in G_n$ tel que $\begin{pmatrix}
+g' \gamma & X \\
 0 & g'
-\end{pmatrix} \in K$. On en déduit alors que $f\left( \sigma_n \begin{pmatrix}
+\end{pmatrix} \in \sigma_n^{-1}K$. On en déduit alors que $ \gamma \in G_n \mapsto f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma_n^{-1} \right)$ est nul sauf si $\gamma$ est dans un compact. L'intégrale est donc absolument convergente. De plus,
+\end{pmatrix}g \right)$ est à support compact. L'intégrale est donc absolument convergente. De plus,
 pour tous $g_1, g_2 \in G_n$ et $g \in G_{2n}$, on a
 \begin{equation}
 \begin{split}
@@ -2356,68 +2387,68 @@ g_1 & 0 \\
 \end{pmatrix}\begin{pmatrix}
 g_1 & 0 \\
 0 & g_2
-\end{pmatrix}g \sigma_n^{-1} \right) d\gamma \\
+\end{pmatrix}g \right) d\gamma \\
 &=_{\gamma \mapsto g_2 \gamma g_1^{-1}} \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 g_2 & 0 \\
 0 & g_2
 \end{pmatrix}\begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma_n^{-1} \right) d\gamma \\
+\end{pmatrix}g \right) d\gamma \\
 &= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1_n
-\end{pmatrix}g \sigma_n^{-1} \right) d\gamma \\
+\end{pmatrix}g \right) d\gamma \\
 &= \widetilde{f}(g).
 \end{split}
 \end{equation}
 
 Pour finir, montrons que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$. Grâce à la décomposition d'Iwasawa, écrivons $g$ sous la forme $\begin{pmatrix}
-g_2 & x \\
+g_1 & x \\
 0 & g_2
 \end{pmatrix}k$ avec $g_1, g_2 \in G_n$, $x \in M_n$ et $k \in K$. Alors $\widetilde{f}(g) = \widetilde{f}\left( \begin{pmatrix}
-1 & x \\
+1 & y \\
 0 & 1
-\end{pmatrix}k \right)$, on a alors
+\end{pmatrix}k \right)$ avec $y = g_1^{-1}x$, on a alors
 \begin{equation}
 \begin{split}
 \widetilde{f}(g) &= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
-1 & \gamma x \\
+1 & \gamma y \\
 0 & 1
 \end{pmatrix} \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right) d\gamma \\
+\end{pmatrix} k \right) d\gamma \\
 &= \int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right) \psi(Tr(\gamma x))d\gamma.
+\end{pmatrix} k \right) \psi(Tr(\gamma y))d\gamma.
 \end{split}
 \end{equation}
-Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact sur $M_n$, à savoir la fonction $\phi_k$ définie par $\phi_k(y) = f\left( \sigma_n \begin{pmatrix}
-y & 0 \\
+Cette dernière intégrale est la transformée de Fourier d'une fonction à support compact sur $M_n$, à savoir la fonction $\phi_k$ définie par $\phi_k(x) = f\left( \sigma_n \begin{pmatrix}
+x & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right)|\det y|^{-n}$ si $y \in G_n$ et $0$ sinon. Le facteur $|\det y|^{-n}$ provient de la transformation de la mesure multiplicative $d\gamma$ en une mesure additive. On en déduit que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$.
+\end{pmatrix} k \right)|\det x|^{-n}$ si $x \in G_n$ et $0$ sinon. Le facteur $|\det x|^{-n}$ provient de la transformation de la mesure multiplicative $d\gamma$ en une mesure additive. On en déduit que $\widetilde{f}$ est à support compact modulo $G_n \times G_n$.
 Ce qui prouve que l'application $f \in \mathcal{S}(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in \mathcal{S}(G_n \times G_n \backslash G_{2n})$ est bien définie.
 
 Cette application est linéaire et injective. En effet, si $\widetilde{f} = 0$, alors $\phi_k = 0$ pour tout $k \in K$, donc $f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right) = 0$ pour tout $\gamma \in G_n$ et $k \in K$. On en déduit que $f = 0$ car elle est $(H_n, \theta)$-invariante.
+\end{pmatrix} k \right) = 0$ pour tout $\gamma \in G_n$ et $k \in K$. On en déduit que $f = 0$ car elle est $(H_n, \theta)$-équivariante.
 
-Pour finir, montrons qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = c||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$. Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ s'étend en un isomorphisme d'espace de Hilbert $L^2(H_n \backslash G_{2n}, \theta) \simeq L^2(G_n \times G_n \backslash G_{2n})$.
+Pour finir, montrons qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = c||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$. Ce qui prouve que l'application $f \in C^\infty_c(H_n \backslash G_{2n}, \theta) \mapsto \widetilde{f} \in C^\infty_c(G_n \times G_n \backslash G_{2n})$ s'étend en un isomorphisme d'espaces de Hilbert $L^2(H_n \backslash G_{2n}, \theta) \simeq L^2(G_n \times G_n \backslash G_{2n})$.
 
 En effet,
 \begin{equation}
 \begin{split}
-||\widetilde{f}||_{L^2(H_n \backslash G_{2n}, \theta)} &= \int_{M_n \times K} |\widetilde{f}\left( \begin{pmatrix}
+||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})} &= \int_{M_n \times K} |\widetilde{f}\left( \begin{pmatrix}
 1 & x \\
 0 & 1
 \end{pmatrix} k \right)|^2 dx dk \\
 &= \int_{M_n \times K} |\int_{G_n} f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right) \psi(Tr(\gamma x) d\gamma|^2 dx dk \\
+\end{pmatrix} k \right) \psi(Tr(\gamma x)) d\gamma|^2 dx dk \\
 &= \int_{M_n \times K} |\widehat{\phi}_k(x)|^2 dx dk.
 \end{split}
 \end{equation}
@@ -2429,13 +2460,13 @@ La transformé de Fourier conserve la norme $L^2$ avec un choix de constante appr
 &= c' \int_{K} \int_{G_n} |f\left( \sigma_n \begin{pmatrix}
 \gamma & 0 \\
 0 & 1
-\end{pmatrix} k \sigma_n^{-1} \right)|^2 \frac{d\gamma}{|\det \gamma|^n} dk.
+\end{pmatrix} k \right)|^2 \frac{d\gamma}{|\det \gamma|^n} dk.
 \end{split}
 \end{equation}
-On met l'accent sur le fait que l'on a modifié la mesure additive sur $M_n$ restreinte à $G_n$ en une mesure multiplicative sur $G_n$. La mesure $\frac{d\gamma}{|\det \gamma|^n} dk$ est une mesure de Haar sur $G_n K \simeq H_n \backslash G_{2n}$. On en déduit bien qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = c||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$.
+On met l'accent sur le fait que l'on a modifié la mesure additive sur $M_n$ restreinte à $G_n$ en une mesure multiplicative sur $G_n$. La mesure $\frac{d\gamma}{|\det \gamma|^n} dk$ est une mesure de invariante sur $G_n K \simeq H_n \backslash G_{2n}$. On en déduit bien qu'il existe une constante $c > 0$ telle que $||f||_{L^2(H_n \backslash G_{2n}, \theta)} = c||\widetilde{f}||_{L^2(G_n \times G_n \backslash G_{2n})}$.
 \end{proof}
 
-Cet isomorphisme d'espace $L^2$ nous permet de faire le lien entre les formules de Plancherel sur  $G_n \times G_n \backslash G_{2n}$ et sur $H_n \backslash G_n$. En effet, on dispose du
+Cet isomorphisme d'espace $L^2$ nous permet de faire le lien entre les formules de Plancherel sur  $G_n \times G_n \backslash G_{2n}$ et sur $H_n \backslash G_{2n}$. En effet, on dispose du
 \begin{theoreme}
 Une décomposition de Plancherel abstraite sur $L^2(G_n \times G_n \backslash G_{2n})$ est obtenue par la relation
 \begin{equation}
