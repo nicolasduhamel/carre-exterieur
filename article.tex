@@ -32,6 +32,7 @@
 
 \title{Formule de Plancherel sur $GL_n \times GL_n \backslash GL_{2n}$}
 \date{\today}
+\author{Nicolas Duhamel}
 \maketitle
 
 \section{Introduction}
@@ -114,7 +115,7 @@ Pour $W \in \mathcal{W}(\pi, \psi)$, on note
 \begin{equation}
 \beta(W) = \int_{H^P_n \cap N_{2n} \backslash H^P_n} W(\xi_p) \theta(\xi_p)^{-1} d\xi_p.
 \end{equation}
-où $H^P_n = H_n \bigcap P_n$, on définit la mesure $d\xi_p$ dans la section \ref{formInv}, voir la section \ref{notations} pour les notations $N_{2n}, P_n$ et $\mathcal{W}(\pi, \psi)$ est le modèle de Whittaker de $\pi$. On pose
+où $H^P_n = H_n \bigcap P_n$, on définit la mesure $d\xi_p$ dans la section \ref{formInv}, voir la section \ref{notations} pour les notations $N_{2n}, P_n$ et $\mathcal{W}(\pi, \psi)$. On pose
 \begin{equation}
 (\varphi_1, \varphi_2)_{Y_n, \pi} = \sum_{W \in \mathcal{B}(\pi, \psi)} \beta(W) \overline{\beta(\pi(\overline{f}_1)\pi(f_2^\vee)W)},
 \end{equation}
@@ -175,8 +176,9 @@ De manière duale, la relation \ref{introFact} est équivalente à une factorisatio
 
 La relation \ref{introLien} entre la période locale et la forme $\beta$ va nous permettre d'obtenir une formule de Plancherel explicite sur $L^2(H_n \backslash GL_{2n}, \theta)$ prouvant ainsi la conjecture \ref{introConj}. Plus précisément, pour $\Phi$ une fonction de Schwartz sur $\mathbb{A}_F^n$ et $W_\varphi$ la fonction de Whittaker associée à $\varphi$, on introduit dans la suite des fonctions zêta globales $J(s, W_\varphi, \Phi)$, qui sont reliées à la période globale par la relation
 \begin{equation}
-Res_{s=1} J(s, W_\varphi, \Phi) = \mathcal{P}_{H_n, \theta}(\varphi) \widehat{\Phi}(0).
+Res_{s=1} J(s, W_\varphi, \Phi) = c\mathcal{P}_{H_n, \theta}(\varphi) \widehat{\Phi}(0),
 \end{equation}
+où $c$ est une constante indépendante de $\varphi$ et $\Phi$.
 
 De plus, ces fonctions zêta globales se décomposent en un produit de fonctions zêta locales, pour $Re(s)$ assez grand, on a
 \begin{equation}
@@ -342,6 +344,10 @@ Alors il existe une constante $c(\pi)$ de module 1 telle que pour tout $s \in \m
 \gamma^{JS}(s,\pi,\Lambda^2,\psi)=c(\pi)\gamma(s,\pi,\Lambda^2,\psi).
 \end{equation}
 \end{theoreme}
+
+\subsection{Remerciments}
+
+Je tiens à remercier Raphaël Beuzart-Plessis qui m'a proposé ce sujet et a su me faire confiance. Il a fait preuve d'une énorme patience lors des phases de recherche et de rédaction. Je tiens à souligner qu'il a pris le temps de me relire un nombre incalculable de fois. Ses remarques et corrections sont la raison pour laquelle cet article n'est pas totalement illisible.
 
 \section{Facteurs $\gamma$ du carré extérieur}
 \label{gamma}
@@ -1894,14 +1900,14 @@ ak & 0 \\
 ce qui nous permet de conclure.
 \end{proof}
 
-Pour tout $g \in G_{2n}$, on pose $||g|| = max(||g||_\infty, ||g^{-1}||_\infty)$ et $\sigma(g) = \log(||g||)$, avec $||g||_\infty = \sup_{i,j} |g_{i,j}|$ où les $g_{i,j}$ sont les coefficients de $g$.
+Pour tout $g \in G_{2n}$, on pose $||g|| = max(||g||_\infty, ||g^{-1}||_\infty)$ et $\sigma(g) = \log(||g||)$, avec $||g||_\infty = \sup_{i,j} |g_{i,j}|$ où les $g_{i,j}$ sont les coefficients de $g$. On note $\Xi$ la fonction Xi d'Harish-Chandra (voir \cite{waldspurger}).
 
 On introduit l'espace $C^w(G_{2n})$ des fonctions tempérées sur $G_{2n}$ comme l'ensemble des fonctions $f : G_{2n} \rightarrow \mathbb{C}$ qui sont biinvariante par un sous-groupe compact ouvert et vérifient qu'il existe $d \geq 1$ et $C > 0$ tel que
 \begin{equation}
 \label{ineqTemp}
-|f(g)| \leq C \delta_{B_{2n}}(m)^{\frac{1}{2}} \sigma(g)^d,
+|f(g)| \leq C \Xi(g) \sigma(g)^d,
 \end{equation}
-pour tout $g \in G_{2n}$, où $g=mk$ avec $m \in B_{2n}$ et $k \in GL_{2n}(\mathbb{Z}_p)$ d'après la décomposition de Cartan. On note $C^w_d(G_{2n})$ le sous-espace de $C^w(G_{2n})$ des fonctions qui vérifient \ref{ineqTemp}. Ce dernier est muni de la norme $\sup_{g \in G_{2n}} \frac{|f(g)|}{\delta_{B_{2n}}(m)^{\frac{1}{2}} \sigma(g)^d}$ qui en fait un espace de Banach. On munit $C^w(G_{2n}) = \bigcup_d C^w_d(G_{2n})$ de la topologie limite inductive.
+pour tout $g \in G_{2n}$. On note $C^w_{d,K}(G_{2n})$ le sous-espace de $C^w(G_{2n})$ des fonctions qui vérifient \ref{ineqTemp} et qui sont biinvariante par $K$, où $K$ est un sous-groupe compact ouvert de $G_{2n}$. Ce dernier est muni de la norme $\sup_{g \in G_{2n}} \frac{|f(g)|}{\Xi(g) \sigma(g)^d}$ qui en fait un espace de Banach. On munit $C^w(G_{2n}) = \bigcup_{d,K} C^w_{d,K}(G_{2n})$ de la topologie limite inductive.
 
 On étend la forme linéaire $f \in \mathcal{S}(G_{2n}) \mapsto \int_{N_{2n}} f(u)\psi(u)^{-1} du$ par continuité en une forme linéaire sur $C^w(G_{2n})$ \cite{beuzart-plessis}, que l'on note
 \begin{equation}
